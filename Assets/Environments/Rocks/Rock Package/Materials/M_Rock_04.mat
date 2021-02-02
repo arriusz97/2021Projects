@@ -1,5 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+<<<<<<< HEAD:Assets/Environments/Rocks/Rock Package/Materials/M_Rock_04.mat
 --- !u!114 &-4820991071146171120
 MonoBehaviour:
   m_ObjectHideFlags: 11
@@ -13,6 +14,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 2
+=======
+>>>>>>> iventory:Assets/Environments/Rocks/Rock Package/Materials/M_Rock_03.mat
 --- !u!21 &2100000
 Material:
   serializedVersion: 6
@@ -20,7 +23,11 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD:Assets/Environments/Rocks/Rock Package/Materials/M_Rock_04.mat
   m_Name: M_Rock_04
+=======
+  m_Name: M_Rock_03
+>>>>>>> iventory:Assets/Environments/Rocks/Rock Package/Materials/M_Rock_03.mat
   m_Shader: {fileID: 4800000, guid: 8d2bb70cbf9db8d4da26e15b26e74248, type: 3}
   m_ShaderKeywords: _EMISSION _GLOSSINESS_FROM_BASE_ALPHA _NORMALMAP _SPECULAR_COLOR
   m_LightmapFlags: 1
@@ -34,11 +41,19 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BaseMap:
+<<<<<<< HEAD:Assets/Environments/Rocks/Rock Package/Materials/M_Rock_04.mat
         m_Texture: {fileID: 2800000, guid: 992f8426259e8f64985d1e26628e4998, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
         m_Texture: {fileID: 2800000, guid: 3b463d7df9e48e24a94cf0033cb321d3, type: 3}
+=======
+        m_Texture: {fileID: 2800000, guid: 0f51354c336ddcb449e55ce5b7f20266, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BumpMap:
+        m_Texture: {fileID: 2800000, guid: 765b9916ad5a87c4f96e84023311598c, type: 3}
+>>>>>>> iventory:Assets/Environments/Rocks/Rock Package/Materials/M_Rock_03.mat
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -58,7 +73,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
+<<<<<<< HEAD:Assets/Environments/Rocks/Rock Package/Materials/M_Rock_04.mat
         m_Texture: {fileID: 2800000, guid: 992f8426259e8f64985d1e26628e4998, type: 3}
+=======
+        m_Texture: {fileID: 2800000, guid: 0f51354c336ddcb449e55ce5b7f20266, type: 3}
+>>>>>>> iventory:Assets/Environments/Rocks/Rock Package/Materials/M_Rock_03.mat
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -110,3 +129,19 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.5, g: 0.5, b: 0.5, a: 0.5}
+<<<<<<< HEAD:Assets/Environments/Rocks/Rock Package/Materials/M_Rock_04.mat
+=======
+--- !u!114 &7597101709269643049
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 2
+>>>>>>> iventory:Assets/Environments/Rocks/Rock Package/Materials/M_Rock_03.mat
