@@ -1,8 +1,12 @@
 fileFormatVersion: 2
-guid: 49076442eeb7e054b8e8869f8b40656d
+<<<<<<< HEAD:Assets/Free Island Collection/Scenes/New Terrain Material.mat.meta
+guid: 0a030d1bc6642ee4784bd92ef085e830
+=======
+guid: c81677b054341ac408b22c88bcffb2a9
+>>>>>>> iventory:Assets/Free Island Collection/Scenes/New Terrain Material 3.mat.meta
 NativeFormatImporter:
   externalObjects: {}
-  mainObjectFileID: 2100000
+  mainObjectFileID: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
