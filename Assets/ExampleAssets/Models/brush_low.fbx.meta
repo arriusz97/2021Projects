@@ -1,5 +1,6 @@
 fileFormatVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< HEAD:Assets/ExampleAssets/Models/brush_low.fbx.meta
 <<<<<<< HEAD:Assets/Environments/Rocks/Rock Package/Mesh/Rock_03.FBX.meta
 guid: 48320e7576ce0664eb501ebbd6c815da
@@ -18,10 +19,41 @@ guid: bae110eee250e4b418b188f4ae4e3170
 guid: aed8c47425ab91f4eb06ce6fe47c3e4e
 >>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island:Assets/ExampleAssets/Models/brush_low.fbx.meta
 >>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
+=======
+<<<<<<< HEAD:Assets/ExampleAssets/Models/paintbucket_low.fbx.meta
+guid: b451a052397f03c4f8a04d915d1c0492
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: paint_1G_bucket_low
+    100002: paint_1G_lid_low
+    100004: paint_5G_bucket_low
+    100006: //RootNode
+    400000: paint_1G_bucket_low
+    400002: paint_1G_lid_low
+    400004: paint_5G_bucket_low
+    400006: //RootNode
+    2100000: plastic_white
+    2100002: paint_5g_label
+    2100004: metal
+    2100006: paint_1g
+    2300000: paint_1G_bucket_low
+    2300002: paint_1G_lid_low
+    2300004: paint_5G_bucket_low
+    3300000: paint_1G_bucket_low
+    3300002: paint_1G_lid_low
+    3300004: paint_5G_bucket_low
+    4300000: paint_5G_bucket_low
+    4300002: paint_1G_bucket_low
+    4300004: paint_1G_lid_low
+=======
+guid: aed8c47425ab91f4eb06ce6fe47c3e4e
+>>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD:Assets/ExampleAssets/Models/brush_low.fbx.meta
 <<<<<<< HEAD:Assets/Environments/Rocks/Rock Package/Mesh/Rock_03.FBX.meta
@@ -80,12 +112,18 @@ ModelImporter:
     3300000: //RootNode
     4300000: level_low
 =======
+=======
+    400000: //RootNode
+>>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
     2100000: paintbrush
     2300000: //RootNode
     3300000: //RootNode
     4300000: brush_low
 >>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island:Assets/ExampleAssets/Models/brush_low.fbx.meta
   externalObjects: {}
+<<<<<<< HEAD
+>>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
+=======
 >>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
   materials:
     importMaterials: 1

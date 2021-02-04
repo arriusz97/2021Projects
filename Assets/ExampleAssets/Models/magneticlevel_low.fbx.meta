@@ -1,10 +1,14 @@
 fileFormatVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< HEAD:Assets/ExampleAssets/Models/magneticlevel_low.fbx.meta
 guid: bae110eee250e4b418b188f4ae4e3170
 =======
 guid: aed8c47425ab91f4eb06ce6fe47c3e4e
 >>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island:Assets/ExampleAssets/Models/brush_low.fbx.meta
+=======
+guid: bae110eee250e4b418b188f4ae4e3170
+>>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
 =======
 guid: bae110eee250e4b418b188f4ae4e3170
 >>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
@@ -14,7 +18,10 @@ ModelImporter:
     100000: //RootNode
     400000: //RootNode
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< HEAD:Assets/ExampleAssets/Models/magneticlevel_low.fbx.meta
+=======
+>>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
 =======
 >>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
     2100000: plastic_black
@@ -25,12 +32,15 @@ ModelImporter:
     3300000: //RootNode
     4300000: level_low
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     2100000: paintbrush
     2300000: //RootNode
     3300000: //RootNode
     4300000: brush_low
 >>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island:Assets/ExampleAssets/Models/brush_low.fbx.meta
+=======
+>>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
 =======
 >>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
   externalObjects: {}

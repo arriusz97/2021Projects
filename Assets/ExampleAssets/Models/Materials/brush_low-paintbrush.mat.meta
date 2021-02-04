@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/ExampleAssets/Models/Materials/brush_low-paintbrush.mat.meta
 guid: 6cab52b58cd2e024d9f5e015774a8889
+=======
+guid: d92ef32394b5f474385d74b565a7bdd7
+>>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island:Assets/ExampleAssets/Materials/Ground_Mat.mat.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 0

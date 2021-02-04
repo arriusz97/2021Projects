@@ -1,5 +1,6 @@
 fileFormatVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< HEAD:Assets/ExampleAssets/Models/small_plane.fbx.meta
 <<<<<<< HEAD:Assets/Environments/Rocks/Rock Package/Mesh/Rock_05.FBX.meta
 guid: d27239c9a7de0f243876d949bb27027b
@@ -18,10 +19,18 @@ guid: 8b73e8872ca76104bbca4ee2b704a1b4
 guid: aeaee610429f51f44981e141eb2a3545
 >>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island:Assets/ExampleAssets/Models/small_plane.fbx.meta
 >>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
+=======
+<<<<<<< HEAD:Assets/ExampleAssets/Models/Stud.fbx.meta
+guid: 34624edaccd9d704a95ed404d919b492
+=======
+guid: aeaee610429f51f44981e141eb2a3545
+>>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island:Assets/ExampleAssets/Models/small_plane.fbx.meta
+>>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD:Assets/ExampleAssets/Models/small_plane.fbx.meta
 <<<<<<< HEAD:Assets/Environments/Rocks/Rock Package/Mesh/Rock_05.FBX.meta
@@ -77,12 +86,32 @@ ModelImporter:
     3300000: //RootNode
     4300000: power_jigsaw_low
 =======
+=======
+<<<<<<< HEAD:Assets/ExampleAssets/Models/Stud.fbx.meta
+    100002: stud
+    100004: stud_short
+    400000: //RootNode
+    400002: stud
+    400004: stud_short
+    2100000: mat_wood_Plywood
+    2300000: stud
+    2300002: stud_short
+    3300000: stud
+    3300002: stud_short
+    4300000: stud
+    4300002: stud_short
+=======
+    400000: //RootNode
+>>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
     2100000: lambert1
     2300000: //RootNode
     3300000: //RootNode
     4300000: pPlane1
 >>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island:Assets/ExampleAssets/Models/small_plane.fbx.meta
   externalObjects: {}
+<<<<<<< HEAD
+>>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
+=======
 >>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
   materials:
     importMaterials: 1
@@ -122,7 +151,11 @@ ModelImporter:
     importCameras: 0
     importLights: 0
     swapUVChannels: 0
+<<<<<<< HEAD
     generateSecondaryUV: 0
+=======
+    generateSecondaryUV: 1
+>>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
     useFileUnits: 1
     optimizeMeshForGPU: 1
     keepQuads: 0
@@ -130,9 +163,15 @@ ModelImporter:
     preserveHierarchy: 0
     indexFormat: 0
     secondaryUVAngleDistortion: 8
+<<<<<<< HEAD
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
+=======
+    secondaryUVAreaDistortion: 15
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 64
+>>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
     useFileScale: 1
     previousCalculatedGlobalScale: 1
     hasPreviousCalculatedGlobalScale: 0

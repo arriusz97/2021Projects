@@ -1,9 +1,21 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
+<<<<<<< HEAD:Assets/ExampleAssets/Models/Stud.fbx.meta
 guid: 34624edaccd9d704a95ed404d919b492
+=======
+guid: aeaee610429f51f44981e141eb2a3545
+>>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island:Assets/ExampleAssets/Models/small_plane.fbx.meta
+=======
+guid: 34624edaccd9d704a95ed404d919b492
+>>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
+<<<<<<< HEAD
+<<<<<<< HEAD:Assets/ExampleAssets/Models/Stud.fbx.meta
+=======
+>>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
     100002: stud
     100004: stud_short
     400000: //RootNode
@@ -16,6 +28,16 @@ ModelImporter:
     3300002: stud_short
     4300000: stud
     4300002: stud_short
+<<<<<<< HEAD
+=======
+    400000: //RootNode
+    2100000: lambert1
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: pPlane1
+>>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island:Assets/ExampleAssets/Models/small_plane.fbx.meta
+=======
+>>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
   externalObjects: {}
   materials:
     importMaterials: 1

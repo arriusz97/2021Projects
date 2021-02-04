@@ -1,5 +1,6 @@
 fileFormatVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
 guid: 8b73e8872ca76104bbca4ee2b704a1b4
 =======
 <<<<<<< HEAD:Assets/ExampleAssets/Models/safetygoggles_low.fbx.meta
@@ -8,11 +9,54 @@ guid: 6296e48663fd7ad46b1a2af507f871cf
 guid: 8b73e8872ca76104bbca4ee2b704a1b4
 >>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island:Assets/ExampleAssets/Models/jigsaw_low.fbx.meta
 >>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
+=======
+<<<<<<< HEAD:Assets/ExampleAssets/Models/Workshop_Set.fbx.meta
+guid: 47616bd0cda748d4cbedcfc908506b9d
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: drywall_panel
+    100002: ground
+    100004: OSB_Panel
+    100006: stud_frame
+    100008: stud_pile
+    100010: //RootNode
+    400000: drywall_panel
+    400002: ground
+    400004: OSB_Panel
+    400006: stud_frame
+    400008: stud_pile
+    400010: //RootNode
+    2100000: mat_wood_Plywood
+    2100002: mat_concrete_cement
+    2100004: nails
+    2100006: drywall_painted
+    2100008: drywall
+    2100010: mat_wood_OSB
+    2300000: drywall_panel
+    2300002: ground
+    2300004: OSB_Panel
+    2300006: stud_frame
+    2300008: stud_pile
+    3300000: drywall_panel
+    3300002: ground
+    3300004: OSB_Panel
+    3300006: stud_frame
+    3300008: stud_pile
+    4300000: stud_pile
+    4300002: ground
+    4300004: drywall_panel
+    4300006: OSB_Panel
+    4300008: stud_frame
+=======
+guid: 8b73e8872ca76104bbca4ee2b704a1b4
+>>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD:Assets/ExampleAssets/Models/safetygoggles_low.fbx.meta
@@ -25,11 +69,17 @@ ModelImporter:
     4300000: safety_goggles_low
 =======
 >>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
+=======
+>>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
     2100000: jigsaw
     2300000: //RootNode
     3300000: //RootNode
     4300000: power_jigsaw_low
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island:Assets/ExampleAssets/Models/jigsaw_low.fbx.meta
+>>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
 =======
 >>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island:Assets/ExampleAssets/Models/jigsaw_low.fbx.meta
 >>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island

@@ -1,6 +1,7 @@
 fileFormatVersion: 2
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< HEAD:Assets/Scenes/Mountain.unity.meta
 guid: 4fec9b98234b2404593e595da355c7ae
 =======
@@ -21,6 +22,14 @@ folderAsset: yes
 <<<<<<< HEAD
 >>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
 =======
+>>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
+=======
+<<<<<<< HEAD:Assets/ExampleAssets/Materials/ConstructionLight_Mat.mat~merged.meta
+guid: 9d48e183dcf53554c870d4d827ee6cdf
+=======
+guid: aa97895f3852bd44399ef0893bec4f5e
+folderAsset: yes
+>>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island:Assets/ExampleAssets/Models.meta
 >>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
 DefaultImporter:
   externalObjects: {}

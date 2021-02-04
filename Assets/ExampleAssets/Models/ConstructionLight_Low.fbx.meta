@@ -1,9 +1,21 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
+<<<<<<< HEAD:Assets/ExampleAssets/Models/ConstructionLight_Low.fbx.meta
 guid: e3ae06a3979f53046aa05330d69de1fa
+=======
+guid: 68a66fb5a71f8204a8dcb613c97d1fa8
+>>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island:Assets/ExampleAssets/Models/hammer_low.fbx.meta
+=======
+guid: e3ae06a3979f53046aa05330d69de1fa
+>>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
+<<<<<<< HEAD
+<<<<<<< HEAD:Assets/ExampleAssets/Models/ConstructionLight_Low.fbx.meta
+=======
+>>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
     100002: Legs_Low
     100004: Light_Bulbs_low
     100006: Light_Heads_Low
@@ -22,6 +34,16 @@ ModelImporter:
     4300000: Legs_Low
     4300002: Light_Heads_Low
     4300004: Light_Bulbs_low
+<<<<<<< HEAD
+=======
+    400000: //RootNode
+    2100000: lambert1
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: hammer_low
+>>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island:Assets/ExampleAssets/Models/hammer_low.fbx.meta
+=======
+>>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
   externalObjects: {}
   materials:
     importMaterials: 1

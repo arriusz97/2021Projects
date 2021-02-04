@@ -1,6 +1,7 @@
 fileFormatVersion: 2
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< HEAD:Assets/Environments/Rocks/Rock Package.meta
 guid: 748c16474962bc340b228199bfb25ab8
 =======
@@ -19,6 +20,9 @@ guid: 854259c1a85404f4b931958119b775c5
 =======
 guid: ffd318dbb37362c4f8d87863d082b2fd
 >>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island:Assets/ExampleAssets/Materials.meta
+>>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
+=======
+guid: ffd318dbb37362c4f8d87863d082b2fd
 >>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
 folderAsset: yes
 DefaultImporter:

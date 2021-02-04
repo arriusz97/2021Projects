@@ -1,6 +1,7 @@
 fileFormatVersion: 2
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD:Assets/AddedAsset/Coconut/coconut_FBX.fbx.meta
 >>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
@@ -27,12 +28,17 @@ ModelImporter:
 guid: 9d0d902f71acfe646a46cb625f815a49
 >>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
 =======
+<<<<<<< HEAD:Assets/ExampleAssets/Models/ConstructionLight_Low.fbx.meta
+guid: e3ae06a3979f53046aa05330d69de1fa
+>>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
+=======
 guid: 68a66fb5a71f8204a8dcb613c97d1fa8
 >>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island:Assets/ExampleAssets/Models/hammer_low.fbx.meta
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
+<<<<<<< HEAD
     400000: //RootNode
 <<<<<<< HEAD
 <<<<<<< HEAD:Assets/AddedAsset/Coconut/coconut_FBX.fbx.meta
@@ -84,12 +90,38 @@ ModelImporter:
     3300000: //RootNode
     4300000: safety_hat_low
 =======
+=======
+<<<<<<< HEAD:Assets/ExampleAssets/Models/ConstructionLight_Low.fbx.meta
+    100002: Legs_Low
+    100004: Light_Bulbs_low
+    100006: Light_Heads_Low
+    400000: //RootNode
+    400002: Legs_Low
+    400004: Light_Bulbs_low
+    400006: Light_Heads_Low
+    2100000: construction_light
+    2100002: emissive_light
+    2300000: Legs_Low
+    2300002: Light_Bulbs_low
+    2300004: Light_Heads_Low
+    3300000: Legs_Low
+    3300002: Light_Bulbs_low
+    3300004: Light_Heads_Low
+    4300000: Legs_Low
+    4300002: Light_Heads_Low
+    4300004: Light_Bulbs_low
+=======
+    400000: //RootNode
+>>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
     2100000: lambert1
     2300000: //RootNode
     3300000: //RootNode
     4300000: hammer_low
 >>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island:Assets/ExampleAssets/Models/hammer_low.fbx.meta
   externalObjects: {}
+<<<<<<< HEAD
+>>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
+=======
 >>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
   materials:
     importMaterials: 1
@@ -97,6 +129,10 @@ ModelImporter:
     materialSearch: 1
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    materialLocation: 1
+>>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
 =======
     materialLocation: 1
 >>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
@@ -111,6 +147,11 @@ ModelImporter:
     motionNodeName: 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    rigImportErrors: 
+    rigImportWarnings: 
+>>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
 =======
     rigImportErrors: 
     rigImportWarnings: 
@@ -125,6 +166,11 @@ ModelImporter:
     animationDoRetargetingWarnings: 0
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+>>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
 =======
     importAnimatedCustomProperties: 0
     importConstraints: 0
@@ -141,6 +187,7 @@ ModelImporter:
     extraExposedTransformPaths: []
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     clipAnimations: []
     isReadable: 1
   meshes:
@@ -153,6 +200,8 @@ ModelImporter:
     addColliders: 0
     importBlendShapes: 1
 =======
+=======
+>>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
 =======
 >>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
     extraUserProperties: []
@@ -168,6 +217,9 @@ ModelImporter:
     importCameras: 0
     importLights: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
+=======
 >>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
 =======
 >>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
@@ -179,6 +231,11 @@ ModelImporter:
     weldVertices: 1
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    preserveHierarchy: 0
+    indexFormat: 0
+>>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
 =======
     preserveHierarchy: 0
     indexFormat: 0
@@ -194,6 +251,11 @@ ModelImporter:
     useFileScale: 1
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+>>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
 =======
     previousCalculatedGlobalScale: 1
     hasPreviousCalculatedGlobalScale: 0
@@ -206,6 +268,7 @@ ModelImporter:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD:Assets/Environments/Rocks/Rock Package/Mesh/Rock_02.FBX.meta
@@ -233,6 +296,13 @@ ModelImporter:
   humanDescription:
     serializedVersion: 2
 >>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
+=======
+    normalCalculationMode: 4
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+>>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
     human: []
     skeleton: []
     armTwist: 0.5
@@ -245,8 +315,11 @@ ModelImporter:
     rootMotionBoneName: 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     hasTranslationDoF: 0
 =======
+=======
+>>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
 =======
 >>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
     rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -254,6 +327,9 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
+=======
 >>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
 =======
 >>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
