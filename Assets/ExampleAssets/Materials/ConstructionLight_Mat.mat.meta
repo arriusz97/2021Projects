@@ -1,5 +1,6 @@
 fileFormatVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< HEAD:Assets/Free Island Collection/Scenes/New Terrain Material.mat.meta
 guid: 0a030d1bc6642ee4784bd92ef085e830
 =======
@@ -12,11 +13,18 @@ NativeFormatImporter:
 <<<<<<< HEAD:Assets/ExampleAssets/Materials/LightBulb_Mat.mat.meta
 guid: ec739259ec61f5d4ba3ed6d34fd802a6
 =======
+<<<<<<< HEAD:Assets/ExampleAssets/Materials/OBS_Mat.mat.meta
+guid: c438e5c679f1be040a135443008e2fce
+>>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
+=======
 guid: 49076442eeb7e054b8e8869f8b40656d
 >>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island:Assets/ExampleAssets/Materials/ConstructionLight_Mat.mat.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 2100000
+<<<<<<< HEAD
+>>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
+=======
 >>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
   userData: 
   assetBundleName: 

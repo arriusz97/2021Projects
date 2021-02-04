@@ -1,14 +1,35 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
+<<<<<<< HEAD:Assets/ExampleAssets/Models/safetyhat_low.fbx.meta
 guid: 9d0d902f71acfe646a46cb625f815a49
+=======
+guid: 68a66fb5a71f8204a8dcb613c97d1fa8
+>>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island:Assets/ExampleAssets/Models/hammer_low.fbx.meta
+=======
+guid: 9d0d902f71acfe646a46cb625f815a49
+>>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
+<<<<<<< HEAD
+<<<<<<< HEAD:Assets/ExampleAssets/Models/safetyhat_low.fbx.meta
+=======
+>>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
     2100000: safetyhat
     2300000: //RootNode
     3300000: //RootNode
     4300000: safety_hat_low
+<<<<<<< HEAD
+=======
+    2100000: lambert1
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: hammer_low
+>>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island:Assets/ExampleAssets/Models/hammer_low.fbx.meta
+=======
+>>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
   externalObjects: {}
   materials:
     importMaterials: 1

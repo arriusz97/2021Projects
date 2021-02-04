@@ -1,4 +1,5 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 <<<<<<< HEAD:Assets/ExampleAssets/Models/small_plane.fbx.meta
 <<<<<<< HEAD:Assets/Environments/Rocks/Rock Package/Mesh/Rock_05.FBX.meta
 guid: d27239c9a7de0f243876d949bb27027b
@@ -10,10 +11,18 @@ licenseType: Store
 =======
 guid: aeaee610429f51f44981e141eb2a3545
 >>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island:Assets/Environments/Rocks/Rock Package/Mesh/Rock_05.FBX.meta
+=======
+<<<<<<< HEAD:Assets/ExampleAssets/Models/jigsaw_low.fbx.meta
+guid: 8b73e8872ca76104bbca4ee2b704a1b4
+=======
+guid: aeaee610429f51f44981e141eb2a3545
+>>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island:Assets/ExampleAssets/Models/small_plane.fbx.meta
+>>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
+<<<<<<< HEAD
 <<<<<<< HEAD:Assets/ExampleAssets/Models/small_plane.fbx.meta
 <<<<<<< HEAD:Assets/Environments/Rocks/Rock Package/Mesh/Rock_05.FBX.meta
     100002: Rock_05_LOD0
@@ -60,6 +69,21 @@ ModelImporter:
     4300000: pPlane1
   externalObjects: {}
 >>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island:Assets/Environments/Rocks/Rock Package/Mesh/Rock_05.FBX.meta
+=======
+    400000: //RootNode
+<<<<<<< HEAD:Assets/ExampleAssets/Models/jigsaw_low.fbx.meta
+    2100000: jigsaw
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: power_jigsaw_low
+=======
+    2100000: lambert1
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: pPlane1
+>>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island:Assets/ExampleAssets/Models/small_plane.fbx.meta
+  externalObjects: {}
+>>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
   materials:
     importMaterials: 1
     materialName: 0

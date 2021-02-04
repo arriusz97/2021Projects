@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/AddedAsset/Coconut.meta
 guid: 854259c1a85404f4b931958119b775c5
+=======
+guid: ffd318dbb37362c4f8d87863d082b2fd
+>>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island:Assets/ExampleAssets/Materials.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

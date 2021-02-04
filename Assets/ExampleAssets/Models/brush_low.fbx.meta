@@ -1,4 +1,5 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 <<<<<<< HEAD:Assets/ExampleAssets/Models/brush_low.fbx.meta
 <<<<<<< HEAD:Assets/Environments/Rocks/Rock Package/Mesh/Rock_03.FBX.meta
 guid: 48320e7576ce0664eb501ebbd6c815da
@@ -10,10 +11,18 @@ licenseType: Store
 =======
 guid: aed8c47425ab91f4eb06ce6fe47c3e4e
 >>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island:Assets/Environments/Rocks/Rock Package/Mesh/Rock_03.FBX.meta
+=======
+<<<<<<< HEAD:Assets/ExampleAssets/Models/magneticlevel_low.fbx.meta
+guid: bae110eee250e4b418b188f4ae4e3170
+=======
+guid: aed8c47425ab91f4eb06ce6fe47c3e4e
+>>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island:Assets/ExampleAssets/Models/brush_low.fbx.meta
+>>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
+<<<<<<< HEAD
 <<<<<<< HEAD:Assets/ExampleAssets/Models/brush_low.fbx.meta
 <<<<<<< HEAD:Assets/Environments/Rocks/Rock Package/Mesh/Rock_03.FBX.meta
     100002: Rock_03_LOD0
@@ -60,6 +69,24 @@ ModelImporter:
     4300000: brush_low
   externalObjects: {}
 >>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island:Assets/Environments/Rocks/Rock Package/Mesh/Rock_03.FBX.meta
+=======
+    400000: //RootNode
+<<<<<<< HEAD:Assets/ExampleAssets/Models/magneticlevel_low.fbx.meta
+    2100000: plastic_black
+    2100002: metal_blue
+    2100004: plastic_white
+    2100006: liquid
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: level_low
+=======
+    2100000: paintbrush
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: brush_low
+>>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island:Assets/ExampleAssets/Models/brush_low.fbx.meta
+  externalObjects: {}
+>>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
   materials:
     importMaterials: 1
     materialName: 0

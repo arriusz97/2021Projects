@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/AddedAsset/CircularTimer/Sprites/TypeThin.meta
 guid: 3333fadde6bac2041bb3625b297f6dec
+=======
+guid: 990f5c2df70993f4987a388ca178996a
+>>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island:Assets/ExampleAssets.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

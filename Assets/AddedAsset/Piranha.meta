@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/AddedAsset/Piranha.meta
 guid: f7ab80e24b51b3f43a65788228b573f7
+=======
+guid: aa97895f3852bd44399ef0893bec4f5e
+>>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island:Assets/ExampleAssets/Models.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

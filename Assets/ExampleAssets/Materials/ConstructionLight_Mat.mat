@@ -1,7 +1,11 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!114 &-6216011540804694664
+=======
+--- !u!114 &-1110115186387250887
+>>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
 =======
 --- !u!114 &-1110115186387250887
 >>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
@@ -25,6 +29,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< HEAD:Assets/Environments/Rocks/Rock Package/Materials/M_Rock_03.mat
   m_Name: M_Rock_03
 =======
@@ -36,6 +41,10 @@ Material:
 =======
 <<<<<<< HEAD:Assets/ExampleAssets/Materials/HardHat_Mat.mat
   m_Name: HardHat_Mat
+=======
+<<<<<<< HEAD:Assets/ExampleAssets/Materials/PaintBrush_Mat.mat
+  m_Name: PaintBrush_Mat
+>>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
   m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
   m_ShaderKeywords: _METALLICSPECGLOSSMAP _NORMALMAP _OCCLUSIONMAP
 =======
@@ -44,6 +53,9 @@ Material:
   m_ShaderKeywords: _METALLICSPECGLOSSMAP _OCCLUSIONMAP
 >>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island:Assets/ExampleAssets/Materials/ConstructionLight_Mat.mat
   m_LightmapFlags: 4
+<<<<<<< HEAD
+>>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
+=======
 >>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -55,6 +67,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BaseMap:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD:Assets/Environments/Rocks/Rock Package/Materials/M_Rock_03.mat
         m_Texture: {fileID: 2800000, guid: 0f51354c336ddcb449e55ce5b7f20266, type: 3}
@@ -77,19 +90,34 @@ Material:
     - _BumpMap:
         m_Texture: {fileID: 2800000, guid: d608c45da8580c9408ee50eb9a8c40f3, type: 3}
 =======
+<<<<<<< HEAD:Assets/ExampleAssets/Materials/PaintBrush_Mat.mat
+        m_Texture: {fileID: 2800000, guid: 4675081b0baf66345adc734388155502, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BumpMap:
+        m_Texture: {fileID: 2800000, guid: 09e745bf0b8ff6a4bb5785d14168289a, type: 3}
+>>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
+=======
         m_Texture: {fileID: 2800000, guid: 2ec6e1532acb1254f9f3797b5d82db44, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
         m_Texture: {fileID: 2800000, guid: e21bd9673bcc8954fa8b4ed0f92661da, type: 3}
 >>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island:Assets/ExampleAssets/Materials/ConstructionLight_Mat.mat
+<<<<<<< HEAD
+>>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
+=======
 >>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
         m_Texture: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
         m_Scale: {x: 4, y: 4}
+=======
+        m_Scale: {x: 1, y: 1}
+>>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
 =======
         m_Scale: {x: 1, y: 1}
 >>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
@@ -100,7 +128,11 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _DetailNormalMap:
 <<<<<<< HEAD
+<<<<<<< HEAD
         m_Texture: {fileID: 2800000, guid: b81346cf3f0a0714393496e97ba2f158, type: 3}
+=======
+        m_Texture: {fileID: 0}
+>>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
 =======
         m_Texture: {fileID: 0}
 >>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
@@ -111,6 +143,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD:Assets/Environments/Rocks/Rock Package/Materials/M_Rock_03.mat
         m_Texture: {fileID: 2800000, guid: 0f51354c336ddcb449e55ce5b7f20266, type: 3}
@@ -137,6 +170,18 @@ Material:
     - _OcclusionMap:
         m_Texture: {fileID: 2800000, guid: 6f61f8dd4499250438f1aa39448e860a, type: 3}
 =======
+<<<<<<< HEAD:Assets/ExampleAssets/Materials/PaintBrush_Mat.mat
+        m_Texture: {fileID: 2800000, guid: 4675081b0baf66345adc734388155502, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicGlossMap:
+        m_Texture: {fileID: 2800000, guid: 888916a5e87c05948b1a97b3c0d42556, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMap:
+        m_Texture: {fileID: 2800000, guid: 888916a5e87c05948b1a97b3c0d42556, type: 3}
+>>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
+=======
         m_Texture: {fileID: 2800000, guid: 2ec6e1532acb1254f9f3797b5d82db44, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -147,6 +192,9 @@ Material:
     - _OcclusionMap:
         m_Texture: {fileID: 2800000, guid: 9a81f1a59f171804e84fce76584bdcb7, type: 3}
 >>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island:Assets/ExampleAssets/Materials/ConstructionLight_Mat.mat
+<<<<<<< HEAD
+>>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
+=======
 >>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -167,9 +215,15 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
     - _GlossMapScale: 1
     - _Glossiness: 0.328
     - _GlossinessSource: 0
+=======
+    - _EnvironmentReflections: 1
+    - _GlossMapScale: 1
+    - _Glossiness: 0.5
+>>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
 =======
     - _EnvironmentReflections: 1
     - _GlossMapScale: 1
@@ -182,6 +236,7 @@ Material:
     - _Parallax: 0.02
     - _QueueOffset: 0
     - _ReceiveShadows: 1
+<<<<<<< HEAD
 <<<<<<< HEAD
     - _Shininess: 0
     - _Smoothness: 0
@@ -201,6 +256,8 @@ Material:
 <<<<<<< HEAD:Assets/Environments/Rocks/Rock Package/Materials/M_Rock_03.mat
 --- !u!114 &7597101709269643049
 =======
+=======
+>>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
     - _Smoothness: 1
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
@@ -214,8 +271,13 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
+<<<<<<< HEAD
 <<<<<<< HEAD:Assets/ExampleAssets/Materials/HardHat_Mat.mat
 --- !u!114 &8647599817607310902
+>>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
+=======
+<<<<<<< HEAD:Assets/ExampleAssets/Materials/PaintBrush_Mat.mat
+--- !u!114 &3664974306083302143
 >>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
 MonoBehaviour:
   m_ObjectHideFlags: 11
@@ -231,7 +293,11 @@ MonoBehaviour:
   version: 2
 =======
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> iventory:Assets/Environments/Rocks/Rock Package/Materials/M_Rock_02.mat
+=======
+>>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island:Assets/ExampleAssets/Materials/ConstructionLight_Mat.mat
+>>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
 =======
 >>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island:Assets/ExampleAssets/Materials/ConstructionLight_Mat.mat
 >>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island

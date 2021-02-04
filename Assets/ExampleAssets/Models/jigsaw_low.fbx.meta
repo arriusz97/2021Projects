@@ -1,14 +1,38 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 8b73e8872ca76104bbca4ee2b704a1b4
+=======
+<<<<<<< HEAD:Assets/ExampleAssets/Models/safetygoggles_low.fbx.meta
+guid: 6296e48663fd7ad46b1a2af507f871cf
+=======
+guid: 8b73e8872ca76104bbca4ee2b704a1b4
+>>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island:Assets/ExampleAssets/Models/jigsaw_low.fbx.meta
+>>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD:Assets/ExampleAssets/Models/safetygoggles_low.fbx.meta
+    2100000: elastic_strap
+    2100002: plastic_transparent
+    2100004: plastic_black
+    2100006: plastic_yellow
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: safety_goggles_low
+=======
+>>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
     2100000: jigsaw
     2300000: //RootNode
     3300000: //RootNode
     4300000: power_jigsaw_low
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island:Assets/ExampleAssets/Models/jigsaw_low.fbx.meta
+>>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
   externalObjects: {}
   materials:
     importMaterials: 1
