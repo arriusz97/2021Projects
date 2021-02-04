@@ -1,4 +1,5 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 <<<<<<< HEAD:Assets/Free Island Collection/Scenes/New Terrain Material 1.mat.meta
 guid: 95f17c21df7dba942b7889929e4f528a
 =======
@@ -7,6 +8,16 @@ guid: aece0eaa0c8ea96498765775c3ab90d8
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 0
+=======
+<<<<<<< HEAD:Assets/ExampleAssets/Materials/Hammer_Mat.mat.meta
+guid: 4efcffd7ae23f1e41943fd914b18da10
+=======
+guid: d92ef32394b5f474385d74b565a7bdd7
+>>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island:Assets/ExampleAssets/Materials/Ground_Mat.mat.meta
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+>>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
   userData: 
   assetBundleName: 
   assetBundleVariant: 

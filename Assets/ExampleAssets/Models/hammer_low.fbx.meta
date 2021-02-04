@@ -1,4 +1,8 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD:Assets/AddedAsset/Coconut/coconut_FBX.fbx.meta
+>>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
 <<<<<<< HEAD:Assets/Environments/Rocks/Rock Package/Mesh/Rock_02.FBX.meta
 guid: 05e04fedc78047c48af519e94c595e13
 timeCreated: 1513837869
@@ -7,6 +11,7 @@ guid: e509b65d970f5f44da8a378719817091
 timeCreated: 1582337576
 >>>>>>> iventory:Assets/AddedAsset/Coconut/coconut_FBX.fbx.meta
 licenseType: Store
+<<<<<<< HEAD
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
@@ -15,17 +20,37 @@ ModelImporter:
     100004: Rock_02_LOD1
     100006: Rock_02_LOD2
     400000: //RootNode
+=======
+=======
+guid: 68a66fb5a71f8204a8dcb613c97d1fa8
+>>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island:Assets/ExampleAssets/Models/hammer_low.fbx.meta
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    400000: //RootNode
+<<<<<<< HEAD:Assets/AddedAsset/Coconut/coconut_FBX.fbx.meta
+>>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
 <<<<<<< HEAD:Assets/Environments/Rocks/Rock Package/Mesh/Rock_02.FBX.meta
     400002: 'Rock_02_LOD0 '
     400004: Rock_02_LOD1
     400006: Rock_02_LOD2
 =======
 >>>>>>> iventory:Assets/AddedAsset/Coconut/coconut_FBX.fbx.meta
+<<<<<<< HEAD
     2300000: //RootNode
     2300002: 'Rock_02_LOD0 '
     2300004: Rock_02_LOD1
     2300006: Rock_02_LOD2
     3300000: //RootNode
+=======
+=======
+    2100000: lambert1
+>>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island:Assets/ExampleAssets/Models/hammer_low.fbx.meta
+    2300000: //RootNode
+    3300000: //RootNode
+<<<<<<< HEAD:Assets/AddedAsset/Coconut/coconut_FBX.fbx.meta
+>>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
 <<<<<<< HEAD:Assets/Environments/Rocks/Rock Package/Mesh/Rock_02.FBX.meta
     3300002: 'Rock_02_LOD0 '
     3300004: Rock_02_LOD1
@@ -39,26 +64,48 @@ ModelImporter:
 =======
     4300000: cocco_low_Group34976_pasted__group8_group
 >>>>>>> iventory:Assets/AddedAsset/Coconut/coconut_FBX.fbx.meta
+<<<<<<< HEAD
+=======
+=======
+    4300000: hammer_low
+  externalObjects: {}
+>>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island:Assets/ExampleAssets/Models/hammer_low.fbx.meta
+>>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
+<<<<<<< HEAD
+=======
+    materialLocation: 1
+>>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
     motionNodeName: 
+<<<<<<< HEAD
+=======
+    rigImportErrors: 
+    rigImportWarnings: 
+>>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
+<<<<<<< HEAD
+=======
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+>>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
+<<<<<<< HEAD
     clipAnimations: []
     isReadable: 1
   meshes:
@@ -70,28 +117,64 @@ ModelImporter:
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1
+=======
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 0
+    importCameras: 0
+    importLights: 0
+>>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
     optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+<<<<<<< HEAD
+=======
+    preserveHierarchy: 0
+    indexFormat: 0
+>>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
+<<<<<<< HEAD
+=======
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+>>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
+<<<<<<< HEAD
 <<<<<<< HEAD:Assets/Environments/Rocks/Rock Package/Mesh/Rock_02.FBX.meta
+=======
+<<<<<<< HEAD:Assets/AddedAsset/Coconut/coconut_FBX.fbx.meta
+<<<<<<< HEAD:Assets/Environments/Rocks/Rock Package/Mesh/Rock_02.FBX.meta
+=======
+    normalCalculationMode: 4
+>>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island:Assets/ExampleAssets/Models/hammer_low.fbx.meta
+>>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
   importAnimation: 0
 =======
   importAnimation: 1
 >>>>>>> iventory:Assets/AddedAsset/Coconut/coconut_FBX.fbx.meta
   copyAvatar: 0
   humanDescription:
+<<<<<<< HEAD
+=======
+    serializedVersion: 2
+>>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
     human: []
     skeleton: []
     armTwist: 0.5
@@ -102,7 +185,14 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     rootMotionBoneName: 
+<<<<<<< HEAD
     hasTranslationDoF: 0
+=======
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+>>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 0
   humanoidOversampling: 1

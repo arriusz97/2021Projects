@@ -1,9 +1,17 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 <<<<<<< HEAD:Assets/Environments/Rocks/Rock Package.meta
 guid: a38cbc0df1961a2498fd1a87bd9b6ee2
 =======
 guid: 1b4f2840150057f48aeff6078a099af5
 >>>>>>> iventory:Assets/AddedAsset/Piranha/Materials.meta
+=======
+<<<<<<< HEAD:Assets/AddedAsset/CircularTimer/Sprites.meta
+guid: 4e4f45770214e5f448ec8fd75ce98016
+=======
+guid: ffd318dbb37362c4f8d87863d082b2fd
+>>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island:Assets/ExampleAssets/Materials.meta
+>>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

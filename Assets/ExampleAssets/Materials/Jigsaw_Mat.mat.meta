@@ -1,5 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
+<<<<<<< HEAD:Assets/ExampleAssets/Materials/Jigsaw_Mat.mat.meta
 guid: 801db2d997a562b4ea333aa4593ce0f0
+=======
+guid: a68228c24abfa2f4b8954d7b0148f799
+>>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island:Assets/ExampleAssets/Materials/DryWall_Mat.mat.meta
+=======
+guid: 801db2d997a562b4ea333aa4593ce0f0
+>>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 2100000

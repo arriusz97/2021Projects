@@ -1,9 +1,17 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 <<<<<<< HEAD:Assets/Environments/Rocks.meta
 guid: 0a04a03a820432d408036fc3e1f97ce4
 =======
 guid: 6a03d4a9c0f25c34a829c604e64d03d3
 >>>>>>> iventory:Assets/AddedAsset.meta
+=======
+<<<<<<< HEAD:Assets/AddedAsset/CircularTimer/Scripts.meta
+guid: b3252a97f5248de49a6f44e3f9383749
+=======
+guid: 990f5c2df70993f4987a388ca178996a
+>>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island:Assets/ExampleAssets.meta
+>>>>>>> parent of 120f7b6... Merge pull request #4 from 2021Projects/island
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
