@@ -11,6 +11,8 @@ public class player : MonoBehaviour
     float m_runSpeed;
     [SerializeField]
     Vector3 m_dir;
+    [SerializeField]
+    private SwimTrigger m_SwimTrigger;
     private bool m_isDead = false;
     private int m_JumpCount = 0;
     private bool m_isRun;
@@ -32,6 +34,8 @@ public class player : MonoBehaviour
     private float m_maxHP;
     private float m_currentHP;
 
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -46,9 +50,18 @@ public class player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Move();
+        if (!m_SwimTrigger.m_isWater)
+        {
+            Move();
+        }
+      
         camera_Rotation();
         character_Rotation();
+
+        if (m_SwimTrigger.m_isWater)
+        {
+            m_Anim.SetBool("SWIM", true);
+        }
 
         if (m_JumpCount < 1 && Input.GetButtonDown("Jump"))
         {
