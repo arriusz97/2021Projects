@@ -8,16 +8,15 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Bushes
-  m_Shader: {fileID: 4800000, guid: 650dd9526735d5b46b79224bc6e94025, type: 3}
-  m_ShaderKeywords: _ALPHAPREMULTIPLY_ON
+  m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
+  m_ShaderKeywords: _ALPHATEST_ON _RECEIVE_SHADOWS_OFF _SPECULARHIGHLIGHTS_OFF
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 1
-  m_CustomRenderQueue: 3000
+  m_CustomRenderQueue: 2450
   stringTagMap:
-    RenderType: Transparent
-  disabledShaderPasses:
-  - SHADOWCASTER
+    RenderType: TransparentCutout
+  disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -149,7 +148,7 @@ Material:
     - VERTEX_ANIMATION: 1
     - Vector1_19FBDA45: 0.259
     - Vector1_4F6BB00E: 0.5
-    - _AlphaClip: 0
+    - _AlphaClip: 1
     - _BendStrength: 0.05
     - _BillboardKwToggle: 0
     - _BillboardShadowFade: 0.5
@@ -163,13 +162,13 @@ Material:
     - _ColorMode: 0
     - _CorrectNormals: 1
     - _Cull: 0
-    - _Cutoff: 0.5
+    - _Cutoff: 0.604
     - _DetailNormalMapScale: 1
     - _DistortionBlend: 0.5
     - _DistortionEnabled: 0
     - _DistortionStrength: 1
     - _DistortionStrengthScaled: 0.1
-    - _DstBlend: 10
+    - _DstBlend: 0
     - _EnableHeightBlend: 0
     - _EnableInstancedPerPixelNormal: 1
     - _EnvironmentReflections: 1
@@ -211,13 +210,13 @@ Material:
     - _SrcBlend: 1
     - _SubsurfaceIndirect: 0.25
     - _SubsurfaceKwToggle: 0
-    - _Surface: 1
+    - _Surface: 0
     - _TwoSided: 2
     - _UVSec: 0
     - _VertexAnimation: 1
     - _WindQuality: 0
     - _WorkflowMode: 1
-    - _ZWrite: 0
+    - _ZWrite: 1
     m_Colors:
     - Color_C30C7CA3: {r: 0.75471693, g: 0.750602, b: 0.7084372, a: 1}
     - WindDirection: {r: 0.4, g: 0.4, b: 0, a: 0}
@@ -229,7 +228,7 @@ Material:
     - _HueVariation: {r: 1, g: 0.5, b: 0, a: 0.1}
     - _HueVariationColor: {r: 1, g: 0.5, b: 0, a: 0.1}
     - _SoftParticleFadeParams: {r: 0, g: 0, b: 0, a: 0}
-    - _SpecColor: {r: 0.19999892, g: 0.19999892, b: 0.19999892, a: 0}
+    - _SpecColor: {r: 0.19999886, g: 0.19999886, b: 0.19999886, a: 0}
     - _SubsurfaceColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &2905409936792211367
 MonoBehaviour:
