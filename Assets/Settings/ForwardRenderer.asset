@@ -51,8 +51,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Active: 1
   settings:
-    causticScale: 0.25
-    waterLevel: -1.2
+    causticScale: 0.122
+    waterLevel: -17
     causticBlendDistance: 3
     debug: 0
   causticShader: {fileID: 4800000, guid: 90939d2e4b62841d29c136c866715501, type: 3}
