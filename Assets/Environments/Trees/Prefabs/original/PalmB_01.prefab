@@ -167,7 +167,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4896864259956814}
-  - component: {fileID: 205940861478846732}
   m_Layer: 0
   m_Name: PalmB_01
   m_TagString: Untagged
@@ -191,26 +190,3 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!205 &205940861478846732
-LODGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1796336510737346}
-  serializedVersion: 2
-  m_LocalReferencePoint: {x: 0.2263856, y: 3.9349666, z: 1.2567744}
-  m_Size: 7.9751406
-  m_FadeMode: 1
-  m_AnimateCrossFading: 0
-  m_LastLODIsBillboard: 0
-  m_LODs:
-  - screenRelativeHeight: 0.3461439
-    fadeTransitionWidth: 0.25
-    renderers:
-    - renderer: {fileID: 23279911168945140}
-  - screenRelativeHeight: 0.052459855
-    fadeTransitionWidth: 0.25
-    renderers:
-    - renderer: {fileID: 23946328909453918}
-  m_Enabled: 1
