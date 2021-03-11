@@ -10,7 +10,7 @@ Material:
   m_Name: Seaweeds
   m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
   m_ShaderKeywords: _EMISSION
-  m_LightmapFlags: 0
+  m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: 2000
@@ -20,6 +20,26 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - Texture2D_B222E8F:
+        m_Texture: {fileID: 2800000, guid: 8fd1a09f036e77d46a48c04c8d159cb9, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_C005B064:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_D7D66558:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_D9BFD5F1:
+        m_Texture: {fileID: 2800000, guid: 087a5dc48a88f411e9674c05bd147800, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_DE8BF47E:
+        m_Texture: {fileID: 2800000, guid: 199be4fdc4bc3c74ebd817e77da26d2f, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _Albedo:
         m_Texture: {fileID: 2800000, guid: 8c6a76ad9e563ad4890089c615bf7731, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -84,6 +104,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_EF77D572_Texture_1:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _SmoothnessMap:
         m_Texture: {fileID: 2800000, guid: e40b117ffcda4d242970e396839209d8, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -97,6 +121,12 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - BOOLEAN_5C6B42CA: 0
+    - BOOLEAN_7021FEFA: 0
+    - Vector1_6E11FCEA: 0.5
+    - Vector1_8B35DE98: 60
+    - Vector1_90E376AD: 1
+    - Vector1_A492C01C: 1
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -119,6 +149,7 @@ Material:
     - _Parallax: 0.02
     - _QueueOffset: 0
     - _ReceiveShadows: 1
+    - _SampleGI: 0
     - _SmoothFromMapSwitch: 1
     - _SmoothRough: 0
     - _Smoothness: 0.5
@@ -141,6 +172,7 @@ Material:
     - _ZWrite: 1
     - __dirty: 0
     m_Colors:
+    - Color_C30C7CA3: {r: 1, g: 1, b: 1, a: 0}
     - _AlbedoColor: {r: 1, g: 1, b: 1, a: 1}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
