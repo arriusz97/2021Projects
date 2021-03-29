@@ -2,37 +2,33 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum eTimerType
-{
-    HP,
-    TP,
-}
-
 public class TimerController : MonoBehaviour
 {
     private CircularTimer mUpdateTimer;
 
     public List<CircularTimer> TimerContainer = new List<CircularTimer>();
 
-    private void StartTimer(int TimerType)
+    private void StartTimer(int TimerNum)
     {
-        TimerContainer[TimerType].StartTimer();
+        TimerContainer[TimerNum].StartTimer();
     }
 
-    private void PauseTimer(int TimerType)
+    private void PauseTimer(int TimerNum)
     {        
-         TimerContainer[TimerType].PauseTimer();     
+         TimerContainer[TimerNum].PauseTimer();     
     }
 
     //
-    private void UpdateTimer(int TimerType, float Update)
+    private void UpdateTimer(int TimerNum, float Update)
     {
-        TimerContainer[TimerType].CurrentTime = Mathf.Clamp(mUpdateTimer.CurrentTime - Update, 0, mUpdateTimer.duration);
+        TimerContainer[TimerNum].CurrentTime = Mathf.Clamp(mUpdateTimer.CurrentTime - Update, 0, mUpdateTimer.duration);
     }
 
     private void Start()
     {
-        StartTimer((int)eTimerType.HP);
-        StartTimer((int)eTimerType.TP);
+        for(int i=0; i < TimerContainer.Count; i++)
+        {
+            StartTimer(i);
+        }
     }
 }

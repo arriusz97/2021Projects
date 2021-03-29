@@ -403,7 +403,6 @@ GameObject:
   m_Component:
   - component: {fileID: 224609695082027448}
   - component: {fileID: 114465945419781296}
-  - component: {fileID: 114197656715240702}
   m_Layer: 5
   m_Name: CircualrTimerThin
   m_TagString: Untagged
@@ -479,18 +478,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &114197656715240702
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1999881253071410}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eafc0bca8b914b042a50a2ea0934692a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2319160090080739212
 GameObject:
   m_ObjectHideFlags: 0
