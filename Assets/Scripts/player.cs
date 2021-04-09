@@ -21,6 +21,11 @@ public class player : MonoBehaviour
     CapsuleCollider m_collider;
     Animator m_Anim;
 
+    [Header("Swim 변수")]
+    [SerializeField]
+    float m_SwimSpeed;
+    private bool m_isDive = false;
+
     [Header("camera변수")]
     public Camera m_camera;
     public Transform m_cameraArm;
@@ -50,18 +55,20 @@ public class player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        Move();
+        camera_Rotation();
+        character_Rotation();
+
         if (!m_SwimTrigger.m_isWater)
         {
             Move();
         }
-      
-        camera_Rotation();
-        character_Rotation();
-
-        if (m_SwimTrigger.m_isWater)
+        else
         {
-            m_Anim.SetBool("SWIM", true);
+            Swim();
         }
+
 
         if (m_JumpCount < 1 && Input.GetButtonDown("Jump"))
         {
@@ -70,15 +77,32 @@ public class player : MonoBehaviour
         }
         m_Anim.SetFloat("JUMP", m_rigidbody.velocity.y);
 
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+        if (Input.GetKeyDown(KeyCode.LeftShift) )
         {
-            m_isRun = true;
+            if (!m_SwimTrigger.m_isWater)
+            {
+                m_isRun = true;
+            }
+            else
+            {
+                m_isDive = true;
+            }
         }
+
 
         if (Input.GetKeyUp(KeyCode.LeftShift))
         {
-            m_isRun = false;
+            if (!m_SwimTrigger.m_isWater)
+            {
+                m_isRun = false;
+            }
+            else
+            {
+                m_isDive = false;
+                Debug.Log("is dive false");
+            }
         }
+
 
         if (Input.GetKey(KeyCode.Z))
         {
@@ -107,9 +131,48 @@ public class player : MonoBehaviour
         m_camera.transform.localEulerAngles = new Vector3(m_currentCameraRotationX, 0, 0);
     }
 
+    private void Swim()
+    {
+        float moveDirX = Input.GetAxisRaw("Horizontal");
+        float moveDirZ = Input.GetAxisRaw("Vertical");
+
+        Vector3 moveHorizontal = transform.right * moveDirX;
+        Vector3 moveVertical = transform.forward * -moveDirZ;
+        Vector3 m_velocity = (moveHorizontal - moveVertical) * m_SwimSpeed;
+
+        m_Anim.SetBool("WALK", false);
+        m_Anim.SetBool("RUN", false);
+        m_rigidbody.useGravity = false;
+
+        if (moveDirX != 0 || moveDirZ != 0)
+        {
+            m_Anim.SetBool("SWIM", true);
+            m_Anim.SetBool("IDLEINWATER", false);
+
+            m_rigidbody.MovePosition(transform.position + m_velocity * Time.deltaTime);
+            if (m_isDive)
+            {
+                var vel = m_rigidbody.velocity;
+                vel.y = -5f;
+                m_rigidbody.velocity = vel;
+                Debug.Log("is Dive");
+            }
+            else
+            {
+                var vel = m_rigidbody.velocity;
+                vel.y = 0f;
+                m_rigidbody.velocity = vel;
+            }
+        }
+        else
+        {
+            m_Anim.SetBool("IDLEINWATER", true);
+        }
+
+    }
+
     private void Move()
     {
-
         float moveDirX = Input.GetAxisRaw("Horizontal");
         float moveDirZ = Input.GetAxisRaw("Vertical");
 
@@ -128,16 +191,26 @@ public class player : MonoBehaviour
             isMove = false;
         }
 
-        m_Anim.SetBool("WALK", isMove);
+        if (!m_SwimTrigger.m_isWater)
+        {
+            m_Anim.SetBool("WALK", isMove);
+        }
 
-        if (isMove)
+        if (isMove && !m_SwimTrigger.m_isWater)
         {
             m_rigidbody.MovePosition(transform.position + m_velocity * Time.deltaTime);
 
             if (!m_isRun)
             {
                 m_Anim.SetBool("RUN", false);
-                m_Anim.SetBool("WALK", true);
+                if (isMove)
+                {
+                    m_Anim.SetBool("WALK", true);
+                }
+                else
+                {
+                    m_Anim.SetBool("IDLE", true);
+                }
                 m_rigidbody.MovePosition(transform.position + m_velocity * Time.deltaTime);
             }
             else
