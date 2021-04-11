@@ -42,7 +42,7 @@ public class TimerController : MonoBehaviour
 
     private void Update()
     {
-        if (Player.m_isDive)
+        if (Player.transform.localPosition.y <= -8.5f)
         {
             TimerContainer[2].Activated(true);
             StartTimer(2);

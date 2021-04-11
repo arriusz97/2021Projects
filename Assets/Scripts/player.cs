@@ -11,8 +11,7 @@ public class player : MonoBehaviour
     float m_runSpeed;
     [SerializeField]
     Vector3 m_dir;
-    [SerializeField]
-    private SwimTrigger m_SwimTrigger;
+    public SwimTrigger m_SwimTrigger;
     public bool m_isDead = false;
     private int m_JumpCount = 0;
     private bool m_isRun;
