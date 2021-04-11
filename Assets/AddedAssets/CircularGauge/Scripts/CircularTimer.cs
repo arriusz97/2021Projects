@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.Events;
 using TMPro;
 
-public enum eCountType { countUp, countDown, HP, TP, }
+public enum eCountType { countUp, countDown, HP, TP, O2 }
 public enum eFillDirection { fillUp, fillDown }
 public enum eFillType { tick, smooth }
 
@@ -164,6 +164,9 @@ public class CircularTimer : MonoBehaviour
                 case eCountType.TP:
                     textSettings.text.text = "TP";
                     break;
+                case eCountType.O2:
+                    textSettings.text.text = "O<sub>2</sub>";
+                    break;
                 case eCountType.countUp:
                     if (textSettings.millisecond)
                     {
@@ -223,5 +226,10 @@ public class CircularTimer : MonoBehaviour
                 fillSettings.fillImage.fillAmount = 1;
                 break;
         }
+    }
+
+    public void Activated(bool isActivate)
+    {
+        gameObject.SetActive(isActivate);
     }
 }

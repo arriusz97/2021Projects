@@ -13,7 +13,7 @@ public class player : MonoBehaviour
     Vector3 m_dir;
     [SerializeField]
     private SwimTrigger m_SwimTrigger;
-    private bool m_isDead = false;
+    public bool m_isDead = false;
     private int m_JumpCount = 0;
     private bool m_isRun;
 
@@ -23,8 +23,8 @@ public class player : MonoBehaviour
 
     [Header("Swim 변수")]
     [SerializeField]
-    float m_SwimSpeed;
-    private bool m_isDive = false;
+    private float m_SwimSpeed;
+    public bool m_isDive = false;
 
     [Header("camera변수")]
     public Camera m_camera;

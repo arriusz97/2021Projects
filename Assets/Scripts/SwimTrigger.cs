@@ -14,4 +14,12 @@ public class SwimTrigger : MonoBehaviour
             Debug.Log("player exit swimTrigger");
         }
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player") && m_isWater)
+        {
+            m_isWater = false;
+            Debug.Log("player enter swimTrigger");
+        }
+    }
 }
