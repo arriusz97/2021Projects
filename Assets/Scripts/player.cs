@@ -24,6 +24,7 @@ public class player : MonoBehaviour
     [SerializeField]
     private float m_SwimSpeed;
     public bool m_isDive = false;
+    private bool m_isDiveup = false;
 
     [Header("camera변수")]
     public Camera m_camera;
@@ -91,15 +92,21 @@ public class player : MonoBehaviour
 
         if (Input.GetKeyUp(KeyCode.LeftShift))
         {
-            if (!m_SwimTrigger.m_isWater)
+            m_isDive = false;
+            m_isRun = false;
+        }
+
+        if (Input.GetKeyDown(KeyCode.LeftControl))
+        {
+            if (m_SwimTrigger.m_isWater)
             {
-                m_isRun = false;
+                m_isDiveup = true;
             }
-            else
-            {
-                m_isDive = false;
-                Debug.Log("is dive false");
-            }
+        }
+
+        if (Input.GetKeyUp(KeyCode.LeftControl))
+        {
+            m_isDiveup = false;
         }
 
 
@@ -156,6 +163,13 @@ public class player : MonoBehaviour
                 m_rigidbody.velocity = vel;
                 Debug.Log("is Dive");
             }
+            else if (m_isDiveup & this.transform.position.y < -20)
+            {
+                var vel = m_rigidbody.velocity;
+                vel.y = +5f;
+                m_rigidbody.velocity = vel;
+                Debug.Log("is Dive up" + this.transform.position.y);
+            }
             else
             {
                 var vel = m_rigidbody.velocity;
@@ -180,14 +194,23 @@ public class player : MonoBehaviour
         Vector3 m_velocity = (moveHorizontal - moveVertical) * m_speed;
 
         bool isMove = false;
+        m_Anim.SetBool("SWIM", false);
+
+        if (!m_rigidbody.useGravity)
+        {
+            m_rigidbody.useGravity = true;
+        }
+
 
         if (moveDirX != 0 || moveDirZ != 0)
         {
             isMove = true;
+            m_Anim.SetBool("IDLE", false);
         }
         else
         {
             isMove = false;
+            m_Anim.SetBool("IDLE", true);
         }
 
         if (!m_SwimTrigger.m_isWater)
@@ -215,6 +238,7 @@ public class player : MonoBehaviour
             else
             {
                 m_Anim.SetBool("RUN", true);
+                m_Anim.SetBool("WALK", false);
                 m_rigidbody.MovePosition(transform.position + (moveHorizontal - moveVertical) * m_runSpeed * Time.deltaTime);
             }
         }
