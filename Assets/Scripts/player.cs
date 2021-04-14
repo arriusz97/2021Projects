@@ -148,6 +148,7 @@ public class player : MonoBehaviour
 
         m_Anim.SetBool("WALK", false);
         m_Anim.SetBool("RUN", false);
+        m_Anim.SetBool("IDLE", false);
         m_rigidbody.useGravity = false;
 
         if (moveDirX != 0 || moveDirZ != 0)
