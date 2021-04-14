@@ -24,7 +24,7 @@ public class underWater : MonoBehaviour
         if (m_swimTrigger.m_isWater)
         {
             RenderSettings.fog = true;
-            RenderSettings.fogColor = new Color(0, 0.4f, 0.5f, 0.5f);    // 3 4 7
+            RenderSettings.fogColor = new Color(0, 0.4f, 0.5f, 0.55f);    // 3 4 7
             RenderSettings.fogDensity = 0.025f;
             m_GlobalVolume.SetActive(true);
         }
