@@ -8,20 +8,20 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Seaweeds
-  m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
-  m_ShaderKeywords: _EMISSION
+  m_Shader: {fileID: -6465566751694194690, guid: 5feac16f9d7f5ea4193306556ce73869,
+    type: 3}
+  m_ShaderKeywords: BOOLEAN_5C6B42CA_ON _EMISSION
   m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 2000
-  stringTagMap:
-    RenderType: Opaque
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
     - Texture2D_B222E8F:
-        m_Texture: {fileID: 2800000, guid: 8fd1a09f036e77d46a48c04c8d159cb9, type: 3}
+        m_Texture: {fileID: 2800000, guid: 8c6a76ad9e563ad4890089c615bf7731, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_C005B064:
@@ -33,7 +33,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_D9BFD5F1:
-        m_Texture: {fileID: 2800000, guid: 087a5dc48a88f411e9674c05bd147800, type: 3}
+        m_Texture: {fileID: 2800000, guid: 36fdc1ed451081446817f665dadabe11, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_DE8BF47E:
@@ -116,18 +116,29 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _WindDistortionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _texcoord:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - BOOLEAN_5C6B42CA: 0
+    - BOOLEAN_5C6B42CA: 1
     - BOOLEAN_7021FEFA: 0
     - Vector1_6E11FCEA: 0.5
     - Vector1_8B35DE98: 60
     - Vector1_90E376AD: 1
     - Vector1_A492C01C: 1
     - _AlphaClip: 0
+    - _BendRotationRandom: 0.2
+    - _BladeCurve: 2
+    - _BladeForward: 0.38
+    - _BladeHeight: 0.5
+    - _BladeHeightRandom: 0.3
+    - _BladeWidth: 0.05
+    - _BladeWidthRandom: 0.02
     - _Blend: 0
     - _BumpScale: 1
     - _Cull: 2
@@ -158,6 +169,7 @@ Material:
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _Surface: 0
+    - _TessellationUniform: 1
     - _Tiling: 1
     - _TransAmbient: 0.2
     - _TransDirect: 1
@@ -166,8 +178,10 @@ Material:
     - _TransShadow: 0.9
     - _Translucency: 1
     - _TranslucencyV: 1
+    - _TranslucentGain: 0.5
     - _TransmisionValue: 1
     - _UVSec: 0
+    - _WindStrength: 1
     - _WorkflowMode: 1
     - _ZWrite: 1
     - __dirty: 0
@@ -175,12 +189,15 @@ Material:
     - Color_C30C7CA3: {r: 1, g: 1, b: 1, a: 0}
     - _AlbedoColor: {r: 1, g: 1, b: 1, a: 1}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
+    - _BottomColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _CubemapColor: {r: 0, g: 0, b: 0, a: 1}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
+    - _TopColor: {r: 0.15819688, g: 0.745283, b: 0.30721986, a: 1}
     - _TranslucencyColor: {r: 0.852662, g: 1, b: 0.5, a: 0}
     - _TransmissionColor: {r: 1, g: 1, b: 1, a: 0}
+    - _WindFrequency: {r: 0.05, g: 0.05, b: 0, a: 0}
 --- !u!114 &1711934254986309494
 MonoBehaviour:
   m_ObjectHideFlags: 11
