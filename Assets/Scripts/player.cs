@@ -162,14 +162,12 @@ public class player : MonoBehaviour
                 var vel = m_rigidbody.velocity;
                 vel.y = -5f;
                 m_rigidbody.velocity = vel;
-                Debug.Log("is Dive");
             }
             else if (m_isDiveup & this.transform.position.y < -20)
             {
                 var vel = m_rigidbody.velocity;
                 vel.y = +5f;
                 m_rigidbody.velocity = vel;
-                Debug.Log("is Dive up" + this.transform.position.y);
             }
             else
             {
@@ -181,6 +179,9 @@ public class player : MonoBehaviour
         else
         {
             m_Anim.SetBool("IDLEINWATER", true);
+            var vel = m_rigidbody.velocity;
+            vel.y = 0f;
+            m_rigidbody.velocity = vel;
         }
 
     }
