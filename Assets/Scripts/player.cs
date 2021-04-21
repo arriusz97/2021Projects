@@ -70,7 +70,7 @@ public class player : MonoBehaviour
         }
 
 
-        if (m_JumpCount < 1 && Input.GetButtonDown("Jump"))
+        if (m_JumpCount < 1 && Input.GetButtonDown("Jump") && !m_SwimTrigger.m_isWater)
         {
             m_rigidbody.velocity = new Vector3(m_rigidbody.velocity.x, 5, m_rigidbody.velocity.z);
             m_JumpCount++;
