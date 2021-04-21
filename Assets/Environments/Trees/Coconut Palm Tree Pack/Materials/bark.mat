@@ -11,7 +11,7 @@ Material:
   m_Shader: {fileID: -6465566751694194690, guid: 4003ffa965d444d209561b52e55c61fc,
     type: 3}
   m_ShaderKeywords: _BENDINGCONTROLS_VERTEX_COLORS_AND_UV4 _FLIPBOOKBLENDING_OFF
-  m_LightmapFlags: 5
+  m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
