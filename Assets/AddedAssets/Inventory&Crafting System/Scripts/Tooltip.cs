@@ -15,6 +15,7 @@ public class Tooltip : MonoBehaviour
     [SerializeField]
     private Text txt_ItemHowtoUsed;
 
+    //툴팁을 마우스커서 기준으로 아래에 출력시킨다
     public void ShowToolTip(ItemObject _item, Vector3 _pos)
     {
         go_Base.SetActive(true);
@@ -25,12 +26,8 @@ public class Tooltip : MonoBehaviour
         txt_ItemName.text = _item.data.Name;
         txt_ItemDesc.text = _item.description;
 
-        //if (_item.data.itemType == Item.ItemType.Equipment)
-        //    txt_ItemHowtoUsed.text = "우 클릭 - 장착";
-        //else if (_item.itemType == Item.ItemType.Used)
-        //    txt_ItemHowtoUsed.text = "우 클릭 - 먹기";
-        //else
-            txt_ItemHowtoUsed.text = "";
+
+        //txt_ItemHowtoUsed.text = "";      추후 각 아이템별로 사용법을 추가하기위해 만들어둠
     }
 
     public void HideToolTip()

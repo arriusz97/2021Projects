@@ -6,8 +6,8 @@ using UnityEngine;
 public class ItemEffect
 {
     public ItemObject _item;
-    public string[] part;  // 효과. 어느 부분을 회복하거나 혹은 깎을 포션인지. 포션 하나당 미치는 효과가 여러개일 수 있어 배열.
-    public int[] num;  //수치. 포션 하나당 미치는 효과가 여러개일 수 있어 배열. 그에 따른 수치.
+    public string[] part;
+    public int[] num;
 }
 
 public class ItemEffectDatabase : MonoBehaviour
@@ -20,6 +20,7 @@ public class ItemEffectDatabase : MonoBehaviour
 
     private const string HP = "HP", TP = "TP", O2 = "O2";
 
+    //아이템 사용시 발생할 효과 현재 Food만 구현
     public void UseItem(Item item)
     {        
         for (int i = 0; i < itemEffects.Length; i++)

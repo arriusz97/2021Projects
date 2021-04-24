@@ -65,7 +65,7 @@ public class ActionController : MonoBehaviour
                 OpenCrafting();
             }
         }
-        else if (Input.GetKeyDown(KeyCode.Space))
+        else if (Input.GetKeyDown(KeyCode.KeypadPlus))
         {
             inventory.Save();
             quickSlot.Save();
@@ -92,7 +92,7 @@ public class ActionController : MonoBehaviour
     {
         if (Physics.Raycast(transform.position, transform.forward, out hitInfo, range, layerMask))
         {
-            if (hitInfo.transform.tag == "item")
+            if (hitInfo.transform.tag == "Item")
             {
                 ItemInfoAppear();
             }
@@ -105,7 +105,7 @@ public class ActionController : MonoBehaviour
     {
         pickupActivated = true;
         actionText.gameObject.SetActive(true);
-        actionText.text = "Press " + "<color=yellow>" + "(F) " + "</color>" + "to pick up " + hitInfo.transform.GetComponent<GroundItem>().item.name;
+        actionText.text = "Press " + "<color=yellow>" + "(F)" + "</color>" + " to pick up " + hitInfo.transform.GetComponent<GroundItem>().item.name;
     }
     //아이템 문구 비활성화
     private void ItemInfoDisappear()

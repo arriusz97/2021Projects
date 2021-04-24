@@ -14,7 +14,8 @@ public class InventoryObject : ScriptableObject
     [SerializeField]
     private Inventory Container = new Inventory();
     public InventorySlot[] GetSlots => Container.Slots;
-
+    
+    //인벤토리에 아이템을 추가한다.
     public bool AddItem(Item item, int amount)
     {
         if (EmptySlotCount <= 0)
@@ -28,7 +29,7 @@ public class InventoryObject : ScriptableObject
         slot.AddAmount(amount);
         return true;
     }
-
+    //인벤토리 내의 빈 슬롯을 센다.
     public int EmptySlotCount
     {
         get
@@ -44,7 +45,7 @@ public class InventoryObject : ScriptableObject
             return counter;
         }
     }
-
+    //인벤토리 내의 해당 아이템을 저장한 슬롯을 찾는다.
     public InventorySlot FindItemOnInventory(Item item)
     {
         for (int i = 0; i < GetSlots.Length; i++)
@@ -56,7 +57,7 @@ public class InventoryObject : ScriptableObject
         }
         return null;
     }
-    
+    //인벤토리 내에 해상 아이템이 있는지 검사한다.
     public bool IsItemInInventory(ItemObject item)
     {
         for (int i = 0; i < GetSlots.Length; i++)
@@ -68,7 +69,7 @@ public class InventoryObject : ScriptableObject
         }
         return false;
     }
-    
+    //인벤토리 내의 첫 빈슬롯을 찾는다.
     public InventorySlot GetEmptySlot()
     {
         for (int i = 0; i < GetSlots.Length; i++)
@@ -80,7 +81,7 @@ public class InventoryObject : ScriptableObject
         }
         return null;
     }
-
+    //인벤토리 내의 두 아이템의 위치를 바꾼다.
     public void SwapItems(InventorySlot item1, InventorySlot item2)
     {
         if (item1 == item2)

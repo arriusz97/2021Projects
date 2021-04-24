@@ -23,7 +23,7 @@ public class ItemBuff : IModifiers
     {
         v += value;
     }
-
+    //아이템의 속성값을 생성한다.
     public void GenerateField()
     {
         value = UnityEngine.Random.Range(min, max);

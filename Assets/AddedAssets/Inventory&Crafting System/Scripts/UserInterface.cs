@@ -57,6 +57,7 @@ public abstract class UserInterface : MonoBehaviour
             slot.slotDisplay.GetComponentInChildren<TextMeshProUGUI>().text = slot.amount == 1 ? string.Empty : slot.amount.ToString("n0");
         }
     }
+    //인벤토리 업데이트
     public void Update()
     {
         if (_previousInventory != inventory)
@@ -66,7 +67,7 @@ public abstract class UserInterface : MonoBehaviour
         _previousInventory = inventory;
 
     }
-    //이벤트 처리기
+    //각 이벤트를 동적으로 생성되는 아이템 슬롯에 부여해준다.
     protected void AddEvent(GameObject obj, EventTriggerType type, UnityAction<BaseEventData> action)
     {
         EventTrigger trigger = obj.GetComponent<EventTrigger>();

@@ -1,13 +1,6 @@
 ﻿public enum ItemType
 {
+    Recipe,
+    Material,
     Food,
-    Helmet,
-    Chest,
-    Pants,
-    Boots,
-    Sword,
-    shield,
-    Gloves,
-    Default,
-    Recipe
 }

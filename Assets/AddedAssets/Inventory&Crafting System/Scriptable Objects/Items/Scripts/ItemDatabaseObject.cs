@@ -9,6 +9,7 @@ public class ItemDatabaseObject : ScriptableObject
 {
     public ItemObject[] ItemObjects;
 
+    //데이터베이스상의 아이템들에 ID를 부여한다
     public void OnValidate()
     {
         for (int i = 0; i < ItemObjects.Length; i++)

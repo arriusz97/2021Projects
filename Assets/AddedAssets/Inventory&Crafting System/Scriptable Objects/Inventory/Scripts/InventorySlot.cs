@@ -21,7 +21,8 @@ public class InventorySlot
     
     public Item item;
     public int amount;
-
+    
+    //슬롯에 저장되있는 아이템의 ID를 반환한다.
     public ItemObject GetItemObject()
     {
         return item.Id >= 0 ? parent.inventory.database.ItemObjects[item.Id] : null;
@@ -54,6 +55,7 @@ public class InventorySlot
         onAfterUpdated?.Invoke(this);
     }
 
+    //해당 슬롯에 아이템이 저장될 수 있는지 판단한다.
     public bool CanPlaceInSlot(ItemObject itemObject)
     {
         if (AllowedItems.Length <= 0 || itemObject == null || itemObject.data.Id < 0)
