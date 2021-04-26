@@ -118,6 +118,17 @@ public class player : MonoBehaviour
         {
             m_Anim.SetBool("PICKUP", false);
         }
+
+        if (Input.GetMouseButton(0))
+        {
+            m_Anim.SetBool("ATTACK", true);
+        }
+        else
+        {
+            m_Anim.SetBool("ATTACK", false);
+        }
+
+
     }
 
     void character_Rotation()
