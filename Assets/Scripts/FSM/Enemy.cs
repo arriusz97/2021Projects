@@ -20,11 +20,11 @@ public class Enemy : MonoBehaviour
     private Rigidbody m_rigidbody;
     private BoxCollider m_collider;
     private Animator m_Anim;
-    private eEnemyState m_state;
+    public eEnemyState m_state;
     [SerializeField]
-    private player m_Target;
+    public player m_Target;
 
-    private Coroutine m_StateMachine;
+    public Coroutine m_StateMachine;
 
     [Header("Enemy HP 변수")]
     [SerializeField]
@@ -50,14 +50,7 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //attackArea에 player가 들어왔다면
-        if (m_attackArea.m_isAttack)
-        {
-            m_state = eEnemyState.ATTACK;
-            StateCheck();
-            StopCoroutine(m_StateMachine);
-            m_StateMachine = StartCoroutine(AutoMove());
-        }
+
     }
 
     public void Hit(float damage)
@@ -72,12 +65,11 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    IEnumerator AutoMove()
+    public IEnumerator AutoMove()
     {
-        WaitForSeconds one = new WaitForSeconds(1);
         while (true)
         {
-            yield return one;
+            yield return null;
             StateCheck();
         }
     }
@@ -112,14 +104,14 @@ public class Enemy : MonoBehaviour
                 m_Anim.SetBool("ATTACK", true);
                 m_Anim.SetBool("SWIM", false);
 
-                Vector3 dir = m_Target.transform.position - transform.position;
-                if(dir.z > 0)
+                if (m_Target != null)
                 {
-                    transform.rotation = Quaternion.Euler(0, 0, 0);
-                }
-                else
-                {
-                    transform.rotation = Quaternion.Euler(0, 180, 0);
+                    Vector3 dir = m_Target.transform.position - transform.position;
+                    Debug.Log(dir);
+
+                    transform.rotation = Quaternion.LookRotation(dir.normalized);
+                    //Quaternion lookRotation = Quaternion.LookRotation(dir);
+                    //transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 0.1f);
                 }
                 m_rigidbody.velocity = Vector3.zero;
                 break;
