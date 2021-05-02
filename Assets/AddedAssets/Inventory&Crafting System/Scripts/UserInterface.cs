@@ -8,6 +8,8 @@ using UnityEngine.EventSystems;
 using System.Linq;
 using System;
 
+public enum MouseButton { Left, Middle, Right }
+
 [RequireComponent(typeof(EventTrigger))]
 public abstract class UserInterface : MonoBehaviour
 {
@@ -16,6 +18,9 @@ public abstract class UserInterface : MonoBehaviour
     public Dictionary<GameObject, InventorySlot> slotsOnInterface = new Dictionary<GameObject, InventorySlot>();
 
     private ItemEffectDatabase theItemEffectDatabase;
+
+    private MouseButton mouseButton;
+
     //게임 실행시 인터페이스 구성
     public void Awake()
     {
@@ -65,7 +70,6 @@ public abstract class UserInterface : MonoBehaviour
             UpdateInventoryLinks();
         }
         _previousInventory = inventory;
-
     }
     //각 이벤트를 동적으로 생성되는 아이템 슬롯에 부여해준다.
     protected void AddEvent(GameObject obj, EventTriggerType type, UnityAction<BaseEventData> action)
@@ -151,15 +155,16 @@ public abstract class UserInterface : MonoBehaviour
             MouseData.tempItemBeingDragged.GetComponent<RectTransform>().position = Input.mousePosition;
     }
 
-    public void OnPointerClick(GameObject obj)
-    {        
+    public void OnPointerClick()
+    {
+
         if (MouseData.slotHoveredOver)
         {
             InventorySlot mouseHoverSlotData = MouseData.interfaceMouseIsOver.slotsOnInterface[MouseData.slotHoveredOver];
 
             theItemEffectDatabase.UseItem(mouseHoverSlotData.item);
 
-            if (mouseHoverSlotData.item.itemType == ItemType.Food)
+            if (mouseHoverSlotData.item.itemType == ItemType.Food && mouseButton == MouseButton.Right)
             {
                 inventory.AddItem(mouseHoverSlotData.item, -1);
             }

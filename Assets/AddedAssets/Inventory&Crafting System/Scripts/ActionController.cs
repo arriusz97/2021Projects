@@ -4,6 +4,8 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+public enum InforType{ Item, Tree, }
+
 public class ActionController : MonoBehaviour
 {
     [SerializeField]
@@ -24,8 +26,15 @@ public class ActionController : MonoBehaviour
     [SerializeField]
     private GameObject inventoryScreen, craftingScreen;
 
+    [SerializeField]
+    private TimerController timer;
+
+    [SerializeField]
+    private int treeLoggingTime = 3;
+
     private bool inventoryOpen = false;
     private bool CraftingOpen = false;
+
 
 
     //게임 시작시 인벤토리가 한번 활성화되야해서 활성화 된채로 시작해 비활성화 시킨다.
@@ -94,18 +103,30 @@ public class ActionController : MonoBehaviour
         {
             if (hitInfo.transform.tag == "Item")
             {
-                ItemInfoAppear();
+                ItemInfoAppear(InforType.Item);
+            }
+            else if (hitInfo.transform.tag == "Tree")
+            {
+                ItemInfoAppear(InforType.Tree);
             }
         }
         else
             ItemInfoDisappear();
     }
     //아이템 문구 활성화
-    private void ItemInfoAppear()
+    private void ItemInfoAppear(InforType type)
     {
         pickupActivated = true;
         actionText.gameObject.SetActive(true);
-        actionText.text = "Press " + "<color=yellow>" + "(F)" + "</color>" + " to pick up " + hitInfo.transform.GetComponent<GroundItem>().item.name;
+        if(type == InforType.Item)
+        {
+            actionText.text = "Press " + "<color=yellow>" + "(F)" + "</color>" + " to pick up " + hitInfo.transform.GetComponent<GroundItem>().item.name;
+        }
+        else if(type == InforType.Tree)
+        {
+            actionText.text = "Press " + "<color=yellow>" + "(F)" + "</color>" + " to logging " ;
+        }
+        
     }
     //아이템 문구 비활성화
     private void ItemInfoDisappear()
@@ -118,14 +139,21 @@ public class ActionController : MonoBehaviour
     {
         if (pickupActivated)
         {
-            Item _item = new Item(hitInfo.transform.GetComponent<GroundItem>().item);
-
-            if (hitInfo.transform != null)
+            if (hitInfo.transform.tag == "Item")
             {
-                Debug.Log(hitInfo.transform.GetComponent<GroundItem>().item.name + " 획득 했습니다.");  // 인벤토리 넣기
-                inventory.AddItem(_item, 1);
-                Destroy(hitInfo.transform.gameObject);
-                ItemInfoDisappear();
+                Item _item = new Item(hitInfo.transform.GetComponent<GroundItem>().item);
+
+                if (hitInfo.transform != null)
+                {
+                    inventory.AddItem(_item, 1);
+                    Destroy(hitInfo.transform.gameObject);
+                    ItemInfoDisappear();
+                }
+            }
+            else if (hitInfo.transform.tag == "Tree")
+            {
+                timer.ActionClockOn(treeLoggingTime);
+                Destroy(hitInfo.transform.gameObject, treeLoggingTime);
             }
         }
     }

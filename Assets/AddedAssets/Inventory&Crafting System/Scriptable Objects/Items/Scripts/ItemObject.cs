@@ -11,16 +11,20 @@ public class ItemObject : ScriptableObject
     [TextArea(15, 20)] 
     public string description;
     public Item data = new Item();
+    [Serializable]
+    public class Recipe
+    {
+        public ItemObject result;
+        public Ingredient[] ingredients;
+    }
+    public Recipe RecipeData;
 
-    public bool recipe;
-    public ItemObject result;
-    public Ingredient[] ingredients;
-    public ActionController Player;
+    private ActionController Player;
 
     //제작 레시피라면 플레이어 인벤토리 참조를 위해 플레이어와 연결
     private void OnEnable()
     {
-        if (recipe)
+        if (type == ItemType.Recipe)
         {
             Player = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<ActionController>();
         }        
@@ -28,7 +32,7 @@ public class ItemObject : ScriptableObject
     //플레이어 인벤토리에 제작에 필요한 재료가 있는지 확인
     private bool CanCraft()
     {
-        foreach (Ingredient ingredient in ingredients)
+        foreach (Ingredient ingredient in RecipeData.ingredients)
         {
             bool containsCurrentIngredient = Player.inventory.IsItemInInventory(ingredient.item);
 
@@ -42,7 +46,7 @@ public class ItemObject : ScriptableObject
     //플레이어 인벤토리의 재료 아이템을 제거
     private void RemoveIngredientsFromInventory()
     {
-        foreach (Ingredient ingredient in ingredients)
+        foreach (Ingredient ingredient in RecipeData.ingredients)
         {
             Player.inventory.FindItemOnInventory(ingredient.item.data).RemoveItem();
         }
@@ -53,11 +57,11 @@ public class ItemObject : ScriptableObject
         if (CanCraft())
         {
             RemoveIngredientsFromInventory();
-            Player.inventory.AddItem(result.data, 1);
+            Player.inventory.AddItem(RecipeData.result.data, 1);
         }
         else
         {
-            Debug.Log("You dont have enaugh ingredients to craft: " + result.data.Name);
+            Debug.Log("You dont have enaugh ingredients to craft: " + RecipeData.result.data.Name);
         }
     }
     

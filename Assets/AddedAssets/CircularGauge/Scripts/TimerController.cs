@@ -37,7 +37,7 @@ public class TimerController : MonoBehaviour
         StartTimer(0);
         StartTimer(1);
         StopTimer(2);
-        TimerContainer[2].Activated(false);
+        TimerContainer[2].Activated(false);        
     }
 
     private void Update()
@@ -59,5 +59,17 @@ public class TimerController : MonoBehaviour
                 UpdateTimer(2, O2Recover+1.0f);
             }
         }
+        if(TimerContainer[3].isPaused)
+        {
+            StopTimer(3);
+            TimerContainer[3].Activated(false);
+        }
+    }
+
+    public void ActionClockOn(int _duration)
+    {
+        TimerContainer[3].duration = _duration;
+        TimerContainer[3].Activated(true);
+        StartTimer(3);
     }
 }

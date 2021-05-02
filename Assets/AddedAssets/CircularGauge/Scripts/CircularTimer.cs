@@ -53,7 +53,7 @@ public class CircularTimer : MonoBehaviour
     public float CurrentTime { get; set; }
     float AfterImageTime;
 
-    bool isPaused = true;
+    public bool isPaused = true;
 
     private void Start()     //인스펙터의 초기설정 불러오기
     {
