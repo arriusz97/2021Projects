@@ -60,6 +60,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -168,6 +169,7 @@ GameObject:
   - component: {fileID: 7136057328331841058}
   - component: {fileID: 3484137959308679816}
   - component: {fileID: 574237744964442804}
+  - component: {fileID: 9158851218959815794}
   m_Layer: 5
   m_Name: Slot Prefab
   m_TagString: Untagged
@@ -219,6 +221,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.7490196, g: 0.61960787, b: 0.44705886, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -288,6 +291,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Delegates: []
+--- !u!114 &9158851218959815794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2139199679936113701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb2c3937c21ba44b96d439942c55262, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slotScreen: {fileID: 0}
+  _inventory: {fileID: 0}
 --- !u!1 &6850115958515506126
 GameObject:
   m_ObjectHideFlags: 0
@@ -348,6 +365,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []

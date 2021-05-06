@@ -17,7 +17,7 @@ public abstract class UserInterface : MonoBehaviour
     private InventoryObject _previousInventory;
     public Dictionary<GameObject, InventorySlot> slotsOnInterface = new Dictionary<GameObject, InventorySlot>();
 
-    private ItemEffectDatabase theItemEffectDatabase;
+    public ItemEffectDatabase theItemEffectDatabase;
 
     private MouseButton mouseButton;
 
@@ -155,24 +155,25 @@ public abstract class UserInterface : MonoBehaviour
             MouseData.tempItemBeingDragged.GetComponent<RectTransform>().position = Input.mousePosition;
     }
 
-    public void OnPointerClick()
-    {
+    //public void OnPointerClick(PointerEventData eventData)
+    //{
+    //    InventorySlot mouseHoverSlotData = MouseData.interfaceMouseIsOver.slotsOnInterface[MouseData.slotHoveredOver];
+    //    theItemEffectDatabase.UseItem(mouseHoverSlotData.item);
 
-        if (MouseData.slotHoveredOver)
-        {
-            InventorySlot mouseHoverSlotData = MouseData.interfaceMouseIsOver.slotsOnInterface[MouseData.slotHoveredOver];
-
-            theItemEffectDatabase.UseItem(mouseHoverSlotData.item);
-
-            if (mouseHoverSlotData.item.itemType == ItemType.Food && mouseButton == MouseButton.Right)
-            {
-                inventory.AddItem(mouseHoverSlotData.item, -1);
-            }
-            else if(mouseHoverSlotData.item.itemType == ItemType.Recipe)
-            {
-                ItemObject io = mouseHoverSlotData.GetItemObject();
-                io.Crafting();
-            }
-        }                   
-    }
+    //    if (eventData.button == PointerEventData.InputButton.Right && MouseData.slotHoveredOver != null)
+    //    {            
+    //        if (mouseHoverSlotData.item.itemType == ItemType.Food)
+    //        {
+    //            inventory.AddItem(mouseHoverSlotData.item, -1);
+    //        }
+    //    }
+    //    else if (eventData.button == PointerEventData.InputButton.Left && MouseData.slotHoveredOver != null)
+    //    {
+    //        if (mouseHoverSlotData.item.itemType == ItemType.Recipe)
+    //        {
+    //            ItemObject io = mouseHoverSlotData.GetItemObject();
+    //            io.Crafting();
+    //        }
+    //    }
+    //}
 }
