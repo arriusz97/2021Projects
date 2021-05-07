@@ -60,6 +60,7 @@ public class player : MonoBehaviour
         camera_Rotation();
         character_Rotation();
 
+        //player가 물에 들어가지 않았다면 move 실행, 물에 들어 갔다면 swim 실행
         if (!m_SwimTrigger.m_isWater)
         {
             Move();
@@ -69,7 +70,7 @@ public class player : MonoBehaviour
             Swim();
         }
 
-
+        // double jump 막기 위해 jump count가 1 이하일 때만 jump 되도록, 물에서 jump 되는 것 막기 위해
         if (m_JumpCount < 1 && Input.GetButtonDown("Jump") && !m_SwimTrigger.m_isWater)
         {
             m_rigidbody.velocity = new Vector3(m_rigidbody.velocity.x, 5, m_rigidbody.velocity.z);
@@ -77,6 +78,8 @@ public class player : MonoBehaviour
         }
         m_Anim.SetFloat("JUMP", m_rigidbody.velocity.y);
 
+
+        //player가 물에 있지 않고, left shift 눌렀다면 run true
         if (Input.GetKeyDown(KeyCode.LeftShift) )
         {
             if (!m_SwimTrigger.m_isWater)
@@ -90,12 +93,14 @@ public class player : MonoBehaviour
         }
 
 
+        //left shift key에서 손 뗐다면 dive, run false
         if (Input.GetKeyUp(KeyCode.LeftShift))
         {
             m_isDive = false;
             m_isRun = false;
         }
 
+        //만약 left control key 누르고, 물속에 있다면 dive up true
         if (Input.GetKeyDown(KeyCode.LeftControl))
         {
             if (m_SwimTrigger.m_isWater)
@@ -104,12 +109,13 @@ public class player : MonoBehaviour
             }
         }
 
+        //left control key에서 손 뗐다면 dive up false
         if (Input.GetKeyUp(KeyCode.LeftControl))
         {
             m_isDiveup = false;
         }
 
-
+        //z key 누르면 pick up true
         if (Input.GetKey(KeyCode.Z))
         {
             m_Anim.SetBool("PICKUP", true);
@@ -118,8 +124,21 @@ public class player : MonoBehaviour
         {
             m_Anim.SetBool("PICKUP", false);
         }
+
+        //마우스 왼쪽 버튼 누르면 attack true
+        if (Input.GetMouseButton(0))
+        {
+            m_Anim.SetBool("ATTACK", true);
+        }
+        else
+        {
+            m_Anim.SetBool("ATTACK", false);
+        }
+
+
     }
 
+    // camera rotation 참조 -> https://wergia.tistory.com/230
     void character_Rotation()
     {
         float YRotation = Input.GetAxisRaw("Mouse X");
@@ -137,8 +156,11 @@ public class player : MonoBehaviour
         m_camera.transform.localEulerAngles = new Vector3(m_currentCameraRotationX, 0, 0);
     }
 
+    
+    //swim 함수
     private void Swim()
     {
+        //horizontal, vertical 입력받기
         float moveDirX = Input.GetAxisRaw("Horizontal");
         float moveDirZ = Input.GetAxisRaw("Vertical");
 
@@ -149,28 +171,37 @@ public class player : MonoBehaviour
         m_Anim.SetBool("WALK", false);
         m_Anim.SetBool("RUN", false);
         m_Anim.SetBool("IDLE", false);
+
+        //물 속에서는 gravity false
         m_rigidbody.useGravity = false;
 
+        //horizontal, vertical 입력이 0이 아니라면
         if (moveDirX != 0 || moveDirZ != 0)
         {
+            //swim 실행
             m_Anim.SetBool("SWIM", true);
             m_Anim.SetBool("IDLEINWATER", false);
 
             m_rigidbody.MovePosition(transform.position + m_velocity * Time.deltaTime);
+            //만약 dive가 true라면 -> left shift key를 눌렀다면
             if (m_isDive)
             {
+                //아래로 내려가도록 rigidbody velocity -5
                 var vel = m_rigidbody.velocity;
                 vel.y = -5f;
                 m_rigidbody.velocity = vel;
             }
             else if (m_isDiveup & this.transform.position.y < -20)
             {
+                //만약 left control key 누르고, player의 위치가 -20보다 아래라면 (바다속에 있다면)
+                //위로 올라가도록 rigidbody velocity +5
                 var vel = m_rigidbody.velocity;
                 vel.y = +5f;
                 m_rigidbody.velocity = vel;
             }
             else
             {
+                //그 외의는 player의 y축 움직이지 않도록 0으로 조정
                 var vel = m_rigidbody.velocity;
                 vel.y = 0f;
                 m_rigidbody.velocity = vel;
@@ -186,8 +217,10 @@ public class player : MonoBehaviour
 
     }
 
+    //move 함수
     private void Move()
     {
+        //horizontal, vertical 입력받기
         float moveDirX = Input.GetAxisRaw("Horizontal");
         float moveDirZ = Input.GetAxisRaw("Vertical");
 
@@ -198,12 +231,13 @@ public class player : MonoBehaviour
         bool isMove = false;
         m_Anim.SetBool("SWIM", false);
 
+        //gravity가 꺼져있다면 켜주기
         if (!m_rigidbody.useGravity)
         {
             m_rigidbody.useGravity = true;
         }
 
-
+        //horizontal, vertical 입력값이 0이 아니라면 is move -> true
         if (moveDirX != 0 || moveDirZ != 0)
         {
             isMove = true;
@@ -220,6 +254,7 @@ public class player : MonoBehaviour
             m_Anim.SetBool("WALK", isMove);
         }
 
+        //isMove가 true고 물속에 있지 않다면
         if (isMove && !m_SwimTrigger.m_isWater)
         {
             m_rigidbody.MovePosition(transform.position + m_velocity * Time.deltaTime);
