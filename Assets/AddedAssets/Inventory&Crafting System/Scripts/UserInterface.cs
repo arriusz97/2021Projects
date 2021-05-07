@@ -154,26 +154,4 @@ public abstract class UserInterface : MonoBehaviour
         if (MouseData.tempItemBeingDragged != null)
             MouseData.tempItemBeingDragged.GetComponent<RectTransform>().position = Input.mousePosition;
     }
-
-    //public void OnPointerClick(PointerEventData eventData)
-    //{
-    //    InventorySlot mouseHoverSlotData = MouseData.interfaceMouseIsOver.slotsOnInterface[MouseData.slotHoveredOver];
-    //    theItemEffectDatabase.UseItem(mouseHoverSlotData.item);
-
-    //    if (eventData.button == PointerEventData.InputButton.Right && MouseData.slotHoveredOver != null)
-    //    {            
-    //        if (mouseHoverSlotData.item.itemType == ItemType.Food)
-    //        {
-    //            inventory.AddItem(mouseHoverSlotData.item, -1);
-    //        }
-    //    }
-    //    else if (eventData.button == PointerEventData.InputButton.Left && MouseData.slotHoveredOver != null)
-    //    {
-    //        if (mouseHoverSlotData.item.itemType == ItemType.Recipe)
-    //        {
-    //            ItemObject io = mouseHoverSlotData.GetItemObject();
-    //            io.Crafting();
-    //        }
-    //    }
-    //}
 }
