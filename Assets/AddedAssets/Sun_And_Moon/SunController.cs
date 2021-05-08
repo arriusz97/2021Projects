@@ -7,8 +7,7 @@ public class SunController : MonoBehaviour
     [SerializeField]
     private float SecondsOfDay = 60f, currentTime = 0.3f;
     //하루의 길이(초), 현재 시간(0일때 자정, 0.25에서 일출, 0.75에서 일몰)
-    [SerializeField]
-    private int currentDay = 0; //현재 날짜
+    public int currentDay = 0; //현재 날짜
     [SerializeField]
     private Light mSun;     //태양
     [SerializeField]
@@ -16,7 +15,9 @@ public class SunController : MonoBehaviour
     [SerializeField]
     private Camera mCam;    //Player 카매라
     private Material mStarMat;      //천구의 별
-
+    [SerializeField]
+    private DayCounter dayCounter;
+    private bool dayCounterMove;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,10 +34,39 @@ public class SunController : MonoBehaviour
         if (currentTime >= 1)
         {
             currentTime = 0;                        //자정이 지나면
-            currentDay++;                           //날짜 증가
+            currentDay++;                         //날짜 증가
+
+            if (!dayCounterMove)
+            {
+                dayCounterMove = true;
+            }            
+        }
+
+        if (dayCounterMove && currentTime >= 0.3f)
+        {
+            if (!dayCounter.isActiveAndEnabled)
+            {
+                DayCounterUpdate(currentDay);
+            }
+
+            dayCounter.day.transform.Translate(Vector3.down * 100f * Time.deltaTime);
+            float x = dayCounter.day.transform.localPosition.x;
+            float y = Mathf.Clamp(dayCounter.day.transform.localPosition.y, -92.317f, 92.317f);
+            dayCounter.day.transform.localPosition = new Vector3(x, y, 0f);
+
+            if(currentTime >= 0.3f + (5f / SecondsOfDay))
+            {
+                dayCounter.gameObject.SetActive(false);
+                dayCounterMove = false;
+            }
         }
     }
 
+    void DayCounterUpdate(int currentDay)
+    {
+        dayCounter.gameObject.SetActive(true);
+        dayCounter.DayUpdate(currentDay);        
+    }
 
     private void LightRotation()
     {
