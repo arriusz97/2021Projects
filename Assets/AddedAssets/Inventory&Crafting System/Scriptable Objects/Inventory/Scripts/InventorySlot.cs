@@ -54,7 +54,10 @@ public class InventorySlot
         item = itemValue;
         amount = amountValue;
         onAfterUpdated?.Invoke(this);
-        Debug.Log(item.Name + " 업데이트");
+        if (item.Name != null)
+        {
+            Debug.Log(item.Name + " 업데이트");
+        }
     }
 
     //해당 슬롯에 아이템이 저장될 수 있는지 판단한다.
