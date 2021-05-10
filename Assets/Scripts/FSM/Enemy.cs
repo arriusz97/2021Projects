@@ -21,6 +21,7 @@ public class Enemy : MonoBehaviour
     private BoxCollider m_collider;
     private Animator m_Anim;
     public eEnemyState m_state;
+    //public eEnemyState m_currentState;
     [SerializeField]
     public player m_Target;
     private float m_time;
@@ -43,8 +44,10 @@ public class Enemy : MonoBehaviour
     private void OnEnable()
     {
         m_state = eEnemyState.IDLE;
+        m_StateMachine = StartCoroutine(FSM());
         m_currentHP = m_maxHP;
         m_currentHP = m_maxHP;
+        currentIndex = 0;
     }
 
     // Start is called before the first frame update
@@ -65,12 +68,20 @@ public class Enemy : MonoBehaviour
     {
         //To Do
         // Coroutine 돌려서 state check
-        yield return null;
+        WaitForSeconds one = new WaitForSeconds(1);
         while (true)
         {
-            if(m_state == eEnemyState.IDLE)
+            yield return null;
+            //만약 현재 상태가 IDLE 이라면 position 변경
+            if (m_state == eEnemyState.IDLE)
             {
-                randomPosition();
+                //매 프레임마다 state check
+                //yield return null;
+                //random index 넘겨받음
+                yield return one;
+                int randomId = randomPosition();
+                Debug.Log("current state: " + m_state + "random position 함수 실행");
+                StateCheck(randomId, currentIndex);
             }
         }
 
@@ -81,28 +92,21 @@ public class Enemy : MonoBehaviour
     public int randomPosition()
     {
         int randomIndex = Random.Range(0, 6);
+        Debug.Log("random position index : " + randomIndex);
 
-        //Todo
-        //if(현재 상태가 DIE 또는 ATTACK)
-        // return currentState;
-
-        //if(random == current)
-        // 현재상태를 IDLE
-        //else
-        // 현재상태를 SWIM
-
-        //return randomIndex
-
+        //만약 현재 상태가 IDLE 이거나 ATTACK이라면 현재 위치 index return
+        if (m_state == eEnemyState.DIE || m_state == eEnemyState.ATTACK)
+            return currentIndex;
 
         if (randomIndex == currentIndex)
         {
             m_state = eEnemyState.IDLE;
+            Debug.Log("random index == current index");
         }
         else
         {
-            if (m_state != eEnemyState.DIE || m_state != eEnemyState.ATTACK)
-                return 0;
             m_state = eEnemyState.SWIM;
+            Debug.Log("random position에서 state를 swim 으로");
         }
 
         return randomIndex;
@@ -118,22 +122,22 @@ public class Enemy : MonoBehaviour
                 m_Anim.SetBool("IDLE", true);
                 m_Anim.SetBool("ATTACK", false);
                 m_rigidbody.velocity = Vector3.zero;
+                Debug.Log("현재 state는 idle in switch");
                 break;
             case eEnemyState.SWIM:
-
-                //Todo
-                //current 위치 -> random 위치로 변경
-                //current 위치 = random 위치
-                //if(this.transform.position == random 위치)
-                //현재 state를 IDLE로 변경
                 m_Anim.SetBool("SWIM", true);
                 m_Anim.SetBool("ATTACK", false);
-                
+                Debug.Log("현재 state는 swim in switch");
                 //enemy의 위치를 현재에서 random으로 나온 위치로 옮긴다      
-                transform.position = Vector3.Lerp(m_Routine[currentID].transform.position, m_Routine[randomID].transform.position, Time.deltaTime * 0.2f);
+                transform.position = Vector3.Lerp(m_Routine[currentID].transform.position, m_Routine[randomID].transform.position, Time.deltaTime);
                 
                 //현재 index를 random index로 변경
                 currentIndex = randomID;
+
+                if(this.transform.position == m_Routine[randomID].transform.position)
+                {
+                    m_state = eEnemyState.IDLE;
+                }
                 break;
             case eEnemyState.ATTACK:
                 m_Anim.SetBool("ATTACK", true);
