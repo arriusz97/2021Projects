@@ -42,7 +42,7 @@ public class TimerController : MonoBehaviour
 
     private void Update()
     {
-        if (Player.transform.localPosition.y <= -8.5f)
+        if (Player.transform.localPosition.y <= 3.0f)
         {
             TimerContainer[2].Activated(true);
             StartTimer(2);
