@@ -35,6 +35,7 @@ public class Enemy : MonoBehaviour
 
     //처음에 0에서 스폰되므로 currentIndex의 초기값을 0으로 지정
     int currentIndex = 0;
+    int randomID = 0;
 
     [Header("Enemy HP 변수")]
     [SerializeField]
@@ -61,28 +62,18 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+       
     }
 
     IEnumerator FSM()
     {
         //To Do
         // Coroutine 돌려서 state check
-        WaitForSeconds one = new WaitForSeconds(1);
         while (true)
         {
+            //매 프레임마다 state check
             yield return null;
-            //만약 현재 상태가 IDLE 이라면 position 변경
-            if (m_state == eEnemyState.IDLE)
-            {
-                //매 프레임마다 state check
-                //yield return null;
-                //random index 넘겨받음
-                yield return one;
-                int randomId = randomPosition();
-                Debug.Log("current state: " + m_state + "random position 함수 실행");
-                StateCheck(randomId, currentIndex);
-            }
+            StateCheck();       
         }
 
     }
@@ -114,14 +105,20 @@ public class Enemy : MonoBehaviour
 
     //state check 해서 상태 변환해주는 함수
     //어느 routine position으로 가야할 지 넘겨받음
-    public void StateCheck(int randomID, int currentID)
+    public void StateCheck()
     {
         switch (m_state)
         {
             case eEnemyState.IDLE:
+                //Todo
+                //attack 가능성 있는지 bool변수로 체크하기 -> AttackArea bool 변수이용
+
                 m_Anim.SetBool("IDLE", true);
                 m_Anim.SetBool("ATTACK", false);
                 m_rigidbody.velocity = Vector3.zero;
+
+                //IDLE에서 randomIndex 정해주기
+                randomID = randomPosition();
                 Debug.Log("현재 state는 idle in switch");
                 break;
             case eEnemyState.SWIM:
@@ -129,15 +126,23 @@ public class Enemy : MonoBehaviour
                 m_Anim.SetBool("ATTACK", false);
                 Debug.Log("현재 state는 swim in switch");
                 //enemy의 위치를 현재에서 random으로 나온 위치로 옮긴다      
-                transform.position = Vector3.Lerp(m_Routine[currentID].transform.position, m_Routine[randomID].transform.position, Time.deltaTime);
-                
-                //현재 index를 random index로 변경
-                currentIndex = randomID;
+                transform.position = Vector3.Lerp(this.transform.position, m_Routine[randomID].transform.position, Time.deltaTime * 0.2f);
+                //https://m.blog.naver.com/PostView.nhn?blogId=dmknight&logNo=220662002178&proxyReferer=https:%2F%2Fwww.google.com%2F
+                //evaluate 사용해보기-> animation clip
 
-                if(this.transform.position == m_Routine[randomID].transform.position)
+                Vector3 dis = this.transform.position - m_Routine[randomID].transform.position;
+                transform.rotation = Quaternion.LookRotation(-dis.normalized);
+                float distance = dis.sqrMagnitude;
+
+                if (distance <= 0.1f)
                 {
                     m_state = eEnemyState.IDLE;
+                    currentIndex = randomID;
                 }
+
+                //Todo
+                //attack 가능성 있는지 bool변수로 체크하기 -> AttackArea bool 변수이용
+
                 break;
             case eEnemyState.ATTACK:
                 m_Anim.SetBool("ATTACK", true);
