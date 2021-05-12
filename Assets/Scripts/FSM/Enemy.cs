@@ -12,27 +12,30 @@ public enum eEnemyState
 
 public class Enemy : MonoBehaviour
 {
+    [Header("Enemy 변수")]
     [SerializeField]
     private float m_speed;
     [SerializeField]
     private AttackArea m_attackArea;
-
     private Rigidbody m_rigidbody;
     private BoxCollider m_collider;
     private Animator m_Anim;
-    public eEnemyState m_state;
-    //public eEnemyState m_currentState;
-    [SerializeField]
-    public player m_Target;
-    private float m_time;
 
+    [Header("FSM변수")]
+    public eEnemyState m_state;
     public Coroutine m_StateMachine;
+    [SerializeField]
+    public GameObject m_Target;
+    private float m_time;
+   
+    public AnimationCurve ac;
+    private float playTimer = 0.0f;
+    private float playTime = 80.0f;
 
     [Header("Routine 변수")]
     //물고기들이 움직일 position 저장
     [SerializeField]
     private GameObject[] m_Routine;
-
     //처음에 0에서 스폰되므로 currentIndex의 초기값을 0으로 지정
     int currentIndex = 0;
     int randomID = 0;
@@ -41,6 +44,7 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     private float m_maxHP;
     private float m_currentHP;
+
 
     private void OnEnable()
     {
@@ -62,7 +66,9 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+       //To do
+       //Hit 구현
+       //Collider Box로 맞았는지 체크해주기
     }
 
     IEnumerator FSM()
@@ -92,12 +98,10 @@ public class Enemy : MonoBehaviour
         if (randomIndex == currentIndex)
         {
             m_state = eEnemyState.IDLE;
-            Debug.Log("random index == current index");
         }
         else
         {
             m_state = eEnemyState.SWIM;
-            Debug.Log("random position에서 state를 swim 으로");
         }
 
         return randomIndex;
@@ -110,52 +114,67 @@ public class Enemy : MonoBehaviour
         switch (m_state)
         {
             case eEnemyState.IDLE:
-                //Todo
-                //attack 가능성 있는지 bool변수로 체크하기 -> AttackArea bool 변수이용
-
                 m_Anim.SetBool("IDLE", true);
                 m_Anim.SetBool("ATTACK", false);
                 m_rigidbody.velocity = Vector3.zero;
 
-                //IDLE에서 randomIndex 정해주기
-                randomID = randomPosition();
-                Debug.Log("현재 state는 idle in switch");
+                //player가 attackArea에 들어왔다면 state를 attack으로
+                if (m_attackArea.m_isAttack)
+                {
+                    m_state = eEnemyState.ATTACK;
+                }
+                else
+                {
+                    //IDLE에서 randomIndex 정해주기
+                    randomID = randomPosition();
+                }
                 break;
             case eEnemyState.SWIM:
                 m_Anim.SetBool("SWIM", true);
                 m_Anim.SetBool("ATTACK", false);
-                Debug.Log("현재 state는 swim in switch");
-                //enemy의 위치를 현재에서 random으로 나온 위치로 옮긴다      
-                transform.position = Vector3.Lerp(this.transform.position, m_Routine[randomID].transform.position, Time.deltaTime * 0.2f);
-                //https://m.blog.naver.com/PostView.nhn?blogId=dmknight&logNo=220662002178&proxyReferer=https:%2F%2Fwww.google.com%2F
-                //evaluate 사용해보기-> animation clip
+
+                //enemy의 위치를 현재에서 random으로 나온 위치로 옮긴다
+                if (playTimer <= playTime)
+                {
+                    transform.position = Vector3.Lerp(this.transform.position, m_Routine[randomID].transform.position, ac.Evaluate(playTimer/playTime));
+                    playTimer += Time.deltaTime;
+                }
 
                 Vector3 dis = this.transform.position - m_Routine[randomID].transform.position;
                 transform.rotation = Quaternion.LookRotation(-dis.normalized);
                 float distance = dis.sqrMagnitude;
 
-                if (distance <= 0.1f)
+                //player가 attackArea에 들어왔다면 state를 attack으로
+                if (m_attackArea.m_isAttack)
+                {
+                    m_state = eEnemyState.ATTACK;
+                }
+
+                if (distance <= 0.2f)
                 {
                     m_state = eEnemyState.IDLE;
                     currentIndex = randomID;
+                    playTimer = 0.0f;
                 }
-
-                //Todo
-                //attack 가능성 있는지 bool변수로 체크하기 -> AttackArea bool 변수이용
 
                 break;
             case eEnemyState.ATTACK:
-                m_Anim.SetBool("ATTACK", true);
-                m_Anim.SetBool("SWIM", false);
                 if (m_Target != null)
                 {
-                    Vector3 dir2 = m_Target.transform.position - transform.position;
-                    Debug.Log(dir2);
-                    transform.rotation = Quaternion.LookRotation(dir2.normalized);
+                    Vector3 dir = m_Target.transform.position - transform.position;
+                    Debug.Log(dir);
+                    transform.rotation = Quaternion.LookRotation(dir.normalized);
+                    m_Anim.SetBool("ATTACK", true);
+                    m_Anim.SetBool("SWIM", false);
+                    m_Anim.SetBool("IDLE", false);
                     //Quaternion lookRotation = Quaternion.LookRotation(dir);
-                    //transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 0.1f);
+                    //transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 0.5f);
                 }
-                m_rigidbody.velocity = Vector3.zero;
+                else if(m_Target == null)
+                {
+                    m_state = eEnemyState.IDLE;
+                }
+                //m_rigidbody.velocity = Vector3.zero;
                 break;
             case eEnemyState.DIE:
                 m_Anim.SetBool("DIE", true);
