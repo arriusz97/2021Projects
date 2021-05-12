@@ -15,10 +15,8 @@ public class AttackArea : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            m_enemy.m_Target = other.gameObject;
             m_isAttack = true;
-            //m_enemy.m_state = eEnemyState.ATTACK;
-            //m_enemy.StateCheck();            
-            Debug.Log("player enter & attack start");
         }
     }
 
@@ -26,9 +24,8 @@ public class AttackArea : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            //m_enemy.m_state = eEnemyState.IDLE;
             m_enemy.m_Target = null;
-            Debug.Log("Player exit & attack false");
+            m_isAttack = false;
         }   
     }
 }
