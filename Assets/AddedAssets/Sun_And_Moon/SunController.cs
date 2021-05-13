@@ -36,25 +36,26 @@ public class SunController : MonoBehaviour
             currentTime = 0;                        //자정이 지나면
             currentDay++;                         //날짜 증가
 
-            if (!dayCounterMove)
+            if (!dayCounterMove)            //날짜가 변하면 DayCounter 출력 준비
             {
                 dayCounterMove = true;
             }            
         }
 
-        if (dayCounterMove && currentTime >= 0.3f)
+        if (dayCounterMove && currentTime >= 0.3f)      // 아침이 되면 DayCounter 출력
         {
             if (!dayCounter.isActiveAndEnabled)
             {
                 DayCounterUpdate(currentDay);
             }
 
-            dayCounter.day.transform.Translate(Vector3.down * 100f * Time.deltaTime);
+            dayCounter.day.transform.Translate(Vector3.down * 100f * Time.deltaTime);       
             float x = dayCounter.day.transform.localPosition.x;
             float y = Mathf.Clamp(dayCounter.day.transform.localPosition.y, -92.317f, 92.317f);
             dayCounter.day.transform.localPosition = new Vector3(x, y, 0f);
+            //DayCounter의 날짜를 마스크 범위내에서 천천히 하강시킨다.
 
-            if(currentTime >= 0.3f + (5f / SecondsOfDay))
+            if(currentTime >= 0.3f + (5f / SecondsOfDay))       //5초간 출력되도록 한다.
             {
                 dayCounter.gameObject.SetActive(false);
                 dayCounterMove = false;
@@ -62,7 +63,7 @@ public class SunController : MonoBehaviour
         }
     }
 
-    void DayCounterUpdate(int currentDay)
+    void DayCounterUpdate(int currentDay)       //DayCounter를 활성화하고 현재 날짜를 전달
     {
         dayCounter.gameObject.SetActive(true);
         dayCounter.DayUpdate(currentDay);        

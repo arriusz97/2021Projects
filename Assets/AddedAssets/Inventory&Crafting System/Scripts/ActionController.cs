@@ -74,6 +74,7 @@ public class ActionController : MonoBehaviour
                 OpenCrafting();
             }
         }
+        //세이브 로드 테스트용
         else if (Input.GetKeyDown(KeyCode.KeypadPlus))
         {
             inventory.Save();
@@ -134,23 +135,23 @@ public class ActionController : MonoBehaviour
         pickupActivated = false;
         actionText.gameObject.SetActive(false);
     }
-    //아이템인지 판단하고 맞다면 획득후 파괴한다.
+    //아이템인지 판단하고 맞다면 작동
     private void CanPickUp()
     {
         if (pickupActivated)
         {
-            if (hitInfo.transform.tag == "Item")
+            if (hitInfo.transform.tag == "Item")        //태그가 아이템일 경우 
             {
                 Item _item = new Item(hitInfo.transform.GetComponent<GroundItem>().item);
 
-                if (hitInfo.transform != null)
+                if (hitInfo.transform != null)      //획득 후 파괴한다.
                 {
                     inventory.AddItem(_item, 1);
                     Destroy(hitInfo.transform.gameObject);
                     ItemInfoDisappear();
                 }
             }
-            else if (hitInfo.transform.tag == "Tree")
+            else if (hitInfo.transform.tag == "Tree")       //태그가 나무일 경우 일정시간 후 파괴한다.
             {
                 timer.ActionClockOn(treeLoggingTime);
                 Destroy(hitInfo.transform.gameObject, treeLoggingTime);
@@ -169,12 +170,13 @@ public class ActionController : MonoBehaviour
         inventoryOpen = false;
         inventoryScreen.SetActive(false);
     }
+    //제작 창 활성화
     private void OpenCrafting()
     {
         CraftingOpen = true;
         craftingScreen.SetActive(true);
     }
-    //인벤토리 창 비활성화
+    //제작 창 비활성화
     private void CloseCrafting()
     {
         CraftingOpen = false;
