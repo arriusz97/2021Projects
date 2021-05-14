@@ -25,9 +25,10 @@ public class Enemy : MonoBehaviour
     public eEnemyState m_state;
     public Coroutine m_StateMachine;
     [SerializeField]
-    public GameObject m_Target;
+    public player m_Target;
     private float m_time;
-   
+    private bool m_canAttack;
+
     public AnimationCurve ac;
     private float playTimer = 0.0f;
     private float playTime = 80.0f;
@@ -66,9 +67,20 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       //To do
-       //Hit 구현
-       //Collider Box로 맞았는지 체크해주기
+       
+    }
+
+    //player에게 맞았을 때 불려질 함수
+    public void Hit(float damage)
+    {
+        m_currentHP -= damage;
+
+        if (m_currentHP <= 0)
+        {
+            m_state = eEnemyState.DIE;
+            StateCheck();
+            StopCoroutine(m_StateMachine);
+        }
     }
 
     IEnumerator FSM()
@@ -89,7 +101,6 @@ public class Enemy : MonoBehaviour
     public int randomPosition()
     {
         int randomIndex = Random.Range(0, 6);
-        Debug.Log("random position index : " + randomIndex);
 
         //만약 현재 상태가 IDLE 이거나 ATTACK이라면 현재 위치 index return
         if (m_state == eEnemyState.DIE || m_state == eEnemyState.ATTACK)
@@ -162,13 +173,19 @@ public class Enemy : MonoBehaviour
                 if (m_Target != null)
                 {
                     Vector3 dir = m_Target.transform.position - transform.position;
-                    Debug.Log(dir);
                     transform.rotation = Quaternion.LookRotation(dir.normalized);
                     m_Anim.SetBool("ATTACK", true);
                     m_Anim.SetBool("SWIM", false);
                     m_Anim.SetBool("IDLE", false);
                     //Quaternion lookRotation = Quaternion.LookRotation(dir);
                     //transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 0.5f);
+
+                    //player가 enemy의 collider안에 들어왔다면
+                    if (m_canAttack)
+                    {
+                        m_Target.Hit(1);
+                        Debug.Log("Target: " + m_Target + "hit!");
+                    }
                 }
                 else if(m_Target == null)
                 {
@@ -183,6 +200,24 @@ public class Enemy : MonoBehaviour
                 m_rigidbody.velocity = Vector3.zero;
                 break;
         }
+    }
+
+    //enemy의 collider box안에 player가 들어왔다면 m_canAttack =true
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            m_canAttack = true;
+        }
+    }
+
+    //enemy의 collider box안에서 player가 나갔다면 m_canAttack =false
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            m_canAttack = false;
+        } 
     }
 
 }

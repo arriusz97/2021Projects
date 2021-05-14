@@ -52,6 +52,24 @@ public class player : MonoBehaviour
         
     }
 
+    //enemy에게 맞았을 때 불릴 함수
+    public void Hit(float damage)
+    {
+        m_currentHP -= damage;
+
+        if (m_currentHP <= 0)
+        {
+            m_Anim.SetBool("DEAD", true);
+
+        }
+    }
+
+    //enemy를 공격할 때 불릴 함수
+    public void AttackTarget(GameObject target)
+    {
+        target.SendMessage("Hit", 1);
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -77,6 +95,8 @@ public class player : MonoBehaviour
         }
         m_Anim.SetFloat("JUMP", m_rigidbody.velocity.y);
 
+
+        //Run & Dive -> left shift
         if (Input.GetKeyDown(KeyCode.LeftShift) )
         {
             if (!m_SwimTrigger.m_isWater)
@@ -89,13 +109,13 @@ public class player : MonoBehaviour
             }
         }
 
-
         if (Input.GetKeyUp(KeyCode.LeftShift))
         {
             m_isDive = false;
             m_isRun = false;
         }
 
+        //Diveup -> left control
         if (Input.GetKeyDown(KeyCode.LeftControl))
         {
             if (m_SwimTrigger.m_isWater)
@@ -109,7 +129,7 @@ public class player : MonoBehaviour
             m_isDiveup = false;
         }
 
-
+        //줍기 -> Z
         if (Input.GetKey(KeyCode.Z))
         {
             m_Anim.SetBool("PICKUP", true);
@@ -117,6 +137,38 @@ public class player : MonoBehaviour
         else
         {
             m_Anim.SetBool("PICKUP", false);
+        }
+
+        //Attack -> mouse left button
+        if (Input.GetMouseButtonDown(0))
+        {
+            //물 속이 아니라면
+            if (!m_SwimTrigger.m_isWater)
+            {
+                m_Anim.SetBool("ATTACK", true);
+                m_Anim.SetBool("IDLE", false);
+            }
+            else  //물 속이라면
+            {
+                m_Anim.SetBool("ATTACK", true);
+                m_Anim.SetBool("IDLEINWATER", false);
+                m_Anim.SetBool("SWIM", false);
+            }
+        }
+
+        if (Input.GetMouseButtonUp(0))
+        {
+            //물 속이 아니라면
+            if (!m_SwimTrigger.m_isWater)
+            {
+                m_Anim.SetBool("ATTACK", false);
+                m_Anim.SetBool("IDLE", true);
+            }
+            else //물속이라면
+            {
+                m_Anim.SetBool("ATTACK", false);
+                m_Anim.SetBool("IDLEINWATER", true);
+            }
         }
     }
 
