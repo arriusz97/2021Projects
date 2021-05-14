@@ -15,7 +15,7 @@ public class AttackArea : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            m_enemy.m_Target = other.gameObject;
+            m_enemy.m_Target = other.gameObject.GetComponent<player>();
             m_isAttack = true;
         }
     }
