@@ -8,7 +8,7 @@ public class TimerController : MonoBehaviour
     private player Player;
 
     [SerializeField]
-    private float O2Recover;
+    private float O2Recover, groundY;
 
     public List<CircularTimer> TimerContainer = new List<CircularTimer>();
 
@@ -42,7 +42,7 @@ public class TimerController : MonoBehaviour
 
     private void Update()
     {
-        if (Player.transform.localPosition.y <= 3.0f)
+        if (Player.transform.localPosition.y <= groundY)
         {
             TimerContainer[2].Activated(true);
             StartTimer(2);

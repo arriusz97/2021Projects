@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 2443059356080701379}
   - component: {fileID: 2435515124446687803}
   - component: {fileID: 1829607718116919834}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: PalmB_LOD0
-  m_TagString: Untagged
+  m_TagString: Tree
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 121
@@ -103,9 +103,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2418877813833687801}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: CoconutTree
-  m_TagString: Untagged
+  m_TagString: Tree
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 121
@@ -117,7 +117,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2421618835523346493}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 223.41, y: -12.33, z: 230.7}
   m_LocalScale: {x: 2, y: 1.2, z: 2}
   m_Children:
@@ -140,7 +140,7 @@ GameObject:
   - component: {fileID: 4987766079671277380}
   - component: {fileID: 8257280956780746977}
   - component: {fileID: 6157324549665025067}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: coconut_FBX 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -219,7 +219,7 @@ GameObject:
   - component: {fileID: 4987766079643092474}
   - component: {fileID: 8257280956550974047}
   - component: {fileID: 6157324549768707733}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: coconut_FBX 1 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -298,7 +298,7 @@ GameObject:
   - component: {fileID: 4987766080132046551}
   - component: {fileID: 8257280954960990578}
   - component: {fileID: 6157324551334962616}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: coconut_FBX 1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -377,7 +377,7 @@ GameObject:
   - component: {fileID: 4987766079878431396}
   - component: {fileID: 8257280954707119361}
   - component: {fileID: 6157324551081064907}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: coconut_FBX 1 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

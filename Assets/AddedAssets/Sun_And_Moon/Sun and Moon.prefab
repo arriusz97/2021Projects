@@ -295,7 +295,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae57872871b98ef47a7f2bb790966679, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SecondsOfDay: 10
+  SecondsOfDay: 60
   currentTime: 0.3
   currentDay: 0
   mSun: {fileID: 2274196283349875901}

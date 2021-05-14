@@ -6,12 +6,15 @@ using System;
 
 public class DataController : MonoBehaviour
 {
-    static GameObject _container;
-    static GameObject Container
+    [SerializeField]
+    private SunController sunController;
+
+    static GameObject dataContainer;
+    static GameObject dContainer
     {
         get
         {
-            return _container;
+            return dataContainer;
         }
     }
     static DataController _instance;
@@ -21,10 +24,10 @@ public class DataController : MonoBehaviour
         {
             if (!_instance)
             {
-                _container = new GameObject();
-                _container.name = "DataController";
-                _instance = _container.AddComponent(typeof(DataController)) as DataController;
-                DontDestroyOnLoad(_container);
+                dataContainer = new GameObject();
+                dataContainer.name = "DataController";
+                _instance = dataContainer.AddComponent(typeof(DataController)) as DataController;
+                DontDestroyOnLoad(dataContainer);
             }
             return _instance;
         }
@@ -51,6 +54,7 @@ public class DataController : MonoBehaviour
             Debug.Log("Load");
             string FromJsonData = File.ReadAllText(filePath);
             _gameData = JsonUtility.FromJson<GameData>(FromJsonData);
+            sunController.SunControllerSetting(Gamedata.currentDay);
         }
         else
         {

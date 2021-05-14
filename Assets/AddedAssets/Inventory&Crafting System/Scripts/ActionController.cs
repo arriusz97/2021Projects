@@ -35,6 +35,8 @@ public class ActionController : MonoBehaviour
     private bool inventoryOpen = false;
     private bool CraftingOpen = false;
 
+    [SerializeField]
+    private DataController dataController;
 
 
     //게임 시작시 인벤토리가 한번 활성화되야해서 활성화 된채로 시작해 비활성화 시킨다.
@@ -44,7 +46,7 @@ public class ActionController : MonoBehaviour
         crafting.Load();
         CloseCrafting();
     }
-    
+
     void Update()
     {
         CheckItem();
@@ -86,6 +88,7 @@ public class ActionController : MonoBehaviour
             inventory.Load();
             quickSlot.Load();
             crafting.Load();
+            dataController.LoadGameData();
         }
     }
     //단축키 F를 입력받으면 아이템을 주울 수 있는지 판단하고 가능하면 줍는다.

@@ -18,11 +18,14 @@ public class SunController : MonoBehaviour
     [SerializeField]
     private DayCounter dayCounter;
     private bool dayCounterMove;
+    private DataController dataController;
+
     // Start is called before the first frame update
     void Start()
     {
         mStarMat = mStarDome.GetComponentInChildren<MeshRenderer>().material;  
         mStarMat.color = new Color(1f, 1f, 1f, 0f);
+        dataController = GameObject.Find("DataController").GetComponent<DataController>();
     }
 
     // Update is called once per frame
@@ -66,7 +69,10 @@ public class SunController : MonoBehaviour
     void DayCounterUpdate(int currentDay)       //DayCounter를 활성화하고 현재 날짜를 전달
     {
         dayCounter.gameObject.SetActive(true);
-        dayCounter.DayUpdate(currentDay);        
+        dayCounter.DayUpdate(currentDay);
+        dataController.Gamedata.currentDay = currentDay;
+        dataController.SaveGameData();
+        
     }
 
     private void LightRotation()
@@ -94,4 +100,10 @@ public class SunController : MonoBehaviour
         }
     }
 
+    public void SunControllerSetting(int _currentday)
+    {
+        dayCounterMove = true;
+        currentDay = _currentday;
+        currentTime = 0.29f;
+    }
 }
