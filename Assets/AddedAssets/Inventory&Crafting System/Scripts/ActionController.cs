@@ -156,8 +156,9 @@ public class ActionController : MonoBehaviour
             }
             else if (hitInfo.transform.tag == "Tree")       //태그가 나무일 경우 일정시간 후 파괴한다.
             {
+                CoconutTree coconutTree = hitInfo.transform.GetComponent<CoconutTree>();
                 timer.ActionClockOn(treeLoggingTime);
-                Destroy(hitInfo.transform.gameObject, treeLoggingTime);
+                coconutTree.TreeFall(treeLoggingTime);
             }
         }
     }
