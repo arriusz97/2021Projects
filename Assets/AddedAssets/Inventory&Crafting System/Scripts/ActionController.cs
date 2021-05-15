@@ -38,6 +38,8 @@ public class ActionController : MonoBehaviour
     [SerializeField]
     private DataController dataController;
 
+    public bool playerLock = false;
+
 
     //게임 시작시 인벤토리가 한번 활성화되야해서 활성화 된채로 시작해 비활성화 시킨다.
     private void Start()
@@ -165,24 +167,30 @@ public class ActionController : MonoBehaviour
     //인벤토리 창 활성화
     private void OpenInventory()
     {
+        playerLock = true;
         inventoryOpen = true;
         inventoryScreen.SetActive(true);
     }
     //인벤토리 창 비활성화
     private void CloseInventory()
     {
+        playerLock = false;
         inventoryOpen = false;
+        inventoryScreen.GetComponent<UserInterface>().theItemEffectDatabase.HideToolTip();
         inventoryScreen.SetActive(false);
+
     }
     //제작 창 활성화
     private void OpenCrafting()
     {
+        playerLock = true;
         CraftingOpen = true;
         craftingScreen.SetActive(true);
     }
     //제작 창 비활성화
     private void CloseCrafting()
     {
+        playerLock = false;
         CraftingOpen = false;
         craftingScreen.SetActive(false);
     }
