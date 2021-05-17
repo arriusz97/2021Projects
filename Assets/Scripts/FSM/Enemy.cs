@@ -177,14 +177,13 @@ public class Enemy : MonoBehaviour
                     m_Anim.SetBool("ATTACK", true);
                     m_Anim.SetBool("SWIM", false);
                     m_Anim.SetBool("IDLE", false);
-                    //Quaternion lookRotation = Quaternion.LookRotation(dir);
-                    //transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 0.5f);
 
-                    //player가 enemy의 collider안에 들어왔다면
-                    if (m_canAttack)
+                    //player가 enemy의 collider안에 들어왔고, 죽은 상태가 아니라면
+                    if (m_canAttack && !m_Target.m_isDead)
                     {
-                        m_Target.Hit(1);
+                        m_Target.Hit(20);
                         Debug.Log("Target: " + m_Target + "hit!");
+                        m_canAttack = false;                   
                     }
                 }
                 else if(m_Target == null)

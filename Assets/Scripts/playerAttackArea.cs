@@ -15,10 +15,10 @@ public class playerAttackArea : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other.gameObject.name);
         if (other.gameObject.CompareTag("Enemy"))
         {
             m_player.AttackTarget(other.gameObject);
+            Debug.Log("Attack target : " + other.gameObject.name);
         }
     }
 }
