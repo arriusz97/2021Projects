@@ -15,10 +15,13 @@ public class player : MonoBehaviour
     public bool m_isDead = false;
     private int m_JumpCount = 0;
     private bool m_isRun;
+    public bool m_isAttack = false;
 
     Rigidbody m_rigidbody;
     CapsuleCollider m_collider;
     Animator m_Anim;
+    [SerializeField]
+    ActionController m_actionController;
 
     [Header("Swim 변수")]
     [SerializeField]
@@ -37,9 +40,12 @@ public class player : MonoBehaviour
     [Header("playerHP변수")]
     [SerializeField]
     private float m_maxHP;
+    [SerializeField]
     private float m_currentHP;
 
-
+    [Header("Knife 변수")]
+    [SerializeField]
+    private GameObject m_knife;
 
     // Start is called before the first frame update
     void Start()
@@ -55,11 +61,14 @@ public class player : MonoBehaviour
     //enemy에게 맞았을 때 불릴 함수
     public void Hit(float damage)
     {
-        m_currentHP -= damage;
-
+        if (!m_isDead)
+        {
+            m_currentHP -= damage;
+        }
         if (m_currentHP <= 0)
         {
-            m_Anim.SetBool("DEAD", true);
+            m_isDead = true;
+            m_Anim.SetTrigger("DEAD");
 
         }
     }
@@ -67,107 +76,113 @@ public class player : MonoBehaviour
     //enemy를 공격할 때 불릴 함수
     public void AttackTarget(GameObject target)
     {
-        target.SendMessage("Hit", 1);
+        target.SendMessage("Hit", 40);
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        Move();
-        camera_Rotation();
-        character_Rotation();
-
-        if (!m_SwimTrigger.m_isWater)
+        if (!m_actionController.playerLock && !m_isDead)
         {
             Move();
-        }
-        else
-        {
-            Swim();
-        }
+            camera_Rotation();
+            character_Rotation();
 
 
-        if (m_JumpCount < 1 && Input.GetButtonDown("Jump") && !m_SwimTrigger.m_isWater)
-        {
-            m_rigidbody.velocity = new Vector3(m_rigidbody.velocity.x, 5, m_rigidbody.velocity.z);
-            m_JumpCount++;
-        }
-        m_Anim.SetFloat("JUMP", m_rigidbody.velocity.y);
-
-
-        //Run & Dive -> left shift
-        if (Input.GetKeyDown(KeyCode.LeftShift) )
-        {
             if (!m_SwimTrigger.m_isWater)
             {
-                m_isRun = true;
+                Move();
             }
             else
             {
-                m_isDive = true;
+                Swim();
             }
-        }
 
-        if (Input.GetKeyUp(KeyCode.LeftShift))
-        {
-            m_isDive = false;
-            m_isRun = false;
-        }
 
-        //Diveup -> left control
-        if (Input.GetKeyDown(KeyCode.LeftControl))
-        {
-            if (m_SwimTrigger.m_isWater)
+            if (m_JumpCount < 1 && Input.GetButtonDown("Jump") && !m_SwimTrigger.m_isWater)
             {
-                m_isDiveup = true;
+                m_rigidbody.velocity = new Vector3(m_rigidbody.velocity.x, 5, m_rigidbody.velocity.z);
+                m_JumpCount++;
             }
-        }
+            m_Anim.SetFloat("JUMP", m_rigidbody.velocity.y);
 
-        if (Input.GetKeyUp(KeyCode.LeftControl))
-        {
-            m_isDiveup = false;
-        }
 
-        //줍기 -> Z
-        if (Input.GetKey(KeyCode.Z))
-        {
-            m_Anim.SetBool("PICKUP", true);
-        }
-        else
-        {
-            m_Anim.SetBool("PICKUP", false);
-        }
-
-        //Attack -> mouse left button
-        if (Input.GetMouseButtonDown(0))
-        {
-            //물 속이 아니라면
-            if (!m_SwimTrigger.m_isWater)
+            //Run & Dive -> left shift
+            if (Input.GetKeyDown(KeyCode.LeftShift))
             {
-                m_Anim.SetBool("ATTACK", true);
-                m_Anim.SetBool("IDLE", false);
+                if (!m_SwimTrigger.m_isWater)
+                {
+                    m_isRun = true;
+                }
+                else
+                {
+                    m_isDive = true;
+                }
             }
-            else  //물 속이라면
-            {
-                m_Anim.SetBool("ATTACK", true);
-                m_Anim.SetBool("IDLEINWATER", false);
-                m_Anim.SetBool("SWIM", false);
-            }
-        }
 
-        if (Input.GetMouseButtonUp(0))
-        {
-            //물 속이 아니라면
-            if (!m_SwimTrigger.m_isWater)
+            if (Input.GetKeyUp(KeyCode.LeftShift))
             {
-                m_Anim.SetBool("ATTACK", false);
-                m_Anim.SetBool("IDLE", true);
+                m_isDive = false;
+                m_isRun = false;
             }
-            else //물속이라면
+
+            //Diveup -> left control
+            if (Input.GetKeyDown(KeyCode.LeftControl))
             {
-                m_Anim.SetBool("ATTACK", false);
-                m_Anim.SetBool("IDLEINWATER", true);
+                if (m_SwimTrigger.m_isWater)
+                {
+                    m_isDiveup = true;
+                }
+            }
+
+            if (Input.GetKeyUp(KeyCode.LeftControl))
+            {
+                m_isDiveup = false;
+            }
+
+            //줍기 -> Z
+            if (Input.GetKey(KeyCode.Z))
+            {
+                m_Anim.SetBool("PICKUP", true);
+            }
+            else
+            {
+                m_Anim.SetBool("PICKUP", false);
+            }
+
+            //Attack -> mouse left button
+            if (Input.GetMouseButtonDown(0))
+            {
+                m_isAttack = true;
+                //물 속이 아니라면
+                if (!m_SwimTrigger.m_isWater)
+                {
+                    m_Anim.SetBool("ATTACK", true);
+                    m_Anim.SetBool("IDLE", false);
+                }
+                else  //물 속이라면
+                {
+                    m_Anim.SetBool("ATTACK", true);
+                    m_Anim.SetBool("IDLEINWATER", false);
+                    m_Anim.SetBool("SWIM", false);
+                }
+            }
+
+            if (Input.GetMouseButtonUp(0))
+            {
+                m_isAttack = false;
+                //물 속이 아니라면
+                if (!m_SwimTrigger.m_isWater)
+                {
+                    m_Anim.SetBool("ATTACK", false);
+                    m_Anim.SetBool("IDLE", true);
+                }
+                else //물속이라면
+                {
+                    m_Anim.SetBool("ATTACK", false);
+                    m_Anim.SetBool("IDLEINWATER", true);
+                }
             }
         }
     }
