@@ -40,6 +40,8 @@ public class ActionController : MonoBehaviour
 
     public bool playerLock = false;
 
+    [SerializeField]
+    private PasueMenu pasueMenu;
 
     //게임 시작시 인벤토리가 한번 활성화되야해서 활성화 된채로 시작해 비활성화 시킨다.
     private void Start()
@@ -78,19 +80,9 @@ public class ActionController : MonoBehaviour
                 OpenCrafting();
             }
         }
-        //세이브 로드 테스트용
-        else if (Input.GetKeyDown(KeyCode.KeypadPlus))
+        else if (Input.GetKeyDown(KeyCode.Escape))
         {
-            inventory.Save();
-            quickSlot.Save();
-            crafting.Save();
-        }
-        else if (Input.GetKeyDown(KeyCode.KeypadEnter))
-        {
-            inventory.Load();
-            quickSlot.Load();
-            crafting.Load();
-            dataController.LoadGameData();
+            pasueMenu.Escape();
         }
     }
     //단축키 F를 입력받으면 아이템을 주울 수 있는지 판단하고 가능하면 줍는다.
@@ -200,5 +192,26 @@ public class ActionController : MonoBehaviour
     {
         inventory.Clear();
         quickSlot.Clear();
+    }
+
+    public void Lock(bool Lock)
+    {
+        playerLock = Lock;
+    }
+
+    public void SaveGame()
+    {
+        inventory.Save();
+        quickSlot.Save();
+        crafting.Save();
+        dataController.SaveGameData();
+    }
+
+    public void LoadGame()
+    {
+        inventory.Load();
+        quickSlot.Load();
+        crafting.Load();
+        dataController.LoadGameData();
     }
 }

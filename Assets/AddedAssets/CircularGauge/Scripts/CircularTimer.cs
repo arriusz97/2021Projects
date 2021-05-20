@@ -48,12 +48,14 @@ public class CircularTimer : MonoBehaviour
     }
     public TextSettings textSettings;
 
-    public UnityEvent didFinishedTimerTime;
-
-    public float CurrentTime { get; set; }
+    public UnityEvent didFinishedTimerTime;  
+    
     float AfterImageTime;
 
     public bool isPaused = true;
+
+    public float CurrentTime { get; set; }
+
 
     private void Start()     //인스펙터의 초기설정 불러오기
     {

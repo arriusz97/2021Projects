@@ -49,10 +49,10 @@ public class TimerController : MonoBehaviour
         }
         else
         {
-            if(TimerContainer[2].CurrentTime <= 0)
+            if(TimerContainer[2].CurrentTime <= 0.1)
             {
-                StopTimer(2);
                 TimerContainer[2].Activated(false);
+                StopTimer(2);               
             }
             else
             {

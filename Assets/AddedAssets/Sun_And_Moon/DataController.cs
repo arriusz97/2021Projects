@@ -46,7 +46,7 @@ public class DataController : MonoBehaviour
             return _gameData;
         }
     }
-    public void LoadGameData()
+    public void LoadGameData()  //지정된 파일경로로부터 데이터를 불러온 후 해당데이터로 씬을 갱신한다.
     {
         string filePath = Application.persistentDataPath + GameDataFileName;
         if (File.Exists(filePath))
@@ -62,7 +62,7 @@ public class DataController : MonoBehaviour
             _gameData = new GameData();
         }
     }
-    public void SaveGameData()
+    public void SaveGameData()  //지정된 파일경로로 현재 씬의 데이터를 저장한다.
     {
         string ToJsonData = JsonUtility.ToJson(Gamedata);
         string filePath = Application.persistentDataPath + GameDataFileName;
