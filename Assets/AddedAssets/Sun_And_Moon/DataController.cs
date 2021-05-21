@@ -18,6 +18,12 @@ public class DataController : MonoBehaviour
         }
     }
     static DataController _instance;
+
+    private void Awake()
+    {
+        sunController = FindObjectOfType<SunController>();
+    }
+
     public static DataController Instance
     {
         get
@@ -54,7 +60,7 @@ public class DataController : MonoBehaviour
             Debug.Log("Load");
             string FromJsonData = File.ReadAllText(filePath);
             _gameData = JsonUtility.FromJson<GameData>(FromJsonData);
-            sunController.SunControllerSetting(Gamedata.currentDay);
+            sunController.SunControllerSetting();
         }
         else
         {

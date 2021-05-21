@@ -18,11 +18,11 @@ public class CoconutTree : MonoBehaviour
         //상호작용 시간동안 대기
         gameObject.GetComponent<Rigidbody>().isKinematic = false;
         //나무의 고정을 해제하고
-        Instantiate(CoconutPrefabs, gameObject.transform.position + (gameObject.transform.up * 6f), Quaternion.LookRotation(gameObject.transform.up));
         Instantiate(CoconutPrefabs, gameObject.transform.position + (gameObject.transform.up * 8f), Quaternion.LookRotation(gameObject.transform.up));
+        Instantiate(CoconutPrefabs, gameObject.transform.position + (gameObject.transform.up * 9f), Quaternion.LookRotation(gameObject.transform.up));
         Instantiate(CoconutPrefabs, gameObject.transform.position + (gameObject.transform.up * 10f), Quaternion.LookRotation(gameObject.transform.up));
         //코코넛 아이템을 생성한 후
-        Destroy(gameObject, 2);
-        //2초 후 파괴한다.
+        Destroy(gameObject, 4);
+        //4초 후 파괴한다.
     }
 }

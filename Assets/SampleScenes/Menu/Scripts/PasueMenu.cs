@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PasueMenu : MonoBehaviour
 {
@@ -9,6 +10,21 @@ public class PasueMenu : MonoBehaviour
 
     private bool isActive = false;
 
+    private Title title;
+
+    public static PasueMenu Pinstance;
+
+    private void Awake()
+    {
+        if (Pinstance == null)
+        {
+            Pinstance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+            Destroy(gameObject);
+    }
+
     public void ClickLoad()
     {
         actionController.LoadGame();
@@ -16,7 +32,7 @@ public class PasueMenu : MonoBehaviour
 
     public void ClickQuit()
     {
-        Application.Quit();
+        StartCoroutine(TitleLoadCoroutine());
     }
 
     public void ClickResume()
@@ -30,5 +46,19 @@ public class PasueMenu : MonoBehaviour
         isActive = !isActive;
         gameObject.SetActive(isActive);
         actionController.Lock(!isActive);
+    }
+
+    IEnumerator TitleLoadCoroutine()
+    {
+        AsyncOperation operation = SceneManager.LoadSceneAsync("TitleScene");
+
+        while (!operation.isDone)
+        {
+            yield return null;
+        }
+
+        title = FindObjectOfType<Title>();
+        title.gameObject.SetActive(true);
+        gameObject.SetActive(false);
     }
 }

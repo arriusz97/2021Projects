@@ -104,10 +104,10 @@ public class SunController : MonoBehaviour
         }
     }
 
-    public void SunControllerSetting(int _currentday)
-    {
+    public void SunControllerSetting()
+    {       
         dayCounterMove = true;
-        currentDay = _currentday;
+        currentDay = dataController.Gamedata.currentDay;
         currentTime = 0.29f;
     }
 }
