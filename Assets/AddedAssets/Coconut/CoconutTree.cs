@@ -7,6 +7,13 @@ public class CoconutTree : MonoBehaviour
     [SerializeField]
     private GameObject CoconutPrefabs;
 
+    private AudioSource treeFalldown;
+
+    private void Awake()
+    {
+        treeFalldown = GetComponent<AudioSource>();
+    }
+
     public void TreeFall(int LoggingTime)
     {
         StartCoroutine(LogCoroutine(LoggingTime));
@@ -16,6 +23,8 @@ public class CoconutTree : MonoBehaviour
     {
         yield return new WaitForSeconds(LoggingTime);
         //상호작용 시간동안 대기
+        treeFalldown.Play();
+
         gameObject.GetComponent<Rigidbody>().isKinematic = false;
         //나무의 고정을 해제하고
         Instantiate(CoconutPrefabs, gameObject.transform.position + (gameObject.transform.up * 8f), Quaternion.LookRotation(gameObject.transform.up));
