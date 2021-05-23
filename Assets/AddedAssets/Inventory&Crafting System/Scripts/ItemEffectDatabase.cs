@@ -18,7 +18,14 @@ public class ItemEffectDatabase : MonoBehaviour
     [SerializeField]
     private Tooltip theSlotToolTip;
 
+    private AudioSource pickup;
+
     private const string HP = "HP", TP = "TP", O2 = "O2";
+
+    private void Awake()
+    {
+        pickup = GetComponent<AudioSource>();
+    }
 
     //아이템 사용시 발생할 효과 현재 Food만 구현
     public void UseItem(Item item)
@@ -60,5 +67,10 @@ public class ItemEffectDatabase : MonoBehaviour
     public void HideToolTip()
     {
         theSlotToolTip.HideToolTip();
+    }
+
+    public void pickupSound()
+    {
+        pickup.Play();
     }
 }

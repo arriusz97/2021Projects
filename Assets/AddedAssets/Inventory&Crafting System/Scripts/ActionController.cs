@@ -43,6 +43,9 @@ public class ActionController : MonoBehaviour
     [SerializeField]
     private PasueMenu pasueMenu;
 
+    [SerializeField]
+    private ItemEffectDatabase effectDatabase;
+
     //게임 시작시 인벤토리가 한번 활성화되야해서 활성화 된채로 시작해 비활성화 시킨다.
     private void Start()
     {
@@ -143,6 +146,7 @@ public class ActionController : MonoBehaviour
 
                 if (hitInfo.transform != null)      //획득 후 파괴한다.
                 {
+                    effectDatabase.pickupSound();
                     inventory.AddItem(_item, 1);
                     Destroy(hitInfo.transform.gameObject);
                     ItemInfoDisappear();
