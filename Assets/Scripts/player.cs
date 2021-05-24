@@ -79,6 +79,7 @@ public class player : MonoBehaviour
         target.SendMessage("Hit", 40);
     }
 
+
     // Update is called once per frame
     void Update()
     {
