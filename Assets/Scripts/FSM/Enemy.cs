@@ -46,6 +46,13 @@ public class Enemy : MonoBehaviour
     private float m_maxHP;
     private float m_currentHP;
 
+    [Header("Particle system")]
+    [SerializeField]
+    private ParticleSystem m_BloodEffect;
+
+    /// <summary>
+    /// //////////////////blood effect 껐다 켰다 해주기
+    /// </summary>
 
     private void OnEnable()
     {
@@ -73,13 +80,17 @@ public class Enemy : MonoBehaviour
     //player에게 맞았을 때 불려질 함수
     public void Hit(float damage)
     {
-        m_currentHP -= damage;
-
-        if (m_currentHP <= 0)
+        //player가 공격 중 일때만 damage 입게
+        if (m_Target.m_isAttack)
         {
-            m_state = eEnemyState.DIE;
-            StateCheck();
-            StopCoroutine(m_StateMachine);
+            m_currentHP -= damage;
+
+            if (m_currentHP <= 0)
+            {
+                m_state = eEnemyState.DIE;
+                StateCheck();
+                StopCoroutine(m_StateMachine);
+            }
         }
     }
 
