@@ -50,10 +50,6 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     private ParticleSystem m_BloodEffect;
 
-    /// <summary>
-    /// //////////////////blood effect 껐다 켰다 해주기
-    /// </summary>
-
     private void OnEnable()
     {
         m_state = eEnemyState.IDLE;
@@ -84,12 +80,15 @@ public class Enemy : MonoBehaviour
         if (m_Target.m_isAttack)
         {
             m_currentHP -= damage;
+            m_BloodEffect.Play();
 
             if (m_currentHP <= 0)
             {
+                m_BloodEffect.gameObject.SetActive(false);
                 m_state = eEnemyState.DIE;
                 StateCheck();
                 StopCoroutine(m_StateMachine);
+                StartCoroutine(DIE());
             }
         }
     }
@@ -102,9 +101,18 @@ public class Enemy : MonoBehaviour
         {
             //매 프레임마다 state check
             yield return null;
-            StateCheck();       
+            StateCheck();
         }
 
+    }
+
+    IEnumerator DIE()
+    {
+        //2초 있다가 죽은 enemy set active false
+        WaitForSeconds four = new WaitForSeconds(4);
+        yield return four;
+
+        this.gameObject.SetActive(false);
     }
 
     //current state는 전역변수
