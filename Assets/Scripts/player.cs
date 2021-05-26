@@ -34,7 +34,7 @@ public class player : MonoBehaviour
     public Transform m_cameraArm;
     //public GameCtrl m_gameCtrl;
     private float m_lookSensitivity = 2f;
-    private float m_cameraRotationLimit = 40f;
+    private float m_cameraRotationLimit = 50f;
     private float m_currentCameraRotationX;
 
     [Header("playerHP변수")]
@@ -46,6 +46,10 @@ public class player : MonoBehaviour
     [Header("Knife 변수")]
     [SerializeField]
     private GameObject m_knife;
+
+    [Header("Player UI")]
+    [SerializeField]
+    private GameObject m_playerBloodUI;
 
     // Start is called before the first frame update
     void Start()
@@ -63,14 +67,36 @@ public class player : MonoBehaviour
     {
         if (!m_isDead)
         {
+            //To do:
+            //enemy한테 맞았다면 blood UI 켜지고 2초 뒤에 꺼지게 하기
+            m_playerBloodUI.SetActive(true);
+
+            //만약에 blood UI가 켜졌다면 코루틴 시작 -> 2초 뒤에 꺼지게
+            if (m_playerBloodUI.activeInHierarchy)
+            {
+                StartCoroutine(BloodUI());
+            }
+            else
+            {
+                StopCoroutine(BloodUI());
+            }
             m_currentHP -= damage;
         }
+
         if (m_currentHP <= 0)
         {
             m_isDead = true;
             m_Anim.SetTrigger("DEAD");
 
         }
+    }
+
+    IEnumerator BloodUI()
+    {
+        WaitForSeconds two = new WaitForSeconds(2);
+        yield return two;
+
+        m_playerBloodUI.SetActive(false);
     }
 
     //enemy를 공격할 때 불릴 함수
