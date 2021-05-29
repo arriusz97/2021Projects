@@ -7,20 +7,21 @@ public class Title : MonoBehaviour
 {
     public string sceneName = "GameScene2";
 
-    public static Title instance;
+ //   public static Title instance;
 
+    [SerializeField]
     private DataController dataController;
 
-    private void Awake()
-    {
-        if (instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-            Destroy(gameObject);
-    }
+    //private void Awake()
+    //{
+    //    if (instance == null)
+    //    {
+    //        instance = this;
+    //        DontDestroyOnLoad(gameObject);
+    //    }
+    //    else
+    //        Destroy(gameObject);
+    //}
 
     public void ClickStart()
     {
@@ -48,6 +49,8 @@ public class Title : MonoBehaviour
 
         dataController = FindObjectOfType<DataController>();
         dataController.LoadGameData();
+
+        GameObject.Find("GUI").transform.Find("UI").gameObject.SetActive(true);
         gameObject.SetActive(false);
     }
 }
