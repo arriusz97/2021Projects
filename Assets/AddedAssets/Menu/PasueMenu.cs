@@ -10,6 +10,21 @@ public class PasueMenu : MonoBehaviour
 
     private bool isActive = false;
 
+    private Title title;
+
+    public static PasueMenu Pinstance;
+
+    private void Awake()
+    {
+        if (Pinstance == null)
+        {
+            Pinstance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+            Destroy(gameObject);
+    }
+
     public void ClickLoad()
     {
         actionController.LoadGame();
@@ -30,10 +45,6 @@ public class PasueMenu : MonoBehaviour
     {
         isActive = !isActive;
         gameObject.SetActive(isActive);
-        if(actionController == null)
-        {
-            actionController = FindObjectOfType<ActionController>();
-        }
         actionController.Lock(isActive);
     }
 
@@ -46,8 +57,8 @@ public class PasueMenu : MonoBehaviour
             yield return null;
         }
 
-        GameObject.Find("TitleUI").transform.Find("TUI").gameObject.SetActive(true);
-        GameObject.Find("UI").transform.Find("DayCounter").gameObject.SetActive(false);
+        title = FindObjectOfType<Title>();
+        title.gameObject.SetActive(true);
         gameObject.SetActive(false);
     }
 }
