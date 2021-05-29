@@ -52,6 +52,12 @@ public class ActionController : MonoBehaviour
         CloseInventory();
         crafting.Load();
         CloseCrafting();
+
+        actionText = GameObject.Find("CursorOnItemText").transform.Find("ActionText").GetComponent<TextMeshProUGUI>();
+        inventoryScreen = GameObject.Find("Inventory Canvas").transform.Find("InventoryScreen").gameObject;
+        craftingScreen = GameObject.Find("Crafting Canvas").transform.Find("CraftingScreen").gameObject;
+        pasueMenu = GameObject.Find("UI").transform.Find("PauseMenu").GetComponent<PasueMenu>();
+        timer = FindObjectOfType<TimerController>();
     }
 
     void Update()

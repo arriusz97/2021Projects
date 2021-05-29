@@ -28,6 +28,7 @@ public class SunController : MonoBehaviour
     {
         mStarMat = mStarDome.GetComponentInChildren<MeshRenderer>().material;  
         mStarMat.color = new Color(1f, 1f, 1f, 0f);
+        dayCounter = GameObject.Find("UI").transform.Find("DayCounter").GetComponent<DayCounter>();
     }
 
     // Update is called once per frame
