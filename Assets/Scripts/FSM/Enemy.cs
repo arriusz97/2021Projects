@@ -28,6 +28,7 @@ public class Enemy : MonoBehaviour
     public player m_Target;
     private float m_time;
     private bool m_canAttack;
+    private EnemySpawnCtrl m_EnemySpawnCtrl; // Init method 만들어서 연결
 
     public AnimationCurve ac;
     private float playTimer = 0.0f;
@@ -35,7 +36,6 @@ public class Enemy : MonoBehaviour
 
     [Header("Routine 변수")]
     //물고기들이 움직일 position 저장
-    [SerializeField]
     private GameObject[] m_Routine;
     //처음에 0에서 스폰되므로 currentIndex의 초기값을 0으로 지정
     int currentIndex = 0;
@@ -89,8 +89,19 @@ public class Enemy : MonoBehaviour
                 StateCheck();
                 StopCoroutine(m_StateMachine);
                 StartCoroutine(DIE());
+                m_EnemySpawnCtrl.Dead();
             }
         }
+    }
+
+    public void SpawnPos_Init(EnemySpawnCtrl spawnCtrl)
+    {
+        m_EnemySpawnCtrl = spawnCtrl;
+    }
+
+    public void Routine_Init(GameObject[] routine)
+    {
+        m_Routine = routine;
     }
 
     IEnumerator FSM()
@@ -108,9 +119,9 @@ public class Enemy : MonoBehaviour
 
     IEnumerator DIE()
     {
-        //2초 있다가 죽은 enemy set active false
-        WaitForSeconds four = new WaitForSeconds(4);
-        yield return four;
+        //3초 있다가 죽은 enemy set active false
+        WaitForSeconds three = new WaitForSeconds(3);
+        yield return three;
 
         this.gameObject.SetActive(false);
     }

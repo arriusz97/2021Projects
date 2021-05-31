@@ -5,40 +5,43 @@ using UnityEngine;
 public class ObjPool<T> : MonoBehaviour where T : Component
 {
     [SerializeField]
-    protected T[] m_Origin;
-    protected List<T>[] m_Pool;
+    protected T m_Origin;
+    protected List<T> m_Pool;
 
-    private void Awake()
+    protected virtual void Awake()
     {
         PoolSetUp();
     }
 
     public void PoolSetUp()
     {
-        m_Pool = new List<T>[m_Origin.Length];
-        for(int i=0; i<m_Pool.Length; i++)
+        m_Pool = new List<T>();
+        for(int i=0; i<m_Pool.Count; i++)
         {
-            m_Pool[i] = new List<T>();
+            m_Pool = new List<T>();
         }
     }
 
-    public T GetFromPool(int id = 0)
+    //꺼진 object 다시 켜주기
+    public T GetFromPool()
     {
-        for(int i=0; i<m_Pool[id].Count; i++)
+        for(int i=0; i<m_Pool.Count; i++)
         {
-            if (!m_Pool[id][i].gameObject.activeInHierarchy)
+            if (!m_Pool[i].gameObject.activeInHierarchy)
             {
-                m_Pool[id][i].gameObject.SetActive(true);
-                return m_Pool[id][i];
+                m_Pool[i].gameObject.SetActive(true);
+                return m_Pool[i];
             }
+         //   id = i;
         }
-        return GetNewObj(id);
+        
+        return GetNewObj();
     }
 
-    protected virtual T GetNewObj(int id)
+    protected virtual T GetNewObj()
     {
-        T newObj = Instantiate(m_Origin[id]);
-        m_Pool[id].Add(newObj);
+        T newObj = Instantiate(m_Origin);
+        m_Pool.Add(newObj);
         return newObj;
     }
 }

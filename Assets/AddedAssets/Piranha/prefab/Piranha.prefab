@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 395267262}
   - component: {fileID: 395267263}
   - component: {fileID: 395267264}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: AttackArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68,7 +68,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2280477549013280800}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Spine01 jnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99,7 +99,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2280477549013280802}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Spine Tip jnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -132,7 +132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2280477549013280804}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Root point helper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -166,7 +166,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2280477549013280806}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Right Front Fin Tip jnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -196,7 +196,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2280477549013280808}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Right Front Fin 02 jnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -227,7 +227,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2280477549013280810}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Right Front Fin 01 jnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -259,7 +259,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2280477549013280812}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Right Fin Helper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -294,7 +294,7 @@ GameObject:
   - component: {fileID: 2280477549013709825}
   - component: {fileID: 4558730493186459622}
   - component: {fileID: 2362150515022172874}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Piranha
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -407,13 +407,6 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  m_Routine:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   m_maxHP: 100
   m_BloodEffect: {fileID: 2389267238504381470}
 --- !u!1 &2280477549013709840
@@ -425,7 +418,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2280477549013280816}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Top Fin jnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -456,7 +449,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2280477549013280818}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Spine08 jnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -487,7 +480,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2280477549013280820}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Spine07 jnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -518,7 +511,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2280477549013280822}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Spine06 jnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -549,7 +542,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2280477549013280824}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Spine05 jnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -580,7 +573,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2280477549013280826}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Spine04 jnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -611,7 +604,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2280477549013280828}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Spine03 jnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -643,7 +636,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2280477549013280830}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Spine02 jnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -674,7 +667,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2280477549013280832}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Head jnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -706,7 +699,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2280477549013280834}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Ctrl_tail btm002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -736,7 +729,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2280477549013280836}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Ctrl_tail btm001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -766,7 +759,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2280477549013280838}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Ctrl_Spn08
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -798,7 +791,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2280477549013280840}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Ctrl_Spn07
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -829,7 +822,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2280477549013280842}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Ctrl_Spn06
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -860,7 +853,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2280477549013280844}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Ctrl_Spn05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -891,7 +884,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2280477549013280846}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Ctrl_Spine04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -923,7 +916,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2280477549013280814}
   - component: {fileID: 2280477549025278286}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Piranha
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1024,7 +1017,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2280477549013280850}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Left Front Fin Tip jnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1054,7 +1047,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2280477549013280852}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Left Front Fin 02 jnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1085,7 +1078,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2280477549013280854}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Left Fin Helper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1116,7 +1109,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2280477549013280856}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Left  Front Fin 01 jnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1147,7 +1140,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2280477549013280858}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Jaw Tip jnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1178,7 +1171,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2280477549013280860}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Jaw jnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1209,7 +1202,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2280477549013280862}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Head Tip jnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1239,7 +1232,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2280477549013280864}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Ctrl_Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1270,7 +1263,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2280477549013280866}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Ctrl_global
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1305,7 +1298,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2280477549013280868}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Back Top Fin Tip jnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1336,7 +1329,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2280477549013280870}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Back Top Fin 02 jnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1367,7 +1360,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2280477549013280872}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Back Top Fin 01 jnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1398,7 +1391,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2280477549013280874}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Back bottom fin Tip jnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1428,7 +1421,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2280477549013280876}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Back Bottom Fin 02 jnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1459,7 +1452,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2280477549013280878}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Back Bottom Fin 01 jnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1490,7 +1483,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2280477549013280880}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Ctrl_Spine03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1521,7 +1514,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2280477549013280882}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Ctrl_Spine02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1553,7 +1546,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2280477549013280884}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Ctrl_Spine01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1584,7 +1577,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2280477549013280886}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Ctrl_Right Front Fin 02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1615,7 +1608,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2280477549013280888}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Ctrl_Right Front Fin 01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1645,7 +1638,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2280477549013280890}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Ctrl_Left Front Fin 02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1676,7 +1669,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2280477549013280892}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Ctrl_Left Front Fin 01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1706,7 +1699,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2280477549013280894}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Ctrl_Jaw
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1736,7 +1729,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2280477549013280782}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Top Fin Tip jnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1768,7 +1761,7 @@ GameObject:
   - component: {fileID: 2565147348570011278}
   - component: {fileID: 2389267238504381470}
   - component: {fileID: 2402093588850212502}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Blood_Effect
   m_TagString: Untagged
   m_Icon: {fileID: 0}

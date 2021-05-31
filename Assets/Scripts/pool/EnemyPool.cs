@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class EnemyPool : ObjPool<Enemy>
 {
-    private void Awake()
+    public GameObject _prefabPiranha;
+    protected override void Awake()
     {
-        m_Origin = Resources.LoadAll<Enemy>("Assets/AddedAssets/Piranha/prefab");
+        base.Awake();
+        m_Origin = _prefabPiranha.GetComponent<Enemy>();
     }
 }
