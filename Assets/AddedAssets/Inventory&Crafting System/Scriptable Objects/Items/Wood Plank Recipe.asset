@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiDisplay: {fileID: 0}
   stackable: 0
-  type: 0
+  type: 1
   description: "\uB098\uBB34 \uD310\uC790"
   data:
     Name: Wood Plank Recipe
