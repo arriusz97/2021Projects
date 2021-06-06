@@ -22,7 +22,7 @@ public class ItemObject : ScriptableObject
     private ActionController Player;
 
     //제작 레시피라면 플레이어 인벤토리 참조를 위해 플레이어와 연결
-    private void OnEnable()
+    private void Start()
     {
         if (type == ItemType.Recipe)
         {

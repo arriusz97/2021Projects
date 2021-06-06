@@ -12,24 +12,24 @@ public class TimerController : MonoBehaviour
 
     public List<CircularTimer> TimerContainer = new List<CircularTimer>();
 
-    private void StartTimer(int TimerNum)
+    public void StartTimer(int TimerNum)
     {
         TimerContainer[TimerNum].StartTimer();
     }
 
-    private void PauseTimer(int TimerNum)
+    public void PauseTimer(int TimerNum)
     {        
          TimerContainer[TimerNum].PauseTimer();     
     }
 
-    private void StopTimer(int TimerNum)
+    public void StopTimer(int TimerNum)
     {
         TimerContainer[TimerNum].StopTimer();
     }
 
-    private void UpdateTimer(int TimerNum, float Update)
+    public void UpdateTimer(int TimerNum, float Update)
     {
-        TimerContainer[TimerNum].CurrentTime = Mathf.Clamp(TimerContainer[TimerNum].CurrentTime - Update*Time.deltaTime, 0, TimerContainer[TimerNum].duration);
+        TimerContainer[TimerNum].CurrentTime = Mathf.Clamp(TimerContainer[TimerNum].CurrentTime - Update, 0, TimerContainer[TimerNum].duration);
     }
 
     private void Start()
@@ -56,7 +56,7 @@ public class TimerController : MonoBehaviour
             }
             else
             {
-                UpdateTimer(2, O2Recover+1.0f);
+                UpdateTimer(2, O2Recover+1.0f * Time.deltaTime);
             }
         }
         if(TimerContainer[3].isPaused)

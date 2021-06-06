@@ -167,14 +167,14 @@ public class ActionController : MonoBehaviour
         }
     }
     //인벤토리 창 활성화
-    private void OpenInventory()
+    public void OpenInventory()
     {
         inventoryOpen = true;
         inventoryScreen.SetActive(true);
         PlayLock();
     }
     //인벤토리 창 비활성화
-    private void CloseInventory()
+    public void CloseInventory()
     {
         inventoryOpen = false;
         inventoryScreen.GetComponent<UserInterface>().theItemEffectDatabase.HideToolTip();
@@ -183,14 +183,14 @@ public class ActionController : MonoBehaviour
 
     }
     //제작 창 활성화
-    private void OpenCrafting()
+    public void OpenCrafting()
     {
         CraftingOpen = true;
         craftingScreen.SetActive(true);
         PlayLock();
     }
     //제작 창 비활성화
-    private void CloseCrafting()
+    public void CloseCrafting()
     {
         CraftingOpen = false;
         craftingScreen.SetActive(false);

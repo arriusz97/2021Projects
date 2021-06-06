@@ -18,6 +18,9 @@ public class ItemEffectDatabase : MonoBehaviour
     [SerializeField]
     private Tooltip theSlotToolTip;
 
+    [SerializeField]
+    private TimerController timer;
+
     private AudioSource pickup;
 
     private const string HP = "HP", TP = "TP", O2 = "O2";
@@ -29,11 +32,13 @@ public class ItemEffectDatabase : MonoBehaviour
 
     //아이템 사용시 발생할 효과 현재 Food만 구현
     public void UseItem(Item item)
-    {        
+    {
         for (int i = 0; i < itemEffects.Length; i++)
         {
+            
             if (itemEffects[i]._item.data.Name == item.Name)
             {
+                
                 if (itemEffects[i]._item.data.itemType == ItemType.Food)
                 {
                     for (int j = 0; j < itemEffects[i].part.Length; j++)
@@ -41,10 +46,13 @@ public class ItemEffectDatabase : MonoBehaviour
                         switch (itemEffects[i].part[j])
                         {
                             case HP:
+                                timer.UpdateTimer(0, itemEffects[i].num[j]);
                                 break;
                             case TP:
+                                timer.UpdateTimer(1, itemEffects[i].num[j]);
                                 break;
                             case O2:
+                                timer.UpdateTimer(2, itemEffects[i].num[j]);
                                 break;
                             default:
                                 Debug.Log("잘못된 Status 부위.");

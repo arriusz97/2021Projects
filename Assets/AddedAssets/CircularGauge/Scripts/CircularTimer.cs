@@ -53,9 +53,11 @@ public class CircularTimer : MonoBehaviour
     float AfterImageTime;
 
     public bool isPaused = true;
-
+    
     public float CurrentTime { get; set; }
 
+    [SerializeField]
+    private float currentTIme;
 
     private void Start()     //인스펙터의 초기설정 불러오기
     {
@@ -108,6 +110,7 @@ public class CircularTimer : MonoBehaviour
         if (!isPaused)
         {
             CurrentTime += Time.deltaTime;  //시간 변화 감지
+            currentTIme = CurrentTime;
 
             if (CurrentTime >= duration)    //정해진 시간에 도달하면 타이머를 멈추고 세팅된 이벤트를 호출한다
             {
