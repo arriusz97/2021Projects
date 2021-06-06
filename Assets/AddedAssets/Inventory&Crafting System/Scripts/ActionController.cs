@@ -169,32 +169,42 @@ public class ActionController : MonoBehaviour
     //인벤토리 창 활성화
     private void OpenInventory()
     {
-        playerLock = true;
         inventoryOpen = true;
         inventoryScreen.SetActive(true);
+        PlayLock();
     }
     //인벤토리 창 비활성화
     private void CloseInventory()
     {
-        playerLock = false;
         inventoryOpen = false;
         inventoryScreen.GetComponent<UserInterface>().theItemEffectDatabase.HideToolTip();
         inventoryScreen.SetActive(false);
+        PlayLock();
 
     }
     //제작 창 활성화
     private void OpenCrafting()
     {
-        playerLock = true;
         CraftingOpen = true;
         craftingScreen.SetActive(true);
+        PlayLock();
     }
     //제작 창 비활성화
     private void CloseCrafting()
     {
-        playerLock = false;
         CraftingOpen = false;
         craftingScreen.SetActive(false);
+        PlayLock();
+    }
+
+    private void PlayLock()
+    {
+        if (CraftingOpen == false && inventoryOpen == false)
+        {
+            playerLock = false;
+        }
+        else
+            playerLock = true;
     }
 
     //종료시 인벤토리와 퀵슬롯을 초기화한다.
