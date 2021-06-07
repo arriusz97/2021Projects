@@ -36,6 +36,8 @@ public class player : MonoBehaviour
     private float m_lookSensitivity = 2f;
     private float m_cameraRotationLimit = 50f;
     private float m_currentCameraRotationX;
+    [SerializeField]
+    private Animator m_cameraAnimator;
 
     [Header("playerHP변수")]
     [SerializeField]
@@ -115,7 +117,6 @@ public class player : MonoBehaviour
             Move();
             camera_Rotation();
             character_Rotation();
-
 
             if (!m_SwimTrigger.m_isWater)
             {
@@ -231,6 +232,7 @@ public class player : MonoBehaviour
         m_camera.transform.localEulerAngles = new Vector3(m_currentCameraRotationX, 0, 0);
     }
 
+
     private void Swim()
     {
         float moveDirX = Input.GetAxisRaw("Horizontal");
@@ -244,6 +246,10 @@ public class player : MonoBehaviour
         m_Anim.SetBool("RUN", false);
         m_Anim.SetBool("IDLE", false);
         m_rigidbody.useGravity = false;
+
+        m_cameraAnimator.SetBool("Camera_Idle", true);
+        m_cameraAnimator.SetBool("Camera_Walk", false);
+        m_cameraAnimator.SetBool("Camera_Run", false);
 
         if (moveDirX != 0 || moveDirZ != 0)
         {
@@ -302,11 +308,14 @@ public class player : MonoBehaviour
         {
             isMove = true;
             m_Anim.SetBool("IDLE", false);
+            m_cameraAnimator.SetBool("Camera_Idle", false);
         }
         else
         {
             isMove = false;
             m_Anim.SetBool("IDLE", true);
+            m_cameraAnimator.SetBool("Camera_Idle", true);
+            m_cameraAnimator.SetBool("Camera_Walk", false);
         }
 
         if (!m_SwimTrigger.m_isWater)
@@ -321,13 +330,16 @@ public class player : MonoBehaviour
             if (!m_isRun)
             {
                 m_Anim.SetBool("RUN", false);
+                m_cameraAnimator.SetBool("Camera_Run", false);
                 if (isMove)
                 {
                     m_Anim.SetBool("WALK", true);
+                    m_cameraAnimator.SetBool("Camera_Walk", true);
                 }
                 else
                 {
                     m_Anim.SetBool("IDLE", true);
+                    m_cameraAnimator.SetBool("Camera_Walk", false);
                 }
                 m_rigidbody.MovePosition(transform.position + m_velocity * Time.deltaTime);
             }
@@ -335,6 +347,8 @@ public class player : MonoBehaviour
             {
                 m_Anim.SetBool("RUN", true);
                 m_Anim.SetBool("WALK", false);
+                m_cameraAnimator.SetBool("Camera_Run", true);
+                m_cameraAnimator.SetBool("Camera_Walk", false);
                 m_rigidbody.MovePosition(transform.position + (moveHorizontal - moveVertical) * m_runSpeed * Time.deltaTime);
             }
         }
