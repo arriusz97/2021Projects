@@ -20,7 +20,7 @@ MonoBehaviour:
     Name: Wood
     Id: 1
     buffs: []
-    itemType: 1
+    itemType: 2
   RecipeData:
     result: {fileID: 0}
     ingredients: []

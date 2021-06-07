@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36c92f6916f51c84180ccd6986ebd922, type: 3}
   m_Name: Wood Plank Recipe
   m_EditorClassIdentifier: 
-  uiDisplay: {fileID: 0}
+  uiDisplay: {fileID: 21300000, guid: ef34cfd08c049e34b9ec37af735b258d, type: 3}
   stackable: 0
   type: 1
   description: "\uB098\uBB34 \uD310\uC790"
@@ -20,7 +20,7 @@ MonoBehaviour:
     Name: Wood Plank Recipe
     Id: 3
     buffs: []
-    itemType: 0
+    itemType: 1
   RecipeData:
     result: {fileID: 11400000, guid: e91b1a3f86c9679438e5221f83fb15e2, type: 2}
     ingredients:

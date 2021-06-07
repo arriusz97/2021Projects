@@ -20,7 +20,7 @@ MonoBehaviour:
     Name: Coconut
     Id: 0
     buffs: []
-    itemType: 2
+    itemType: 3
   RecipeData:
     result: {fileID: 0}
     ingredients: []

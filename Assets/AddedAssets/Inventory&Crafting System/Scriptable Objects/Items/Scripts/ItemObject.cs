@@ -27,6 +27,7 @@ public class ItemObject : ScriptableObject
         if (type == ItemType.Recipe)
         {
             Player = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<ActionController>();
+            Debug.Log("Play Connected");
         }        
     }
     //플레이어 인벤토리에 제작에 필요한 재료가 있는지 확인
@@ -54,6 +55,7 @@ public class ItemObject : ScriptableObject
     //제작이 가능하면 결과물을 플레이어 인벤토리에 추가해준다
     public void Crafting()
     {
+        Player = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<ActionController>();
         if (CanCraft())
         {
             RemoveIngredientsFromInventory();
