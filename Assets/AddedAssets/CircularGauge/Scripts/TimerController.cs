@@ -34,7 +34,7 @@ public class TimerController : MonoBehaviour
 
     private void Start()
     {
-        StartTimer(0);
+        StopTimer(0);
         StartTimer(1);
         StopTimer(2);
         TimerContainer[2].Activated(false);        
@@ -71,5 +71,10 @@ public class TimerController : MonoBehaviour
         TimerContainer[3].duration = _duration;
         TimerContainer[3].Activated(true);
         StartTimer(3);
+    }
+
+    public float GetDuration(int timerNum)
+    {
+        return TimerContainer[timerNum].duration;
     }
 }
