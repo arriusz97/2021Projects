@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Title : MonoBehaviour
 {
     public string sceneName = "GameScene2";
 
     [SerializeField]
-    private GameObject tLoading, background, ui;
+    private GameObject background;
 
     private float time = 0;
  //   public static Title instance;
@@ -16,18 +17,26 @@ public class Title : MonoBehaviour
     [SerializeField]
     private DataController dataController;
 
+    [SerializeField]
+    private Image progressbar;
+
+    private bool Load = false;
     public void ClickStart()
     {
-        tLoading.SetActive(true);
+        Load = false;
+        progressbar.gameObject.SetActive(true);
         background.SetActive(true);
+        SceneManager.sceneLoaded += LoadSceneEnd;
         StartCoroutine(GameStartCoroutine());
     }
 
     public void ClickLoad()
     {
-        tLoading.SetActive(true);
+        Load = true;
+        progressbar.gameObject.SetActive(true);
         background.SetActive(true);
-        StartCoroutine(GameLoadCoroutine());
+        SceneManager.sceneLoaded += LoadSceneEnd;
+        StartCoroutine(GameStartCoroutine());
     }
 
     public void ClickExit()
@@ -37,37 +46,62 @@ public class Title : MonoBehaviour
 
     IEnumerator GameStartCoroutine()
     {
+        progressbar.fillAmount = 0f; 
+        //yield return StartCoroutine(Fade(true));
+
         AsyncOperation operation = SceneManager.LoadSceneAsync(sceneName);
-        if (GameObject.Find("GUI"))
-            GameObject.Find("GUI").transform.Find("UI").gameObject.SetActive(true);
+        operation.allowSceneActivation = false;
 
-        
-        while (!operation.isDone)
-        {
-            yield return null;            
-        }
 
-        tLoading.SetActive(false);
-        background.SetActive(false);
-        gameObject.SetActive(false);
-    }
-
-    IEnumerator GameLoadCoroutine()
-    {
-        AsyncOperation operation = SceneManager.LoadSceneAsync(sceneName);
-        if (GameObject.Find("GUI"))
-            GameObject.Find("GUI").transform.Find("UI").gameObject.SetActive(true);
-
+        float pgtimer = 0.0f;
         while (!operation.isDone)
         {
             yield return null;
+            pgtimer += Time.unscaledDeltaTime;
+
+            if(operation.progress < 0.9f)
+            {
+                progressbar.fillAmount = Mathf.Lerp(progressbar.fillAmount, operation.progress, pgtimer);
+                if(progressbar.fillAmount >= operation.progress)
+                {
+                    pgtimer = 0f;
+                }
+            }
+            else
+            {
+                progressbar.fillAmount = Mathf.Lerp(progressbar.fillAmount, 1f, pgtimer);
+                if(progressbar.fillAmount == 1.0f)
+                {
+                    operation.allowSceneActivation = true;
+                    yield break;
+                }
+            }
+        }
+                
+    }
+
+    private void LoadSceneEnd(Scene scene, LoadSceneMode loadSceneMode)
+    {
+        if(scene.name == sceneName)
+        {
+            ProgressEnd();
+            SceneManager.sceneLoaded -= LoadSceneEnd;
+        }
+    }
+
+    private void ProgressEnd()
+    {
+
+        if (GameObject.Find("GUI"))
+            GameObject.Find("GUI").transform.Find("UI").gameObject.SetActive(true);
+
+        if (Load)
+        {
+            dataController = FindObjectOfType<DataController>();
+            dataController.LoadGameData();
         }
 
-        dataController = FindObjectOfType<DataController>();
-        dataController.LoadGameData();
-
-        
-        tLoading.SetActive(false);
+        progressbar.gameObject.SetActive(false);
         background.SetActive(false);
         gameObject.SetActive(false);
     }

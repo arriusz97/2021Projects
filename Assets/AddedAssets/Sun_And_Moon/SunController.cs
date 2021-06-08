@@ -28,11 +28,11 @@ public class SunController : MonoBehaviour
     {
         mStarMat = mStarDome.GetComponentInChildren<MeshRenderer>().material;  
         mStarMat.color = new Color(1f, 1f, 1f, 0f);
-        dayCounter = GameObject.Find("UI").transform.Find("DayCounter").GetComponent<DayCounter>();
+        dayCounter = GameObject.Find("GUI").transform.Find("UI").transform.Find("DayCounter").GetComponent<DayCounter>();
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         LightRotation();
         StarLight();
@@ -47,6 +47,19 @@ public class SunController : MonoBehaviour
                 dayCounterMove = true;
             }            
         }
+
+        /*
+        if(currentTime <= 0.24)
+        {
+            gameObject.GetComponentInChildren<Light>().intensity = 0.1f;
+        }
+        else if(currentTime >= 0.76)
+        {
+            gameObject.GetComponentInChildren<Light>().intensity = 0.1f;
+        }
+        else
+            gameObject.GetComponentInChildren<Light>().intensity = 1f;
+        */
 
         if (dayCounterMove && currentTime >= 0.3f)      // 아침이 되면 DayCounter 출력
         {

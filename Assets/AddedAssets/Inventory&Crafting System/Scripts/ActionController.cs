@@ -53,10 +53,10 @@ public class ActionController : MonoBehaviour
         crafting.Load();
         CloseCrafting();
 
-        actionText = GameObject.Find("CursorOnItemText").transform.Find("ActionText").GetComponent<TextMeshProUGUI>();
-        inventoryScreen = GameObject.Find("Inventory Canvas").transform.Find("InventoryScreen").gameObject;
-        craftingScreen = GameObject.Find("Crafting Canvas").transform.Find("CraftingScreen").gameObject;
-        pasueMenu = GameObject.Find("UI").transform.Find("PauseMenu").GetComponent<PasueMenu>();
+        actionText = GameObject.Find("GUI").transform.Find("UI").transform.Find("CursorOnItemText").transform.Find("ActionText").GetComponent<TextMeshProUGUI>();
+        inventoryScreen = GameObject.Find("GUI").transform.Find("UI").transform.Find("Inventory Canvas").transform.Find("InventoryScreen").gameObject;
+        craftingScreen = GameObject.Find("GUI").transform.Find("UI").transform.Find("Crafting Canvas").transform.Find("CraftingScreen").gameObject;
+        pasueMenu = GameObject.Find("GUI").transform.Find("UI").transform.Find("PauseMenu").GetComponent<PasueMenu>();
         timer = FindObjectOfType<TimerController>();
     }
 

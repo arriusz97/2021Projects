@@ -51,6 +51,8 @@ public class player : MonoBehaviour
     [SerializeField]
     private GameObject m_playerBloodUI;
 
+    private TimerController mTimer;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -58,8 +60,12 @@ public class player : MonoBehaviour
         m_collider = GetComponent<CapsuleCollider>();
         m_Anim = GetComponent<Animator>();
 
-        m_currentHP = m_maxHP;
-        
+        mTimer = GameObject.Find("Timer Canvas").GetComponent<TimerController>();
+
+        //m_currentHP = m_maxHP;
+        m_currentHP = mTimer.GetDuration(0);
+
+
     }
 
     //enemy에게 맞았을 때 불릴 함수
@@ -70,6 +76,7 @@ public class player : MonoBehaviour
             //To do:
             //enemy한테 맞았다면 blood UI 켜지고 2초 뒤에 꺼지게 하기
             m_playerBloodUI.SetActive(true);
+            
 
             //만약에 blood UI가 켜졌다면 코루틴 시작 -> 2초 뒤에 꺼지게
             if (m_playerBloodUI.activeInHierarchy)
@@ -81,6 +88,7 @@ public class player : MonoBehaviour
                 StopCoroutine(BloodUI());
             }
             m_currentHP -= damage;
+            mTimer.UpdateTimer(0, -damage);
         }
 
         if (m_currentHP <= 0)

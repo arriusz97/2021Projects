@@ -47,6 +47,7 @@ public class PasueMenu : MonoBehaviour
         }
 
         GameObject.Find("TitleUI").transform.Find("TUI").gameObject.SetActive(true);
+        GameObject.Find("UI").transform.Find("DayCounter").gameObject.SetActive(false);
         GameObject.Find("UI").SetActive(false);
         /*
         GameObject.Find("UI").transform.Find("DayCounter").gameObject.SetActive(false);
