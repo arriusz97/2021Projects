@@ -285,6 +285,7 @@ public class player : MonoBehaviour
             m_Anim.SetBool("IDLEINWATER", true);
             var vel = m_rigidbody.velocity;
             vel.y = 0f;
+            vel.x = 0f;
             m_rigidbody.velocity = vel;
         }
 
