@@ -136,6 +136,7 @@ public class player : MonoBehaviour
             {
                 m_rigidbody.velocity = new Vector3(m_rigidbody.velocity.x, 5, m_rigidbody.velocity.z);
                 m_JumpCount++;
+                //m_Anim.SetBool("JUMP_ANIM", true);
             }
             m_Anim.SetFloat("JUMP", m_rigidbody.velocity.y);
 
@@ -364,6 +365,7 @@ public class player : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             m_JumpCount = 0;
+           // m_Anim.SetBool("JUMP_ANIM", false);
         }
     }
 }
