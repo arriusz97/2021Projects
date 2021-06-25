@@ -460,6 +460,7 @@ GameObject:
   m_Component:
   - component: {fileID: 400024}
   - component: {fileID: 11400000}
+  - component: {fileID: 835804114}
   m_Layer: 0
   m_Name: Fish Bass 1
   m_TagString: Untagged
@@ -498,3 +499,16 @@ MonoBehaviour:
   _speed: 10
   _scanner: {fileID: 0}
   _cacheTransform: {fileID: 0}
+--- !u!65 &835804114
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100024}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.8, y: 1, z: 2.5}
+  m_Center: {x: 0.13, y: 0, z: -0.09}
