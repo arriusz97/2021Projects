@@ -30,6 +30,11 @@ public class ItemEffectDatabase : MonoBehaviour
         pickup = GetComponent<AudioSource>();
     }
 
+    private void Start()
+    {
+        theSlotToolTip = GameObject.Find("GUI").transform.Find("UI").transform.Find("Tooltip").GetComponent<Tooltip>();
+    }
+
     //아이템 사용시 발생할 효과 현재 Food만 구현
     public void UseItem(Item item)
     {

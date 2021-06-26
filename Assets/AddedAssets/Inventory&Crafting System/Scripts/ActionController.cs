@@ -232,6 +232,5 @@ public class ActionController : MonoBehaviour
         inventory.Load();
         quickSlot.Load();
         crafting.Load();
-        dataController.LoadGameData();
     }
 }

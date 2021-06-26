@@ -8,11 +8,19 @@ public class PasueMenu : MonoBehaviour
     [SerializeField]
     private ActionController actionController;
 
+    [SerializeField]
+    private DataController dataController;
+
     private bool isActive = false;
+
+    private void OnEnable()
+    {
+        dataController = GameObject.Find("DataController").GetComponent<DataController>();
+    }
 
     public void ClickLoad()
     {
-        actionController.LoadGame();
+        dataController.LoadGameData();
     }
 
     public void ClickQuit()

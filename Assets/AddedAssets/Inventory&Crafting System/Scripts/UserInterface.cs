@@ -31,7 +31,11 @@ public abstract class UserInterface : MonoBehaviour
             inventory.GetSlots[i].onAfterUpdated += OnSlotUpdate;
         }
         AddEvent(gameObject, EventTriggerType.PointerEnter, delegate { OnEnterInterface(gameObject); });
-        AddEvent(gameObject, EventTriggerType.PointerExit, delegate { OnExitInterface(gameObject); });
+        AddEvent(gameObject, EventTriggerType.PointerExit, delegate { OnExitInterface(gameObject); });        
+    }
+
+    private void OnEnable()
+    {
         theItemEffectDatabase = GameObject.Find("EffectDatabase").GetComponent<ItemEffectDatabase>();
     }
 

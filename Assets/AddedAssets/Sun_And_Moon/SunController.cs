@@ -123,5 +123,6 @@ public class SunController : MonoBehaviour
         dayCounterMove = true;
         currentDay = dataController.Gamedata.currentDay;
         currentTime = 0.29f;
+        actionController.LoadGame();
     }
 }

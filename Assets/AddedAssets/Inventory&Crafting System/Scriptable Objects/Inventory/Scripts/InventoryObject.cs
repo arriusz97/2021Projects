@@ -18,7 +18,7 @@ public class InventoryObject : ScriptableObject
     //인벤토리에 아이템을 추가한다.
     public bool AddItem(Item item, int amount)
     {
-        if (EmptySlotCount <= 0)
+        if (EmptySlotCount <= 0 && amount > 0)
             return false;
         InventorySlot slot = FindItemOnInventory(item);
         if (!database.ItemObjects[item.Id].stackable || slot == null)

@@ -15,7 +15,7 @@ MonoBehaviour:
   uiDisplay: {fileID: 21300000, guid: ef34cfd08c049e34b9ec37af735b258d, type: 3}
   stackable: 0
   type: 1
-  description: "\uB098\uBB34 \uD310\uC790"
+  description: "\uB098\uBB341 = \uB098\uBB34 \uD310\uC7903"
   data:
     Name: Wood Plank Recipe
     Id: 3
@@ -23,6 +23,7 @@ MonoBehaviour:
     itemType: 1
   RecipeData:
     result: {fileID: 11400000, guid: e91b1a3f86c9679438e5221f83fb15e2, type: 2}
+    resultamount: 3
     ingredients:
     - item: {fileID: 11400000, guid: 78d0b74c1b492754ca01e2690f61dedf, type: 2}
       amount: 1

@@ -15,6 +15,7 @@ public class ItemObject : ScriptableObject
     public class Recipe
     {
         public ItemObject result;
+        public int resultamount = 1;
         public Ingredient[] ingredients;
     }
     public Recipe RecipeData;
@@ -49,7 +50,7 @@ public class ItemObject : ScriptableObject
     {
         foreach (Ingredient ingredient in RecipeData.ingredients)
         {
-            Player.inventory.FindItemOnInventory(ingredient.item.data).RemoveItem();
+            Player.inventory.FindItemOnInventory(ingredient.item.data).AddAmount(-ingredient.amount);
         }
     }
     //제작이 가능하면 결과물을 플레이어 인벤토리에 추가해준다
@@ -59,7 +60,7 @@ public class ItemObject : ScriptableObject
         if (CanCraft())
         {
             RemoveIngredientsFromInventory();
-            Player.inventory.AddItem(RecipeData.result.data, 1);
+            Player.inventory.AddItem(RecipeData.result.data, RecipeData.resultamount);
         }
         else
         {
