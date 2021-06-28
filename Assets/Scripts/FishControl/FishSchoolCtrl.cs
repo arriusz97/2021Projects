@@ -5,8 +5,9 @@ using UnityEngine;
 public class FishSchoolCtrl : MonoBehaviour
 {
     //To do list
-    //1. Bubble particle 설정해서 달아주기
-    //2. fish object list에 넣고 생성해주기 -> OBJ Pool 사용
-    //3. random path 설정해주기 -> wander function 생성
-    //4. avoid obstacle -> 더 공부해보기 // obstacle 만나면 좌/우로 방향 틀어서 다시 wander
+    //Spawn Ctrl
+    //각 spawn할 위치 넘겨받아서 pool 이용해서 생성해주기
+    // gold fish나 koi는 각 지역 당 10마리 정도 spawn 해주고
+    // salmon, bass, amberjack은 각 지역 당 4마리 정도 spawn 해주기
+    // 물고기 채집하고 난 뒤 spawn 위치에서 20초 뒤 재생성?
 }
