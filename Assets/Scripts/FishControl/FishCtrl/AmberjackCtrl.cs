@@ -14,21 +14,17 @@ public class AmberjackCtrl : MonoBehaviour
     private float m_MaxSpeed = 5f;
     [SerializeField]
     private float m_MaxrotationSpeed = 0.5f;
+    //[SerializeField]
+    //private float neighbourDistance;
     [SerializeField]
-    private float neighbourDistance;
+    private int m_Boundary = 10;
     private bool m_isTurning = false;
+    [SerializeField]
+    private FishAreaCtrl m_fishAreaCtrl;
+    public Vector3 m_targetPosition = Vector3.zero;
 
     Vector3 averageHeading;
     Vector3 averagePosition;
-
-    //boundary를 x, y 지정해서 사용할 수도 있음
-    [Header("Roaming Area 변수")]
-    [SerializeField]
-    private float m_AreaWidth;
-    [SerializeField]
-    private float m_AreaDepth;
-    [SerializeField]
-    private float m_AreaHeight;
    
 
     private void Start()
@@ -36,16 +32,13 @@ public class AmberjackCtrl : MonoBehaviour
         m_Speed = Random.Range(2f, 4f);
     }
 
-    float TurnSpeed()
-    {
-        return Random.Range(0.2f, m_MaxrotationSpeed);
-    }
-
     private void Update()
     {
-        GetIsTurning();
+        //change target position
+        GetTargetPosition();
 
-        if (m_isTurning)
+        //fish area ctrl에서 area 벗어나면 m_isTurning = true, 들어오면 false
+        if (m_fishAreaCtrl.m_isTurning)
         {
             Vector3 direction = Vector3.zero - transform.position;
             transform.rotation = Quaternion.Slerp(transform.rotation,
@@ -60,26 +53,35 @@ public class AmberjackCtrl : MonoBehaviour
         transform.Translate(0, 0, Time.deltaTime * m_Speed);
     }
 
-    void GetIsTurning()
+    void GetTargetPosition()
     {
-        //boundary에 부딪치면 turning true
-        //else false
+        if(Random.Range(1,10000) < 50)
+        {
+            m_targetPosition = new Vector3(
+                Random.Range(-m_Boundary, m_Boundary),
+                Random.Range(-m_Boundary, m_Boundary),
+                Random.Range(-m_Boundary, m_Boundary)
+                );
+        }
     }
 
     void setRotation()
     {
-        //그룹 사이즈에 따라서 rotation 시킴 -> 나는 각각의 fish에 붙어서 제어하는 ctrl
-        //흠.. 어떻게 rotation을 시킬까...
-        //random.range해서 몇 나오면 rotation 시키고 아니면 그대로 직진하게 하고 할까
+        Vector3 direction = m_fishAreaCtrl.transform.position - transform.position;
+        if (direction != Vector3.zero)
+        {
+            transform.rotation = Quaternion.Slerp(transform.rotation,
+                Quaternion.LookRotation(direction),
+                TurnSpeed() * Time.deltaTime);
+        }
     }
 
-    
 
-    public void OnDrawGizmos()
+    float TurnSpeed()
     {
-        Gizmos.color = Color.cyan;
-        Gizmos.DrawWireCube(transform.position, new Vector3((m_AreaWidth * 2), (m_AreaHeight * 2) + m_AreaHeight * 2, (m_AreaDepth * 2) + m_AreaDepth * 2));
+        return Random.Range(0.2f, m_MaxrotationSpeed);
     }
+
 }
 
 //https://coderzero.tistory.com/entry/%EC%9C%A0%EB%8B%88%ED%8B%B0-%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%86%8C%EC%8A%A4-Fish-Flock
