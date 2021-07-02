@@ -48,18 +48,18 @@ public class SunController : MonoBehaviour
             }            
         }
 
-        /*
+        
         if(currentTime <= 0.24)
         {
-            gameObject.GetComponentInChildren<Light>().intensity = 0.1f;
+            gameObject.GetComponentInChildren<Light>().intensity = Mathf.Lerp(0.1f, 1.0f, currentTime);
         }
         else if(currentTime >= 0.76)
         {
-            gameObject.GetComponentInChildren<Light>().intensity = 0.1f;
+            gameObject.GetComponentInChildren<Light>().intensity = Mathf.Lerp(1.0f, 0.1f, currentTime);
         }
         else
             gameObject.GetComponentInChildren<Light>().intensity = 1f;
-        */
+        
 
         if (dayCounterMove && currentTime >= 0.3f)      // 아침이 되면 DayCounter 출력
         {

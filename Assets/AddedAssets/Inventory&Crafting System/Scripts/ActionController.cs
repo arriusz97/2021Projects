@@ -54,8 +54,8 @@ public class ActionController : MonoBehaviour
         CloseCrafting();
 
         actionText = GameObject.Find("GUI").transform.Find("UI").transform.Find("CursorOnItemText").transform.Find("ActionText").GetComponent<TextMeshProUGUI>();
-        inventoryScreen = GameObject.Find("GUI").transform.Find("UI").transform.Find("Inventory Canvas").transform.Find("InventoryScreen").gameObject;
-        craftingScreen = GameObject.Find("GUI").transform.Find("UI").transform.Find("Crafting Canvas").transform.Find("CraftingScreen").gameObject;
+        //inventoryScreen = GameObject.Find("GUI").transform.Find("UI").transform.Find("Inventory Canvas").transform.Find("InventoryScreen").gameObject;
+        //craftingScreen = GameObject.Find("GUI").transform.Find("UI").transform.Find("Crafting Canvas").transform.Find("CraftingScreen").gameObject;
         pasueMenu = GameObject.Find("GUI").transform.Find("UI").transform.Find("PauseMenu").GetComponent<PasueMenu>();
         timer = FindObjectOfType<TimerController>();
     }
@@ -209,6 +209,11 @@ public class ActionController : MonoBehaviour
 
     //종료시 인벤토리와 퀵슬롯을 초기화한다.
     public void OnApplicationQuit()
+    {
+        OnQuit();
+    }
+
+    public void OnQuit()
     {
         inventory.Clear();
         quickSlot.Clear();

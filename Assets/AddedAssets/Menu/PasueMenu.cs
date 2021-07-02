@@ -62,7 +62,7 @@ public class PasueMenu : MonoBehaviour
         actionController.CloseCrafting();
         actionController.CloseInventory();
         */
-
+        actionController.OnQuit();
         gameObject.SetActive(false);
     }
 }
