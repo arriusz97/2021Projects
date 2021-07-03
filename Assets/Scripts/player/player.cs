@@ -62,7 +62,7 @@ public class player : MonoBehaviour
         m_collider = GetComponent<CapsuleCollider>();
         m_Anim = GetComponent<Animator>();
 
-        mTimer = GameObject.Find("Timer Canvas").GetComponent<TimerController>();
+        mTimer = GameObject.Find("Canvas").GetComponent<TimerController>();
         m_currentHP = m_maxHP;
         
     }
