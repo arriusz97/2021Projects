@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8601336771085695072}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: joint7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8601336771085695074}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: joint8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70,7 +70,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8601336771085695076}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: joint5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100,7 +100,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8601336771085695078}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: joint6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -131,7 +131,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8601336771085695080}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: joint3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -163,7 +163,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8601336771085695082}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: joint4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -194,7 +194,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8601336771085695084}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Root
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -231,7 +231,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8601336771085695086}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: joint2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -262,7 +262,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8601336771085695088}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: joint15
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -293,7 +293,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8601336771085695090}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: joint16
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -324,7 +324,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8601336771085695092}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: joint13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -355,7 +355,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8601336771085695094}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: joint14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -385,7 +385,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8601336771085695096}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: joint11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -418,7 +418,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8601336771085695098}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: joint12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -449,7 +449,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8601336771085695100}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: joint9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -480,7 +480,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8601336771085695102}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: joint10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -512,7 +512,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8601336771085694992}
   - component: {fileID: 8601336771097017778}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -561,7 +561,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8601336771085694994}
   - component: {fileID: 8601336771097553266}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: GoldFishMesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -675,7 +675,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8601336771085694998}
   - component: {fileID: 8601336770563884111}
-  m_Layer: 0
+  - component: {fileID: 3729501192897974832}
+  m_Layer: 11
   m_Name: Goldfish_Spawn
   m_TagString: Fish
   m_Icon: {fileID: 0}
@@ -710,6 +711,23 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.3, y: 0.3, z: 0.5}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &3729501192897974832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8601336771086050358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed5357be2d83d94459ab5eccb630ffe0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MaxSpeed: 7
+  m_MaxrotationSpeed: 0.9
+  m_Boundary: 18
+  m_fishAreaCtrl: {fileID: 0}
+  m_targetPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &8601336771086050400
 GameObject:
   m_ObjectHideFlags: 0
@@ -719,7 +737,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8601336771085695040}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: joint23
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -749,7 +767,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8601336771085695042}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: joint24
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -780,7 +798,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8601336771085695044}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: joint21
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -811,7 +829,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8601336771085695046}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: joint22
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -842,7 +860,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8601336771085695048}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: joint19
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -873,7 +891,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8601336771085695050}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: joint20
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -903,7 +921,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8601336771085695052}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: joint17
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -933,7 +951,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8601336771085695054}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: joint18
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -964,7 +982,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8601336771085695056}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: joint31
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -995,7 +1013,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8601336771085695058}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: joint32
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1025,7 +1043,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8601336771085695060}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: joint29
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1055,7 +1073,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8601336771085695062}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: joint30
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1086,7 +1104,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8601336771085695064}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: joint27
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1117,7 +1135,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8601336771085695066}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: joint28
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1148,7 +1166,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8601336771085695068}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: joint25
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1179,7 +1197,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8601336771085695070}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: joint26
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1266,6 +1284,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Fish_Bubble
+      objectReference: {fileID: 0}
+    - target: {fileID: 5331771260959804193, guid: 2f6e19d1eb3e9d94284034df9ac0afa0,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 5331771260959804194, guid: 2f6e19d1eb3e9d94284034df9ac0afa0,
         type: 3}
