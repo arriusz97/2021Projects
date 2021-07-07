@@ -4,15 +4,74 @@ using UnityEngine;
 
 public class BassCtrl : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [Header("Bass 변수")]
+    private float m_Speed;
+    [SerializeField]
+    private float m_MaxSpeed = 5f;
+    [SerializeField]
+    private float m_MaxrotationSpeed = 0.7f;
+    //[SerializeField]
+    //private float neighbourDistance;
+    [SerializeField]
+    private int m_Boundary = 15;
+    private bool m_isTurning = false;
+
+    public Vector3 m_targetPosition = Vector3.zero;
+
+    Vector3 averageHeading;
+    Vector3 averagePosition;
+
+    private BassSpawnCtrl m_bassSpawnCtrl;
+
+    private void Start()
     {
-        
+        m_Speed = Random.Range(1f, 5f);
     }
 
-    // Update is called once per frame
-    void Update()
+    //init method 만들어서 연결
+    public void SpawnPos_Init(BassSpawnCtrl spawnCtrl)
     {
-        
+        m_bassSpawnCtrl = spawnCtrl;
+    }
+
+    private void Update()
+    {
+        //change target position
+        GetTargetPosition();
+
+            if (Random.Range(0, 8) < 1)
+                setRotation();
+       
+        transform.Translate(0, 0, Time.deltaTime * m_Speed);
+    }
+
+    void GetTargetPosition()
+    {
+        if (Random.Range(1, 100) < 50)
+        {
+            m_targetPosition = new Vector3(
+                Random.Range(-m_Boundary, m_Boundary),
+                Random.Range(-m_Boundary, m_Boundary),
+                Random.Range(-m_Boundary, m_Boundary)
+                );
+
+        }
+    }
+
+    void setRotation()
+    {
+        Vector3 direction = m_bassSpawnCtrl.transform.position - transform.position;
+        if (direction != Vector3.zero)
+        {
+            transform.rotation = Quaternion.Slerp(transform.rotation,
+                Quaternion.LookRotation(direction),
+                TurnSpeed() * Time.deltaTime);
+        }
+    }
+
+
+    float TurnSpeed()
+    {
+        return Random.Range(0.1f, m_MaxrotationSpeed);
     }
 }

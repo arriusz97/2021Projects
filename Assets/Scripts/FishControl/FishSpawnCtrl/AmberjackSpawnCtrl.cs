@@ -4,10 +4,7 @@ using UnityEngine;
 
 public class AmberjackSpawnCtrl : MonoBehaviour
 {
-    //Todo
-    //물고기의 spawn ctrl라고 생각하면 될듯
-    //생성할 물고기의 pool 가져오기
-    //물고기 개체수 관리
+    //이 script는 Spawn position 오브젝트에 붙어서 spawn을 ctrl 할 것임.
 
     [SerializeField]
     private Amberjack_Pool m_Amberjack_pool;
@@ -23,7 +20,7 @@ public class AmberjackSpawnCtrl : MonoBehaviour
         {
             AmberjackCtrl amberjack = m_Amberjack_pool.GetFromPool();
             amberjack.transform.position = transform.position;
-            //amberjack.SpawnPos(this);
+            amberjack.SpawnPos_Init(this);
         }
 
         StartCoroutine(AmberjackSpawnRoutine());
@@ -42,7 +39,7 @@ public class AmberjackSpawnCtrl : MonoBehaviour
             yield return twenty;
             AmberjackCtrl amberjack = m_Amberjack_pool.GetFromPool();
             amberjack.transform.position = transform.position;
-            //amberjack.SpawnPos(this);
+            amberjack.SpawnPos_Init(this);
             m_FishCurrentCount++;
         }
     }
@@ -55,6 +52,5 @@ public class AmberjackSpawnCtrl : MonoBehaviour
             m_spawnCoroutine = StartCoroutine(AmberjackSpawnRoutine());
         }
     }
-
 
 }
