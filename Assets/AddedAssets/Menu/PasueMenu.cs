@@ -18,17 +18,17 @@ public class PasueMenu : MonoBehaviour
         dataController = GameObject.Find("DataController").GetComponent<DataController>();
     }
 
-    public void ClickLoad()
+    private void ClickLoad()
     {
         dataController.LoadGameData();
     }
 
-    public void ClickQuit()
+    private void ClickQuit()
     {
         StartCoroutine(TitleLoadCoroutine());
     }
 
-    public void ClickResume()
+    private void ClickResume()
     {
         gameObject.SetActive(false);
         actionController.Lock(false);
@@ -57,11 +57,7 @@ public class PasueMenu : MonoBehaviour
         GameObject.Find("TitleUI").transform.Find("TUI").gameObject.SetActive(true);
         GameObject.Find("UI").transform.Find("DayCounter").gameObject.SetActive(false);
         GameObject.Find("UI").SetActive(false);
-        /*
-        GameObject.Find("UI").transform.Find("DayCounter").gameObject.SetActive(false);
-        actionController.CloseCrafting();
-        actionController.CloseInventory();
-        */
+
         actionController.OnQuit();
         gameObject.SetActive(false);
     }

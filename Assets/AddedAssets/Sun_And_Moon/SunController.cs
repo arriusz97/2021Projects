@@ -7,19 +7,28 @@ public class SunController : MonoBehaviour
     [SerializeField]
     private float SecondsOfDay = 60f, currentTime = 0.3f;
     //하루의 길이(초), 현재 시간(0일때 자정, 0.25에서 일출, 0.75에서 일몰)
+
     public int currentDay = 0; //현재 날짜
+
     [SerializeField]
     private Light mSun;     //태양
+
     [SerializeField]
     private GameObject mMoonState, mMoon, mStarDome;     //달위치, 달, 천구
+
     [SerializeField]
     private Camera mCam;    //Player 카매라
+
     private Material mStarMat;      //천구의 별
+
     [SerializeField]
     private DayCounter dayCounter;
+
     private bool dayCounterMove;
+
     [SerializeField]
     private DataController dataController;
+
     [SerializeField]
     private ActionController actionController;
 
@@ -37,6 +46,7 @@ public class SunController : MonoBehaviour
         LightRotation();
         StarLight();
         currentTime += (Time.deltaTime / SecondsOfDay);
+
         if (currentTime >= 1)
         {
             currentTime = 0;                        //자정이 지나면
@@ -48,18 +58,7 @@ public class SunController : MonoBehaviour
             }            
         }
 
-        
-        if(currentTime <= 0.24)
-        {
-            gameObject.GetComponentInChildren<Light>().intensity = Mathf.Lerp(0.1f, 1.0f, currentTime);
-        }
-        else if(currentTime >= 0.76)
-        {
-            gameObject.GetComponentInChildren<Light>().intensity = Mathf.Lerp(1.0f, 0.1f, currentTime);
-        }
-        else
-            gameObject.GetComponentInChildren<Light>().intensity = 1f;
-        
+        LightIntensity();
 
         if (dayCounterMove && currentTime >= 0.3f)      // 아침이 되면 DayCounter 출력
         {
@@ -68,11 +67,7 @@ public class SunController : MonoBehaviour
                 DayCounterUpdate(currentDay);
             }
 
-            dayCounter.day.transform.Translate(Vector3.down * 100f * Time.deltaTime);       
-            float x = dayCounter.day.transform.localPosition.x;
-            float y = Mathf.Clamp(dayCounter.day.transform.localPosition.y, -92.317f, 92.317f);
-            dayCounter.day.transform.localPosition = new Vector3(x, y, 0f);
-            //DayCounter의 날짜를 마스크 범위내에서 천천히 하강시킨다.
+            dayCounter.StartCounter();
 
             if(currentTime >= 0.3f + (5f / SecondsOfDay))       //5초간 출력되도록 한다.
             {
@@ -116,6 +111,20 @@ public class SunController : MonoBehaviour
         {
             mStarMat.color = new Color(1, 1, 1, Mathf.Lerp(0, 1, Time.deltaTime));
         }
+    }
+
+    private void LightIntensity()
+    {
+        if (currentTime <= 0.24)
+        {
+            gameObject.GetComponentInChildren<Light>().intensity = Mathf.Lerp(0.1f, 1.0f, currentTime);
+        }
+        else if (currentTime >= 0.76)
+        {
+            gameObject.GetComponentInChildren<Light>().intensity = Mathf.Lerp(1.0f, 0.1f, currentTime);
+        }
+        else
+            gameObject.GetComponentInChildren<Light>().intensity = 1f;
     }
 
     public void SunControllerSetting()
