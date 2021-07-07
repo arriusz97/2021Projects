@@ -23,10 +23,9 @@ public class KoiCtrl : MonoBehaviour
 
     private KoiSpawnCtrl m_koiSpawnCtrl;
 
-
     private void Start()
     {
-        m_Speed = Random.Range(2f, 8f);
+        m_Speed = Random.Range(2f, 7f);
     }
 
     //init method 만들어서 연결
@@ -41,7 +40,7 @@ public class KoiCtrl : MonoBehaviour
         GetTargetPosition();
 
 
-            if (Random.Range(0, 10) < 1)
+            if (Random.Range(0, 8) < 1)
                 setRotation();
 
         transform.Translate(0, 0, Time.deltaTime * m_Speed);
@@ -56,14 +55,13 @@ public class KoiCtrl : MonoBehaviour
                 Random.Range(-m_Boundary, m_Boundary),
                 Random.Range(-m_Boundary, m_Boundary)
                 );
-
-          //  Debug.Log("Koi targetPosition" + m_targetPosition);
         }
     }
 
     void setRotation()
     {
-        Vector3 direction = m_koiSpawnCtrl.transform.position - transform.position;
+        Vector3 direction = (m_koiSpawnCtrl.transform.position - transform.position);
+
         if (direction != Vector3.zero)
         {
             transform.rotation = Quaternion.Slerp(transform.rotation,

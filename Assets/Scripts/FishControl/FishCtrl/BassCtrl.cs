@@ -39,7 +39,7 @@ public class BassCtrl : MonoBehaviour
         //change target position
         GetTargetPosition();
 
-            if (Random.Range(0, 10) < 1)
+            if (Random.Range(0, 8) < 1)
                 setRotation();
        
         transform.Translate(0, 0, Time.deltaTime * m_Speed);
