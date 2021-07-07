@@ -13,7 +13,7 @@ public class GoldFishCtrl : MonoBehaviour
     //[SerializeField]
     //private float neighbourDistance;
     [SerializeField]
-    private int m_Boundary = 18;
+    private int m_Boundary = 15;
     private bool m_isTurning = false;
 
     public Vector3 m_targetPosition = Vector3.zero;
@@ -26,7 +26,7 @@ public class GoldFishCtrl : MonoBehaviour
 
     private void Start()
     {
-        m_Speed = Random.Range(2f, 8f);
+        m_Speed = Random.Range(1f, 8f);
     }
 
     //init method 만들어서 연결
@@ -40,7 +40,7 @@ public class GoldFishCtrl : MonoBehaviour
         //change target position
         GetTargetPosition();
 
-            if (Random.Range(0, 8) < 1)
+            if (Random.Range(0, 5) < 1)
                 setRotation();
 
         transform.Translate(0, 0, Time.deltaTime * m_Speed);
@@ -48,7 +48,7 @@ public class GoldFishCtrl : MonoBehaviour
 
     void GetTargetPosition()
     {
-        if (Random.Range(1, 80) < 50)
+        if (Random.Range(1, 1000) < 50)
         {
             m_targetPosition = new Vector3(
                 Random.Range(-m_Boundary, m_Boundary),

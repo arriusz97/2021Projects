@@ -166,6 +166,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2349747526004193514}
   - component: {fileID: 2349747525721946528}
+  - component: {fileID: 3747348011703138243}
   m_Layer: 11
   m_Name: Fish Bass_Spawn
   m_TagString: Fish
@@ -201,6 +202,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.8, y: 1, z: 2.5}
   m_Center: {x: 0.13, y: 0, z: -0.09}
+--- !u!114 &3747348011703138243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2349747526004024522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a39af5b59f3e73943baf5cb8c9dc41fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MaxSpeed: 5
+  m_MaxrotationSpeed: 0.7
+  m_Boundary: 15
+  m_targetPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &2349747526004024528
 GameObject:
   m_ObjectHideFlags: 0

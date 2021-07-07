@@ -25,7 +25,7 @@ public class SalmonCtrl : MonoBehaviour
 
     private void Start()
     {
-        m_Speed = Random.Range(2f, 8f);
+        m_Speed = Random.Range(1f, 7f);
     }
 
     //init method 만들어서 연결
@@ -39,7 +39,7 @@ public class SalmonCtrl : MonoBehaviour
         //change target position
         GetTargetPosition();
 
-            if (Random.Range(0, 10) < 1)
+            if (Random.Range(0, 8) < 1)
                 setRotation();
 
         transform.Translate(0, 0, Time.deltaTime * m_Speed);
