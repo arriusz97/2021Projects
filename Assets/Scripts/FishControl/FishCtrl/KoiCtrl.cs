@@ -34,6 +34,12 @@ public class KoiCtrl : MonoBehaviour
         m_koiSpawnCtrl = spawnCtrl;
     }
 
+    //player에게 잡혔을 때 불릴 함수
+    public void DIE()
+    {
+       m_koiSpawnCtrl.Dead();
+    }
+
     private void Update()
     {
         //change target position

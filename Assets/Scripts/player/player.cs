@@ -174,15 +174,15 @@ public class player : MonoBehaviour
                 m_isDiveup = false;
             }
 
-            //줍기 -> Z
-            if (Input.GetKey(KeyCode.Z))
-            {
-                m_Anim.SetBool("PICKUP", true);
-            }
-            else
-            {
-                m_Anim.SetBool("PICKUP", false);
-            }
+            ////줍기 -> Z
+            //if (Input.GetKey(KeyCode.Z))
+            //{
+            //    m_Anim.SetBool("PICKUP", true);
+            //}
+            //else
+            //{
+            //    m_Anim.SetBool("PICKUP", false);
+            //}
 
             //Attack -> mouse left button
             if (Input.GetMouseButtonDown(0))

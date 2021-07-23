@@ -9,12 +9,14 @@ public class SwimTrigger : MonoBehaviour
     [Header("UnderwaterSound")]
     public AudioSource m_Exitwater;
     public AudioSource m_Enterwater;
+    public AudioSource m_Abovewater;
 
 
     private void Awake()
     {
         m_Enterwater.mute = true;
         m_Exitwater.mute = true;
+        m_Abovewater.Play();
     }
 
     //물에 들어간 것
@@ -26,6 +28,7 @@ public class SwimTrigger : MonoBehaviour
             Debug.Log("player exit swimTrigger");
             m_Enterwater.mute = false;
             m_Enterwater.Play();
+            m_Abovewater.Stop();
         }
     }
 
@@ -38,6 +41,7 @@ public class SwimTrigger : MonoBehaviour
             Debug.Log("player enter swimTrigger");
             m_Exitwater.mute = false;
             m_Exitwater.Play();
+            m_Abovewater.Play();
         }
     }
 }
