@@ -27,10 +27,7 @@ public class SunController : MonoBehaviour
     private bool dayCounterMove;
 
     [SerializeField]
-    private DataController dataController;
-
-    [SerializeField]
-    private ActionController actionController;
+    private DataController dataController;   
 
     // Start is called before the first frame update
     void Start()
@@ -84,7 +81,7 @@ public class SunController : MonoBehaviour
         //DayCounter를 활성화하고 현재 날짜를 전달
 
         dataController.Gamedata.currentDay = currentDay;
-        actionController.SaveGame();
+        dataController.SaveGameData();
         //Gamedata에 현재 날짜를 기록하고 저장
     }
 
@@ -131,7 +128,6 @@ public class SunController : MonoBehaviour
     {       
         dayCounterMove = true;
         currentDay = dataController.Gamedata.currentDay;
-        currentTime = 0.29f;
-        actionController.LoadGame();
+        currentTime = 0.29f;      
     }
 }

@@ -227,7 +227,6 @@ public class ActionController : MonoBehaviour
         inventory.Save();
         quickSlot.Save();
         crafting.Save();
-        dataController.SaveGameData();
     }
 
     public void LoadGame()

@@ -9,6 +9,15 @@ public class DataController : MonoBehaviour
     [SerializeField]
     private SunController sunController;
 
+    [SerializeField]
+    private ActionController actionController;
+
+    [SerializeField]
+    private TimerController timerController;
+
+    [SerializeField]
+    private GameObject player;
+
     static GameObject dataContainer;
     static GameObject dContainer
     {
@@ -22,6 +31,7 @@ public class DataController : MonoBehaviour
     private void Awake()
     {
         sunController = FindObjectOfType<SunController>();
+        timerController = FindObjectOfType<TimerController>();
     }
 
     public static DataController Instance
@@ -60,7 +70,10 @@ public class DataController : MonoBehaviour
             Debug.Log("Load");
             string FromJsonData = File.ReadAllText(filePath);
             _gameData = JsonUtility.FromJson<GameData>(FromJsonData);
+
+            playerDataLoad();
             sunController.SunControllerSetting();
+            actionController.LoadGame();
         }
         else
         {
@@ -70,9 +83,30 @@ public class DataController : MonoBehaviour
     }
     public void SaveGameData()  //지정된 파일경로로 현재 씬의 데이터를 저장한다.
     {
+        playerDataSave();
+        actionController.SaveGame();
+
         string ToJsonData = JsonUtility.ToJson(Gamedata);
         string filePath = Application.persistentDataPath + GameDataFileName;
         File.WriteAllText(filePath, ToJsonData);
         Debug.Log("Save");
+    }
+
+    public void playerDataSave()
+    {
+        Gamedata.playerPosition = player.transform.position;
+        Gamedata.playerRotation = player.transform.rotation;
+
+        Gamedata.playerHP = timerController.GetCurrentTime(0);
+        Gamedata.playerTP = timerController.GetCurrentTime(1);
+    }
+
+    public void playerDataLoad()
+    {
+        player.transform.position = Gamedata.playerPosition;
+        player.transform.rotation = Gamedata.playerRotation;
+
+        timerController.SetCurrentTime(0, Gamedata.playerHP);
+        timerController.SetCurrentTime(1, Gamedata.playerTP);
     }
 }

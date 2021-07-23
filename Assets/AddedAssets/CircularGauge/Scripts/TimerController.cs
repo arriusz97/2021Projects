@@ -77,4 +77,14 @@ public class TimerController : MonoBehaviour
     {
         return TimerContainer[timerNum].duration;
     }
+
+    public float GetCurrentTime(int timerNum)
+    {
+        return TimerContainer[timerNum].CurrentTime;
+    }
+
+    public void SetCurrentTime(int timerNUm, float currentTime)
+    {
+        TimerContainer[timerNUm].CurrentTime = currentTime;
+    }
 }
