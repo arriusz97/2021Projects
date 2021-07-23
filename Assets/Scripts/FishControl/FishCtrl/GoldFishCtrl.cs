@@ -35,6 +35,12 @@ public class GoldFishCtrl : MonoBehaviour
         m_goldfishSpawnCtrl = spawnCtrl;
     }
 
+    //player에게 잡혔을 때 불릴 함수
+    public void DIE()
+    {
+        m_goldfishSpawnCtrl.Dead();
+    }
+
     private void Update()
     {
         //change target position

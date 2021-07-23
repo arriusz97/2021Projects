@@ -34,6 +34,12 @@ public class SalmonCtrl : MonoBehaviour
        m_salmonSpawnCtrl  = spawnCtrl;
     }
 
+    //player에게 잡혔을 때 불릴 함수
+    public void DIE()
+    {
+        m_salmonSpawnCtrl.Dead();
+    }
+
     private void Update()
     {
         //change target position
