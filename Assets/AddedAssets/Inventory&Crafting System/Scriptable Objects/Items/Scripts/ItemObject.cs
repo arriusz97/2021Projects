@@ -36,7 +36,7 @@ public class ItemObject : ScriptableObject
     {
         foreach (Ingredient ingredient in RecipeData.ingredients)
         {
-            bool containsCurrentIngredient = Player.inventory.IsItemInInventory(ingredient.item);
+            bool containsCurrentIngredient = Player.inventory.IsItemInInventory(ingredient.item, ingredient.amount);
 
             if (!containsCurrentIngredient)
             {

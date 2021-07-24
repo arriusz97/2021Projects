@@ -56,15 +56,18 @@ public class InventoryObject : ScriptableObject
             }
         }
         return null;
-    }
+    } 
     //인벤토리 내에 해상 아이템이 있는지 검사한다.
-    public bool IsItemInInventory(ItemObject item)
+    public bool IsItemInInventory(ItemObject item, int amount = 1)
     {
         for (int i = 0; i < GetSlots.Length; i++)
         {
             if (GetSlots[i].item.Id == item.data.Id)
             {
-                return true;
+                if(GetSlots[i].amount >= amount)
+                {
+                    return true;
+                }                
             }
         }
         return false;
