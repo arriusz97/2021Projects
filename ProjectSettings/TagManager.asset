@@ -10,6 +10,12 @@ TagManager:
   - Enemy
   - Fish
   - Fire
+  - Amberjack
+  - Bass
+  - Goldfish
+  - Koi
+  - Koi2
+  - Salmon
   layers:
   - Default
   - TransparentFX

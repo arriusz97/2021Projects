@@ -12,8 +12,10 @@ public class underWater : MonoBehaviour
     public GameObject m_GlobalVolume;
     public GameObject m_bubble;
 
-    [Header("Above water Sound")]
-    public AudioSource m_Abovewater;
+    //[Header("Water Sound")]
+    //public AudioSource m_Abovewater;
+    ////public AudioSource m_Insidewater;
+    //public bool m_underwater;
 
 
     // Start is called before the first frame update
@@ -22,7 +24,7 @@ public class underWater : MonoBehaviour
         RenderSettings.fog = false; //close fog
         m_GlobalVolume.SetActive(false);
         m_bubble.SetActive(false);
-       // m_Abovewater.mute = true;
+       // m_Abovewater.Play();
     }
 
     // Update is called once per frame
@@ -37,7 +39,7 @@ public class underWater : MonoBehaviour
             m_GlobalVolume.SetActive(true);
             m_bubble.SetActive(true);
 
-            m_Abovewater.Stop();
+          //  m_Abovewater.Stop();
         }
         else
         {
@@ -45,9 +47,8 @@ public class underWater : MonoBehaviour
             m_GlobalVolume.SetActive(false);
             m_bubble.SetActive(false);
 
-            //m_Abovewater.mute = false;
-            m_Abovewater.Play();
         }
 
     }
+
 }

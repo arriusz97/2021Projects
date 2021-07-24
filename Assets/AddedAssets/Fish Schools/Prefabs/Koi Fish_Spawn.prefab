@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3066066770371530277}
   m_Layer: 11
   m_Name: Koi Fish_Spawn
-  m_TagString: Fish
+  m_TagString: Koi
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -41,7 +41,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2252289795500882723}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.15, y: 0.2, z: 0.4}
@@ -61,7 +61,6 @@ MonoBehaviour:
   m_MaxSpeed: 10
   m_MaxrotationSpeed: 0.7
   m_Boundary: 5
-  m_fishAreaCtrl: {fileID: 0}
   m_targetPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &2252289795500882725
 GameObject:

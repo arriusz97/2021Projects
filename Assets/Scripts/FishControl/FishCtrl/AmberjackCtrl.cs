@@ -36,6 +36,12 @@ public class AmberjackCtrl : MonoBehaviour
         m_Amberjack_spawnCtrl = spawnCtrl;
     }
 
+    //player에게 잡혔을 때 불릴 함수
+    public void DIE()
+    {
+        m_Amberjack_spawnCtrl.Dead();
+    }
+
     private void Update()
     {
         //change target position
