@@ -26,7 +26,7 @@ public class GoldFishCtrl : MonoBehaviour
 
     private void Start()
     {
-        m_Speed = Random.Range(1f, 8f);
+        m_Speed = Random.Range(2f, 8f);
     }
 
     //init method 만들어서 연결

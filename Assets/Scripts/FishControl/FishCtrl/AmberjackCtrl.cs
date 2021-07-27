@@ -27,7 +27,7 @@ public class AmberjackCtrl : MonoBehaviour
 
     private void Start()
     {
-        m_Speed = Random.Range(1f, 5f);
+        m_Speed = Random.Range(1.5f, 5f);
     }
 
     //init method 만들어서 연결
