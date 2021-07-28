@@ -288,15 +288,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2808518114794328977}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0.11555352, y: 2.8189255e-19, z: 0.4234282}
+  m_LocalRotation: {x: 0.051099423, y: 0.72103137, z: -0.022905586, w: 0.6906359}
+  m_LocalPosition: {x: 0.15695906, y: -0.025463104, z: 0.42877197}
   m_LocalScale: {x: 0.9999999, y: 1, z: 1}
   m_Children:
   - {fileID: 2808518114794753961}
   - {fileID: 2808518114794753975}
   m_Father: {fileID: 2808518114794753957}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 5.9470005, y: 92.593, z: 2.423}
 --- !u!137 &2808518114789056133
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -531,6 +531,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Fish_Bubble
+      objectReference: {fileID: 0}
+    - target: {fileID: 5331771260959804193, guid: 2f6e19d1eb3e9d94284034df9ac0afa0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5331771260959804194, guid: 2f6e19d1eb3e9d94284034df9ac0afa0,
         type: 3}
