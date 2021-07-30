@@ -218,6 +218,8 @@ MonoBehaviour:
   m_MaxrotationSpeed: 0.7
   m_Boundary: 15
   m_targetPosition: {x: 0, y: 0, z: 0}
+  inventory: {fileID: 11400000, guid: ba391aef18194db419840aa8245becc2, type: 2}
+  bassItem: {fileID: 11400000, guid: 639db6688f5e24347a65b84a8e6bb170, type: 2}
 --- !u!1 &2349747526004024528
 GameObject:
   m_ObjectHideFlags: 0

@@ -22,6 +22,11 @@ public class SalmonCtrl : MonoBehaviour
 
     private SalmonSpawnCtrl m_salmonSpawnCtrl;
 
+    [SerializeField]
+    private InventoryObject inventory;
+
+    [SerializeField]
+    private ItemObject salmonItem;
 
     private void Start()
     {
@@ -38,6 +43,7 @@ public class SalmonCtrl : MonoBehaviour
     public void DIE()
     {
         m_salmonSpawnCtrl.Dead();
+        inventory.AddItem(salmonItem.data, 1);
     }
 
     private void Update()

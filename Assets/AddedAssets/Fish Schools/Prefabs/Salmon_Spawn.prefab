@@ -482,6 +482,8 @@ MonoBehaviour:
   m_MaxrotationSpeed: 0.5
   m_Boundary: 8
   m_targetPosition: {x: 0, y: 0, z: 0}
+  inventory: {fileID: 11400000, guid: ba391aef18194db419840aa8245becc2, type: 2}
+  salmonItem: {fileID: 11400000, guid: dc7f2aa41d23b9d489e087fe97a78c34, type: 2}
 --- !u!1001 &6019719519017991591
 PrefabInstance:
   m_ObjectHideFlags: 0

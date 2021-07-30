@@ -23,6 +23,12 @@ public class GoldFishCtrl : MonoBehaviour
 
     private GoldFishSpawnCtrl m_goldfishSpawnCtrl;
 
+    [SerializeField]
+    private InventoryObject inventory;
+
+    [SerializeField]
+    private ItemObject goldfishItem;
+
 
     private void Start()
     {
@@ -39,6 +45,7 @@ public class GoldFishCtrl : MonoBehaviour
     public void DIE()
     {
         m_goldfishSpawnCtrl.Dead();
+        inventory.AddItem(goldfishItem.data, 1);
     }
 
     private void Update()

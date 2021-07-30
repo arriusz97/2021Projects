@@ -23,6 +23,12 @@ public class BassCtrl : MonoBehaviour
 
     private BassSpawnCtrl m_bassSpawnCtrl;
 
+    [SerializeField]
+    private InventoryObject inventory;
+
+    [SerializeField]
+    private ItemObject bassItem;
+
     private void Start()
     {
         m_Speed = Random.Range(1f, 5f);
@@ -37,7 +43,8 @@ public class BassCtrl : MonoBehaviour
     //player에게 잡혔을 때 불릴 함수
     public void DIE()
     {
-       m_bassSpawnCtrl.Dead();
+        m_bassSpawnCtrl.Dead();
+        inventory.AddItem(bassItem.data, 1);
     }
 
     private void Update()

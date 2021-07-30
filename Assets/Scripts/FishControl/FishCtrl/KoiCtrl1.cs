@@ -23,6 +23,11 @@ public class KoiCtrl1 : MonoBehaviour
 
     private KoiSpawnCtrl1 m_koiSpawnCtrl1;
 
+    [SerializeField]
+    private InventoryObject inventory;
+
+    [SerializeField]
+    private ItemObject koiItem;
 
     private void Start()
     {
@@ -39,6 +44,7 @@ public class KoiCtrl1 : MonoBehaviour
     public void DIE()
     {
         m_koiSpawnCtrl1.Dead();
+        inventory.AddItem(koiItem.data, 1);
     }
 
     private void Update()

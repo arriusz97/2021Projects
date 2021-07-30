@@ -23,7 +23,12 @@ public class AmberjackCtrl : MonoBehaviour
     Vector3 averagePosition;
 
     private AmberjackSpawnCtrl m_Amberjack_spawnCtrl;
-   
+
+    [SerializeField]
+    private InventoryObject inventory;
+
+    [SerializeField]
+    private ItemObject AmberjackItem;
 
     private void Start()
     {
@@ -40,6 +45,7 @@ public class AmberjackCtrl : MonoBehaviour
     public void DIE()
     {
         m_Amberjack_spawnCtrl.Dead();
+        inventory.AddItem(AmberjackItem.data, 1);
     }
 
     private void Update()

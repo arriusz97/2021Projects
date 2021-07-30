@@ -23,6 +23,12 @@ public class KoiCtrl : MonoBehaviour
 
     private KoiSpawnCtrl m_koiSpawnCtrl;
 
+    [SerializeField]
+    private InventoryObject inventory;
+
+    [SerializeField]
+    private ItemObject koiItem;
+
     private void Start()
     {
         m_Speed = Random.Range(2f, 7f);
@@ -38,6 +44,7 @@ public class KoiCtrl : MonoBehaviour
     public void DIE()
     {
        m_koiSpawnCtrl.Dead();
+        inventory.AddItem(koiItem.data, 1);
     }
 
     private void Update()
