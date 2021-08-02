@@ -30,7 +30,7 @@ public class SalmonCtrl : MonoBehaviour
 
     private void Start()
     {
-        m_Speed = Random.Range(1f, 7f);
+        m_Speed = Random.Range(2f, 7f);
     }
 
     //init method 만들어서 연결

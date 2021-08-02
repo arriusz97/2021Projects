@@ -31,7 +31,7 @@ public class KoiCtrl1 : MonoBehaviour
 
     private void Start()
     {
-        m_Speed = Random.Range(2f, 7f);
+        m_Speed = Random.Range(3f, 7f);
     }
 
     //init method 만들어서 연결

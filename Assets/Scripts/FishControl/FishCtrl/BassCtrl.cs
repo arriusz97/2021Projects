@@ -31,7 +31,7 @@ public class BassCtrl : MonoBehaviour
 
     private void Start()
     {
-        m_Speed = Random.Range(1f, 5f);
+        m_Speed = Random.Range(2f, 5.5f);
     }
 
     //init method 만들어서 연결
