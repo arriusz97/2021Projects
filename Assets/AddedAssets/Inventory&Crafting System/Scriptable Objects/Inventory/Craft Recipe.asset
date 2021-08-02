@@ -24,10 +24,3 @@ MonoBehaviour:
         buffs: []
         itemType: 1
       amount: 1
-    - AllowedItems: 
-      item:
-        Name: 
-        Id: -1
-        buffs: []
-        itemType: 0
-      amount: 0
