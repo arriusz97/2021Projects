@@ -13,9 +13,5 @@ public class terrainSetting : MonoBehaviour
         m_terrain.treeDistance = distance;    
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+ 
 }
