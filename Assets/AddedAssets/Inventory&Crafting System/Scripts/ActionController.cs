@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public enum InforType{ Item, Tree, }
+public enum InforType{ Item, Tree, ItemBox}
 
 public class ActionController : MonoBehaviour
 {
@@ -110,9 +110,17 @@ public class ActionController : MonoBehaviour
             {
                 ItemInfoAppear(InforType.Item);
             }
-            else if (hitInfo.transform.tag == "Tree")
+            else if (hitInfo.transform.tag == "Interaction")
             {
-                ItemInfoAppear(InforType.Tree);
+                if(hitInfo.transform.GetComponent<InteractionObject>().InteractionType == eInteractionType.Tree)
+                {
+                    ItemInfoAppear(InforType.Tree);
+                }
+                else if (hitInfo.transform.GetComponent<InteractionObject>().InteractionType == eInteractionType.ItemBox)
+                {
+                    ItemInfoAppear(InforType.ItemBox);
+                }
+                
             }
         }
         else
@@ -130,6 +138,10 @@ public class ActionController : MonoBehaviour
         else if(type == InforType.Tree)
         {
             actionText.text = "Press " + "<color=yellow>" + "(F)" + "</color>" + " to logging " ;
+        }
+        else if(type == InforType.ItemBox)
+        {
+            actionText.text = "Press " + "<color=yellow>" + "(F)" + "</color>" + " to Root ";
         }
         
     }
@@ -156,11 +168,22 @@ public class ActionController : MonoBehaviour
                     ItemInfoDisappear();
                 }
             }
-            else if (hitInfo.transform.tag == "Tree")       //태그가 나무일 경우 일정시간 후 파괴한다.
+            else if (hitInfo.transform.tag == "Interaction")       //태그가 나무일 경우 일정시간 후 파괴한다.
             {
-                CoconutTree coconutTree = hitInfo.transform.GetComponent<CoconutTree>();
-                timer.ActionClockOn(treeLoggingTime);
-                coconutTree.TreeFall(treeLoggingTime);
+                InteractionObject interactionObject = hitInfo.transform.GetComponent<InteractionObject>();
+                if (interactionObject.InteractionType == eInteractionType.Tree)
+                {
+                    CoconutTree coconutTree = hitInfo.transform.GetComponent<CoconutTree>();
+                    coconutTree.ActionClockOn(treeLoggingTime);
+                    coconutTree.TreeFall(treeLoggingTime);
+                    ItemInfoDisappear();
+                }
+                else if (interactionObject.InteractionType == eInteractionType.ItemBox)
+                {
+                    interactionObject.ActionClockOn(3);
+                    interactionObject.ItemRoot(inventory);
+                    ItemInfoDisappear();
+                }
             }
         }
     }

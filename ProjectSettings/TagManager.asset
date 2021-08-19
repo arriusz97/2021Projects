@@ -6,7 +6,6 @@ TagManager:
   tags:
   - Ground
   - Item
-  - Tree
   - Enemy
   - Fish
   - Fire
@@ -16,6 +15,7 @@ TagManager:
   - Koi
   - Koi2
   - Salmon
+  - Interaction
   layers:
   - Default
   - TransparentFX

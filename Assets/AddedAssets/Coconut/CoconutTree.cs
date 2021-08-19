@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CoconutTree : MonoBehaviour
+public class CoconutTree : InteractionObject
 {
     [SerializeField]
     private GameObject CoconutPrefabs;
