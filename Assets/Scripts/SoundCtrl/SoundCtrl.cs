@@ -13,6 +13,7 @@ public class SoundCtrl : MonoBehaviour
     public AudioSource m_Terrain7_Bgm;
     public AudioSource m_Island_Bgm;
 
+    //boolean 변수 받아오기 위한 ctrl
     [Header("Terrain Sound Ctrl")]
     public Terrain1_SoundCtrl t1_soundCtrl;
     public Terrain2_SoundCtrl t2_soundCtrl;
@@ -28,13 +29,6 @@ public class SoundCtrl : MonoBehaviour
         m_Island_Bgm.Play();
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
     void Update()
     {
         //terrain1로 들어갔으면 terrain1 bgm 틀기
@@ -167,23 +161,9 @@ public class SoundCtrl : MonoBehaviour
         }
     }
 
-    //public static IEnumerator FadeOut(AudioSource audioSource, float FadeTime)
-    //{
-    //    float startVolume = audioSource.volume;
-
-    //    while (audioSource.volume > 0)
-    //    {
-    //        audioSource.volume -= startVolume * Time.deltaTime / FadeTime;
-
-    //        yield return null;
-    //    }
-
-    //    audioSource.Stop();
-    //    audioSource.volume = startVolume;
-
     public void fadeout(AudioSource audioSource, float FadeTime)
     {
-        audioSource.volume -= 0.3f * Time.deltaTime / FadeTime;
+        audioSource.volume -= 0.5f * Time.deltaTime / FadeTime;
+        Debug.Log("fade out " + audioSource + audioSource.volume);
     }
- //fade out 수정
 }
