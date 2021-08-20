@@ -24,6 +24,13 @@ public class SoundCtrl : MonoBehaviour
     public Terrain8_SoundCtrl t8_soundCtrl;
     public SwimTrigger m_swimTrigger;
 
+    [Header("Effect Sound")]
+    public AudioSource m_walk_Sand;
+    public AudioSource m_run_Sand;
+
+    [Header("player script")]
+    public player m_playerCtrl;
+
     private void Awake()
     {
         m_Island_Bgm.Play();
@@ -159,11 +166,43 @@ public class SoundCtrl : MonoBehaviour
             }
             m_Island_Bgm.Stop();
         }
+
+        //물 속에 있지 않고 player가 walk하고 있다면
+        if(!m_swimTrigger.m_isWater && m_playerCtrl.isMove)
+        {
+            //playing하고 있지 않다면
+            if (!m_walk_Sand.isPlaying)
+            {
+                m_walk_Sand.Play();
+                Debug.Log("walk sound play");
+            }
+
+            //player가 뛰고 있다면
+            if (m_playerCtrl.m_isRun)
+            {
+                m_walk_Sand.Stop();
+
+                if (!m_run_Sand.isPlaying)
+                {
+                    m_run_Sand.Play();
+                    Debug.Log("Run sound Play");
+                }
+            }
+            else
+            {
+                m_run_Sand.Stop();
+                Debug.Log("run sound stop");
+            }
+        }
+        else
+        {
+            m_walk_Sand.Stop();
+            Debug.Log("walk sound stop");
+        }
     }
 
     public void fadeout(AudioSource audioSource, float FadeTime)
     {
         audioSource.volume -= 0.5f * Time.deltaTime / FadeTime;
-        Debug.Log("fade out " + audioSource + audioSource.volume);
     }
 }

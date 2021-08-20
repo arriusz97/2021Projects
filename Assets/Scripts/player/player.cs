@@ -14,8 +14,9 @@ public class player : MonoBehaviour
     public SwimTrigger m_SwimTrigger;
     public bool m_isDead = false;
     private int m_JumpCount = 0;
-    private bool m_isRun;
+    public bool m_isRun;
     public bool m_isAttack = false;
+    public bool isMove = false;
 
     Rigidbody m_rigidbody;
     CapsuleCollider m_collider;
@@ -174,16 +175,6 @@ public class player : MonoBehaviour
                 m_isDiveup = false;
             }
 
-            ////줍기 -> Z
-            //if (Input.GetKey(KeyCode.Z))
-            //{
-            //    m_Anim.SetBool("PICKUP", true);
-            //}
-            //else
-            //{
-            //    m_Anim.SetBool("PICKUP", false);
-            //}
-
             //Attack -> mouse left button
             if (Input.GetMouseButtonDown(0))
             {
@@ -301,7 +292,6 @@ public class player : MonoBehaviour
         Vector3 moveVertical = transform.forward * -moveDirZ;
         Vector3 m_velocity = (moveHorizontal - moveVertical) * m_speed;
 
-        bool isMove = false;
         m_Anim.SetBool("SWIM", false);
 
         if (!m_rigidbody.useGravity)
