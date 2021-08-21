@@ -24,3 +24,38 @@ MonoBehaviour:
         buffs: []
         itemType: 3
       amount: 3
+    - AllowedItems: 
+      item:
+        Name: Coconut
+        Id: 4
+        buffs: []
+        itemType: 3
+      amount: 3
+    - AllowedItems: 
+      item:
+        Name: Coconut
+        Id: 5
+        buffs: []
+        itemType: 3
+      amount: 3
+    - AllowedItems: 
+      item:
+        Name: Coconut
+        Id: 6
+        buffs: []
+        itemType: 3
+      amount: 3
+    - AllowedItems: 
+      item:
+        Name: Coconut
+        Id: 7
+        buffs: []
+        itemType: 3
+      amount: 3
+    - AllowedItems: 
+      item:
+        Name: Coconut
+        Id: 8
+        buffs: []
+        itemType: 3
+      amount: 3

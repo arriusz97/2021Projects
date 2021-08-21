@@ -24,3 +24,38 @@ MonoBehaviour:
         buffs: []
         itemType: 1
       amount: 1
+    - AllowedItems: 
+      item:
+        Name: 
+        Id: 14
+        buffs: []
+        itemType: 1
+      amount: 1
+    - AllowedItems: 
+      item:
+        Name: 
+        Id: 15
+        buffs: []
+        itemType: 1
+      amount: 1
+    - AllowedItems: 
+      item:
+        Name: 
+        Id: 16
+        buffs: []
+        itemType: 1
+      amount: 1
+    - AllowedItems: 
+      item:
+        Name: 
+        Id: 17
+        buffs: []
+        itemType: 1
+      amount: 1
+    - AllowedItems: 
+      item:
+        Name: 
+        Id: 18
+        buffs: []
+        itemType: 1
+      amount: 1
