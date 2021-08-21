@@ -5,8 +5,11 @@ using UnityEngine;
 public class SunController : MonoBehaviour
 {
     [SerializeField]
-    private float SecondsOfDay = 60f, currentTime = 0.3f;
-    //하루의 길이(초), 현재 시간(0일때 자정, 0.25에서 일출, 0.75에서 일몰)
+    private float SecondsOfDay = 60f;
+    //하루의 길이(초), 
+
+    [SerializeField]
+    public float currentTime = 0.3f; // 현재 시간(0일때 자정, 0.25에서 일출, 0.75에서 일몰)
 
     public int currentDay = 0; //현재 날짜
 
