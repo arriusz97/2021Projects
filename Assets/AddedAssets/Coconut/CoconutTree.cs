@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CoconutTree : MonoBehaviour
+public class CoconutTree : InteractionObject
 {
     [SerializeField]
-    private GameObject CoconutPrefabs;
+    private GameObject CoconutPrefabs, LogPrefabs;
 
     private AudioSource treeFalldown;
 
@@ -30,7 +30,8 @@ public class CoconutTree : MonoBehaviour
         Instantiate(CoconutPrefabs, gameObject.transform.position + (gameObject.transform.up * 8f), Quaternion.LookRotation(gameObject.transform.up));
         Instantiate(CoconutPrefabs, gameObject.transform.position + (gameObject.transform.up * 9f), Quaternion.LookRotation(gameObject.transform.up));
         Instantiate(CoconutPrefabs, gameObject.transform.position + (gameObject.transform.up * 10f), Quaternion.LookRotation(gameObject.transform.up));
-        //코코넛 아이템을 생성한 후
+        Instantiate(LogPrefabs, gameObject.transform.position + (gameObject.transform.up * 5f), Quaternion.LookRotation(gameObject.transform.up));
+        //아이템을 생성한 후
         Destroy(gameObject, 4);
         //4초 후 파괴한다.
     }
