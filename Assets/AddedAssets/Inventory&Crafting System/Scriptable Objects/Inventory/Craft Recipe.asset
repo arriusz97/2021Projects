@@ -19,8 +19,43 @@ MonoBehaviour:
     Slots:
     - AllowedItems: 
       item:
-        Name: Wood Plank Recipe
+        Name: 
         Id: 3
+        buffs: []
+        itemType: 1
+      amount: 3
+    - AllowedItems: 
+      item:
+        Name: 
+        Id: 9
+        buffs: []
+        itemType: 1
+      amount: 1
+    - AllowedItems: 
+      item:
+        Name: 
+        Id: 10
+        buffs: []
+        itemType: 1
+      amount: 1
+    - AllowedItems: 
+      item:
+        Name: 
+        Id: 11
+        buffs: []
+        itemType: 1
+      amount: 1
+    - AllowedItems: 
+      item:
+        Name: 
+        Id: 12
+        buffs: []
+        itemType: 1
+      amount: 1
+    - AllowedItems: 
+      item:
+        Name: 
+        Id: 13
         buffs: []
         itemType: 1
       amount: 1
