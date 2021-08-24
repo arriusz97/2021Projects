@@ -28,6 +28,9 @@ public class SunController : MonoBehaviour
 
     private bool dayCounterMove;
 
+    //island bgm 밤, 낮 바꿔줄 bool 변수
+    public bool m_night = false;
+
     [SerializeField]
     private DataController dataController;   
 
@@ -59,8 +62,18 @@ public class SunController : MonoBehaviour
 
         LightIntensity();
 
+        if(currentTime >= 0.75f || currentTime <= 0.25f)
+        {
+            m_night = true;
+        }
+        else
+        {
+            m_night = false;
+        }
+
         if (dayCounterMove && currentTime >= 0.3f)      // 아침이 되면 DayCounter 출력
         {
+
             if (!dayCounter.isActiveAndEnabled)
             {
                 DayCounterUpdate(currentDay);

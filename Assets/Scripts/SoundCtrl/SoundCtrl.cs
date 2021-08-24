@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SoundCtrl : MonoBehaviour
 {
-    //BGM Ctrl
+    //BGM 
     public AudioSource m_Terrain1_Bgm;
     public AudioSource m_Terrain2_Bgm;
     public AudioSource m_Terrain3_8_Bgm;
@@ -12,6 +12,7 @@ public class SoundCtrl : MonoBehaviour
     public AudioSource m_Terrain5_6_Bgm;
     public AudioSource m_Terrain7_Bgm;
     public AudioSource m_Island_Bgm;
+    public AudioSource m_Island_night_Bgm;
 
     //boolean 변수 받아오기 위한 ctrl
     [Header("Terrain Sound Ctrl")]
@@ -23,6 +24,7 @@ public class SoundCtrl : MonoBehaviour
     public Terrain7_SoundCtrl t7_soundCtrl;
     public Terrain8_SoundCtrl t8_soundCtrl;
     public SwimTrigger m_swimTrigger;
+    public SunController m_sunCtrl;
 
     [Header("Effect Sound")]
     public AudioSource m_walk_Sand;
@@ -149,13 +151,56 @@ public class SoundCtrl : MonoBehaviour
             m_Terrain7_Bgm.Stop();
         }
 
+        ////물 속에 있지 않다면 && 밤이 아니라면
+        //if (!m_swimTrigger.m_isWater && !m_sunCtrl.m_night)
+        //{
+        //    m_Island_Bgm.volume = 0.3f;
+        //    if (!m_Island_Bgm.isPlaying)
+        //    {
+        //        m_Island_Bgm.Play();
+        //    }
+        //}
+        ////물 속에 있지 않고 && 밤이라면
+        //else if (!m_swimTrigger.m_isWater && m_sunCtrl.m_night)
+        //{
+        //    m_Island_night_Bgm.volume = 0.3f;
+        //    if (!m_Island_night_Bgm.isPlaying)
+        //    {
+        //        m_Island_night_Bgm.Play();
+        //    }
+        //}
+        //else
+        //{
+        //    if (m_Island_Bgm.volume > 0)
+        //    {
+        //        fadeout(m_Island_Bgm, 0.5f);
+        //    }
+        //    m_Island_Bgm.Stop();
+        //}
+
         //물 속에 있지 않다면
         if (!m_swimTrigger.m_isWater)
         {
-            m_Island_Bgm.volume = 0.3f;
-            if (!m_Island_Bgm.isPlaying)
+            //밤이 아니라면
+            if (!m_sunCtrl.m_night)
             {
-                m_Island_Bgm.Play();
+                m_Island_night_Bgm.Stop();
+
+                m_Island_Bgm.volume = 0.3f;
+                if (!m_Island_Bgm.isPlaying)
+                {
+                    m_Island_Bgm.Play();
+                }
+            }
+            else //밤이라면
+            {
+                m_Island_Bgm.Stop();
+
+                m_Island_night_Bgm.volume = 0.3f;
+                if (!m_Island_night_Bgm.isPlaying)
+                {
+                    m_Island_night_Bgm.Play();
+                }
             }
         }
         else
@@ -165,10 +210,16 @@ public class SoundCtrl : MonoBehaviour
                 fadeout(m_Island_Bgm, 0.5f);
             }
             m_Island_Bgm.Stop();
+
+            if(m_Island_night_Bgm.volume > 0)
+            {
+                fadeout(m_Island_night_Bgm, 0.5f);
+            }
+            m_Island_night_Bgm.Stop();
         }
 
         //물 속에 있지 않고 player가 walk하고 있다면
-        if(!m_swimTrigger.m_isWater && m_playerCtrl.isMove)
+        if (!m_swimTrigger.m_isWater && m_playerCtrl.isMove)
         {
             //playing하고 있지 않다면
             if (!m_walk_Sand.isPlaying)
