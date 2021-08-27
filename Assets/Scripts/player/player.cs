@@ -54,6 +54,7 @@ public class player : MonoBehaviour
     [SerializeField]
     private GameObject m_playerBloodUI;
 
+    [SerializeField]
     private TimerController mTimer;
 
     // Start is called before the first frame update
@@ -62,8 +63,7 @@ public class player : MonoBehaviour
         m_rigidbody = GetComponent<Rigidbody>();
         m_collider = GetComponent<CapsuleCollider>();
         m_Anim = GetComponent<Animator>();
-
-        mTimer = GameObject.Find("Canvas").GetComponent<TimerController>();
+        
         m_currentHP = m_maxHP;
         
     }

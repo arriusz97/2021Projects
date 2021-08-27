@@ -22,12 +22,13 @@ public class Slot : MonoBehaviour, IPointerClickHandler
     public void OnPointerClick(PointerEventData eventData)      //PointerEventData를 이용하기 위해 프리팹에 직접 붙여준다.
     {
         InventorySlot mouseHoverSlotData = MouseData.interfaceMouseIsOver.slotsOnInterface[MouseData.slotHoveredOver];
-        _theItemEffectDatabase.UseItem(mouseHoverSlotData.item);
+        
 
         if (eventData.button == PointerEventData.InputButton.Right && MouseData.slotHoveredOver != null)    //우클릭
         {
             if (mouseHoverSlotData.item.itemType == ItemType.Food)      //아이템이 음식이라면 수치를 1 감소시킨다.
             {
+                _theItemEffectDatabase.UseItem(mouseHoverSlotData.item);
                 _inventory.AddItem(mouseHoverSlotData.item, -1);
             }
         }
@@ -35,6 +36,7 @@ public class Slot : MonoBehaviour, IPointerClickHandler
         {
             if (mouseHoverSlotData.item.itemType == ItemType.Recipe)    //레시피라면 제작한다.
             {
+                _theItemEffectDatabase.UseItem(mouseHoverSlotData.item);
                 ItemObject io = mouseHoverSlotData.GetItemObject();
                 io.Crafting();
             }

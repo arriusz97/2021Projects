@@ -34,7 +34,7 @@ public class TimerController : MonoBehaviour
 
     private void Start()
     {
-        StopTimer(0);
+        StartTimer(0);
         StartTimer(1);
         StopTimer(2);
         TimerContainer[2].Activated(false);        
@@ -64,6 +64,7 @@ public class TimerController : MonoBehaviour
             StopTimer(3);
             TimerContainer[3].Activated(false);
         }
+        UpdateTimer(0, Time.deltaTime);
     }
 
     public void ActionClockOn(int _duration)

@@ -19,8 +19,8 @@ MonoBehaviour:
     Slots:
     - AllowedItems: 
       item:
-        Name: 
-        Id: -1
+        Name: Coconut
+        Id: 0
         buffs: []
-        itemType: 0
-      amount: 0
+        itemType: 3
+      amount: 3
