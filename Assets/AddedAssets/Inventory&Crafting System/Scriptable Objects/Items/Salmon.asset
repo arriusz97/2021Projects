@@ -15,7 +15,7 @@ MonoBehaviour:
   uiDisplay: {fileID: 21300000, guid: 6a85d2369931e2545a4cbec2c36fc0ed, type: 3}
   stackable: 0
   type: 3
-  description: 
+  description: Salmon
   data:
     Name: Salmon
     Id: 8

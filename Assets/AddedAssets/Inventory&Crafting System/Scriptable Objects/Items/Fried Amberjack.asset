@@ -15,7 +15,7 @@ MonoBehaviour:
   uiDisplay: {fileID: 21300000, guid: 8843cabec2a27a04394682d423b47372, type: 3}
   stackable: 1
   type: 3
-  description: 
+  description: Fried Amberjack
   data:
     Name: Fried Amberjack
     Id: 14

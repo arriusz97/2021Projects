@@ -15,13 +15,15 @@ MonoBehaviour:
   uiDisplay: {fileID: 21300000, guid: 8843cabec2a27a04394682d423b47372, type: 3}
   stackable: 0
   type: 1
-  description: 
+  description: Recipe Fried Amberjack
   data:
     Name: Recipe Fried Amberjack
     Id: 9
     buffs: []
     itemType: 1
   RecipeData:
-    result: {fileID: 0}
+    result: {fileID: 11400000, guid: 0f53ec453e5366a44965f3b7aae1d3eb, type: 2}
     resultamount: 1
-    ingredients: []
+    ingredients:
+    - item: {fileID: 11400000, guid: 696028862bc187843980679f580fb0a2, type: 2}
+      amount: 1

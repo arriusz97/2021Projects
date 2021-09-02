@@ -3,4 +3,5 @@
     Default,
     Tree,
     ItemBox,
+    Campfire
 }

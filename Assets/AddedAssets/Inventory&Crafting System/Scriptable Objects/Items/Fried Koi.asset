@@ -15,7 +15,7 @@ MonoBehaviour:
   uiDisplay: {fileID: 21300000, guid: d2764a933c0350144a69efd84a549793, type: 3}
   stackable: 1
   type: 3
-  description: 
+  description: Fried Koi
   data:
     Name: Fried Koi
     Id: 17

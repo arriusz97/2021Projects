@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public enum InforType{ Item, Tree, ItemBox}
+public enum InforType{ Item, Tree, ItemBox, Campfire}
 
 public class ActionController : MonoBehaviour
 {
@@ -21,10 +21,10 @@ public class ActionController : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI actionText;
 
-    public InventoryObject inventory, quickSlot, crafting;
+    public InventoryObject inventory, quickSlot, crafting, campfire;
 
     [SerializeField]
-    private GameObject inventoryScreen, craftingScreen;
+    private GameObject inventoryScreen, craftingScreen, campfireScreen;
 
     [SerializeField]
     private TimerController timer;
@@ -32,7 +32,7 @@ public class ActionController : MonoBehaviour
     [SerializeField]
     private int treeLoggingTime = 3;
 
-    private bool inventoryOpen = false;
+    private bool inventoryOpen = false, campfireOpen = false;
     private bool CraftingOpen = false;
 
     [SerializeField]
@@ -52,6 +52,7 @@ public class ActionController : MonoBehaviour
         CloseInventory();
         crafting.Load();
         CloseCrafting();
+        CloseCampfire();
 
         actionText = GameObject.Find("GUI").transform.Find("UI").transform.Find("CursorOnItemText").transform.Find("ActionText").GetComponent<TextMeshProUGUI>();        
         pasueMenu = GameObject.Find("GUI").transform.Find("UI").transform.Find("PauseMenu").GetComponent<PasueMenu>();
@@ -89,7 +90,12 @@ public class ActionController : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.Escape))
         {
-            pasueMenu.Escape();
+            if (campfireOpen)
+            {
+                CloseCampfire();
+            }
+            else
+                pasueMenu.Escape();
         }
     }
     //단축키 F를 입력받으면 아이템을 주울 수 있는지 판단하고 가능하면 줍는다.
@@ -120,7 +126,14 @@ public class ActionController : MonoBehaviour
                 {
                     ItemInfoAppear(InforType.ItemBox);
                 }
-                
+                else if (hitInfo.transform.GetComponent<InteractionObject>().InteractionType == eInteractionType.Campfire)
+                {
+                    if (campfireOpen)
+                    {
+                        ItemInfoDisappear();
+                    }
+                    ItemInfoAppear(InforType.Campfire);
+                }
             }
         }
         else
@@ -142,6 +155,10 @@ public class ActionController : MonoBehaviour
         else if(type == InforType.ItemBox)
         {
             actionText.text = "Press " + "<color=yellow>" + "(F)" + "</color>" + " to Root ";
+        }
+        else if(type == InforType.Campfire)
+        {
+            actionText.text = "Press " + "<color=yellow>" + "(F)" + "</color>" + " to Cook ";
         }
         
     }
@@ -184,6 +201,10 @@ public class ActionController : MonoBehaviour
                     interactionObject.ItemRoot(inventory);
                     ItemInfoDisappear();
                 }
+                else if (interactionObject.InteractionType == eInteractionType.Campfire)
+                {
+                    OpenCamfire();
+                }
             }
         }
     }
@@ -218,9 +239,23 @@ public class ActionController : MonoBehaviour
         PlayLock();
     }
 
+    public void OpenCamfire()
+    {
+        campfireOpen = true;
+        campfireScreen.SetActive(true);
+        PlayLock();
+    }
+
+    public void CloseCampfire()
+    {
+        campfireOpen = false;
+        campfireScreen.SetActive(false);
+        PlayLock();
+    }
+
     private void PlayLock()
     {
-        if (CraftingOpen == false && inventoryOpen == false)
+        if (CraftingOpen == false && inventoryOpen == false && campfireOpen == false)
         {
             playerLock = false;
         }
@@ -250,6 +285,7 @@ public class ActionController : MonoBehaviour
         inventory.Save();
         quickSlot.Save();
         crafting.Save();
+        campfire.Save();
     }
 
     public void LoadGame()
@@ -257,5 +293,6 @@ public class ActionController : MonoBehaviour
         inventory.Load();
         quickSlot.Load();
         crafting.Load();
+        campfire.Load();
     }
 }

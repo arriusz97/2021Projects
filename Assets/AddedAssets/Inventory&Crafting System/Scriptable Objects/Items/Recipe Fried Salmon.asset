@@ -15,13 +15,15 @@ MonoBehaviour:
   uiDisplay: {fileID: 21300000, guid: 6a85d2369931e2545a4cbec2c36fc0ed, type: 3}
   stackable: 0
   type: 1
-  description: 
+  description: Recipe Fried Salmon
   data:
     Name: Recipe Fried Salmon
     Id: 13
     buffs: []
     itemType: 1
   RecipeData:
-    result: {fileID: 0}
+    result: {fileID: 11400000, guid: 1a5a06fb3bbecd8468ce756435f881bc, type: 2}
     resultamount: 1
-    ingredients: []
+    ingredients:
+    - item: {fileID: 11400000, guid: dc7f2aa41d23b9d489e087fe97a78c34, type: 2}
+      amount: 1
