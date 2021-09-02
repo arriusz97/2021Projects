@@ -256,13 +256,13 @@ public class player : MonoBehaviour
             if (m_isDive)
             {
                 var vel = m_rigidbody.velocity;
-                vel.y = -5f;
+                vel.y = -5.5f;
                 m_rigidbody.velocity = vel;
             }
             else if (m_isDiveup & this.transform.position.y < -20)
             {
                 var vel = m_rigidbody.velocity;
-                vel.y = +5f;
+                vel.y = +5.5f;
                 m_rigidbody.velocity = vel;
             }
             else
@@ -274,11 +274,30 @@ public class player : MonoBehaviour
         }
         else
         {
-            m_Anim.SetBool("IDLEINWATER", true);
-            var vel = m_rigidbody.velocity;
-            vel.y = 0f;
-            vel.x = 0f;
-            m_rigidbody.velocity = vel;
+            //player를 움직이지 않고 물 속에서 shift, ctrl 버튼을 누른다면 제자리에서 dive, dive up
+            if (m_isDive)
+            {
+                var vel2 = m_rigidbody.velocity;
+                vel2.y -= 0.5f;
+                m_rigidbody.velocity = vel2;
+                Debug.Log("제자리에서 dive");
+            }
+            else if (m_isDiveup & this.transform.position.y < -20)
+            {
+                var vel2 = m_rigidbody.velocity;
+                vel2.y += 0.5f;
+                m_rigidbody.velocity = vel2;
+                Debug.Log("제자리에서 dive up");
+            }
+            else
+            {
+                //아무것도 하지 않았다면 idle in water anim 실행되게
+                m_Anim.SetBool("IDLEINWATER", true);
+                var vel = m_rigidbody.velocity;
+                vel.y = 0f;
+                vel.x = 0f;
+                m_rigidbody.velocity = vel;
+            }
         }
 
     }
