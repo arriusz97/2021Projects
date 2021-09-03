@@ -4,4 +4,5 @@
     Recipe,
     Material,
     Food,
+    Construct,
 }

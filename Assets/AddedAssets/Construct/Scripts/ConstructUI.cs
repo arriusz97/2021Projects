@@ -19,7 +19,7 @@ public class ConstructUI : MonoBehaviour
     private GameObject go_BaseUI; // 기본 베이스 UI
 
     [SerializeField]
-    private Construct[] constructs;  // 🔥불 탭에 있는 슬롯들. 
+    private Construct[] constructs;  // 불 탭에 있는 슬롯들. 
 
     private GameObject go_Preview; // 미리 보기 프리팹을 담을 변수
     private GameObject go_Prefab; // 실제 생성될 프리팹을 담을 변수 
@@ -53,7 +53,7 @@ public class ConstructUI : MonoBehaviour
         if (Input.GetButtonDown("Fire1"))
             Build();
 
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetButtonDown("Fire2"))
             Cancel();
     }
 

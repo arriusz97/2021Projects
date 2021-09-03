@@ -67,6 +67,11 @@ public class ItemObject : ScriptableObject
             Debug.Log("You dont have enaugh ingredients to craft: " + RecipeData.result.data.Name);
         }
     }
+
+    public void Constructing()
+    {
+
+    }
     
     public Item CreateItem()
     {
