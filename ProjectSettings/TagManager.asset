@@ -16,6 +16,8 @@ TagManager:
   - Koi2
   - Salmon
   - Interaction
+  - Tree
+  - Yacht
   layers:
   - Default
   - TransparentFX
