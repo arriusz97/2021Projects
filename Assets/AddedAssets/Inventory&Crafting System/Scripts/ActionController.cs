@@ -10,9 +10,7 @@ public class ActionController : MonoBehaviour
 {
     [SerializeField]
     private float range;
-
     private bool pickupActivated = false;
-
     private RaycastHit hitInfo;
 
     [SerializeField]
@@ -20,11 +18,10 @@ public class ActionController : MonoBehaviour
 
     [SerializeField]
     private TextMeshProUGUI actionText;
-
-    public InventoryObject inventory, quickSlot, crafting, campfire;
-
+   
     [SerializeField]
     private GameObject inventoryScreen, craftingScreen, campfireScreen;
+    public InventoryObject inventory, quickSlot, crafting, campfire;
 
     [SerializeField]
     private TimerController timer;
@@ -32,19 +29,19 @@ public class ActionController : MonoBehaviour
     [SerializeField]
     private int treeLoggingTime = 3;
 
-    private bool inventoryOpen = false, campfireOpen = false;
-    private bool CraftingOpen = false;
+    public bool inventoryOpen = false, campfireOpen = false, CraftingOpen = false, playerLock = false;
 
     [SerializeField]
     private DataController dataController;
-
-    public bool playerLock = false;
 
     [SerializeField]
     private PasueMenu pasueMenu;
 
     [SerializeField]
     private ItemEffectDatabase effectDatabase;
+
+    [SerializeField]
+    private GameObject UI;
 
     //게임 시작시 인벤토리가 한번 활성화되야해서 활성화 된채로 시작해 비활성화 시킨다.
     private void Start()
@@ -54,9 +51,15 @@ public class ActionController : MonoBehaviour
         CloseCrafting();
         CloseCampfire();
 
-        actionText = GameObject.Find("GUI").transform.Find("UI").transform.Find("CursorOnItemText").transform.Find("ActionText").GetComponent<TextMeshProUGUI>();        
-        pasueMenu = GameObject.Find("GUI").transform.Find("UI").transform.Find("PauseMenu").GetComponent<PasueMenu>();
+        UI = GameObject.Find("GUI").transform.Find("UI").gameObject;
+        actionText = UI.transform.Find("CursorOnItemText").transform.Find("ActionText").GetComponent<TextMeshProUGUI>();
+        pasueMenu = UI.transform.Find("PauseMenu").GetComponent<PasueMenu>();
+
         timer = FindObjectOfType<TimerController>();
+        timer.StartTimer(0);
+        timer.StartTimer(1);
+        timer.StopTimer(2);
+        timer.TimerContainer[2].Activated(false);
     }
 
     void Update()

@@ -32,14 +32,6 @@ public class TimerController : MonoBehaviour
         TimerContainer[TimerNum].CurrentTime = Mathf.Clamp(TimerContainer[TimerNum].CurrentTime - Update, 0, TimerContainer[TimerNum].duration);
     }
 
-    private void Start()
-    {
-        StartTimer(0);
-        StartTimer(1);
-        StopTimer(2);
-        TimerContainer[2].Activated(false);        
-    }
-
     private void Update()
     {
         if (Player.transform.localPosition.y <= groundY)

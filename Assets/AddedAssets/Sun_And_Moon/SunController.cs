@@ -21,6 +21,7 @@ public class SunController : MonoBehaviour
     [SerializeField]
     private Camera mCam;    //Player 카매라
 
+    [SerializeField]
     private Material mStarMat;      //천구의 별
 
     [SerializeField]
@@ -37,7 +38,7 @@ public class SunController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        mStarMat = mStarDome.GetComponentInChildren<MeshRenderer>().material;  
+        //mStarMat = mStarDome.GetComponentInChildren<MeshRenderer>().material;  
         mStarMat.color = new Color(1f, 1f, 1f, 0f);
         dayCounter = GameObject.Find("GUI").transform.Find("UI").transform.Find("DayCounter").GetComponent<DayCounter>();
     }
