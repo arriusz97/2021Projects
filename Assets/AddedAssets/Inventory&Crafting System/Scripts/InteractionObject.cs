@@ -37,4 +37,9 @@ public class InteractionObject : MonoBehaviour
 
         Destroy(gameObject, 1);
     }
+    
+    public void Dismantle()
+    {
+        Destroy(gameObject);
+    }
 }

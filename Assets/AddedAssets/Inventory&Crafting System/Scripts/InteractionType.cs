@@ -3,5 +3,7 @@
     Default,
     Tree,
     ItemBox,
-    Campfire
+    Campfire,
+    Construction,
+
 }

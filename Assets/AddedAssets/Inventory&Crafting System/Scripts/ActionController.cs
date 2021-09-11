@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public enum InforType{ Item, Tree, ItemBox, Campfire}
+public enum InforType{ Item, Tree, ItemBox, Campfire, Construction}
 
 public class ActionController : MonoBehaviour
 {
@@ -137,6 +137,10 @@ public class ActionController : MonoBehaviour
                     }
                     ItemInfoAppear(InforType.Campfire);
                 }
+                else if (hitInfo.transform.GetComponent<InteractionObject>().InteractionType == eInteractionType.Construction)
+                {
+                    ItemInfoAppear(InforType.Construction);
+                }
             }
         }
         else
@@ -149,11 +153,11 @@ public class ActionController : MonoBehaviour
         actionText.gameObject.SetActive(true);
         if(type == InforType.Item)
         {
-            actionText.text = "Press " + "<color=yellow>" + "(F)" + "</color>" + " to pick up " + hitInfo.transform.GetComponent<GroundItem>().item.name;
+            actionText.text = "Press " + "<color=yellow>" + "(F)" + "</color>" + " to Pick Up " + hitInfo.transform.GetComponent<GroundItem>().item.name;
         }
         else if(type == InforType.Tree)
         {
-            actionText.text = "Press " + "<color=yellow>" + "(F)" + "</color>" + " to logging " ;
+            actionText.text = "Press " + "<color=yellow>" + "(F)" + "</color>" + " to Logging " ;
         }
         else if(type == InforType.ItemBox)
         {
@@ -163,7 +167,10 @@ public class ActionController : MonoBehaviour
         {
             actionText.text = "Press " + "<color=yellow>" + "(F)" + "</color>" + " to Cook ";
         }
-        
+        else if(type == InforType.Construction)
+        {
+            actionText.text = "Press " + "<color=yellow>" + "(F)" + "</color>" + " to Dismantle ";
+        }
     }
     //아이템 문구 비활성화
     private void ItemInfoDisappear()
@@ -188,7 +195,7 @@ public class ActionController : MonoBehaviour
                     ItemInfoDisappear();
                 }
             }
-            else if (hitInfo.transform.tag == "Interaction")       //태그가 나무일 경우 일정시간 후 파괴한다.
+            else if (hitInfo.transform.tag == "Interaction")
             {
                 InteractionObject interactionObject = hitInfo.transform.GetComponent<InteractionObject>();
                 if (interactionObject.InteractionType == eInteractionType.Tree)
@@ -207,6 +214,10 @@ public class ActionController : MonoBehaviour
                 else if (interactionObject.InteractionType == eInteractionType.Campfire)
                 {
                     OpenCamfire();
+                }
+                else if (interactionObject.InteractionType == eInteractionType.Construction)
+                {
+                    interactionObject.Dismantle();
                 }
             }
         }
