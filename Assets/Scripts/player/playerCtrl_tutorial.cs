@@ -23,8 +23,10 @@ public class playerCtrl_tutorial : MonoBehaviour
     Animator m_Anim;
 
     //서있을 때 킬 collider, 앉아있을 때 킬 collider 따로 만들어서 관리하기
-
-
+    [SerializeField]
+    private CapsuleCollider m_upperBodyCollider;
+    [SerializeField]
+    private CapsuleCollider m_lowerBodyCollider;
 
     //[SerializeField]
     //ActionController m_actionController;
@@ -44,14 +46,17 @@ public class playerCtrl_tutorial : MonoBehaviour
     private float m_currentCameraRotationX;
 
 
+    [Header("yacht driving")]
+    [SerializeField]
+    private yachtDrivingSit m_drivingSitCtrl;  //bool 변수로 trigger check
+    public bool m_isSit = false;
+
     // Start is called before the first frame update
     void Start()
     {
         m_rigidbody = GetComponent<Rigidbody>();
         m_collider = GetComponent<CapsuleCollider>();
         m_Anim = GetComponent<Animator>();
-        m_Anim.SetBool("IDLE", false);
-        m_Anim.SetBool("SIT", true);
 
     }
 
@@ -61,7 +66,12 @@ public class playerCtrl_tutorial : MonoBehaviour
 
         //if (!m_actionController.playerLock)
         //{
+
+        //앉은 상태면 움직이지 X
+        if (!m_isSit)
+        {
             Move();
+        }
             camera_Rotation();
             character_Rotation();
 
@@ -84,39 +94,18 @@ public class playerCtrl_tutorial : MonoBehaviour
             m_Anim.SetFloat("JUMP", m_rigidbody.velocity.y);
 
 
-            ////Run & Dive -> left shift
-            //if (Input.GetKeyDown(KeyCode.LeftShift))
-            //{
-            //    if (!m_SwimTrigger.m_isWater)
-            //    {
-            //        m_isRun = true;
-            //    }
-            //    else
-            //    {
-            //        m_isDive = true;
-            //    }
-            //}
+        //player가 sit zone에 들어오고, 상호작용 키 F 를 눌렀다면
+        if(m_drivingSitCtrl.m_playerEnter && Input.GetKey(KeyCode.F) && !m_isSit)
+        {
+            gameObject.GetComponent<CapsuleCollider>().enabled = false;  //긴 원형 collider off
+            m_upperBodyCollider.gameObject.SetActive(true);
+            m_lowerBodyCollider.gameObject.SetActive(true);
+            m_Anim.SetBool("SIT", true);
+            m_Anim.SetBool("IDLE", false);
+            m_isSit = true;
+            transform.position = new Vector3(-15f, -15.5f, 2f);
+        }
 
-            //if (Input.GetKeyUp(KeyCode.LeftShift))
-            //{
-            //    m_isDive = false;
-            //    m_isRun = false;
-            //}
-
-            ////Diveup -> left control
-            //if (Input.GetKeyDown(KeyCode.LeftControl))
-            //{
-            //    if (m_SwimTrigger.m_isWater)
-            //    {
-            //        m_isDiveup = true;
-            //    }
-            //}
-
-            //if (Input.GetKeyUp(KeyCode.LeftControl))
-            //{
-            //    m_isDiveup = false;
-            //}
-       // }
     }
 
     void character_Rotation()
@@ -159,7 +148,10 @@ public class playerCtrl_tutorial : MonoBehaviour
         else
         {
             isMove = false;
-            m_Anim.SetBool("IDLE", true);
+            if (!m_isSit)
+            {
+                m_Anim.SetBool("IDLE", true);
+            }
         }
 
 
@@ -170,8 +162,11 @@ public class playerCtrl_tutorial : MonoBehaviour
         }
         else
         {
-            m_Anim.SetBool("IDLE", true);
-            m_Anim.SetBool("WALK", false);
+            if (!m_isSit)
+            {
+                m_Anim.SetBool("IDLE", true);
+                m_Anim.SetBool("WALK", false);
+            }
         }
         m_rigidbody.MovePosition(transform.position + m_velocity * Time.deltaTime);
 
@@ -182,7 +177,6 @@ public class playerCtrl_tutorial : MonoBehaviour
         if (collision.gameObject.CompareTag("Yacht"))
         {
             m_JumpCount = 0;
-            // m_Anim.SetBool("JUMP_ANIM", false);
         }
     }
 }
