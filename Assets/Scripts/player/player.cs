@@ -29,7 +29,7 @@ public class player : MonoBehaviour
     private float m_SwimSpeed;
     public bool m_isDive = false;
     private bool m_isDiveup = false;
-
+   
     [Header("camera변수")]
     public Camera m_camera;
     public Transform m_cameraArm;
