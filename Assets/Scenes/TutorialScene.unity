@@ -1223,7 +1223,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 654186193}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -15.86, y: -16.04, z: 2.04}
+  m_LocalPosition: {x: -17.27, y: -14.55, z: -0.45}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 1770989944}
@@ -1688,6 +1688,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Yacht
       objectReference: {fileID: 0}
+    - target: {fileID: 3524752758657795046, guid: 4f8e80620323fce4ca44da4ef6adcddd,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4752731278881477642, guid: 4f8e80620323fce4ca44da4ef6adcddd,
         type: 3}
       propertyPath: m_Name
@@ -1697,6 +1702,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Yacht
+      objectReference: {fileID: 0}
+    - target: {fileID: 4752731278881477642, guid: 4f8e80620323fce4ca44da4ef6adcddd,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7351317567095011681, guid: 4f8e80620323fce4ca44da4ef6adcddd,
         type: 3}
@@ -1772,6 +1782,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Yacht
+      objectReference: {fileID: 0}
+    - target: {fileID: 7879366687358289937, guid: 4f8e80620323fce4ca44da4ef6adcddd,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f8e80620323fce4ca44da4ef6adcddd, type: 3}
@@ -1905,6 +1920,121 @@ Transform:
   m_Father: {fileID: 47976060}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1026930717
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1026930718}
+  - component: {fileID: 1026930721}
+  - component: {fileID: 1026930720}
+  - component: {fileID: 1026930719}
+  m_Layer: 0
+  m_Name: Yacht_Camera
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1026930718
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1026930717}
+  m_LocalRotation: {x: 0.09462023, y: -0.7007475, z: 0.09462023, w: 0.7007475}
+  m_LocalPosition: {x: 0.4, y: 1.4, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1512352475}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 15.38, y: -90, z: 0}
+--- !u!114 &1026930719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1026930717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
+--- !u!81 &1026930720
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1026930717}
+  m_Enabled: 1
+--- !u!20 &1026930721
+Camera:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1026930717}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+  m_FocalLength: 50
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.3
+  far clip plane: 1000
+  field of view: 60
+  orthographic: 0
+  orthographic size: 5
+  m_Depth: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 1
+  m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
 --- !u!1 &1047107293
 GameObject:
   m_ObjectHideFlags: 0
@@ -2396,7 +2526,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   computeOverride: 0
-  _depthTex: {fileID: 1550576614}
+  _depthTex: {fileID: 1335069085}
   bakedDepthTex: {fileID: 0}
   _waves:
   - amplitude: 0.6617056
@@ -2541,6 +2671,24 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1280259965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1280259963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 584e4a88aa6562a48aff44b8745c307e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_speed: 50
+  m_drivingSitCtrl: {fileID: 1512352477}
+  m_playerCtrl: {fileID: 1770989947}
+  m_MainCamera: {fileID: 1494604746}
+  m_YachtCamera: {fileID: 1026930721}
+  m_cameraArm: {fileID: 1512352475}
 --- !u!1 &1285172050
 GameObject:
   m_ObjectHideFlags: 0
@@ -2602,6 +2750,41 @@ Transform:
   m_Father: {fileID: 1738980977}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!84 &1335069085
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: WaterDepthMap
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  serializedVersion: 3
+  m_Width: 1024
+  m_Height: 1024
+  m_AntiAliasing: 1
+  m_MipCount: -1
+  m_DepthFormat: 2
+  m_ColorFormat: 142
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_EnableCompatibleFormat: 1
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
 --- !u!1 &1350232702
 GameObject:
   m_ObjectHideFlags: 0
@@ -2706,7 +2889,6 @@ GameObject:
   - component: {fileID: 1494604746}
   - component: {fileID: 1494604748}
   - component: {fileID: 1494604747}
-  - component: {fileID: 1494604750}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2811,36 +2993,6 @@ Transform:
   m_Father: {fileID: 676531011}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 4.09, y: -1.9, z: 0}
---- !u!114 &1494604750
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1494604745}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8bb960fb259559740abe4fc3b545980a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  range: 7
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 512
-  actionText: {fileID: 0}
-  inventory: {fileID: 11400000, guid: ba391aef18194db419840aa8245becc2, type: 2}
-  quickSlot: {fileID: 11400000, guid: 8763422fb5534b64fa4a9df878ec496f, type: 2}
-  crafting: {fileID: 11400000, guid: 8895e21c7f713a24db98145575ae5b21, type: 2}
-  campfire: {fileID: 11400000, guid: c52327bb355e4b948b0163a80fcb9d01, type: 2}
-  inventoryScreen: {fileID: 0}
-  craftingScreen: {fileID: 0}
-  campfireScreen: {fileID: 0}
-  timer: {fileID: 0}
-  treeLoggingTime: 3
-  dataController: {fileID: 0}
-  playerLock: 0
-  pasueMenu: {fileID: 0}
-  effectDatabase: {fileID: 0}
 --- !u!1 &1512352474
 GameObject:
   m_ObjectHideFlags: 0
@@ -2869,7 +3021,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.378, y: 4.862, z: 1.012}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1026930718}
   m_Father: {fileID: 1264517455}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3026,41 +3179,6 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.12140915, y: 0.8777253, z: 0.041393638}
     m_Extent: {x: 0.1821323, y: 0.17044693, z: 0.17122298}
   m_DirtyAABB: 0
---- !u!84 &1550576614
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: WaterDepthMap
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  serializedVersion: 3
-  m_Width: 1024
-  m_Height: 1024
-  m_AntiAliasing: 1
-  m_MipCount: -1
-  m_DepthFormat: 2
-  m_ColorFormat: 142
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_EnableCompatibleFormat: 1
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
 --- !u!1 &1567233990
 GameObject:
   m_ObjectHideFlags: 0
@@ -3307,7 +3425,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1770989943}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 3.03}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 676531011}
@@ -3364,7 +3482,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6633a9cf8cb862049a835d0dc4ecd4ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_speed: 6.5
+  m_speed: 7
   m_dir: {x: 0, y: 0, z: 0}
   m_isRun: 0
   isMove: 0
@@ -3373,6 +3491,7 @@ MonoBehaviour:
   m_camera: {fileID: 1494604746}
   m_cameraArm: {fileID: 676531011}
   m_drivingSitCtrl: {fileID: 1512352477}
+  m_yachtDrivingSit: {fileID: 1512352474}
   m_isSit: 0
 --- !u!95 &1770989948
 Animator:

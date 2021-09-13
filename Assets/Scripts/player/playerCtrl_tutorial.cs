@@ -11,8 +11,6 @@ public class playerCtrl_tutorial : MonoBehaviour
     [SerializeField]
     Vector3 m_dir;
 
-   // public SwimTrigger m_SwimTrigger;
-
     private int m_JumpCount = 0;
     public bool m_isRun;
 
@@ -28,15 +26,6 @@ public class playerCtrl_tutorial : MonoBehaviour
     [SerializeField]
     private CapsuleCollider m_lowerBodyCollider;
 
-    //[SerializeField]
-    //ActionController m_actionController;
-
-    //[Header("Swim 변수")]
-    //[SerializeField]
-    //private float m_SwimSpeed;
-    //public bool m_isDive = false;
-    //private bool m_isDiveup = false;
-
     [Header("camera변수")]
     public Camera m_camera;
     public Transform m_cameraArm;
@@ -49,6 +38,8 @@ public class playerCtrl_tutorial : MonoBehaviour
     [Header("yacht driving")]
     [SerializeField]
     private yachtDrivingSit m_drivingSitCtrl;  //bool 변수로 trigger check
+    [SerializeField]
+    private GameObject m_yachtDrivingSit;
     public bool m_isSit = false;
 
     // Start is called before the first frame update
@@ -64,26 +55,13 @@ public class playerCtrl_tutorial : MonoBehaviour
     void Update()
     {
 
-        //if (!m_actionController.playerLock)
-        //{
-
         //앉은 상태면 움직이지 X
         if (!m_isSit)
         {
             Move();
-        }
             camera_Rotation();
             character_Rotation();
-
-        //if (!m_SwimTrigger.m_isWater)
-        //{
-        //    Move();
-        //}
-        //else
-        //{
-        //    Swim();
-        //}
-
+        }
 
         if (m_JumpCount < 1 && Input.GetButtonDown("Jump")) // && !m_SwimTrigger.m_isWater
         {
@@ -91,11 +69,11 @@ public class playerCtrl_tutorial : MonoBehaviour
             m_JumpCount++;
 
         }
-            m_Anim.SetFloat("JUMP", m_rigidbody.velocity.y);
+        m_Anim.SetFloat("JUMP", m_rigidbody.velocity.y);
 
 
         //player가 sit zone에 들어오고, 상호작용 키 F 를 눌렀다면
-        if(m_drivingSitCtrl.m_playerEnter && Input.GetKey(KeyCode.F) && !m_isSit)
+        if (m_drivingSitCtrl.m_playerEnter && Input.GetKey(KeyCode.F) && !m_isSit)
         {
             gameObject.GetComponent<CapsuleCollider>().enabled = false;  //긴 원형 collider off
             m_upperBodyCollider.gameObject.SetActive(true);
@@ -103,9 +81,20 @@ public class playerCtrl_tutorial : MonoBehaviour
             m_Anim.SetBool("SIT", true);
             m_Anim.SetBool("IDLE", false);
             m_isSit = true;
-            transform.position = new Vector3(-15f, -15.5f, 2f);
+            playerDriving();
         }
 
+    }
+
+    void playerDriving()
+    {
+        if (m_isSit)
+        {
+            transform.position = new Vector3(-15f, -15.5f, 2f);
+            transform.rotation = Quaternion.Euler(0f, -90f, 0f);
+            m_rigidbody.isKinematic = true;  //yacht가 움직일 때 player가 움직이지 않게 is kinematic을 켜줌
+            this.transform.SetParent(m_yachtDrivingSit.transform);
+        }
     }
 
     void character_Rotation()
