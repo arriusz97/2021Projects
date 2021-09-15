@@ -9,11 +9,19 @@ public class yachtDrivingSit : MonoBehaviour
     public TextMeshProUGUI m_sitText;
     public playerCtrl_tutorial m_playerTutorial;
 
+    public GameObject m_player;
+
     private void Update()
     {
         if (m_playerTutorial.m_isSit)
         {
             m_sitText.gameObject.SetActive(false);
+        }
+
+        if(!m_player.activeInHierarchy && Input.GetKey(KeyCode.LeftShift))
+        {
+            m_player.SetActive(true);
+            m_playerTutorial.m_isSit = false;
         }
     }
 
