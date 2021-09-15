@@ -11,20 +11,16 @@ public class playerCtrl_tutorial : MonoBehaviour
     [SerializeField]
     Vector3 m_dir;
 
+    [SerializeField]
+    private GameObject m_player;
+
     private int m_JumpCount = 0;
     public bool m_isRun;
-
     public bool isMove = false;
 
     Rigidbody m_rigidbody;
     CapsuleCollider m_collider;
     Animator m_Anim;
-
-    //서있을 때 킬 collider, 앉아있을 때 킬 collider 따로 만들어서 관리하기
-    [SerializeField]
-    private CapsuleCollider m_upperBodyCollider;
-    [SerializeField]
-    private CapsuleCollider m_lowerBodyCollider;
 
     [Header("camera변수")]
     public Camera m_camera;
@@ -40,6 +36,8 @@ public class playerCtrl_tutorial : MonoBehaviour
     private yachtDrivingSit m_drivingSitCtrl;  //bool 변수로 trigger check
     [SerializeField]
     private GameObject m_yachtDrivingSit;
+    [SerializeField]
+    private GameObject m_yacht;
     public bool m_isSit = false;
 
     // Start is called before the first frame update
@@ -75,26 +73,13 @@ public class playerCtrl_tutorial : MonoBehaviour
         //player가 sit zone에 들어오고, 상호작용 키 F 를 눌렀다면
         if (m_drivingSitCtrl.m_playerEnter && Input.GetKey(KeyCode.F) && !m_isSit)
         {
-            gameObject.GetComponent<CapsuleCollider>().enabled = false;  //긴 원형 collider off
-            m_upperBodyCollider.gameObject.SetActive(true);
-            m_lowerBodyCollider.gameObject.SetActive(true);
-            m_Anim.SetBool("SIT", true);
-            m_Anim.SetBool("IDLE", false);
             m_isSit = true;
-            playerDriving();
-        }
 
-    }
+            Debug.Log("player Sit");
+            this.gameObject.SetActive(false);
 
-    void playerDriving()
-    {
-        if (m_isSit)
-        {
-            transform.position = new Vector3(-15f, -15.5f, 2f);
-            transform.rotation = Quaternion.Euler(0f, -90f, 0f);
-            m_rigidbody.isKinematic = true;  //yacht가 움직일 때 player가 움직이지 않게 is kinematic을 켜줌
-            this.transform.SetParent(m_yachtDrivingSit.transform);
         }
+        
     }
 
     void character_Rotation()
