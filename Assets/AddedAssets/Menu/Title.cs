@@ -61,8 +61,8 @@ public class Title : MonoBehaviour
 
             if(operation.progress < 0.9f)
             {
-                //progressbar.fillAmount = Mathf.Lerp(progressbar.fillAmount, operation.progress, pgtimer);
-                progressbar.fillAmount = Mathf.Lerp(progressbar.fillAmount, 0.9f, pgtimer);
+                progressbar.fillAmount = Mathf.Lerp(progressbar.fillAmount, operation.progress, pgtimer);
+                //progressbar.fillAmount = Mathf.Lerp(progressbar.fillAmount, 0.9f, pgtimer);
                 if (progressbar.fillAmount >= operation.progress)
                 {
                     pgtimer = 0f;
