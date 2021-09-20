@@ -38,7 +38,6 @@ public class playerCtrl_tutorial : MonoBehaviour
     private GameObject m_yachtDrivingSit;
     [SerializeField]
     private GameObject m_yacht;
-    public bool m_isSit = false;
 
     // Start is called before the first frame update
     void Start()
@@ -54,7 +53,7 @@ public class playerCtrl_tutorial : MonoBehaviour
     {
 
         //앉은 상태면 움직이지 X
-        if (!m_isSit)
+        if (!m_drivingSitCtrl.m_playerSit)
         {
             Move();
             camera_Rotation();
@@ -68,17 +67,6 @@ public class playerCtrl_tutorial : MonoBehaviour
 
         }
         m_Anim.SetFloat("JUMP", m_rigidbody.velocity.y);
-
-
-        //player가 sit zone에 들어오고, 상호작용 키 F 를 눌렀다면
-        if (m_drivingSitCtrl.m_playerEnter && Input.GetKey(KeyCode.F) && !m_isSit)
-        {
-            m_isSit = true;
-
-            Debug.Log("player Sit");
-            this.gameObject.SetActive(false);
-
-        }
         
     }
 
@@ -122,7 +110,7 @@ public class playerCtrl_tutorial : MonoBehaviour
         else
         {
             isMove = false;
-            if (!m_isSit)
+            if (!m_drivingSitCtrl.m_playerSit)
             {
                 m_Anim.SetBool("IDLE", true);
             }
@@ -136,7 +124,7 @@ public class playerCtrl_tutorial : MonoBehaviour
         }
         else
         {
-            if (!m_isSit)
+            if (!m_drivingSitCtrl.m_playerSit)
             {
                 m_Anim.SetBool("IDLE", true);
                 m_Anim.SetBool("WALK", false);
