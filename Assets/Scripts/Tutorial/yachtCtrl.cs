@@ -22,9 +22,18 @@ public class yachtCtrl : MonoBehaviour
     private float m_cameraRotationLimit = 25f;
     private float m_currentCameraRotationX;
 
+    [Header("Sound")]
+    [SerializeField]
+    private AudioSource m_waterSound;
+    [SerializeField]
+    private AudioSource m_YachtDrivingSound;
+    [SerializeField]
+    private AudioSource m_YachtStopSound;
+
     private void Awake()
     {
         m_rigidbody = GetComponent<Rigidbody>();
+        m_waterSound.Play();
     }
 
     private void Update()
@@ -44,12 +53,36 @@ public class yachtCtrl : MonoBehaviour
             //main camera는 꺼두고, yacht 운전석 camera만 켜두기
             m_MainCamera.gameObject.SetActive(false);
 
+            if (moveDirX != 0 || moveDirZ != 0)
+            {
+                if (!m_YachtDrivingSound.isPlaying)
+                {
+                    m_YachtDrivingSound.Play();
+                }
+                m_waterSound.Stop();
+                m_YachtStopSound.Stop();
+            }
+            else
+            {
+                if (!m_YachtStopSound.isPlaying)
+                {
+                    m_YachtStopSound.Play();
+                }
+                m_YachtDrivingSound.Stop();
+            }
+
             yacht_Rotation();
             camera_Rotation();
         }
         else
         {
             m_MainCamera.gameObject.SetActive(true);
+            m_YachtDrivingSound.Stop();
+            m_waterSound.Play();
+            if (!m_YachtStopSound.isPlaying)
+            {
+                m_YachtStopSound.Play();
+            }
         }
     }
 
