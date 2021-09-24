@@ -19,7 +19,7 @@ public class yachtCtrl : MonoBehaviour
     private Camera m_YachtCamera;
     public Transform m_cameraArm;
     private float m_lookSensitivity = 2f;
-    private float m_cameraRotationLimit = 25f;
+    private float m_cameraRotationLimit = 10f;
     private float m_currentCameraRotationX;
 
     [Header("Sound")]
@@ -29,6 +29,12 @@ public class yachtCtrl : MonoBehaviour
     private AudioSource m_YachtDrivingSound;
     [SerializeField]
     private AudioSource m_YachtStopSound;
+
+    [Header("Rain")]
+    [SerializeField]
+    private GameObject m_YachtCamera_Rain;
+    [SerializeField]
+    private StormTrigger m_StormTrigger;
 
     private void Awake()
     {
@@ -50,8 +56,13 @@ public class yachtCtrl : MonoBehaviour
 
             m_rigidbody.MovePosition(transform.position + m_velocity * Time.deltaTime);
 
-            //main camera는 꺼두고, yacht 운전석 camera만 켜두기
+            //main camera는 꺼두고, yacht 운전석 camera만 켜두기, yacht camera에 붙은 rain 켜주기
             m_MainCamera.gameObject.SetActive(false);
+
+            if (m_StormTrigger.m_Storm_Start)
+            {
+                m_YachtCamera_Rain.SetActive(true);
+            }
 
             if (moveDirX != 0 || moveDirZ != 0)
             {
@@ -77,6 +88,7 @@ public class yachtCtrl : MonoBehaviour
         else
         {
             m_MainCamera.gameObject.SetActive(true);
+            m_YachtCamera_Rain.SetActive(false);
             m_YachtDrivingSound.Stop();
             m_waterSound.Play();
             if (!m_YachtStopSound.isPlaying)

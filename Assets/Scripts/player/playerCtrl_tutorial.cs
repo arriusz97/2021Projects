@@ -27,8 +27,16 @@ public class playerCtrl_tutorial : MonoBehaviour
     public Transform m_cameraArm;
     //public GameCtrl m_gameCtrl;
     private float m_lookSensitivity = 2f;
-    private float m_cameraRotationLimit = 30f;
+    private float m_cameraRotationLimit = 22f;
     private float m_currentCameraRotationX;
+
+    [Header("Rain")]
+    [SerializeField]
+    private GameObject m_MainCamera_Rain;
+    [SerializeField]
+    private GameObject m_NormalRain;
+    [SerializeField]
+    private StormTrigger m_stormTrigger;
 
 
     [Header("yacht driving")]
@@ -67,6 +75,17 @@ public class playerCtrl_tutorial : MonoBehaviour
 
         }
         m_Anim.SetFloat("JUMP", m_rigidbody.velocity.y);
+
+        if (m_stormTrigger.m_Storm_Start)
+        {
+            m_MainCamera_Rain.SetActive(true);
+            m_NormalRain.SetActive(true);
+        }
+        else
+        {
+            m_MainCamera_Rain.SetActive(false);
+            m_NormalRain.SetActive(false);
+        }
         
     }
 
