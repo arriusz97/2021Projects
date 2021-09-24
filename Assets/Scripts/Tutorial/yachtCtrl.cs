@@ -22,22 +22,24 @@ public class yachtCtrl : MonoBehaviour
     private float m_cameraRotationLimit = 25f;
     private float m_currentCameraRotationX;
 
-    //Main camera는 값이 0보다 작거나 같을 때 켜지게 하고, yacht camera는 값이 0.2f보다 크거나 같을 때 켜지게 함
-    private float cameraTimeSpace_Main = 0.0f;
-    private float cameraTimeSpace_yacht;
-
-
+    [Header("Sound")]
+    [SerializeField]
+    private AudioSource m_waterSound;
+    [SerializeField]
+    private AudioSource m_YachtDrivingSound;
+    [SerializeField]
+    private AudioSource m_YachtStopSound;
 
     private void Awake()
     {
         m_rigidbody = GetComponent<Rigidbody>();
+        m_waterSound.Play();
     }
 
     private void Update()
     {
-
-        //player가 driving sit에 앉아있고 cameraTimeSpace_Main값이 0보다 작다면
-        if (m_playerCtrl.m_isSit && cameraTimeSpace_Main <= 0.0f)
+        //player가 driving sit에 앉아있다면
+        if (m_drivingSitCtrl.m_playerSit)
         {
             float moveDirZ = Input.GetAxisRaw("Horizontal");
             float moveDirX = Input.GetAxisRaw("Vertical");
@@ -50,23 +52,36 @@ public class yachtCtrl : MonoBehaviour
 
             //main camera는 꺼두고, yacht 운전석 camera만 켜두기
             m_MainCamera.gameObject.SetActive(false);
-            m_YachtCamera.gameObject.SetActive(true);
 
-            cameraTimeSpace_yacht += Time.deltaTime;
-            cameraTimeSpace_Main = 0.2f;
+            if (moveDirX != 0 || moveDirZ != 0)
+            {
+                if (!m_YachtDrivingSound.isPlaying)
+                {
+                    m_YachtDrivingSound.Play();
+                }
+                m_waterSound.Stop();
+                m_YachtStopSound.Stop();
+            }
+            else
+            {
+                if (!m_YachtStopSound.isPlaying)
+                {
+                    m_YachtStopSound.Play();
+                }
+                m_YachtDrivingSound.Stop();
+            }
 
             yacht_Rotation();
             camera_Rotation();
         }
-        else if(cameraTimeSpace_yacht >= 0.2f)   //player가 driving sit에 앉아있지 않고 cameraTimeSpace가 0.2f를 넘었다면
+        else
         {
-            //main camera가 켜져있지 않다면
-            if (!m_MainCamera.gameObject.activeInHierarchy)
+            m_MainCamera.gameObject.SetActive(true);
+            m_YachtDrivingSound.Stop();
+            m_waterSound.Play();
+            if (!m_YachtStopSound.isPlaying)
             {
-                m_MainCamera.gameObject.SetActive(true);
-                m_YachtCamera.gameObject.SetActive(false);
-                cameraTimeSpace_yacht = 0.0f; //main camera 켜준 뒤 cameraTimeSpace 초기화
-                cameraTimeSpace_Main -= Time.deltaTime;
+                m_YachtStopSound.Play();
             }
         }
     }
