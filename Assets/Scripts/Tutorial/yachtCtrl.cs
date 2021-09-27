@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using WaterSystem.Data;
 
 public class yachtCtrl : MonoBehaviour
 {
@@ -18,7 +19,7 @@ public class yachtCtrl : MonoBehaviour
     [SerializeField]
     private Camera m_YachtCamera;
     public Transform m_cameraArm;
-    private float m_lookSensitivity = 2f;
+    private float m_lookSensitivity = 1f;
     private float m_cameraRotationLimit = 10f;
     private float m_currentCameraRotationX;
 
@@ -29,12 +30,16 @@ public class yachtCtrl : MonoBehaviour
     private AudioSource m_YachtDrivingSound;
     [SerializeField]
     private AudioSource m_YachtStopSound;
+    [SerializeField]
+    private AudioSource m_StormSound;
 
     [Header("Rain")]
     [SerializeField]
     private GameObject m_YachtCamera_Rain;
     [SerializeField]
     private StormTrigger m_StormTrigger;
+
+    public GameObject m_water;
 
     private void Awake()
     {
@@ -62,6 +67,14 @@ public class yachtCtrl : MonoBehaviour
             if (m_StormTrigger.m_Storm_Start)
             {
                 m_YachtCamera_Rain.SetActive(true);
+
+                if (!m_StormSound.isPlaying)
+                {
+                    m_StormSound.Play();
+                }
+
+                m_waterSound.Stop();
+              
             }
 
             if (moveDirX != 0 || moveDirZ != 0)
@@ -114,5 +127,6 @@ public class yachtCtrl : MonoBehaviour
 
         m_YachtCamera.transform.localEulerAngles = new Vector3(m_currentCameraRotationX, -95f, 0);
     }
+
 
 }
