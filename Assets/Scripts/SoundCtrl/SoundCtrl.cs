@@ -151,33 +151,6 @@ public class SoundCtrl : MonoBehaviour
             m_Terrain7_Bgm.Stop();
         }
 
-        ////물 속에 있지 않다면 && 밤이 아니라면
-        //if (!m_swimTrigger.m_isWater && !m_sunCtrl.m_night)
-        //{
-        //    m_Island_Bgm.volume = 0.3f;
-        //    if (!m_Island_Bgm.isPlaying)
-        //    {
-        //        m_Island_Bgm.Play();
-        //    }
-        //}
-        ////물 속에 있지 않고 && 밤이라면
-        //else if (!m_swimTrigger.m_isWater && m_sunCtrl.m_night)
-        //{
-        //    m_Island_night_Bgm.volume = 0.3f;
-        //    if (!m_Island_night_Bgm.isPlaying)
-        //    {
-        //        m_Island_night_Bgm.Play();
-        //    }
-        //}
-        //else
-        //{
-        //    if (m_Island_Bgm.volume > 0)
-        //    {
-        //        fadeout(m_Island_Bgm, 0.5f);
-        //    }
-        //    m_Island_Bgm.Stop();
-        //}
-
         //물 속에 있지 않다면
         if (!m_swimTrigger.m_isWater)
         {

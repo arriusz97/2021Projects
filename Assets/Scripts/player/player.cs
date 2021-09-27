@@ -280,14 +280,12 @@ public class player : MonoBehaviour
                 var vel2 = m_rigidbody.velocity;
                 vel2.y -= 0.5f;
                 m_rigidbody.velocity = vel2;
-                Debug.Log("제자리에서 dive");
             }
             else if (m_isDiveup & this.transform.position.y < -20)
             {
                 var vel2 = m_rigidbody.velocity;
                 vel2.y += 0.5f;
                 m_rigidbody.velocity = vel2;
-                Debug.Log("제자리에서 dive up");
             }
             else
             {
