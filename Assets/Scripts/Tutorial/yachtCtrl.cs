@@ -12,6 +12,8 @@ public class yachtCtrl : MonoBehaviour
     private yachtDrivingSit m_drivingSitCtrl;
     public playerCtrl_tutorial m_playerCtrl;
     Rigidbody m_rigidbody;
+    [SerializeField]
+    float tempRotate = 1.5f;
 
     [Header("Camera 속성")]
     [SerializeField]
@@ -60,6 +62,9 @@ public class yachtCtrl : MonoBehaviour
             Vector3 m_velocity = (moveHorizontal - moveVertical) * m_speed;
 
             m_rigidbody.MovePosition(transform.position + m_velocity * Time.deltaTime);
+           
+            yacht_Rotation();
+            camera_Rotation();
 
             //main camera는 꺼두고, yacht 운전석 camera만 켜두기, yacht camera에 붙은 rain 켜주기
             m_MainCamera.gameObject.SetActive(false);
@@ -67,6 +72,9 @@ public class yachtCtrl : MonoBehaviour
             if (m_StormTrigger.m_Storm_Start)
             {
                 m_YachtCamera_Rain.SetActive(true);
+
+                transform.position = new Vector3(Mathf.PingPong(Time.time, 3), transform.position.y, transform.position.z);
+                transform.rotation = Quaternion.Euler(Mathf.PingPong(Time.time * tempRotate, 4f), this.transform.rotation.y, 0f);
 
                 if (!m_StormSound.isPlaying)
                 {
@@ -95,8 +103,6 @@ public class yachtCtrl : MonoBehaviour
                 m_YachtDrivingSound.Stop();
             }
 
-            yacht_Rotation();
-            camera_Rotation();
         }
         else
         {
@@ -116,6 +122,7 @@ public class yachtCtrl : MonoBehaviour
         float YRotation = Input.GetAxisRaw("Mouse X");
         Vector3 charRotationY = new Vector3(0, YRotation, 0) * m_lookSensitivity;
         m_rigidbody.MoveRotation(m_rigidbody.rotation * Quaternion.Euler(charRotationY));
+
     }
 
     void camera_Rotation()

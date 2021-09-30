@@ -68,7 +68,7 @@ Material:
     - _PerspectiveFilter: 0.875
     - _Reflectivity: 10
     - _ScaleRatioA: 0.9
-    - _ScaleRatioB: 1
+    - _ScaleRatioB: 0.73125
     - _ScaleRatioC: 0.73125
     - _ScaleX: 1
     - _ScaleY: 1
@@ -115,7 +115,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hashCode: 231247347
   material: {fileID: 2180264}
-  materialHashCode: -1183942120
+  materialHashCode: 198912371
   m_Version: 1.1.0
   m_SourceFontFileGUID: 74d9b831eea81e446ac4c429a23c87cb
   m_SourceFontFile_EditorRef: {fileID: 12800000, guid: 74d9b831eea81e446ac4c429a23c87cb,
@@ -4647,6 +4647,8 @@ MonoBehaviour:
   m_AtlasTextures:
   - {fileID: 28684132378477856}
   m_AtlasTextureIndex: 0
+  m_IsMultiAtlasTexturesEnabled: 0
+  m_ClearDynamicDataOnBuild: 0
   m_UsedGlyphRects:
   - m_X: 0
     m_Y: 0
