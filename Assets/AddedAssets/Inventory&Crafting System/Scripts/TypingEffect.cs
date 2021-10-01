@@ -16,9 +16,11 @@ public class TypingEffect : MonoBehaviour
 
     public string writerText = "";
 
+    public float WaitSeconds = 0.2f;
+
     bool isButtonClicked = false;
 
-    void Start()
+    public void StartNarration()
     {
         StartCoroutine(TextPractice());
     }
@@ -44,6 +46,7 @@ public class TypingEffect : MonoBehaviour
         //텍스트 타이핑 효과
         for (a = 0; a < narration.Length; a++)
         {
+            yield return new WaitForSeconds(WaitSeconds);
             writerText += narration[a];
             ChatText.text = writerText;
             yield return null;
@@ -69,12 +72,3 @@ public class TypingEffect : MonoBehaviour
         }
     }
 }
-
-
-//
-//            if (isButtonClicked)
-//            {
-//                ChatText.text = narration;
-//                a = narration.Length; // 버튼 눌리면 그냥 다 출력하게 함
-//                isButtonClicked = false;
-//            }
