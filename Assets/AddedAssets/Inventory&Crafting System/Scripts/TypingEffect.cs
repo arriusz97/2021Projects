@@ -32,6 +32,7 @@ public class TypingEffect : MonoBehaviour
             if (Input.GetKeyDown(element))
             {
                 isButtonClicked = true;
+                Debug.Log("key pressed");
             }
         }
     }
@@ -49,6 +50,7 @@ public class TypingEffect : MonoBehaviour
             yield return new WaitForSeconds(WaitSeconds);
             writerText += narration[a];
             ChatText.text = writerText;
+            Debug.Log("narration text = " + narration[a]);
             yield return null;
         }
 

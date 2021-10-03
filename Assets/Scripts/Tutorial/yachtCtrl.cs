@@ -41,8 +41,6 @@ public class yachtCtrl : MonoBehaviour
     [SerializeField]
     private StormTrigger m_StormTrigger;
 
-    public GameObject m_water;
-
     private void Awake()
     {
         m_rigidbody = GetComponent<Rigidbody>();
@@ -74,7 +72,10 @@ public class yachtCtrl : MonoBehaviour
                 m_YachtCamera_Rain.SetActive(true);
 
                 transform.position = new Vector3(Mathf.PingPong(Time.time, 3), transform.position.y, transform.position.z);
-                transform.rotation = Quaternion.Euler(Mathf.PingPong(Time.time * tempRotate, 4f), this.transform.rotation.y, 0f);
+                transform.rotation = Quaternion.Euler(Mathf.PingPong(Time.time * tempRotate, 5f), this.transform.rotation.y, 0f);
+
+                WaterSurfaceData m_water = new WaterSurfaceData();
+                BasicWaves _basicWaveSettings = new BasicWaves(10f, 30f, 5f);
 
                 if (!m_StormSound.isPlaying)
                 {
