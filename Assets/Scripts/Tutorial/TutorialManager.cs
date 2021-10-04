@@ -1,13 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TutorialManager : MonoBehaviour
 {
     //tutorial manager
     //1. thunder, rain 관리해서 on, off 해주기 -> 아니면 bool 변수로 넘겨주기
     //2. UI manager 생성해서 UI 만들어주기
-    //3. skybox 교체해주기 -> 특정 event를 달성 했을 경우
+
+    //yacht에 thunder치면 gameScene으로 넘어가게 하기
+
 
     [Header("SkyBox")]
     [SerializeField]
@@ -25,6 +28,18 @@ public class TutorialManager : MonoBehaviour
     [SerializeField]
     private GameObject[] m_Thunder;
 
+    public yachtCtrl m_yachtCtrl;
+
+    [Header("Typing effect")]
+    public TypingEffect m_tutorialTyping;
+    public TypingEffect_TMP m_tmpro_typing;
+
+    private void Start()
+    {
+        // m_tutorialTyping.StartNarration();
+       // m_tmpro_typing.StartNarration();
+    }
+
     private void Update()
     {
 
@@ -38,6 +53,12 @@ public class TutorialManager : MonoBehaviour
 
             RenderSettings.skybox = m_RainSkyBox;
             m_Light.color = Color.gray;
+        }
+
+        //천둥이 쳤다면
+        if (m_yachtCtrl.b_IsThunder)
+        {
+            SceneManager.LoadScene(2);
         }
     }
 }
