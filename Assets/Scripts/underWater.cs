@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityStandardAssets.Effects;
 using UnityEngine;
+using WaterSystem;
 
 public class underWater : MonoBehaviour
 {
@@ -11,6 +12,9 @@ public class underWater : MonoBehaviour
     public SwimTrigger m_swimTrigger;
     public GameObject m_GlobalVolume;
     public GameObject m_bubble;
+
+    [Header("Water")]
+    public Water _water;
 
     //[Header("Water Sound")]
     //public AudioSource m_Abovewater;
@@ -24,7 +28,14 @@ public class underWater : MonoBehaviour
         RenderSettings.fog = false; //close fog
         m_GlobalVolume.SetActive(false);
         m_bubble.SetActive(false);
-       // m_Abovewater.Play();
+        // m_Abovewater.Play();
+
+        _water.surfaceData._basicWaveSettings.amplitude = 4f;
+        _water.surfaceData._basicWaveSettings.wavelength = 50f;
+        _water.Init();
+
+        Debug.Log("underwater start 시작");
+
     }
 
     // Update is called once per frame

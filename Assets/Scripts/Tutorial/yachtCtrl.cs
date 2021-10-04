@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using WaterSystem.Data;
+using WaterSystem;
 
 public class yachtCtrl : MonoBehaviour
 {
+    public Water _water;
+
     [Header("yacht 속성")]
     [SerializeField]
     private float m_speed;
@@ -41,10 +44,19 @@ public class yachtCtrl : MonoBehaviour
     [SerializeField]
     private StormTrigger m_StormTrigger;
 
+    [Header("Thunder")]
+    public bool b_IsThunder;    //안내 UI 띄울 bool 변수
+    public GameObject m_Thunder;
+
+
     private void Awake()
     {
         m_rigidbody = GetComponent<Rigidbody>();
         m_waterSound.Play();
+
+        _water.surfaceData._basicWaveSettings.amplitude = 4f;
+        _water.surfaceData._basicWaveSettings.wavelength = 50f;
+        _water.Init();
     }
 
     private void Update()
@@ -74,17 +86,22 @@ public class yachtCtrl : MonoBehaviour
                 transform.position = new Vector3(Mathf.PingPong(Time.time, 3), transform.position.y, transform.position.z);
                 transform.rotation = Quaternion.Euler(Mathf.PingPong(Time.time * tempRotate, 5f), this.transform.rotation.y, 0f);
 
-                WaterSurfaceData m_water = new WaterSurfaceData();
-                BasicWaves _basicWaveSettings = new BasicWaves(10f, 30f, 5f);
-
                 if (!m_StormSound.isPlaying)
                 {
                     m_StormSound.Play();
-                }
 
+                    //water 높이 바꿔주기
+                    _water.surfaceData._basicWaveSettings.amplitude = 20f;
+                    _water.surfaceData._basicWaveSettings.wavelength = 100f;
+
+                    _water.Init();
+
+                    StartCoroutine(SceneChange());
+                }
                 m_waterSound.Stop();
               
             }
+
 
             if (moveDirX != 0 || moveDirZ != 0)
             {
@@ -116,6 +133,17 @@ public class yachtCtrl : MonoBehaviour
                 m_YachtStopSound.Play();
             }
         }
+    }
+
+    //storm이 시작되고, player가 배가 조종되지 않는 다는 것을 알게된 후 배 위를 돌아다니다가
+    //5초 뒤 천둥이 요트 위에 치게 되고 Scene change
+    IEnumerator SceneChange()
+    {
+        WaitForSeconds five = new WaitForSeconds(5.0f);
+        yield return five;
+
+        m_Thunder.gameObject.SetActive(true);
+        b_IsThunder = true;
     }
 
     void yacht_Rotation()
