@@ -6,7 +6,8 @@ using UnityEngine.UI;
 
 public class Title : MonoBehaviour
 {
-    public string sceneName = "GameScene2";
+    public string gameSceneName, tutorialSceneName;
+
 
     [SerializeField]
     private GameObject background;
@@ -27,7 +28,7 @@ public class Title : MonoBehaviour
         progressbar.gameObject.SetActive(true);
         background.SetActive(true);
         SceneManager.sceneLoaded += LoadSceneEnd;
-        StartCoroutine(GameStartCoroutine());
+        StartCoroutine(GameStartCoroutine(tutorialSceneName));
     }
 
     public void ClickLoad()
@@ -36,7 +37,7 @@ public class Title : MonoBehaviour
         progressbar.gameObject.SetActive(true);
         background.SetActive(true);
         SceneManager.sceneLoaded += LoadSceneEnd;
-        StartCoroutine(GameStartCoroutine());
+        StartCoroutine(GameStartCoroutine(gameSceneName));
     }
 
     public void ClickExit()
@@ -44,7 +45,7 @@ public class Title : MonoBehaviour
         Application.Quit();
     }
 
-    IEnumerator GameStartCoroutine()
+    IEnumerator GameStartCoroutine(string sceneName)
     {
         progressbar.fillAmount = 0f; 
         //yield return StartCoroutine(Fade(true));
@@ -83,7 +84,7 @@ public class Title : MonoBehaviour
 
     private void LoadSceneEnd(Scene scene, LoadSceneMode loadSceneMode)
     {
-        if(scene.name == sceneName)
+        if(scene.name == gameSceneName || scene.name == tutorialSceneName)
         {
             ProgressEnd();
             SceneManager.sceneLoaded -= LoadSceneEnd;
