@@ -16,13 +16,13 @@ public class TypingEffect : MonoBehaviour
 
     public string writerText = "";
 
-    public float WaitSeconds = 0.2f;
+    public float WaitSeconds = 0.1f;
 
     bool isButtonClicked = false;
 
-    public void StartNarration()
+    public void StartNarration(int startLine, int finishLine)
     {
-        StartCoroutine(TextPractice());
+        StartCoroutine(TextPractice(startLine, finishLine));
     }
 
     void Update()
@@ -46,10 +46,14 @@ public class TypingEffect : MonoBehaviour
         //텍스트 타이핑 효과
         for (a = 0; a < narration.Length; a++)
         {
-            yield return new WaitForSeconds(WaitSeconds);
-            writerText += narration[a];
-            ChatText.text = writerText;
-            yield return null;
+            if(!narration[a].Equals(" "))
+            {
+                yield return new WaitForSeconds(WaitSeconds);
+                writerText += narration[a];
+                ChatText.text = writerText;
+                yield return null;
+            }
+            
         }
 
         //키를 다시 누를 떄 까지 무한정 대기
@@ -64,9 +68,9 @@ public class TypingEffect : MonoBehaviour
         }
     }
 
-    IEnumerator TextPractice()
+    IEnumerator TextPractice(int startLine, int finishLine)
     {
-        for (int i = 0; i < fulltext.Length; i++)
+        for (int i = startLine; i <= finishLine; i++)
         {
             yield return StartCoroutine(NormalChat("캐릭터1", fulltext[i]));
         }

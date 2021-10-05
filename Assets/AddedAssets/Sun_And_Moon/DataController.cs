@@ -16,6 +16,9 @@ public class DataController : MonoBehaviour
     private TimerController timerController;
 
     [SerializeField]
+    private ControlGuide controlGuide;
+
+    [SerializeField]
     private GameObject player;
 
     static GameObject dataContainer;
@@ -74,6 +77,7 @@ public class DataController : MonoBehaviour
             playerDataLoad();
             sunController.SunControllerSetting();
             actionController.LoadGame();
+            ControlGuideLoad();
         }
         else
         {
@@ -85,6 +89,7 @@ public class DataController : MonoBehaviour
     {
         playerDataSave();
         actionController.SaveGame();
+        ControlGuideSave();
 
         string ToJsonData = JsonUtility.ToJson(Gamedata);
         string filePath = Application.persistentDataPath + GameDataFileName;
@@ -108,5 +113,15 @@ public class DataController : MonoBehaviour
 
         timerController.SetCurrentTime(0, Gamedata.playerHP);
         timerController.SetCurrentTime(1, Gamedata.playerTP);
+    }
+
+    public void ControlGuideSave()
+    {
+        Gamedata.controlGuideBoolean = controlGuide.guideBoolean;
+    }
+
+    public void ControlGuideLoad()
+    {
+        controlGuide.guideBoolean = Gamedata.controlGuideBoolean;
     }
 }

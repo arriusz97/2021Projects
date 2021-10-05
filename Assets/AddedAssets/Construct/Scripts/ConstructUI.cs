@@ -33,6 +33,8 @@ public class ConstructUI : MonoBehaviour
     [SerializeField]
     private float range;
 
+    [SerializeField]
+    private DataController dataController;
 
     public void SlotClick(int _slotNumber)
     {
