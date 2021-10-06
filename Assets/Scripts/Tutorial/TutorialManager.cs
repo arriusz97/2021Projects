@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class TutorialManager : MonoBehaviour
 {
@@ -31,13 +32,35 @@ public class TutorialManager : MonoBehaviour
     public yachtCtrl m_yachtCtrl;
 
     [Header("Typing effect")]
-    public TypingEffect m_tutorialTyping;
+  //  public TypingEffect m_tutorialTyping;
     public TypingEffect_TMP m_tmpro_typing;
+    public TypingEffect_TMP m_Message02_typing;
+
+    [Header("UI")]
+    [SerializeField]
+    private RawImage m_SceneChange_Image;
+    [SerializeField]
+    private GameObject m_Message02;
+    [SerializeField]
+    private GameObject m_Message02_outline;
+    [SerializeField]
+    private GameObject m_Message02_background;
+    [SerializeField]
+    private Text m_Message02_text;
+    private bool b_NarrationRunning = false;
 
     private void Start()
     {
-        // m_tutorialTyping.StartNarration();
-       // m_tmpro_typing.StartNarration();
+         //m_tutorialTyping.StartNarration();
+          m_tmpro_typing.StartNarration();
+    }
+
+    public void sceneChange()
+    {
+        m_Message02.gameObject.SetActive(true);
+        m_Message02_background.gameObject.SetActive(true);
+        m_Message02_outline.gameObject.SetActive(true);
+        m_Message02_text.gameObject.SetActive(true);
     }
 
     private void Update()
@@ -53,12 +76,36 @@ public class TutorialManager : MonoBehaviour
 
             RenderSettings.skybox = m_RainSkyBox;
             m_Light.color = Color.gray;
+            
+            sceneChange();
+
+            //typing이 끝났으면
+            if (!m_Message02_typing.m_isTyping)
+            {
+                Debug.Log("Typing 끝");
+                m_Message02.gameObject.SetActive(false);
+                m_Message02_background.gameObject.SetActive(false);
+                m_Message02_outline.gameObject.SetActive(false);
+                m_Message02_text.gameObject.SetActive(false);
+            }
+            
+
         }
 
-        //천둥이 쳤다면
-        if (m_yachtCtrl.b_IsThunder)
-        {
+        //천둥이 치고 15초가 지났다면
+        if (m_yachtCtrl.b_SceneChagne)
+        { 
+
+            m_SceneChange_Image.gameObject.SetActive(true);
             SceneManager.LoadScene(2);
         }
+    }
+
+    IEnumerator SceneChange()
+    {
+        yield return null;
+
+        //한번만 발동되게 하기
+        m_Message02_typing.StartNarration();
     }
 }
