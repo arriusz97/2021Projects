@@ -2,11 +2,12 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class TypingEffect : MonoBehaviour
 {
 
-    public Text ChatText; // 실제 채팅이 나오는 텍스트
+    public TextMeshProUGUI ChatText; // 실제 채팅이 나오는 텍스트
     //public Text CharacterName; // 캐릭터 이름이 나오는 텍스트
 
 
@@ -16,7 +17,7 @@ public class TypingEffect : MonoBehaviour
 
     public string writerText = "";
 
-    public float WaitSeconds = 0.1f;
+    public float WaitSeconds = 0.05f;
 
     bool isButtonClicked = false;
 
