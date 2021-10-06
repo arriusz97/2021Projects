@@ -36,7 +36,7 @@ public class yachtCtrl : MonoBehaviour
     [SerializeField]
     private AudioSource m_YachtStopSound;
     [SerializeField]
-    private AudioSource m_StormSound;
+    public AudioSource m_StormSound;
 
     [Header("Rain")]
     [SerializeField]
@@ -46,7 +46,7 @@ public class yachtCtrl : MonoBehaviour
 
     [Header("Thunder")]
     public bool b_IsThunder;    //안내 UI 띄울 bool 변수
-    public GameObject m_Thunder;
+    public bool b_SceneChagne;  //scene을 변경할 bool 변수
 
 
     private void Awake()
@@ -89,7 +89,7 @@ public class yachtCtrl : MonoBehaviour
                 if (!m_StormSound.isPlaying)
                 {
                     m_StormSound.Play();
-
+                    b_IsThunder = true;
                     //water 높이 바꿔주기
                     _water.surfaceData._basicWaveSettings.amplitude = 20f;
                     _water.surfaceData._basicWaveSettings.wavelength = 100f;
@@ -136,14 +136,13 @@ public class yachtCtrl : MonoBehaviour
     }
 
     //storm이 시작되고, player가 배가 조종되지 않는 다는 것을 알게된 후 배 위를 돌아다니다가
-    //5초 뒤 천둥이 요트 위에 치게 되고 Scene change
+    //15초 뒤 천둥이 요트 위에 치게 되고 Scene change
     IEnumerator SceneChange()
     {
-        WaitForSeconds five = new WaitForSeconds(5.0f);
-        yield return five;
+        WaitForSeconds fift = new WaitForSeconds(15.0f);
+        yield return fift;
 
-        m_Thunder.gameObject.SetActive(true);
-        b_IsThunder = true;
+        b_SceneChagne = true;
     }
 
     void yacht_Rotation()

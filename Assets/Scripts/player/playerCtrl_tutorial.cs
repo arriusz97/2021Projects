@@ -47,6 +47,10 @@ public class playerCtrl_tutorial : MonoBehaviour
     [SerializeField]
     private GameObject m_yacht;
 
+    [Header("MessageUI")]
+    [SerializeField]
+    private TypingEffect_TMP typingEffect;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -63,9 +67,13 @@ public class playerCtrl_tutorial : MonoBehaviour
         //앉은 상태면 움직이지 X
         if (!m_drivingSitCtrl.m_playerSit)
         {
-            Move();
             camera_Rotation();
             character_Rotation();
+
+            if (!typingEffect.m_isTyping)
+            {
+                Move();
+            }
         }
 
         if (m_JumpCount < 1 && Input.GetButtonDown("Jump")) // && !m_SwimTrigger.m_isWater
