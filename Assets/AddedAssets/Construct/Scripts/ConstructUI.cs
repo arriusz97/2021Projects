@@ -87,7 +87,7 @@ public class ConstructUI : MonoBehaviour
         }
     }
 
-    private void Window()
+    public void Window()
     {
         if (!isActivated)
             OpenWindow();
