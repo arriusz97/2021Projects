@@ -7,11 +7,9 @@ using TMPro;
 public class TypingEffect : MonoBehaviour
 {
 
-    public TextMeshProUGUI ChatText; // 실제 채팅이 나오는 텍스트
-    //public Text CharacterName; // 캐릭터 이름이 나오는 텍스트
+    public TextMeshProUGUI ChatText; 
 
-
-    public List<KeyCode> skipButton; // 대화를 빠르게 넘길 수 있는 키
+    public List<KeyCode> skipButton;
 
     public string[] fulltext;
 
@@ -21,6 +19,8 @@ public class TypingEffect : MonoBehaviour
 
     bool isButtonClicked = false;
 
+    public bool waiting, narrationEnd = false;
+
     public void StartNarration(int startLine, int finishLine)
     {
         StartCoroutine(TextPractice(startLine, finishLine));
@@ -28,23 +28,15 @@ public class TypingEffect : MonoBehaviour
 
     void Update()
     {
-        foreach (var element in skipButton) // 버튼 검사
-        {
-            if (Input.GetKeyDown(element))
-            {
-                isButtonClicked = true;
-            }
-        }
+        Skip();
     }
-
 
     IEnumerator NormalChat(string narrator, string narration)
     {
         int a = 0;
-        //CharacterName.text = narrator;
+        narrationEnd = false;
         writerText = "";
 
-        //텍스트 타이핑 효과
         for (a = 0; a < narration.Length; a++)
         {
             if(!narration[a].Equals(" "))
@@ -57,7 +49,8 @@ public class TypingEffect : MonoBehaviour
             
         }
 
-        //키를 다시 누를 떄 까지 무한정 대기
+        narrationEnd = true;
+
         while (true)
         {
             if (isButtonClicked)
@@ -71,9 +64,26 @@ public class TypingEffect : MonoBehaviour
 
     IEnumerator TextPractice(int startLine, int finishLine)
     {
+        waiting = false;
         for (int i = startLine; i <= finishLine; i++)
         {
+            if (i == finishLine)
+            {
+                waiting = true;
+            }
             yield return StartCoroutine(NormalChat("캐릭터1", fulltext[i]));
+        }
+        
+    }
+
+    public void Skip()
+    {
+        foreach (var element in skipButton)
+        {
+            if (Input.GetKeyDown(element))
+            {
+                isButtonClicked = true;
+            }
         }
     }
 }
