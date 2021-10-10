@@ -14,6 +14,7 @@ public class yachtCtrl : MonoBehaviour
     [SerializeField]
     private yachtDrivingSit m_drivingSitCtrl;
     public playerCtrl_tutorial m_playerCtrl;
+    public TutorialManager tutorialManager;
     Rigidbody m_rigidbody;
     [SerializeField]
     float tempRotate = 1.5f;
@@ -35,7 +36,6 @@ public class yachtCtrl : MonoBehaviour
     private AudioSource m_YachtDrivingSound;
     [SerializeField]
     private AudioSource m_YachtStopSound;
-    [SerializeField]
     public AudioSource m_StormSound;
 
     [Header("Rain")]
@@ -46,7 +46,6 @@ public class yachtCtrl : MonoBehaviour
 
     [Header("Thunder")]
     public bool b_IsThunder;    //안내 UI 띄울 bool 변수
-    public bool b_SceneChagne;  //scene을 변경할 bool 변수
 
 
     private void Awake()
@@ -96,7 +95,9 @@ public class yachtCtrl : MonoBehaviour
 
                     _water.Init();
 
-                    StartCoroutine(SceneChange());
+                    Debug.Log("message coroutine 실행");
+                    tutorialManager.Message02_func();
+                    
                 }
                 m_waterSound.Stop();
               
@@ -133,16 +134,6 @@ public class yachtCtrl : MonoBehaviour
                 m_YachtStopSound.Play();
             }
         }
-    }
-
-    //storm이 시작되고, player가 배가 조종되지 않는 다는 것을 알게된 후 배 위를 돌아다니다가
-    //15초 뒤 천둥이 요트 위에 치게 되고 Scene change
-    IEnumerator SceneChange()
-    {
-        WaitForSeconds fift = new WaitForSeconds(15.0f);
-        yield return fift;
-
-        b_SceneChagne = true;
     }
 
     void yacht_Rotation()
