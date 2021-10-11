@@ -3420,7 +3420,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec10f120c47c54f48b308948a5a7dd64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: GameScene2
+  gameSceneName: GameScene2
+  tutorialSceneName: TutorialScene
   background: {fileID: 972417407}
   dataController: {fileID: 0}
   progressbar: {fileID: 87614036}
@@ -5588,37 +5589,37 @@ MonoBehaviour:
   _depthTex: {fileID: 69502102}
   bakedDepthTex: {fileID: 0}
   _waves:
-  - amplitude: 10.180087
+  - amplitude: 2.0360174
     direction: -157.6966
-    wavelength: 49.146843
+    wavelength: 24.573421
     origin:
       x: 0
       y: 0
     onmiDir: 0
-  - amplitude: 13.433495
+  - amplitude: 2.686699
     direction: -151.68127
-    wavelength: 66.51629
+    wavelength: 33.258144
     origin:
       x: 0
       y: 0
     onmiDir: 0
-  - amplitude: 20.251732
+  - amplitude: 4.0503464
     direction: -248.20753
-    wavelength: 65.389
+    wavelength: 32.6945
     origin:
       x: 0
       y: 0
     onmiDir: 0
-  - amplitude: 20.155651
+  - amplitude: 4.0311303
     direction: -157.03645
-    wavelength: 102.23603
+    wavelength: 51.118015
     origin:
       x: 0
       y: 0
     onmiDir: 0
-  - amplitude: 22.291172
+  - amplitude: 4.4582343
     direction: -109.31301
-    wavelength: 125.48907
+    wavelength: 62.744534
     origin:
       x: 0
       y: 0
