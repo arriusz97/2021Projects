@@ -6,9 +6,7 @@ using TMPro;
 
 public class TypingEffect_TMP : MonoBehaviour
 {
-    //public Text CharacterName; // 캐릭터 이름이 나오는 텍스트
 
-   // public TextMeshProUGUI m_chatText;
     public Text ChatText; // 실제 채팅이 나오는 텍스트
 
     public List<KeyCode> skipButton; // 대화를 빠르게 넘길 수 있는 키
@@ -22,6 +20,9 @@ public class TypingEffect_TMP : MonoBehaviour
     public bool m_isTyping; //typing 되고 있는 동안 true 될 bool 변수
 
     bool isButtonClicked = false;
+
+    public RawImage m_background;
+    public RawImage m_outline;
 
     public void StartNarration()
     {
@@ -44,6 +45,8 @@ public class TypingEffect_TMP : MonoBehaviour
         {
             this.gameObject.SetActive(false);
             this.transform.parent.gameObject.SetActive(false);
+            m_background.gameObject.SetActive(false);
+            m_outline.gameObject.SetActive(false);
         }
 
     }
@@ -61,7 +64,7 @@ public class TypingEffect_TMP : MonoBehaviour
             yield return new WaitForSeconds(WaitSeconds);
             writerText += narration[a];
             ChatText.text = writerText;
-            Debug.Log("narration text = " + narration[a]);
+          //  Debug.Log("narration text = " + narration[a]);
             yield return null;
         }
 
