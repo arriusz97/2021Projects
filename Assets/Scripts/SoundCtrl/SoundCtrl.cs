@@ -198,7 +198,6 @@ public class SoundCtrl : MonoBehaviour
             if (!m_walk_Sand.isPlaying)
             {
                 m_walk_Sand.Play();
-                Debug.Log("walk sound play");
             }
 
             //player가 뛰고 있다면
@@ -209,19 +208,16 @@ public class SoundCtrl : MonoBehaviour
                 if (!m_run_Sand.isPlaying)
                 {
                     m_run_Sand.Play();
-                    Debug.Log("Run sound Play");
                 }
             }
             else
             {
                 m_run_Sand.Stop();
-                Debug.Log("run sound stop");
             }
         }
         else
         {
             m_walk_Sand.Stop();
-            Debug.Log("walk sound stop");
         }
     }
 

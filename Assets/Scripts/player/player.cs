@@ -33,7 +33,6 @@ public class player : MonoBehaviour
     [Header("camera변수")]
     public Camera m_camera;
     public Transform m_cameraArm;
-    //public GameCtrl m_gameCtrl;
     private float m_lookSensitivity = 2f;
     private float m_cameraRotationLimit = 50f;
     private float m_currentCameraRotationX;
@@ -57,6 +56,10 @@ public class player : MonoBehaviour
     [SerializeField]
     private TimerController mTimer;
 
+    [Header("IngameCtrl")]
+    [SerializeField]
+    private IngameCtrl ingameCtrl;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -65,7 +68,6 @@ public class player : MonoBehaviour
         m_Anim = GetComponent<Animator>();
         
         m_currentHP = m_maxHP;
-        
     }
 
     //enemy에게 맞았을 때 불릴 함수
@@ -92,9 +94,13 @@ public class player : MonoBehaviour
 
         if (m_currentHP <= 0)
         {
+            StartCoroutine(BloodUI());
             m_isDead = true;
             m_Anim.SetTrigger("DEAD");
-
+            Debug.Log(m_cameraArm.transform.rotation.y);
+            m_cameraArm.transform.rotation = Quaternion.Euler(new Vector3(55f, m_cameraArm.transform.rotation.eulerAngles.y, m_cameraArm.transform.rotation.eulerAngles.z));
+            Debug.Log(m_cameraArm.transform.rotation.y);
+            ingameCtrl.playerDead();
         }
     }
 
@@ -137,7 +143,6 @@ public class player : MonoBehaviour
             {
                 m_rigidbody.velocity = new Vector3(m_rigidbody.velocity.x, 5, m_rigidbody.velocity.z);
                 m_JumpCount++;
-                //m_Anim.SetBool("JUMP_ANIM", true);
             }
             m_Anim.SetFloat("JUMP", m_rigidbody.velocity.y);
 
@@ -372,7 +377,6 @@ public class player : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             m_JumpCount = 0;
-           // m_Anim.SetBool("JUMP_ANIM", false);
         }
     }
 }
