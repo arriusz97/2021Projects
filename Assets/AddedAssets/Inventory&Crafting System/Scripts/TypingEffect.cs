@@ -7,7 +7,7 @@ using TMPro;
 public class TypingEffect : MonoBehaviour
 {
 
-    public TextMeshProUGUI ChatText; 
+    public Text ChatText; 
 
     public List<KeyCode> skipButton;
 
