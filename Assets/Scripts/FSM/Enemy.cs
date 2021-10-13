@@ -211,8 +211,7 @@ public class Enemy : MonoBehaviour
                     //player가 enemy의 collider안에 들어왔고, 죽은 상태가 아니라면
                     if (m_canAttack && !m_Target.m_isDead)
                     {
-                        m_Target.Hit(20);
-                        Debug.Log("Target: " + m_Target + "hit!");
+                        m_Target.Hit(25);
                         m_canAttack = false;                   
                     }
                 }

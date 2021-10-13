@@ -44,7 +44,7 @@ public class yachtDrivingSit : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             //안내 UI 띄우기
-            m_sitText.text = "Press " + "<color=yellow>" + "(F)" + "</color>" + " to Sit ";
+            m_sitText.text = "Press " + "<color=yellow>" + "(F)" + "</color>" + " to sit";
             m_sitText.gameObject.SetActive(true);
             m_playerEnter = true;
         }
