@@ -8,7 +8,7 @@ public class TimerController : MonoBehaviour
     private player Player;
 
     [SerializeField]
-    private float O2Recover, groundY;
+    private float O2Recover, groundY, HPdown;
 
     public List<CircularTimer> TimerContainer = new List<CircularTimer>();
 
@@ -51,12 +51,20 @@ public class TimerController : MonoBehaviour
                 UpdateTimer(2, O2Recover+1.0f * Time.deltaTime);
             }
         }
+
         if(TimerContainer[3].isPaused)
         {
             StopTimer(3);
             TimerContainer[3].Activated(false);
         }
+
+        if(TimerContainer[1].CurrentTime == 1)
+        {
+            UpdateTimer(0, -HPdown);
+        }
+
         UpdateTimer(0, Time.deltaTime);
+
     }
 
     public void ActionClockOn(int _duration)
