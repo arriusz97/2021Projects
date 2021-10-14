@@ -8,6 +8,8 @@ public class ControlGuide : MonoBehaviour
     [SerializeField]
     private TypingEffect typingEffect;
 
+
+
     public int[] guideBoolean = Enumerable.Repeat<int>(0, 10).ToArray<int>();
 
     // Start is called before the first frame update

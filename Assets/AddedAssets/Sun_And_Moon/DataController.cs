@@ -19,6 +19,9 @@ public class DataController : MonoBehaviour
     private ControlGuide controlGuide;
 
     [SerializeField]
+    private ConstructUI constructUI;
+
+    [SerializeField]
     private GameObject player;
 
     static GameObject dataContainer;
@@ -78,6 +81,7 @@ public class DataController : MonoBehaviour
             sunController.SunControllerSetting();
             actionController.LoadGame();
             ControlGuideLoad();
+            ConstructLoad();
         }
         else
         {
@@ -90,6 +94,7 @@ public class DataController : MonoBehaviour
         playerDataSave();
         actionController.SaveGame();
         ControlGuideSave();
+        ConstructSave();
 
         string ToJsonData = JsonUtility.ToJson(Gamedata);
         string filePath = Application.persistentDataPath + GameDataFileName;
@@ -123,5 +128,15 @@ public class DataController : MonoBehaviour
     public void ControlGuideLoad()
     {
         controlGuide.guideBoolean = Gamedata.controlGuideBoolean;
+    }
+
+    public void ConstructSave()
+    {
+        Gamedata.CObjects = constructUI.Constructions;
+    }
+
+    public void ConstructLoad()
+    {
+        constructUI.Constructions = Gamedata.CObjects;
     }
 }

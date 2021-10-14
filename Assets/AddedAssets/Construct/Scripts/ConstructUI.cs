@@ -33,6 +33,10 @@ public class ConstructUI : MonoBehaviour
     [SerializeField]
     private float range;
 
+    public constructionObject[] Constructions = new constructionObject[5];
+    private int ConstructionNUm;
+
+
     [SerializeField]
     private DataController dataController;
 
@@ -42,6 +46,7 @@ public class ConstructUI : MonoBehaviour
         go_Prefab = constructs[_slotNumber].go_prefab;
         isPreviewActivated = true;
         go_BaseUI.SetActive(false);
+        ConstructionNUm = _slotNumber;
     }
 
     void Update()
@@ -84,6 +89,9 @@ public class ConstructUI : MonoBehaviour
             isPreviewActivated = false;
             go_Preview = null;
             go_Prefab = null;
+
+            Constructions[ConstructionNUm].objectPosition = hitInfo.point;
+            Constructions[ConstructionNUm].objectRotation = Quaternion.identity;
         }
     }
 
