@@ -29,6 +29,10 @@ public class SoundCtrl : MonoBehaviour
     [Header("Effect Sound")]
     public AudioSource m_walk_Sand;
     public AudioSource m_run_Sand;
+    
+    //O2 Gauge에 사용될 효과음
+    public AudioSource m_HeartBeat;
+    public AudioSource m_Alarm;
 
     [Header("player script")]
     public player m_playerCtrl;
@@ -224,5 +228,19 @@ public class SoundCtrl : MonoBehaviour
     public void fadeout(AudioSource audioSource, float FadeTime)
     {
         audioSource.volume -= 0.5f * Time.deltaTime / FadeTime;
+    }
+
+
+    //외부에서 실행할 함수
+    public void warningSound()
+    {
+        m_Alarm.Play();
+        m_HeartBeat.Play();
+    }
+
+    public void warningSound_Off()
+    {
+        m_Alarm.Stop();
+        m_HeartBeat.Stop();
     }
 }
