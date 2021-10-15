@@ -25,7 +25,7 @@ public class yachtCtrl : MonoBehaviour
     [SerializeField]
     private Camera m_YachtCamera;
     public Transform m_cameraArm;
-    private float m_lookSensitivity = 1f;
+    private float m_lookSensitivity = 0.8f;
     private float m_cameraRotationLimit = 10f;
     private float m_currentCameraRotationX;
 
