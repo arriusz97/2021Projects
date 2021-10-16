@@ -10,7 +10,7 @@ public class ActionController : MonoBehaviour
 {
     [SerializeField]
     private float range;
-    private bool pickupActivated = false;
+    public bool pickupActivated = false;
     private RaycastHit hitInfo;
 
     [SerializeField]

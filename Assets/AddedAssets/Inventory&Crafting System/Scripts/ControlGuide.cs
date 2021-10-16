@@ -9,9 +9,17 @@ public class ControlGuide : MonoBehaviour
     private TypingEffect typingEffect;
 
     [SerializeField]
+    private player player;
+
+    [SerializeField]
+    private ActionController action;
+
+    [SerializeField]
     private int[] narrationSet = new int[10];
 
     public int[] guideBoolean = Enumerable.Repeat<int>(0, 10).ToArray<int>();
+
+    
 
     // Start is called before the first frame update
     void Start()
@@ -48,6 +56,66 @@ public class ControlGuide : MonoBehaviour
                     guideBoolean[1] = 1;
                     Debug.Log("run guide clear");                   
                     typingEffect.StartNarration(narrationSet[1] + 1, narrationSet[2]);
+                }
+            }
+            else if (guideBoolean[2] == 0)
+            {
+                if (player.transform.localPosition.y <= -2.1)
+                {
+                    typingEffect.Skip();
+                    guideBoolean[2] = 1;
+                    Debug.Log("move to sea guide clear");
+                    typingEffect.StartNarration(narrationSet[2] + 1, narrationSet[3]);
+                }
+            }
+            else if (guideBoolean[3] == 0)
+            {
+                if (player.transform.localPosition.y <= -3.5 && Input.GetKey(KeyCode.LeftShift))
+                {
+                    typingEffect.Skip();
+                    guideBoolean[3] = 1;
+                    Debug.Log("dive guide clear");
+                    typingEffect.StartNarration(narrationSet[3] + 1, narrationSet[4]);
+                }
+            }
+            else if (guideBoolean[4] == 0)
+            {
+                if (player.transform.localPosition.y <= -2.5 && Input.GetKey(KeyCode.LeftControl))
+                {
+                    typingEffect.Skip();
+                    guideBoolean[4] = 1;
+                    Debug.Log("rise guide clear");
+                    typingEffect.StartNarration(narrationSet[4] + 1, narrationSet[5]);
+                }
+            }
+            else if (guideBoolean[5] == 0)
+            {
+                if (player.m_isAttack)
+                {
+                    typingEffect.Skip();
+                    guideBoolean[5] = 1;
+                    Debug.Log("attack guide clear");
+                    typingEffect.StartNarration(narrationSet[5] + 1, narrationSet[6]);
+                }
+            }
+            else if (guideBoolean[6] == 0)
+            {
+                if (Input.GetKey(KeyCode.F) && action.pickupActivated)
+                {
+                    typingEffect.Skip();
+                    guideBoolean[6] = 1;
+                    Debug.Log("interaction guide clear");
+                    typingEffect.StartNarration(narrationSet[6] + 1, narrationSet[7]);
+                }
+            }
+            else if (guideBoolean[7] == 0)
+            {
+                if (action.inventoryOpen)
+                {
+                    typingEffect.Skip();
+                    guideBoolean[7] = 1;
+                    Debug.Log("inventory guide clear");
+                    typingEffect.StartNarration(narrationSet[7] + 1, narrationSet[8]);
                 }
             }
         }
