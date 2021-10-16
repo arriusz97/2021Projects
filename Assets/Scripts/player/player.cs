@@ -33,7 +33,7 @@ public class player : MonoBehaviour
     [Header("camera변수")]
     public Camera m_camera;
     public Transform m_cameraArm;
-    private float m_lookSensitivity = 2f;
+    private float m_lookSensitivity = 1.5f;
     private float m_cameraRotationLimit = 50f;
     private float m_currentCameraRotationX;
     [SerializeField]
@@ -94,12 +94,10 @@ public class player : MonoBehaviour
 
         if (m_currentHP <= 0)
         {
-            StartCoroutine(BloodUI());
+            m_playerBloodUI.SetActive(true);
             m_isDead = true;
             m_Anim.SetTrigger("DEAD");
-            Debug.Log(m_cameraArm.transform.rotation.y);
             m_cameraArm.transform.rotation = Quaternion.Euler(new Vector3(55f, m_cameraArm.transform.rotation.eulerAngles.y, m_cameraArm.transform.rotation.eulerAngles.z));
-            Debug.Log(m_cameraArm.transform.rotation.y);
             ingameCtrl.playerDead();
         }
     }
@@ -261,13 +259,13 @@ public class player : MonoBehaviour
             if (m_isDive)
             {
                 var vel = m_rigidbody.velocity;
-                vel.y = -5.5f;
+                vel.y = -6f;
                 m_rigidbody.velocity = vel;
             }
             else if (m_isDiveup & this.transform.position.y < -20)
             {
                 var vel = m_rigidbody.velocity;
-                vel.y = +5.5f;
+                vel.y = +6f;
                 m_rigidbody.velocity = vel;
             }
             else
@@ -283,13 +281,13 @@ public class player : MonoBehaviour
             if (m_isDive)
             {
                 var vel2 = m_rigidbody.velocity;
-                vel2.y -= 0.5f;
+                vel2.y -= 0.45f;
                 m_rigidbody.velocity = vel2;
             }
             else if (m_isDiveup & this.transform.position.y < -20)
             {
                 var vel2 = m_rigidbody.velocity;
-                vel2.y += 0.5f;
+                vel2.y += 0.45f;
                 m_rigidbody.velocity = vel2;
             }
             else
