@@ -12,6 +12,8 @@ public class TimerController : MonoBehaviour
 
     public List<CircularTimer> TimerContainer = new List<CircularTimer>();
 
+    public bool O2alert = false;
+
     public void StartTimer(int TimerNum)
     {
         TimerContainer[TimerNum].StartTimer();
@@ -64,6 +66,13 @@ public class TimerController : MonoBehaviour
         }
 
         UpdateTimer(0, Time.deltaTime);
+
+        if (TimerContainer[3].CurrentTime >= 0.7)
+        {
+            O2alert = true;
+        }
+        else
+            O2alert = false;
 
     }
 

@@ -18,17 +18,17 @@ public class PasueMenu : MonoBehaviour
         dataController = GameObject.Find("DataController").GetComponent<DataController>();
     }
 
-    private void ClickLoad()
+    public void ClickLoad()
     {
         dataController.LoadGameData();
     }
 
-    private void ClickQuit()
+    public void ClickQuit()
     {
         StartCoroutine(TitleLoadCoroutine());
     }
 
-    private void ClickResume()
+    public void ClickResume()
     {
         gameObject.SetActive(false);
         actionController.Lock(false);

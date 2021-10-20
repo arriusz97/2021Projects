@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class IngameCtrl : MonoBehaviour
 {
+    [SerializeField]
+    private CanvasGroup deadUICanvas;
     
     public void playerDead()
     {
@@ -20,6 +22,8 @@ public class IngameCtrl : MonoBehaviour
     //player가 죽고나서 5초 뒤 lobby로 전환
     IEnumerator dead()
     {
+        yield return StartCoroutine(Fade(true));
+
         WaitForSeconds five  = new WaitForSeconds(5.0f);
         yield return five;
 
@@ -33,4 +37,19 @@ public class IngameCtrl : MonoBehaviour
 
         SceneManager.LoadScene(3);
     }
+
+    private IEnumerator Fade(bool isFadeIn) 
+    { 
+        float timer = 0f;
+        while (timer <= 1f) 
+        { 
+            yield return null;
+            timer += Time.unscaledDeltaTime * 2f;
+            deadUICanvas.alpha = Mathf.Lerp(isFadeIn ? 0 : 1, isFadeIn ? 1 : 0, timer); 
+        }
+        if (!isFadeIn) 
+        { gameObject.SetActive(false); 
+        } 
+    }
+
 }
