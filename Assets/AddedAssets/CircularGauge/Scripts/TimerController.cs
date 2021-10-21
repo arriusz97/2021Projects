@@ -67,7 +67,7 @@ public class TimerController : MonoBehaviour
 
         UpdateTimer(0, Time.deltaTime);
 
-        if (TimerContainer[3].CurrentTime >= 0.7)
+        if (TimerContainer[2].CurrentTime >= 0.7 * TimerContainer[2].duration)
         {
             O2alert = true;
         }
