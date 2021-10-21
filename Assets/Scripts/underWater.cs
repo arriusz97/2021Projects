@@ -42,7 +42,7 @@ public class underWater : MonoBehaviour
     void Update()
     {
         //player가 물에 들어갔다면 fog -> true
-        if (m_swimTrigger.m_isWater && m_player.transform.position.y < -23.5f)
+        if (m_swimTrigger.m_isWater && m_player.transform.position.y < -22.7f)
         {        
             RenderSettings.fog = true;
             RenderSettings.fogColor = new Color(0, 0.4f, 0.5f, 0.55f);

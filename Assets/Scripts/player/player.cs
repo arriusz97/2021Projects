@@ -94,12 +94,17 @@ public class player : MonoBehaviour
 
         if (m_currentHP <= 0)
         {
-            m_playerBloodUI.SetActive(true);
-            m_isDead = true;
-            m_Anim.SetTrigger("DEAD");
-            m_cameraArm.transform.rotation = Quaternion.Euler(new Vector3(55f, m_cameraArm.transform.rotation.eulerAngles.y, m_cameraArm.transform.rotation.eulerAngles.z));
-            ingameCtrl.playerDead();
+            dead();
         }
+    }
+
+    public void dead()
+    {
+        m_playerBloodUI.SetActive(true);
+        m_isDead = true;
+        m_Anim.SetTrigger("DEAD");
+        m_cameraArm.transform.rotation = Quaternion.Euler(new Vector3(55f, m_cameraArm.transform.rotation.eulerAngles.y, m_cameraArm.transform.rotation.eulerAngles.z));
+        ingameCtrl.playerDead();
     }
 
     IEnumerator BloodUI()
