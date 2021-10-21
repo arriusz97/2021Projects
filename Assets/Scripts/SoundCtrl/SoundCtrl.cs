@@ -37,6 +37,9 @@ public class SoundCtrl : MonoBehaviour
     [Header("player script")]
     public player m_playerCtrl;
 
+    [Header("o2 gauge")]
+    public TimerController timeCtrl;
+
     private void Awake()
     {
         m_Island_Bgm.Play();
@@ -155,6 +158,22 @@ public class SoundCtrl : MonoBehaviour
             m_Terrain7_Bgm.Stop();
         }
 
+        if (timeCtrl.O2alert)
+        {
+            Debug.Log("o2 alert true");
+            if(!m_HeartBeat.isPlaying && !m_Alarm.isPlaying)
+            {
+                m_HeartBeat.Play();
+                m_Alarm.Play();
+            }
+
+        }
+        else
+        {
+            m_HeartBeat.Stop();
+            m_Alarm.Stop();
+        }
+
         //물 속에 있지 않다면
         if (!m_swimTrigger.m_isWater)
         {
@@ -195,52 +214,43 @@ public class SoundCtrl : MonoBehaviour
             m_Island_night_Bgm.Stop();
         }
 
-        //물 속에 있지 않고 player가 walk하고 있다면
-        if (!m_swimTrigger.m_isWater && m_playerCtrl.isMove)
+        //물 속에 있지 않고 
+        if (!m_swimTrigger.m_isWater)
         {
-            //playing하고 있지 않다면
-            if (!m_walk_Sand.isPlaying)
+           // player가 walk하고 있다면
+            if (m_playerCtrl.isMove)
             {
-                m_walk_Sand.Play();
-            }
-
-            //player가 뛰고 있다면
-            if (m_playerCtrl.m_isRun)
-            {
-                m_walk_Sand.Stop();
-
-                if (!m_run_Sand.isPlaying)
+                //playing하고 있지 않다면
+                if (!m_walk_Sand.isPlaying)
                 {
-                    m_run_Sand.Play();
+                    m_walk_Sand.Play();
                 }
-            }
-            else
-            {
-                m_run_Sand.Stop();
+
+                //player가 뛰고 있다면
+                if (m_playerCtrl.m_isRun)
+                {
+                    m_walk_Sand.Stop();
+
+                    if (!m_run_Sand.isPlaying)
+                    {
+                        m_run_Sand.Play();
+                    }
+                }
+                else
+                {
+                    m_run_Sand.Stop();
+                }
             }
         }
         else
         {
             m_walk_Sand.Stop();
+            m_run_Sand.Stop();
         }
     }
 
     public void fadeout(AudioSource audioSource, float FadeTime)
     {
         audioSource.volume -= 0.5f * Time.deltaTime / FadeTime;
-    }
-
-
-    //외부에서 실행할 함수
-    public void warningSound()
-    {
-        m_Alarm.Play();
-        m_HeartBeat.Play();
-    }
-
-    public void warningSound_Off()
-    {
-        m_Alarm.Stop();
-        m_HeartBeat.Stop();
     }
 }
