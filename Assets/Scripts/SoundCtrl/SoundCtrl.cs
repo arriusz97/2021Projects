@@ -160,7 +160,6 @@ public class SoundCtrl : MonoBehaviour
 
         if (timeCtrl.O2alert)
         {
-            Debug.Log("o2 alert true");
             if(!m_HeartBeat.isPlaying && !m_Alarm.isPlaying)
             {
                 m_HeartBeat.Play();

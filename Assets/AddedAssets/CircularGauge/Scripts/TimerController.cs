@@ -70,7 +70,6 @@ public class TimerController : MonoBehaviour
         if (TimerContainer[2].CurrentTime >= 0.7 * TimerContainer[2].duration)
         {
             O2alert = true;
-            Debug.Log("TimeCtrl alert true");
         }
         else
             O2alert = false;
