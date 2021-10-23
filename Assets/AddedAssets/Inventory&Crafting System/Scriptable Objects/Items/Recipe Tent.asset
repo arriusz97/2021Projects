@@ -15,7 +15,7 @@ MonoBehaviour:
   uiDisplay: {fileID: 21300000, guid: 91c58e50d8837bc408646225967e3ec9, type: 3}
   stackable: 0
   type: 1
-  description: 
+  description: "\uB3DB + \uB098\uBB34\uB9C9\uB300 8 + \uB098\uBB34\uD310\uC790 4"
   data:
     Name: Recipe Tent
     Id: 23
@@ -24,4 +24,10 @@ MonoBehaviour:
   RecipeData:
     result: {fileID: 11400000, guid: fe1b5861e255b4647b720f008d079b50, type: 2}
     resultamount: 1
-    ingredients: []
+    ingredients:
+    - item: {fileID: 11400000, guid: 4826a48c7e2705e48bd1a65683741994, type: 2}
+      amount: 1
+    - item: {fileID: 11400000, guid: d5ed94d3ad0aaaa498cae3f276845e1b, type: 2}
+      amount: 8
+    - item: {fileID: 11400000, guid: e91b1a3f86c9679438e5221f83fb15e2, type: 2}
+      amount: 4

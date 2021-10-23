@@ -382,4 +382,9 @@ public class player : MonoBehaviour
             m_JumpCount = 0;
         }
     }
+
+    public void SwimSpeedUpgrade()
+    {
+        m_SwimSpeed += 20;
+    }
 }

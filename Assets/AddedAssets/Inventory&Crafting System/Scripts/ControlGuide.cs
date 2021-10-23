@@ -15,9 +15,9 @@ public class ControlGuide : MonoBehaviour
     private ActionController action;
 
     [SerializeField]
-    private int[] narrationSet = new int[10];
+    private int[] narrationSet = new int[8];
 
-    public int[] guideBoolean = Enumerable.Repeat<int>(0, 10).ToArray<int>();
+    public int[] guideBoolean = Enumerable.Repeat<int>(0, 8).ToArray<int>();
 
     
 
@@ -78,22 +78,22 @@ public class ControlGuide : MonoBehaviour
             }
             else if (guideBoolean[4] == 0)
             {
-                if (player.transform.localPosition.y <= -2.5 && Input.GetKey(KeyCode.LeftControl))
-                {
-                    typingEffect.Skip();
-                    guideBoolean[4] = 1;
-                    Debug.Log("rise guide clear");
-                    typingEffect.StartNarration(narrationSet[4] + 1, narrationSet[5]);
-                }
-            }
-            else if (guideBoolean[5] == 0)
-            {
                 if (player.m_isAttack)
                 {
                     typingEffect.Skip();
                     guideBoolean[5] = 1;
                     Debug.Log("attack guide clear");
                     typingEffect.StartNarration(narrationSet[5] + 1, narrationSet[6]);
+                }
+            }
+            else if (guideBoolean[5] == 0)
+            {                
+                if (player.transform.localPosition.y <= -2.5 && Input.GetKey(KeyCode.LeftControl))
+                {
+                    typingEffect.Skip();
+                    guideBoolean[4] = 1;
+                    Debug.Log("rise guide clear");
+                    typingEffect.StartNarration(narrationSet[4] + 1, narrationSet[5]);
                 }
             }
             else if (guideBoolean[6] == 0)

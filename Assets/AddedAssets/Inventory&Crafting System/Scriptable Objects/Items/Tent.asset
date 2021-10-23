@@ -15,7 +15,7 @@ MonoBehaviour:
   uiDisplay: {fileID: 21300000, guid: 91c58e50d8837bc408646225967e3ec9, type: 3}
   stackable: 0
   type: 4
-  description: 
+  description: "\uD150\uD2B8"
   data:
     Name: Tent
     Id: 26

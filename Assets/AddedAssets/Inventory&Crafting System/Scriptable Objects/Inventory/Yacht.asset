@@ -19,8 +19,8 @@ MonoBehaviour:
     Slots:
     - AllowedItems: 
       item:
-        Name: Wood
-        Id: 1
+        Name: Sail
+        Id: 33
         buffs: []
         itemType: 2
       amount: 1
