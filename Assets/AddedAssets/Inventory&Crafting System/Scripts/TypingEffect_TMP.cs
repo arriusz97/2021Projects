@@ -49,6 +49,10 @@ public class TypingEffect_TMP : MonoBehaviour
             m_outline.gameObject.SetActive(false);
         }
 
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            m_isTyping = false;
+        }
     }
 
 
