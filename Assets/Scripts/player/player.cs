@@ -264,13 +264,13 @@ public class player : MonoBehaviour
             if (m_isDive)
             {
                 var vel = m_rigidbody.velocity;
-                vel.y = -6f;
+                vel.y = -5.7f;
                 m_rigidbody.velocity = vel;
             }
             else if (m_isDiveup & this.transform.position.y < -20)
             {
                 var vel = m_rigidbody.velocity;
-                vel.y = +6f;
+                vel.y = +5.7f;
                 m_rigidbody.velocity = vel;
             }
             else
@@ -335,8 +335,10 @@ public class player : MonoBehaviour
         {
             isMove = false;
             m_Anim.SetBool("IDLE", true);
+            m_Anim.SetBool("RUN", false);
             m_cameraAnimator.SetBool("Camera_Idle", true);
             m_cameraAnimator.SetBool("Camera_Walk", false);
+            m_cameraAnimator.SetBool("Camera_Run", false);
         }
 
         if (!m_SwimTrigger.m_isWater)
