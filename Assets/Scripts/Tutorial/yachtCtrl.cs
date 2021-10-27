@@ -47,12 +47,6 @@ public class yachtCtrl : MonoBehaviour
     [Header("Thunder")]
     public bool b_IsThunder;    //안내 UI 띄울 bool 변수
 
-    [Header("WallPosition")]
-    public float m_leftWall;
-    public float m_rightWall;
-    public float m_upWall;
-    public float m_bottomWall;
-
 
     private void Awake()
     {
@@ -141,19 +135,19 @@ public class yachtCtrl : MonoBehaviour
             }
         }
 
-        if(this.transform.position.z >= 270)
+        if(this.transform.position.z <= -700f)
         {
-            this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, 270f);
+            this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, -700f);
         }
-        else if(this.transform.position.z <= 900)
+        else if(this.transform.position.z >= 500)
         {
-            this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, 900f);
+            this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, 500f);
         }
-        else if(this.transform.position.x >= -330)
+        else if (this.transform.position.x >= 0)
         {
-            this.transform.position = new Vector3(-330f, this.transform.position.y, this.transform.position.z);
+            this.transform.position = new Vector3(0f, this.transform.position.y, this.transform.position.z);
         }
-        else if(this.transform.position.x <= -930)
+        else if (this.transform.position.x <= -930)
         {
             this.transform.position = new Vector3(-930f, this.transform.position.y, this.transform.position.z);
         }

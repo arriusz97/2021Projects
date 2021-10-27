@@ -6134,6 +6134,41 @@ Transform:
   m_Father: {fileID: 1645026613}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!84 &447265388
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: WaterDepthMap
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  serializedVersion: 3
+  m_Width: 1024
+  m_Height: 1024
+  m_AntiAliasing: 1
+  m_MipCount: -1
+  m_DepthFormat: 2
+  m_ColorFormat: 142
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_EnableCompatibleFormat: 1
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
 --- !u!1 &458334030
 GameObject:
   m_ObjectHideFlags: 0
@@ -8437,40 +8472,40 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   computeOverride: 0
-  _depthTex: {fileID: 1707094782}
+  _depthTex: {fileID: 447265388}
   bakedDepthTex: {fileID: 0}
   _waves:
-  - amplitude: 2.0360174
+  - amplitude: 10.180087
     direction: -157.6966
-    wavelength: 24.573421
+    wavelength: 49.146843
     origin:
       x: 0
       y: 0
     onmiDir: 0
-  - amplitude: 2.686699
+  - amplitude: 13.433495
     direction: -151.68127
-    wavelength: 33.258144
+    wavelength: 66.51629
     origin:
       x: 0
       y: 0
     onmiDir: 0
-  - amplitude: 4.0503464
+  - amplitude: 20.251732
     direction: -248.20753
-    wavelength: 32.6945
+    wavelength: 65.389
     origin:
       x: 0
       y: 0
     onmiDir: 0
-  - amplitude: 4.0311303
+  - amplitude: 20.155651
     direction: -157.03645
-    wavelength: 51.118015
+    wavelength: 102.23603
     origin:
       x: 0
       y: 0
     onmiDir: 0
-  - amplitude: 4.4582343
+  - amplitude: 22.291172
     direction: -109.31301
-    wavelength: 62.744534
+    wavelength: 125.48907
     origin:
       x: 0
       y: 0
@@ -8627,7 +8662,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _water: {fileID: 1241935326}
-  m_speed: 90
+  m_speed: 100
   m_drivingSitCtrl: {fileID: 1512352477}
   m_playerCtrl: {fileID: 1770989947}
   tutorialManager: {fileID: 1521969638}
@@ -8642,6 +8677,10 @@ MonoBehaviour:
   m_YachtCamera_Rain: {fileID: 1917393562266428}
   m_StormTrigger: {fileID: 1748021304}
   b_IsThunder: 0
+  m_leftWall: 0
+  m_rightWall: 0
+  m_upWall: 0
+  m_bottomWall: 0
 --- !u!1 &1285172050
 GameObject:
   m_ObjectHideFlags: 0
@@ -14188,41 +14227,6 @@ Transform:
   m_Father: {fileID: 394702871}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!84 &1707094782
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: WaterDepthMap
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  serializedVersion: 3
-  m_Width: 1024
-  m_Height: 1024
-  m_AntiAliasing: 1
-  m_MipCount: -1
-  m_DepthFormat: 2
-  m_ColorFormat: 142
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_EnableCompatibleFormat: 1
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
 --- !u!1 &1713523401
 GameObject:
   m_ObjectHideFlags: 0
