@@ -24,3 +24,17 @@ MonoBehaviour:
         buffs: []
         itemType: 1
       amount: 1
+    - AllowedItems: 
+      item:
+        Name: Wood Plank Recipe
+        Id: 29
+        buffs: []
+        itemType: 1
+      amount: 1
+    - AllowedItems: 
+      item:
+        Name: Wood Plank Recipe
+        Id: 35
+        buffs: []
+        itemType: 1
+      amount: 1
