@@ -24,10 +24,10 @@ public class IngameCtrl : MonoBehaviour
     {
         
         yield return StartCoroutine(Fade(true));
-
+        gui.alpha = 1;
         WaitForSeconds five  = new WaitForSeconds(5.0f);
         yield return five;
-        gui.alpha = 1;
+        
         SceneManager.LoadScene(0);
     }
 

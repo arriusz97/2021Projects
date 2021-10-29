@@ -5,4 +5,5 @@
     Material,
     Food,
     Construct,
+    Tool,
 }

@@ -15,6 +15,8 @@ public class GameData
     public Quaternion playerRotation;
     public constructionObject[] CObjects = new constructionObject[5];
     public int[] controlGuideBoolean = new int[10];
+    public int O2upgrade = 0;
+    public int swimUpgrade = 0;
 }
 
 public class constructionObject

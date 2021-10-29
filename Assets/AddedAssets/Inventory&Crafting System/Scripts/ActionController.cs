@@ -311,15 +311,26 @@ public class ActionController : MonoBehaviour
         quickSlot.Load();
         crafting.Load();
         campfire.Load();
+
+        if(dataController.Gamedata.O2upgrade == 1)
+        {
+            O2gaugeUpgrade();
+        }
+        if(dataController.Gamedata.swimUpgrade == 1)
+        {
+            SwimSpeedUpgrade();
+        }
     }
 
     public void O2gaugeUpgrade()
     {
         timer.TimerContainer[2].duration = timer.TimerContainer[2].duration + 30;
+        dataController.Gamedata.O2upgrade = 1;
     }
 
     public void SwimSpeedUpgrade()
     {
         mPlayer.SwimSpeedUpgrade();
+        dataController.Gamedata.swimUpgrade = 1;
     }
 }

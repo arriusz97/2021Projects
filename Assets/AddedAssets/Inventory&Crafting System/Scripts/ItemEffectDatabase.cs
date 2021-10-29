@@ -25,6 +25,9 @@ public class ItemEffectDatabase : MonoBehaviour
 
     private const string HP = "HP", TP = "TP", O2 = "O2";
 
+    [SerializeField]
+    private ActionController AC;
+
     private void Awake()
     {
         pickup = GetComponent<AudioSource>();
@@ -64,8 +67,19 @@ public class ItemEffectDatabase : MonoBehaviour
                                 break;
                         }
                         Debug.Log(item.Name + " 을 사용했습니다.");
-                    }
+                    }                    
                     return;
+                }
+                else if (itemEffects[i]._item.data.itemType == ItemType.Tool)
+                {
+                    if(item.Name == "Flippers")
+                    {
+                        AC.SwimSpeedUpgrade();
+                    }
+                    else if(item.Name == "")
+                    {
+                        AC.O2gaugeUpgrade();
+                    }
                 }
             }
         }

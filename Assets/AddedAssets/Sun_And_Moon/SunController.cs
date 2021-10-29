@@ -33,7 +33,10 @@ public class SunController : MonoBehaviour
     public bool m_night = false;
 
     [SerializeField]
-    private DataController dataController;   
+    private DataController dataController;
+
+    [SerializeField]
+    private GameObject[] supplyBoxs = new GameObject[9];
 
     // Start is called before the first frame update
     void Start()
@@ -49,45 +52,11 @@ public class SunController : MonoBehaviour
         LightRotation();
         StarLight();
         currentTime += (Time.deltaTime / SecondsOfDay);
-
-        if (currentTime >= 1)
-        {
-            currentTime = 0;                        //자정이 지나면
-            currentDay++;                         //날짜 증가
-
-            if (!dayCounterMove)            //날짜가 변하면 DayCounter 출력 준비
-            {
-                dayCounterMove = true;
-            }            
-        }
-
+        DayUpdate();
         LightIntensity();
-
-        if(currentTime >= 0.75f || currentTime <= 0.25f)
-        {
-            m_night = true;
-        }
-        else
-        {
-            m_night = false;
-        }
-
-        if (dayCounterMove && currentTime >= 0.3f)      // 아침이 되면 DayCounter 출력
-        {
-
-            if (!dayCounter.isActiveAndEnabled)
-            {
-                DayCounterUpdate(currentDay);
-            }
-
-            dayCounter.StartCounter();
-
-            if(currentTime >= 0.3f + (5f / SecondsOfDay))       //5초간 출력되도록 한다.
-            {
-                dayCounter.gameObject.SetActive(false);
-                dayCounterMove = false;
-            }
-        }
+        NightCheck();
+        DayCounterCall();
+        SupplyBoxsReset();        
     }
 
     void DayCounterUpdate(int currentDay)       
@@ -145,5 +114,62 @@ public class SunController : MonoBehaviour
         dayCounterMove = true;
         currentDay = dataController.Gamedata.currentDay;
         currentTime = 0.29f;      
+    }
+
+    private void NightCheck()
+    {
+        if (currentTime >= 0.75f || currentTime <= 0.25f)
+        {
+            m_night = true;
+        }
+        else
+        {
+            m_night = false;
+        }
+    }
+
+    private void DayUpdate()
+    {
+        if (currentTime >= 1)
+        {
+            currentTime = 0;                        //자정이 지나면
+            currentDay++;                         //날짜 증가
+
+            if (!dayCounterMove)            //날짜가 변하면 DayCounter 출력 준비
+            {
+                dayCounterMove = true;
+            }
+        }
+    }
+
+    private void DayCounterCall()
+    {
+        if (dayCounterMove && currentTime >= 0.3f)      // 아침이 되면 DayCounter 출력
+        {
+
+            if (!dayCounter.isActiveAndEnabled)
+            {
+                DayCounterUpdate(currentDay);
+            }
+
+            dayCounter.StartCounter();
+
+            if (currentTime >= 0.3f + (5f / SecondsOfDay))       //5초간 출력되도록 한다.
+            {
+                dayCounter.gameObject.SetActive(false);
+                dayCounterMove = false;
+            }
+        }
+    }
+
+    private void SupplyBoxsReset()
+    {
+        if (currentDay == 14)
+        {
+            for (int i = 0; i < supplyBoxs.Length; i++)
+            {
+                supplyBoxs[i].SetActive(true);
+            }
+        }
     }
 }
