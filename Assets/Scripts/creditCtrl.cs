@@ -11,10 +11,13 @@ public class creditCtrl : MonoBehaviour
     private float m_Speed;
     [SerializeField]
     private AudioSource m_bgm;
+    [SerializeField]
+    private AudioSource m_helicopter;
 
     private void Awake()
     {
         m_bgm.Play();
+        m_helicopter.Play();
     }
 
     // Update is called once per frame
@@ -25,7 +28,7 @@ public class creditCtrl : MonoBehaviour
         Debug.Log(m_rectTransform.position.y + m_Speed);
 
 
-        if(m_rectTransform.position.y + m_Speed > 80f)
+        if(m_rectTransform.position.y + m_Speed > -200f)
         {
             StartCoroutine(twosec());
         }
