@@ -76,7 +76,7 @@ public class ItemEffectDatabase : MonoBehaviour
                     {
                         AC.SwimSpeedUpgrade();
                     }
-                    else if(item.Name == "")
+                    else if(item.Name == "O2")
                     {
                         AC.O2gaugeUpgrade();
                     }

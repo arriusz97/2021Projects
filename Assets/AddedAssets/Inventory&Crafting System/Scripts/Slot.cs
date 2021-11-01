@@ -26,7 +26,7 @@ public class Slot : MonoBehaviour, IPointerClickHandler
 
         if (eventData.button == PointerEventData.InputButton.Right && MouseData.slotHoveredOver != null)    //우클릭
         {
-            if (mouseHoverSlotData.item.itemType == ItemType.Food)      //아이템이 음식이라면 수치를 1 감소시킨다.
+            if (mouseHoverSlotData.item.itemType == ItemType.Food || mouseHoverSlotData.item.itemType == ItemType.Tool)      //아이템이 음식이라면 수치를 1 감소시킨다.
             {
                 _theItemEffectDatabase.UseItem(mouseHoverSlotData.item);
                 _inventory.AddItem(mouseHoverSlotData.item, -1);
