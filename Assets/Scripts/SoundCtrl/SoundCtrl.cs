@@ -240,6 +240,11 @@ public class SoundCtrl : MonoBehaviour
                     m_run_Sand.Stop();
                 }
             }
+            else
+            {
+                m_walk_Sand.Stop();
+                m_run_Sand.Stop();
+            }
         }
         else
         {
