@@ -128,6 +128,10 @@ public class DataController : MonoBehaviour
     public void ControlGuideLoad()
     {
         controlGuide.guideBoolean = Gamedata.controlGuideBoolean;
+        if(Gamedata.controlGuideBoolean[7] == 1)
+        {
+            controlGuide.sail.SetActive(false);
+        }
     }
 
     public void ConstructSave()

@@ -26,9 +26,6 @@ public class ActionController : MonoBehaviour
     [SerializeField]
     private TimerController timer;
 
-    [SerializeField]
-    private int treeLoggingTime = 3;
-
     public bool inventoryOpen = false, campfireOpen = false, CraftingOpen = false, playerLock = false;
 
     [SerializeField]
@@ -204,13 +201,13 @@ public class ActionController : MonoBehaviour
                 if (interactionObject.InteractionType == eInteractionType.Tree)
                 {
                     CoconutTree coconutTree = hitInfo.transform.GetComponent<CoconutTree>();
-                    coconutTree.ActionClockOn(treeLoggingTime);
-                    coconutTree.TreeFall(treeLoggingTime);
+                    coconutTree.ActionClockOn();
+                    coconutTree.TreeFall();
                     ItemInfoDisappear();
                 }
                 else if (interactionObject.InteractionType == eInteractionType.ItemBox)
                 {
-                    interactionObject.ActionClockOn(3);
+                    interactionObject.ActionClockOn();
                     interactionObject.ItemRoot(inventory);
                     ItemInfoDisappear();
                 }

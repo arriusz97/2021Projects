@@ -12,11 +12,11 @@ public class InteractionObject : MonoBehaviour
     [SerializeField]
     private TimerController timer;
 
-    private int interactionTime;
+    [SerializeField]
+    protected int interactionTime = 3;
 
-    public void ActionClockOn(int actiontime)
+    public void ActionClockOn()
     {
-        interactionTime = actiontime;
         timer.ActionClockOn(interactionTime);
     }
 

@@ -14,9 +14,9 @@ public class CoconutTree : InteractionObject
         treeFalldown = GetComponent<AudioSource>();
     }
 
-    public void TreeFall(int LoggingTime)
+    public void TreeFall()
     {
-        StartCoroutine(LogCoroutine(LoggingTime));
+        StartCoroutine(LogCoroutine(interactionTime));
     }
 
     IEnumerator LogCoroutine(int LoggingTime)

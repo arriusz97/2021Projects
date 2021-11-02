@@ -36,7 +36,7 @@ public class InventorySlot
 
     public void AddAmount(int value)
     {
-        if((amount += value) == 0)
+        if((amount += value) <= 0)
         {
             RemoveItem();
         }

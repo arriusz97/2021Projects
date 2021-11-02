@@ -14,7 +14,7 @@ public class GameData
     public Vector3 playerPosition;
     public Quaternion playerRotation;
     public constructionObject[] CObjects = new constructionObject[5];
-    public int[] controlGuideBoolean = new int[10];
+    public int[] controlGuideBoolean = new int[8];
     public int O2upgrade = 0;
     public int swimUpgrade = 0;
 }

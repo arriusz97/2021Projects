@@ -19,7 +19,7 @@ public class ControlGuide : MonoBehaviour
 
     public int[] guideBoolean = Enumerable.Repeat<int>(0, 8).ToArray<int>();
 
-    
+    public GameObject sail;    
 
     // Start is called before the first frame update
     void Start()
@@ -81,19 +81,19 @@ public class ControlGuide : MonoBehaviour
                 if (player.m_isAttack)
                 {
                     typingEffect.Skip();
-                    guideBoolean[5] = 1;
+                    guideBoolean[4] = 1;
                     Debug.Log("attack guide clear");
-                    typingEffect.StartNarration(narrationSet[5] + 1, narrationSet[6]);
+                    typingEffect.StartNarration(narrationSet[4] + 1, narrationSet[5]);
                 }
             }
             else if (guideBoolean[5] == 0)
-            {                
+            {
                 if (player.transform.localPosition.y <= -2.5 && Input.GetKey(KeyCode.LeftControl))
                 {
                     typingEffect.Skip();
-                    guideBoolean[4] = 1;
+                    guideBoolean[5] = 1;
                     Debug.Log("rise guide clear");
-                    typingEffect.StartNarration(narrationSet[4] + 1, narrationSet[5]);
+                    typingEffect.StartNarration(narrationSet[5] + 1, narrationSet[6]);
                 }
             }
             else if (guideBoolean[6] == 0)
@@ -117,7 +117,9 @@ public class ControlGuide : MonoBehaviour
                 }
             }
             else
+            {            
                 gameObject.SetActive(false);
+            }
         }
     }
 }
