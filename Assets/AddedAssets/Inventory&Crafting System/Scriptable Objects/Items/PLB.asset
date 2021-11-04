@@ -14,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiDisplay: {fileID: 0}
   stackable: 0
-  type: 0
+  type: 5
   description: "\uC870\uB09C\uC2E0\uD638 \uBC1C\uC2E0\uAE30"
   data:
     Name: PLB
     Id: 34
     buffs: []
-    itemType: 0
+    itemType: 5
   RecipeData:
     result: {fileID: 0}
     resultamount: 1

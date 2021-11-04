@@ -31,6 +31,7 @@ public class TimerController : MonoBehaviour
 
     public void UpdateTimer(int TimerNum, float Update)
     {
+        TimerContainer[TimerNum].isPaused = false;
         TimerContainer[TimerNum].CurrentTime = Mathf.Clamp(TimerContainer[TimerNum].CurrentTime - Update, 0, TimerContainer[TimerNum].duration);
     }
 
@@ -60,9 +61,9 @@ public class TimerController : MonoBehaviour
             TimerContainer[3].Activated(false);
         }
 
-        if(TimerContainer[1].CurrentTime == 1)
+        if(TimerContainer[1].isPaused)
         {
-            UpdateTimer(0, -HPdown);
+            UpdateTimer(0, -HPdown * Time.deltaTime);
         }
 
         UpdateTimer(0, Time.deltaTime);
@@ -73,7 +74,6 @@ public class TimerController : MonoBehaviour
         }
         else
             O2alert = false;
-
     }
 
     public void ActionClockOn(int _duration)

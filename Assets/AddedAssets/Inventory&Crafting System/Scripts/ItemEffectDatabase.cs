@@ -80,6 +80,10 @@ public class ItemEffectDatabase : MonoBehaviour
                     {
                         AC.O2gaugeUpgrade();
                     }
+                    else if(item.Name == "PLB")
+                    {
+                        AC.RescueSignal();
+                    }
                 }
             }
         }

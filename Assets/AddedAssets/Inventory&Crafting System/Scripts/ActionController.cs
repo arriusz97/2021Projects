@@ -330,4 +330,8 @@ public class ActionController : MonoBehaviour
         mPlayer.SwimSpeedUpgrade();
         dataController.Gamedata.swimUpgrade = 1;
     }
+    public void RescueSignal()
+    {
+
+    }
 }
