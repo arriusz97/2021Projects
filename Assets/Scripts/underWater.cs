@@ -16,25 +16,16 @@ public class underWater : MonoBehaviour
     [Header("Water")]
     public Water _water;
 
-    //[Header("Water Sound")]
-    //public AudioSource m_Abovewater;
-    ////public AudioSource m_Insidewater;
-    //public bool m_underwater;
-
-
     // Start is called before the first frame update
     void Start()
     {
         RenderSettings.fog = false; //close fog
         m_GlobalVolume.SetActive(false);
         m_bubble.SetActive(false);
-        // m_Abovewater.Play();
 
         _water.surfaceData._basicWaveSettings.amplitude = 4f;
         _water.surfaceData._basicWaveSettings.wavelength = 50f;
         _water.Init();
-
-        Debug.Log("underwater start 시작");
 
     }
 

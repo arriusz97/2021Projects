@@ -87,6 +87,7 @@ public abstract class UserInterface : MonoBehaviour
 
     public void OnEnter(GameObject obj)
     {
+        MouseData.interfaceMouseIsOver = gameObject.GetComponent<UserInterface>();
         MouseData.slotHoveredOver = obj;
         if (MouseData.interfaceMouseIsOver)
         {
@@ -112,6 +113,8 @@ public abstract class UserInterface : MonoBehaviour
     {
         MouseData.slotHoveredOver = null;
         theItemEffectDatabase.HideToolTip();
+
+        MouseData.interfaceMouseIsOver = null;
     }
 
     public void OnDragStart(GameObject obj)
