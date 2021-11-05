@@ -20,34 +20,28 @@ public class PasueMenu : MonoBehaviour
 
     public void ClickLoad()
     {
+        Escape(); 
         dataController.LoadGameData();
     }
 
     public void ClickQuit()
     {
+        Escape();
         StartCoroutine(TitleLoadCoroutine());
     }
 
     public void ClickResume()
     {
-        gameObject.SetActive(false);
-        actionController.Lock(false);
+        Escape();
     }
 
     public void Escape()
     {
         isActive = !isActive;
         gameObject.SetActive(isActive);
-        if (isActive)
-        {
-            Time.timeScale = 0;
-        }
-        else
-        {
-            Time.timeScale = 1;
-        }
+        TimeStop();
 
-        if(actionController == null)
+        if (actionController == null)
         {
             actionController = FindObjectOfType<ActionController>();
         }
@@ -69,5 +63,16 @@ public class PasueMenu : MonoBehaviour
 
         actionController.OnQuit();
         gameObject.SetActive(false);
+    }
+    void TimeStop()
+    {
+        if (isActive)
+        {
+            Time.timeScale = 0;
+        }
+        else
+        {
+            Time.timeScale = 1;
+        }
     }
 }

@@ -32,8 +32,9 @@ public class ItemObject : ScriptableObject
         }        
     }
     //플레이어 인벤토리에 제작에 필요한 재료가 있는지 확인
-    private bool CanCraft()
+    public bool CanCraft()
     {
+        Player = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<ActionController>();
         foreach (Ingredient ingredient in RecipeData.ingredients)
         {
             bool containsCurrentIngredient = Player.inventory.IsItemInInventory(ingredient.item, ingredient.amount);
@@ -46,7 +47,7 @@ public class ItemObject : ScriptableObject
         return true;
     }
     //플레이어 인벤토리의 재료 아이템을 제거
-    private void RemoveIngredientsFromInventory()
+    public void RemoveIngredientsFromInventory()
     {
         foreach (Ingredient ingredient in RecipeData.ingredients)
         {
@@ -66,11 +67,6 @@ public class ItemObject : ScriptableObject
         {
             Debug.Log("You dont have enaugh ingredients to craft: " + RecipeData.result.data.Name);
         }
-    }
-
-    public void Constructing()
-    {
-
     }
     
     public Item CreateItem()

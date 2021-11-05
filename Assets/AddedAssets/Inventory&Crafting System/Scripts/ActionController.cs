@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public enum InforType{ Item, Tree, ItemBox, Campfire, Construction}
+public enum InforType{ Item, Tree, ItemBox, Campfire, Construction, Tent}
 
 public class ActionController : MonoBehaviour
 {
@@ -42,6 +42,9 @@ public class ActionController : MonoBehaviour
 
     [SerializeField]
     private player mPlayer;
+
+    [SerializeField]
+    private SunController SC;
 
     //게임 시작시 인벤토리가 한번 활성화되야해서 활성화 된채로 시작해 비활성화 시킨다.
     private void Start()
@@ -141,6 +144,10 @@ public class ActionController : MonoBehaviour
                 {
                     ItemInfoAppear(InforType.Construction);
                 }
+                else if (hitInfo.transform.GetComponent<InteractionObject>().InteractionType == eInteractionType.Tent)
+                {
+                    ItemInfoAppear(InforType.Tent);
+                }
             }
         }
         else
@@ -170,6 +177,10 @@ public class ActionController : MonoBehaviour
         else if(type == InforType.Construction)
         {
             actionText.text = "Press " + "<color=yellow>" + "(F)" + "</color>" + " to Dismantle ";
+        }
+        else if (type == InforType.Tent)
+        {
+            actionText.text = "Press " + "<color=yellow>" + "(F)" + "</color>" + " to Sleep ";
         }
     }
     //아이템 문구 비활성화
@@ -218,6 +229,10 @@ public class ActionController : MonoBehaviour
                 else if (interactionObject.InteractionType == eInteractionType.Construction)
                 {
                     interactionObject.Dismantle();
+                }
+                else if (interactionObject.InteractionType == eInteractionType.Tent)
+                {
+                    SC.Sleep();
                 }
             }
         }

@@ -8,6 +8,7 @@ public class Construct
     public string craftName; // 이름
     public GameObject go_prefab; // 실제 설치 될 프리팹
     public GameObject go_PreviewPrefab; // 미리 보기 프리팹
+    public ItemObject IO;
 }
 
 public class ConstructUI : MonoBehaviour
@@ -34,6 +35,8 @@ public class ConstructUI : MonoBehaviour
     private float range;
 
     public constructionObject[] Constructions = new constructionObject[5];
+
+    [SerializeField]
     private int ConstructionNUm;
 
 
@@ -42,6 +45,7 @@ public class ConstructUI : MonoBehaviour
 
     public void SlotClick(int _slotNumber)
     {
+        Debug.Log("SlotClick");
         go_Preview = Instantiate(constructs[_slotNumber].go_PreviewPrefab, tf_Player.position + tf_Player.forward, Quaternion.identity);
         go_Prefab = constructs[_slotNumber].go_prefab;
         isPreviewActivated = true;
@@ -72,16 +76,13 @@ public class ConstructUI : MonoBehaviour
             {
                 Vector3 _location = hitInfo.point;
                 go_Preview.transform.position = _location;
-
-                Debug.Log(_location);
-                Debug.Log(go_Preview.transform.position);
             }
         }
     }
 
     private void Build()
     {
-        if (isPreviewActivated && go_Preview.GetComponent<Preview>().isBuildable())
+        if (isPreviewActivated && go_Preview.GetComponent<Preview>().isBuildable() && constructs[ConstructionNUm].IO.CanCraft())
         {
             Instantiate(go_Prefab, hitInfo.point, Quaternion.identity);
             Destroy(go_Preview);
@@ -89,9 +90,10 @@ public class ConstructUI : MonoBehaviour
             isPreviewActivated = false;
             go_Preview = null;
             go_Prefab = null;
+            constructs[ConstructionNUm].IO.RemoveIngredientsFromInventory();
 
-            Constructions[ConstructionNUm].objectPosition = hitInfo.point;
-            Constructions[ConstructionNUm].objectRotation = Quaternion.identity;
+            //Constructions[ConstructionNUm].objectPosition = hitInfo.point;
+            //Constructions[ConstructionNUm].objectRotation = Quaternion.identity;
         }
     }
 

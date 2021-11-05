@@ -5,5 +5,5 @@
     ItemBox,
     Campfire,
     Construction,
-
+    Tent,
 }

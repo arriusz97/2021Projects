@@ -41,7 +41,7 @@ public class SunController : MonoBehaviour
     [SerializeField]
     private IngameCtrl ingameCtrl;
 
-    private bool rescueSignal = false;
+    private bool rescueSignal = false, sleep = false;
 
     // Start is called before the first frame update
     void Start()
@@ -61,7 +61,7 @@ public class SunController : MonoBehaviour
         LightIntensity();
         NightCheck();
         DayCounterCall();
-        SupplyBoxsReset();        
+        SupplyBoxsReset();
     }
 
     void DayCounterUpdate(int currentDay)       
@@ -130,6 +130,11 @@ public class SunController : MonoBehaviour
         else
         {
             m_night = false;
+            if (sleep)
+            {
+                sleep = false;
+                Time.timeScale = 1;
+            }
         }
     }
 
@@ -143,12 +148,14 @@ public class SunController : MonoBehaviour
         {
             currentTime = 0;                        //자정이 지나면
             currentDay++;                         //날짜 증가
-
+            
             if (!dayCounterMove)            //날짜가 변하면 DayCounter 출력 준비
             {
                 dayCounterMove = true;
             }
+
         }
+
     }
 
     private void DayCounterCall()
@@ -185,5 +192,14 @@ public class SunController : MonoBehaviour
     public void RescueCall()
     {
         rescueSignal = true;
+    }
+
+    public void Sleep()
+    {
+        if (m_night)
+        {
+            sleep = true;
+            Time.timeScale = SecondsOfDay * 0.125f;
+        }
     }
 }

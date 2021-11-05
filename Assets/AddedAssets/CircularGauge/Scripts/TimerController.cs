@@ -14,6 +14,9 @@ public class TimerController : MonoBehaviour
 
     public bool O2alert = false;
 
+    [SerializeField]
+    private SunController SC;
+
     public void StartTimer(int TimerNum)
     {
         TimerContainer[TimerNum].StartTimer();
@@ -37,43 +40,17 @@ public class TimerController : MonoBehaviour
 
     private void Update()
     {
-        if (Player.transform.localPosition.y <= groundY)
-        {
-            TimerContainer[2].Activated(true);
-            StartTimer(2);
-        }
-        else
-        {
-            if(TimerContainer[2].CurrentTime <= 0.1)
-            {
-                TimerContainer[2].Activated(false);
-                StopTimer(2);               
-            }
-            else
-            {
-                UpdateTimer(2, O2Recover+1.0f * Time.deltaTime);
-            }
-        }
+        O2Call();        
 
-        if(TimerContainer[3].isPaused)
+        UpdateTimer(0, Time.deltaTime);
+
+        if (TimerContainer[3].isPaused)
         {
             StopTimer(3);
             TimerContainer[3].Activated(false);
         }
 
-        if(TimerContainer[1].isPaused)
-        {
-            UpdateTimer(0, -HPdown * Time.deltaTime);
-        }
-
-        UpdateTimer(0, Time.deltaTime);
-
-        if (TimerContainer[2].CurrentTime >= 0.7 * TimerContainer[2].duration)
-        {
-            O2alert = true;
-        }
-        else
-            O2alert = false;
+        HPdownCall();
     }
 
     public void ActionClockOn(int _duration)
@@ -96,5 +73,46 @@ public class TimerController : MonoBehaviour
     public void SetCurrentTime(int timerNUm, float currentTime)
     {
         TimerContainer[timerNUm].CurrentTime = currentTime;
+    }
+
+    private void O2Call()
+    {
+        if (Player.transform.localPosition.y <= groundY)
+        {
+            TimerContainer[2].Activated(true);
+            StartTimer(2);
+        }
+        else
+        {
+            if (TimerContainer[2].CurrentTime <= 0.1)
+            {
+                TimerContainer[2].Activated(false);
+                StopTimer(2);
+            }
+            else
+            {
+                UpdateTimer(2, O2Recover + 1.0f * Time.deltaTime);
+            }
+        }
+
+        if (TimerContainer[2].CurrentTime >= 0.7 * TimerContainer[2].duration)
+        {
+            O2alert = true;
+        }
+        else
+            O2alert = false;
+    }
+
+    private void HPdownCall()
+    {
+        if (TimerContainer[1].isPaused)
+        {
+            UpdateTimer(0, -HPdown * Time.deltaTime);
+        }
+
+        if (SC.m_night == true)
+        {
+            UpdateTimer(0, -1 * Time.deltaTime);
+        }
     }
 }
