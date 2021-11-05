@@ -28,6 +28,9 @@ public class ItemEffectDatabase : MonoBehaviour
     [SerializeField]
     private ActionController AC;
 
+    [SerializeField]
+    private SunController SC;
+
     private void Awake()
     {
         pickup = GetComponent<AudioSource>();
@@ -82,7 +85,7 @@ public class ItemEffectDatabase : MonoBehaviour
                     }
                     else if(item.Name == "PLB")
                     {
-                        AC.RescueSignal();
+                        SC.RescueCall();
                     }
                 }
             }

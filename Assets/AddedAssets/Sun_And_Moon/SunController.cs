@@ -38,6 +38,11 @@ public class SunController : MonoBehaviour
     [SerializeField]
     private GameObject[] supplyBoxs = new GameObject[9];
 
+    [SerializeField]
+    private IngameCtrl ingameCtrl;
+
+    private bool rescueSignal = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -130,7 +135,11 @@ public class SunController : MonoBehaviour
 
     private void DayUpdate()
     {
-        if (currentTime >= 1)
+        if(rescueSignal == true)
+        {
+            ingameCtrl.endingScene();
+        }
+        else if (currentTime >= 1)
         {
             currentTime = 0;                        //자정이 지나면
             currentDay++;                         //날짜 증가
@@ -171,5 +180,10 @@ public class SunController : MonoBehaviour
                 supplyBoxs[i].SetActive(true);
             }
         }
+    }
+
+    public void RescueCall()
+    {
+        rescueSignal = true;
     }
 }
