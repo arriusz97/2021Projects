@@ -25,7 +25,6 @@ public class SwimTrigger : MonoBehaviour
         if (other.gameObject.CompareTag("Player") && !m_isWater)
         {
             m_isWater = true;
-            Debug.Log("player exit swimTrigger");
             m_Enterwater.mute = false;
             m_Enterwater.Play();
             m_Abovewater.Stop();
@@ -38,7 +37,6 @@ public class SwimTrigger : MonoBehaviour
         if (other.gameObject.CompareTag("Player") && m_isWater)
         {
             m_isWater = false;
-            Debug.Log("player enter swimTrigger");
             m_Exitwater.mute = false;
             m_Exitwater.Play();
             m_Abovewater.Play();
