@@ -15,7 +15,8 @@ MonoBehaviour:
   uiDisplay: {fileID: 21300000, guid: d5c3d9036e032c24183bec94fe2b9533, type: 3}
   stackable: 0
   type: 1
-  description: 
+  description: "\uB098\uBB34\uB9C9\uB300 8 + \uB098\uBB34\uD310\uC790 2 + \uB364\uBD88
+    2"
   data:
     Name: Recipe Shelter
     Id: 24
@@ -24,4 +25,10 @@ MonoBehaviour:
   RecipeData:
     result: {fileID: 11400000, guid: c7c71149337ed2345b557bdae8297615, type: 2}
     resultamount: 1
-    ingredients: []
+    ingredients:
+    - item: {fileID: 11400000, guid: d5ed94d3ad0aaaa498cae3f276845e1b, type: 2}
+      amount: 8
+    - item: {fileID: 11400000, guid: e91b1a3f86c9679438e5221f83fb15e2, type: 2}
+      amount: 2
+    - item: {fileID: 11400000, guid: 931f6d0a5a297b84b85980c09c4e6c11, type: 2}
+      amount: 2

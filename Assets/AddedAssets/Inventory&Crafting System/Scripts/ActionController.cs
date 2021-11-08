@@ -26,7 +26,7 @@ public class ActionController : MonoBehaviour
     [SerializeField]
     private TimerController timer;
 
-    public bool inventoryOpen = false, campfireOpen = false, CraftingOpen = false, playerLock = false;
+    public bool inventoryOpen = false, campfireOpen = false, CraftingOpen = false, ConstructOpen = false, playerLock = false;
 
     [SerializeField]
     private DataController dataController;
@@ -286,9 +286,21 @@ public class ActionController : MonoBehaviour
         PlayLock();
     }
 
+    public void OpenConstruct()
+    {
+        ConstructOpen = true;
+        PlayLock();
+    }
+
+    public void CloseConstruct()
+    {
+        ConstructOpen = false;
+        PlayLock();
+    }
+
     private void PlayLock()
     {
-        if (CraftingOpen == false && inventoryOpen == false && campfireOpen == false)
+        if (CraftingOpen == false && inventoryOpen == false && campfireOpen == false && ConstructOpen == false)
         {
             playerLock = false;
         }

@@ -9,6 +9,7 @@ public class Construct
     public GameObject go_prefab; // 실제 설치 될 프리팹
     public GameObject go_PreviewPrefab; // 미리 보기 프리팹
     public ItemObject IO;
+    public GameObject obj;
 }
 
 public class ConstructUI : MonoBehaviour
@@ -39,9 +40,18 @@ public class ConstructUI : MonoBehaviour
     [SerializeField]
     private int ConstructionNUm;
 
-
     [SerializeField]
     private DataController dataController;
+
+    [SerializeField]
+    private ActionController AC;
+
+    public ItemEffectDatabase theItemEffectDatabase;
+
+    private void OnEnable()
+    {
+        theItemEffectDatabase = GameObject.Find("EffectDatabase").GetComponent<ItemEffectDatabase>();
+    }
 
     public void SlotClick(int _slotNumber)
     {
@@ -100,9 +110,15 @@ public class ConstructUI : MonoBehaviour
     public void Window()
     {
         if (!isActivated)
+        {
             OpenWindow();
+            AC.OpenConstruct();
+        }
         else
+        {
             CloseWindow();
+            AC.CloseConstruct();
+        }
     }
 
     private void OpenWindow()
@@ -113,6 +129,7 @@ public class ConstructUI : MonoBehaviour
 
     private void CloseWindow()
     {
+        theItemEffectDatabase.HideToolTip();
         isActivated = false;
         go_BaseUI.SetActive(false);
     }
@@ -129,5 +146,16 @@ public class ConstructUI : MonoBehaviour
         go_Prefab = null;
 
         go_BaseUI.SetActive(false);
+    }
+
+    public void OnPointerEnter(int _slotNumber)
+    {
+        ConstructionNUm = _slotNumber;
+        theItemEffectDatabase.ShowToolTip(constructs[ConstructionNUm].IO, constructs[ConstructionNUm].obj.transform.position);
+    }
+
+    public void OnPinterExit()
+    {
+        theItemEffectDatabase.HideToolTip();
     }
 }
