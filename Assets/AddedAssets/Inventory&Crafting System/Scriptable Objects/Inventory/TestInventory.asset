@@ -78,35 +78,35 @@ MonoBehaviour:
         Name: 
         Id: 14
         buffs: []
-        itemType: 0
+        itemType: 3
       amount: 20
     - AllowedItems: 
       item:
         Name: 
         Id: 15
         buffs: []
-        itemType: 0
+        itemType: 3
       amount: 20
     - AllowedItems: 
       item:
         Name: 
         Id: 16
         buffs: []
-        itemType: 0
+        itemType: 3
       amount: 20
     - AllowedItems: 
       item:
         Name: 
         Id: 17
         buffs: []
-        itemType: 0
+        itemType: 3
       amount: 20
     - AllowedItems: 
       item:
         Name: 
         Id: 18
         buffs: []
-        itemType: 0
+        itemType: 3
       amount: 20
     - AllowedItems: 
       item:

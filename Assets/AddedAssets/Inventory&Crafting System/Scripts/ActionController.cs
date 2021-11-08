@@ -209,30 +209,33 @@ public class ActionController : MonoBehaviour
             else if (hitInfo.transform.tag == "Interaction")
             {
                 InteractionObject interactionObject = hitInfo.transform.GetComponent<InteractionObject>();
-                if (interactionObject.InteractionType == eInteractionType.Tree)
+                if (interactionObject.getReady())
                 {
-                    CoconutTree coconutTree = hitInfo.transform.GetComponent<CoconutTree>();
-                    coconutTree.ActionClockOn();
-                    coconutTree.TreeFall();
-                    ItemInfoDisappear();
-                }
-                else if (interactionObject.InteractionType == eInteractionType.ItemBox)
-                {
-                    interactionObject.ActionClockOn();
-                    interactionObject.ItemRoot(inventory);
-                    ItemInfoDisappear();
-                }
-                else if (interactionObject.InteractionType == eInteractionType.Campfire)
-                {
-                    OpenCamfire();
-                }
-                else if (interactionObject.InteractionType == eInteractionType.Construction)
-                {
-                    interactionObject.Dismantle();
-                }
-                else if (interactionObject.InteractionType == eInteractionType.Tent)
-                {
-                    SC.Sleep();
+                    if (interactionObject.InteractionType == eInteractionType.Tree)
+                    {
+                        CoconutTree coconutTree = hitInfo.transform.GetComponent<CoconutTree>();
+                        coconutTree.ActionClockOn();
+                        coconutTree.TreeFall();
+                        ItemInfoDisappear();
+                    }
+                    else if (interactionObject.InteractionType == eInteractionType.ItemBox)
+                    {
+                        interactionObject.ActionClockOn();
+                        interactionObject.ItemRoot(inventory);
+                        ItemInfoDisappear();
+                    }
+                    else if (interactionObject.InteractionType == eInteractionType.Campfire)
+                    {
+                        OpenCamfire();
+                    }
+                    else if (interactionObject.InteractionType == eInteractionType.Construction)
+                    {
+                        interactionObject.Dismantle();
+                    }
+                    else if (interactionObject.InteractionType == eInteractionType.Tent)
+                    {
+                        SC.Sleep();
+                    }
                 }
             }
         }
@@ -264,6 +267,7 @@ public class ActionController : MonoBehaviour
     public void CloseCrafting()
     {
         CraftingOpen = false;
+        craftingScreen.GetComponent<UserInterface>().theItemEffectDatabase.HideToolTip();
         craftingScreen.SetActive(false);
         PlayLock();
     }

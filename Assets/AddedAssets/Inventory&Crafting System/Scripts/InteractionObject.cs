@@ -15,6 +15,9 @@ public class InteractionObject : MonoBehaviour
     [SerializeField]
     protected int interactionTime = 3;
 
+    [SerializeField]
+    protected bool interactionReady = true;
+
     public void ActionClockOn()
     {
         timer.ActionClockOn(interactionTime);
@@ -22,6 +25,7 @@ public class InteractionObject : MonoBehaviour
 
     public void ItemRoot(InventoryObject playerInventory)
     {
+        interactionReady = false;
         StartCoroutine(Rooting(playerInventory));
     }
     
@@ -40,6 +44,12 @@ public class InteractionObject : MonoBehaviour
     
     public void Dismantle()
     {
+        interactionReady = false;
         Destroy(gameObject);
+    }
+
+    public bool getReady()
+    {
+        return interactionReady;
     }
 }
