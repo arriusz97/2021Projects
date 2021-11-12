@@ -96,6 +96,11 @@ public class TutorialManager : MonoBehaviour
             m_SceneChange_Image.gameObject.SetActive(true);
             SceneManager.LoadScene(2);
         }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene(0);
+        }
     }
 
     IEnumerator Message02_Start()
