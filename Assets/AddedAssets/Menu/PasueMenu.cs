@@ -26,8 +26,11 @@ public class PasueMenu : MonoBehaviour
 
     public void ClickQuit()
     {
-        Escape();
+        isActive = !isActive;
+        TimeStop();
+        CursorLock();
         StartCoroutine(TitleLoadCoroutine());
+        
     }
 
     public void ClickResume()
@@ -40,12 +43,7 @@ public class PasueMenu : MonoBehaviour
         isActive = !isActive;
         gameObject.SetActive(isActive);
         TimeStop();
-
-        if (actionController == null)
-        {
-            actionController = FindObjectOfType<ActionController>();
-        }
-        actionController.Lock(isActive);
+        CursorLock();
     }
 
     IEnumerator TitleLoadCoroutine()
@@ -74,5 +72,13 @@ public class PasueMenu : MonoBehaviour
         {
             Time.timeScale = 1;
         }
+    }
+    void CursorLock()
+    {
+        if (actionController == null)
+        {
+            actionController = FindObjectOfType<ActionController>();
+        }
+        actionController.Lock(isActive);
     }
 }
