@@ -55,7 +55,7 @@ public class ConstructUI : MonoBehaviour
 
     public void SlotClick(int _slotNumber)
     {
-        Debug.Log("SlotClick");
+        theItemEffectDatabase.HideToolTip();
         go_Preview = Instantiate(constructs[_slotNumber].go_PreviewPrefab, tf_Player.position + tf_Player.forward, Quaternion.identity);
         go_Prefab = constructs[_slotNumber].go_prefab;
         isPreviewActivated = true;

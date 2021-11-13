@@ -86,6 +86,7 @@ public class ItemEffectDatabase : MonoBehaviour
                     else if(item.Name == "PLB")
                     {
                         SC.RescueCall();
+                        Debug.Log("구조신호 발생");
                     }
                 }
             }

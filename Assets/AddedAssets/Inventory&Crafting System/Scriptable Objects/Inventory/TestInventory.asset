@@ -19,176 +19,176 @@ MonoBehaviour:
     Slots:
     - AllowedItems: 
       item:
-        Name: 
+        Name: Coconut
         Id: 0
         buffs: []
         itemType: 3
       amount: 20
     - AllowedItems: 
       item:
-        Name: 
+        Name: Wood
         Id: 1
         buffs: []
         itemType: 2
       amount: 20
     - AllowedItems: 
       item:
-        Name: 
+        Name: Wood Plank
         Id: 2
         buffs: []
         itemType: 2
       amount: 20
     - AllowedItems: 
       item:
-        Name: 
+        Name: Amberjack
         Id: 4
         buffs: []
-        itemType: 0
+        itemType: 3
       amount: 20
     - AllowedItems: 
       item:
-        Name: 
+        Name: Bass
         Id: 5
         buffs: []
-        itemType: 0
+        itemType: 3
       amount: 20
     - AllowedItems: 
       item:
-        Name: 
+        Name: Goldfish
         Id: 6
         buffs: []
-        itemType: 0
+        itemType: 3
       amount: 20
     - AllowedItems: 
       item:
-        Name: 
+        Name: Koi
         Id: 7
         buffs: []
-        itemType: 0
+        itemType: 3
       amount: 20
     - AllowedItems: 
       item:
-        Name: 
+        Name: Salmon
         Id: 8
         buffs: []
-        itemType: 0
+        itemType: 3
       amount: 20
     - AllowedItems: 
       item:
-        Name: 
+        Name: Fried Amberjack
         Id: 14
         buffs: []
         itemType: 3
       amount: 20
     - AllowedItems: 
       item:
-        Name: 
+        Name: Fried Bass
         Id: 15
         buffs: []
         itemType: 3
       amount: 20
     - AllowedItems: 
       item:
-        Name: 
+        Name: Fried Goldfish
         Id: 16
         buffs: []
         itemType: 3
       amount: 20
     - AllowedItems: 
       item:
-        Name: 
+        Name: Fried Koi
         Id: 17
         buffs: []
         itemType: 3
       amount: 20
     - AllowedItems: 
       item:
-        Name: 
+        Name: Fried Salmon
         Id: 18
         buffs: []
         itemType: 3
       amount: 20
     - AllowedItems: 
       item:
-        Name: 
+        Name: Battery
         Id: 19
         buffs: []
-        itemType: 0
+        itemType: 2
       amount: 20
     - AllowedItems: 
       item:
-        Name: 
+        Name: Compass
         Id: 20
         buffs: []
-        itemType: 0
+        itemType: 2
       amount: 1
     - AllowedItems: 
       item:
-        Name: 
+        Name: Duct Tape
         Id: 21
         buffs: []
-        itemType: 0
+        itemType: 2
       amount: 20
     - AllowedItems: 
       item:
-        Name: 
+        Name: Wood Stick
         Id: 28
         buffs: []
-        itemType: 0
+        itemType: 2
       amount: 20
     - AllowedItems: 
       item:
-        Name: 
+        Name: Bush
         Id: 30
         buffs: []
-        itemType: 0
+        itemType: 2
       amount: 20
     - AllowedItems: 
       item:
-        Name: 
+        Name: Bucket
         Id: 31
         buffs: []
-        itemType: 0
+        itemType: 2
       amount: 1
     - AllowedItems: 
       item:
-        Name: 
+        Name: Lighter
         Id: 32
         buffs: []
-        itemType: 0
+        itemType: 2
       amount: 1
     - AllowedItems: 
       item:
-        Name: 
+        Name: Sail
         Id: 33
         buffs: []
-        itemType: 0
+        itemType: 2
       amount: 1
     - AllowedItems: 
       item:
-        Name: 
+        Name: PLB
         Id: 34
         buffs: []
-        itemType: 0
-      amount: 20
-    - AllowedItems: 
-      item:
-        Name: 
-        Id: 36
-        buffs: []
-        itemType: 0
-      amount: 20
-    - AllowedItems: 
-      item:
-        Name: 
-        Id: 37
-        buffs: []
-        itemType: 0
+        itemType: 5
       amount: 1
     - AllowedItems: 
       item:
-        Name: 
+        Name: Water Bottle
+        Id: 36
+        buffs: []
+        itemType: 3
+      amount: 20
+    - AllowedItems: 
+      item:
+        Name: Flippers
+        Id: 37
+        buffs: []
+        itemType: 5
+      amount: 1
+    - AllowedItems: 
+      item:
+        Name: O2
         Id: 38
         buffs: []
-        itemType: 0
+        itemType: 5
       amount: 1

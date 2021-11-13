@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36c92f6916f51c84180ccd6986ebd922, type: 3}
   m_Name: Recipe PLB
   m_EditorClassIdentifier: 
-  uiDisplay: {fileID: 0}
+  uiDisplay: {fileID: 21300000, guid: 23f3845a8bacc624ca443d466e50ee66, type: 3}
   stackable: 0
   type: 1
   description: "\uBC30\uD130\uB9AC 2 + \uB355\uD2B8 \uD14C\uC774\uD504 2 + \uB098\uCE68\uBC18

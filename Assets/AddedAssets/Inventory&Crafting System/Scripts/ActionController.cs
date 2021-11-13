@@ -300,7 +300,7 @@ public class ActionController : MonoBehaviour
 
     private void PlayLock()
     {
-        if (CraftingOpen == false && inventoryOpen == false && campfireOpen == false && ConstructOpen == false)
+        if (CraftingOpen == false && inventoryOpen == false && campfireOpen == false)
         {
             playerLock = false;
         }

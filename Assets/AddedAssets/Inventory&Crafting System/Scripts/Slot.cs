@@ -29,7 +29,10 @@ public class Slot : MonoBehaviour, IPointerClickHandler
             if (mouseHoverSlotData.item.itemType == ItemType.Food || mouseHoverSlotData.item.itemType == ItemType.Tool)      //아이템이 음식이라면 수치를 1 감소시킨다.
             {
                 _theItemEffectDatabase.UseItem(mouseHoverSlotData.item);
-                _inventory.AddItem(mouseHoverSlotData.item, -1);
+                if (mouseHoverSlotData.item.itemType == ItemType.Food)
+                    _inventory.AddItem(mouseHoverSlotData.item, -1);
+                else if (mouseHoverSlotData.item.itemType == ItemType.Tool)
+                    _inventory.RemoveItem(mouseHoverSlotData.item);
             }
         }
         else if (eventData.button == PointerEventData.InputButton.Left && MouseData.slotHoveredOver != null)       //좌클릭

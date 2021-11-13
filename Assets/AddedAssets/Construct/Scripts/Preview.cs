@@ -41,6 +41,7 @@ public class Preview : MonoBehaviour
             }
 
             tf_Child.GetComponent<Renderer>().materials = newMaterials;
+            
         }
     }
 

@@ -15,6 +15,11 @@ public class InventoryObject : ScriptableObject
     private Inventory Container = new Inventory();
     public InventorySlot[] GetSlots => Container.Slots;
     
+    public void OnValidate()
+    {
+        DataUpdate();
+    }
+
     //인벤토리에 아이템을 추가한다.
     public bool AddItem(Item item, int amount)
     {
@@ -22,13 +27,20 @@ public class InventoryObject : ScriptableObject
             return false;
         InventorySlot slot = FindItemOnInventory(item);
         if (!database.ItemObjects[item.Id].stackable || slot == null)
-        {
+        { 
             GetEmptySlot().UpdateSlot(item, amount);
             return true;
         }
         slot.AddAmount(amount);
         return true;
     }
+
+    public void RemoveItem(Item item)
+    {
+        InventorySlot slot = FindItemOnInventory(item);
+        slot.RemoveItem();
+    }
+
     //인벤토리 내의 빈 슬롯을 센다.
     public int EmptySlotCount
     {
@@ -142,6 +154,20 @@ public class InventoryObject : ScriptableObject
     public void Clear()
     {
         Container.Clear();
+    }
+
+    public void DataUpdate()
+    {
+        for (int i = 0; i < Container.Slots.Length; i++) 
+        {
+            foreach(ItemObject databaseItem in database.ItemObjects)
+            {
+                if(Container.Slots[i].item.Id == databaseItem.data.Id)
+                {
+                    Container.Slots[i].item = databaseItem.data;
+                }
+            }
+        }
     }
 }
 

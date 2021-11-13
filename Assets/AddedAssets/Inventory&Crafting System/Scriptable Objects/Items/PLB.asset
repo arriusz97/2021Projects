@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36c92f6916f51c84180ccd6986ebd922, type: 3}
   m_Name: PLB
   m_EditorClassIdentifier: 
-  uiDisplay: {fileID: 0}
+  uiDisplay: {fileID: 21300000, guid: 23f3845a8bacc624ca443d466e50ee66, type: 3}
   stackable: 0
   type: 5
   description: "\uC870\uB09C\uC2E0\uD638 \uBC1C\uC2E0\uAE30"
