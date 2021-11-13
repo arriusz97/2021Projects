@@ -15,7 +15,7 @@ MonoBehaviour:
   uiDisplay: {fileID: 21300000, guid: eb7cbb755dc2f5b4c844946cf9c577f9, type: 3}
   stackable: 0
   type: 2
-  description: 
+  description: "\uB77C\uC774\uD130"
   data:
     Name: Lighter
     Id: 32

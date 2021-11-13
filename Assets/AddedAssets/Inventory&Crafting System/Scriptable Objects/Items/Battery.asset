@@ -15,7 +15,7 @@ MonoBehaviour:
   uiDisplay: {fileID: 21300000, guid: d1f2eae1523cacc4c9a4d126ab4ba306, type: 3}
   stackable: 1
   type: 2
-  description: Battery
+  description: "\uBC30\uD130\uB9AC"
   data:
     Name: Battery
     Id: 19

@@ -15,7 +15,7 @@ MonoBehaviour:
   uiDisplay: {fileID: 21300000, guid: b13502348b1941d4aa428163388fd2ba, type: 3}
   stackable: 1
   type: 2
-  description: Duct Tape
+  description: "\uB355\uD2B8 \uD14C\uC774\uD504"
   data:
     Name: Duct Tape
     Id: 21

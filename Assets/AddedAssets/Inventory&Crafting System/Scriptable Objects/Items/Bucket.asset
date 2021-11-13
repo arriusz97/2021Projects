@@ -15,7 +15,7 @@ MonoBehaviour:
   uiDisplay: {fileID: 0}
   stackable: 0
   type: 2
-  description: 
+  description: "\uC591\uB3D9\uC774"
   data:
     Name: Bucket
     Id: 31

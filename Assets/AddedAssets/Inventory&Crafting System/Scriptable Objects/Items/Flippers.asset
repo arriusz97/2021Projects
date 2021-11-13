@@ -15,7 +15,7 @@ MonoBehaviour:
   uiDisplay: {fileID: 21300000, guid: bcc9c57004525484b92f5610938a6448, type: 3}
   stackable: 0
   type: 5
-  description: 
+  description: "\uC624\uB9AC\uBC1C"
   data:
     Name: Flippers
     Id: 37

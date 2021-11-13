@@ -15,7 +15,8 @@ MonoBehaviour:
   uiDisplay: {fileID: 0}
   stackable: 0
   type: 1
-  description: "\uBC30\uD130\uB9AC 2 + \uB355\uD2B8 \uD14C\uC774\uD504 2"
+  description: "\uBC30\uD130\uB9AC 2 + \uB355\uD2B8 \uD14C\uC774\uD504 2 + \uB098\uCE68\uBC18
+    1"
   data:
     Name: Recipe PLB Repair
     Id: 35
@@ -29,3 +30,5 @@ MonoBehaviour:
       amount: 2
     - item: {fileID: 11400000, guid: 67b45212cf617a64b87026e2c5f1402a, type: 2}
       amount: 2
+    - item: {fileID: 11400000, guid: 83f8bd76991d16c40ade99204e4383f9, type: 2}
+      amount: 1

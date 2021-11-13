@@ -19,15 +19,15 @@ MonoBehaviour:
     Slots:
     - AllowedItems: 
       item:
-        Name: Coconut
-        Id: 0
+        Name: Water Bottle
+        Id: 36
         buffs: []
         itemType: 3
       amount: 3
     - AllowedItems: 
       item:
-        Name: Coconut
-        Id: 0
+        Name: Flippers
+        Id: 37
         buffs: []
-        itemType: 3
-      amount: 3
+        itemType: 5
+      amount: 1

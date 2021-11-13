@@ -15,7 +15,7 @@ MonoBehaviour:
   uiDisplay: {fileID: 21300000, guid: aa6cbda57a1516c4b87356a0723d86a5, type: 3}
   stackable: 1
   type: 3
-  description: "\uCF54\uCF54\uB11B\uC774\uB2E4."
+  description: "\uCF54\uCF54\uB11B"
   data:
     Name: Coconut
     Id: 0
@@ -23,4 +23,5 @@ MonoBehaviour:
     itemType: 3
   RecipeData:
     result: {fileID: 0}
+    resultamount: 1
     ingredients: []

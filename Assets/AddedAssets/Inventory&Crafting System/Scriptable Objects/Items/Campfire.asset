@@ -15,7 +15,7 @@ MonoBehaviour:
   uiDisplay: {fileID: 21300000, guid: 7b1a047542fade640b4892800e3a62ec, type: 3}
   stackable: 0
   type: 4
-  description: 
+  description: "\uCEA0\uD504\uD30C\uC774\uC5B4"
   data:
     Name: Campfire
     Id: 25
