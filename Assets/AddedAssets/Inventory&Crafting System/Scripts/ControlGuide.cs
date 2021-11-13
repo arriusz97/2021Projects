@@ -88,7 +88,7 @@ public class ControlGuide : MonoBehaviour
             }
             else if (guideBoolean[5] == 0)
             {
-                if (player.transform.localPosition.y <= -2.5 && Input.GetKey(KeyCode.LeftControl))
+                if (player.transform.localPosition.y <= -2.2 && Input.GetKey(KeyCode.LeftControl))
                 {
                     typingEffect.Skip();
                     guideBoolean[5] = 1;
