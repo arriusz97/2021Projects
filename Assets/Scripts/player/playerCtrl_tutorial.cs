@@ -26,7 +26,7 @@ public class playerCtrl_tutorial : MonoBehaviour
     public Camera m_camera;
     public Transform m_cameraArm;
     //public GameCtrl m_gameCtrl;
-    private float m_lookSensitivity = 1.5f;
+    private float m_lookSensitivity = 0.8f;
     private float m_cameraRotationLimit = 22f;
     private float m_currentCameraRotationX;
 
