@@ -12,8 +12,8 @@ public class Tooltip : MonoBehaviour
     private Text txt_ItemName;
     [SerializeField]
     private Text txt_ItemDesc;
-    [SerializeField]
-    private Text txt_ItemHowtoUsed;
+    //[SerializeField]
+    //private Text txt_ItemHowtoUsed;
 
     //툴팁을 마우스커서 기준으로 아래에 출력시킨다
     public void ShowToolTip(ItemObject _item, Vector3 _pos)
