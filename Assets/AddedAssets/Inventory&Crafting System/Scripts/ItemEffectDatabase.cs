@@ -22,7 +22,7 @@ public class ItemEffectDatabase : MonoBehaviour
     private TimerController timer;
 
     [SerializeField]
-    private AudioSource pickup, crafting;
+    private AudioSource pickup, crafting, eating;
 
     private const string HP = "HP", TP = "TP", O2 = "O2";
 
@@ -53,6 +53,7 @@ public class ItemEffectDatabase : MonoBehaviour
                 
                 if (itemEffects[i]._item.data.itemType == ItemType.Food)
                 {
+                    eating.Play();
                     for (int j = 0; j < itemEffects[i].part.Length; j++)
                     {
                         switch (itemEffects[i].part[j])
