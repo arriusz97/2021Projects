@@ -42,4 +42,15 @@ public class SwimTrigger : MonoBehaviour
             m_Abovewater.Play();
         }
     }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player") && m_isWater)
+        {
+            m_isWater = false;
+            m_Exitwater.mute = false;
+            m_Exitwater.Play();
+            m_Abovewater.Play();
+        }
+    }
 }
