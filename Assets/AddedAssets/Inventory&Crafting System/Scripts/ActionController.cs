@@ -34,8 +34,7 @@ public class ActionController : MonoBehaviour
     [SerializeField]
     private PasueMenu pasueMenu;
 
-    [SerializeField]
-    private ItemEffectDatabase effectDatabase;
+    public ItemEffectDatabase effectDatabase;
 
     [SerializeField]
     private GameObject UI;
@@ -200,7 +199,7 @@ public class ActionController : MonoBehaviour
 
                 if (hitInfo.transform != null)      //획득 후 파괴한다.
                 {
-                    effectDatabase.pickupSound();
+                    effectDatabase.PickupSound();
                     inventory.AddItem(_item, 1);
                     Destroy(hitInfo.transform.gameObject);
                     ItemInfoDisappear();
@@ -347,6 +346,10 @@ public class ActionController : MonoBehaviour
         if(dataController.Gamedata.swimUpgrade == 1)
         {
             SwimSpeedUpgrade();
+        }
+        if (mPlayer.transform.position.y <= -1.9)
+        {
+            mPlayer.m_SwimTrigger.m_isWater = true;
         }
     }
 

@@ -21,7 +21,8 @@ public class ItemEffectDatabase : MonoBehaviour
     [SerializeField]
     private TimerController timer;
 
-    private AudioSource pickup;
+    [SerializeField]
+    private AudioSource pickup, crafting;
 
     private const string HP = "HP", TP = "TP", O2 = "O2";
 
@@ -104,8 +105,13 @@ public class ItemEffectDatabase : MonoBehaviour
         theSlotToolTip.HideToolTip();
     }
 
-    public void pickupSound()
+    public void PickupSound()
     {
         pickup.Play();
+    }
+
+    public void CraftingSound()
+    {
+        crafting.Play();
     }
 }
