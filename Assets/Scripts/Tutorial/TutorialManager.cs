@@ -6,12 +6,6 @@ using UnityEngine.UI;
 
 public class TutorialManager : MonoBehaviour
 {
-    //tutorial manager
-    //1. thunder, rain 관리해서 on, off 해주기 -> 아니면 bool 변수로 넘겨주기
-    //2. UI manager 생성해서 UI 만들어주기
-
-    //yacht에 thunder치면 gameScene으로 넘어가게 하기
-
 
     [Header("SkyBox")]
     [SerializeField]
@@ -50,13 +44,17 @@ public class TutorialManager : MonoBehaviour
     private GameObject m_Message02_background;
     [SerializeField]
     private Text m_Message02_text;
+    [SerializeField]
+    private TutorialSceneCtrl tutorial_Scene_Ctrl;
 
-    private bool b_NarrationRunning = false;
+
+    //private bool b_NarrationRunning = false;
     public bool b_SceneChagne;  //scene을 변경할 bool 변수
 
     private void Start()
     {
-          m_Message01_typing.StartNarration();
+        tutorial_Scene_Ctrl = GameObject.Find("TutorialSceneCtrl").gameObject.GetComponent<TutorialSceneCtrl>();
+        m_Message01_typing.StartNarration();
     }
 
     private void sceneChange()
@@ -99,9 +97,11 @@ public class TutorialManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            SceneManager.LoadScene(0);
+            Debug.Log("Press Escape");
+            tutorial_Scene_Ctrl.StartLoadTitleScene();
         }
     }
+
 
     IEnumerator Message02_Start()
     {
