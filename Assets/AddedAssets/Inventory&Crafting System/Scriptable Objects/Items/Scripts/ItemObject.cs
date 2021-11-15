@@ -62,6 +62,7 @@ public class ItemObject : ScriptableObject
         {
             RemoveIngredientsFromInventory();
             Player.inventory.AddItem(RecipeData.result.data, RecipeData.resultamount);
+            Player.effectDatabase.CraftingSound();
         }
         else
         {
