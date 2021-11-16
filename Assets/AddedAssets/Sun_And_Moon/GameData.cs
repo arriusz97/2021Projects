@@ -13,14 +13,11 @@ public class GameData
     public float playerHP, playerTP;
     public Vector3 playerPosition;
     public Quaternion playerRotation;
-    public constructionObject[] CObjects = new constructionObject[5];
     public int[] controlGuideBoolean = new int[8];
     public int O2upgrade = 0;
     public int swimUpgrade = 0;
-}
 
-public class constructionObject
-{
-    public Vector3 objectPosition;
-    public Quaternion objectRotation;
+    public bool[] consExit = new bool[3];
+    public Vector3[] consPosition = new Vector3[3];
+    public Quaternion[] consRotation = new Quaternion[3];
 }

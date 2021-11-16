@@ -35,8 +35,6 @@ public class ConstructUI : MonoBehaviour
     [SerializeField]
     private float range;
 
-    public constructionObject[] Constructions = new constructionObject[5];
-
     [SerializeField]
     private int ConstructionNUm;
 
@@ -47,6 +45,10 @@ public class ConstructUI : MonoBehaviour
     private ActionController AC;
 
     public ItemEffectDatabase theItemEffectDatabase;
+
+    public bool[] mConsExit = new bool[3];
+    public Vector3[] mConsPosition = new Vector3[3];
+    public Quaternion[] mConsRotation = new Quaternion[3];
 
     private void OnEnable()
     {
@@ -94,7 +96,8 @@ public class ConstructUI : MonoBehaviour
     {
         if (isPreviewActivated && go_Preview.GetComponent<Preview>().isBuildable() && constructs[ConstructionNUm].IO.CanCraft())
         {
-            Instantiate(go_Prefab, hitInfo.point, Quaternion.identity);
+            GameObject cons = Instantiate(go_Prefab, hitInfo.point, Quaternion.identity);
+            //Instantiate(go_Prefab, hitInfo.point, Quaternion.identity);
             Destroy(go_Preview);
             isActivated = false;
             isPreviewActivated = false;
@@ -102,8 +105,9 @@ public class ConstructUI : MonoBehaviour
             go_Prefab = null;
             constructs[ConstructionNUm].IO.RemoveIngredientsFromInventory();
 
-            //Constructions[ConstructionNUm].objectPosition = hitInfo.point;
-            //Constructions[ConstructionNUm].objectRotation = Quaternion.identity;
+            mConsExit[ConstructionNUm] = true;
+            mConsPosition[ConstructionNUm] = cons.transform.position;
+            mConsRotation[ConstructionNUm] = cons.transform.rotation;
         }
     }
 
@@ -157,5 +161,14 @@ public class ConstructUI : MonoBehaviour
     public void OnPinterExit()
     {
         theItemEffectDatabase.HideToolTip();
+    }
+
+    public void ConstructionLoad()
+    {
+        for(int i = 0; i < 3; i++)
+        {
+            if(mConsExit[i])
+                Instantiate(constructs[i].go_prefab, mConsPosition[i], mConsRotation[i]);
+        }
     }
 }

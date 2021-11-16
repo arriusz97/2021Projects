@@ -136,11 +136,22 @@ public class DataController : MonoBehaviour
 
     public void ConstructSave()
     {
-        Gamedata.CObjects = constructUI.Constructions;
+        for(int i = 0; i < 3; i++)
+        {
+            Gamedata.consExit[i] = constructUI.mConsExit[i];
+            Gamedata.consPosition[i] = constructUI.mConsPosition[i];
+            Gamedata.consRotation[i] = constructUI.mConsRotation[i];
+        }       
     }
 
     public void ConstructLoad()
     {
-        constructUI.Constructions = Gamedata.CObjects;
+        for (int i = 0; i < 3; i++)
+        {
+            constructUI.mConsExit[i]= Gamedata.consExit[i];
+            constructUI.mConsPosition[i] = Gamedata.consPosition[i];
+            constructUI.mConsRotation[i] = Gamedata.consRotation[i];
+        }
+        constructUI.ConstructionLoad();
     }
 }
