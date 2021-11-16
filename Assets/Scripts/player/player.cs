@@ -60,6 +60,11 @@ public class player : MonoBehaviour
     [SerializeField]
     private IngameCtrl ingameCtrl;
 
+    private void OnEnable()
+    {
+        m_playerBloodUI = GameObject.Find("GUI").transform.Find("UI").transform.Find("Blood_Effect_UI").gameObject;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -254,6 +259,8 @@ public class player : MonoBehaviour
         m_cameraAnimator.SetBool("Camera_Idle", true);
         m_cameraAnimator.SetBool("Camera_Walk", false);
         m_cameraAnimator.SetBool("Camera_Run", false);
+
+        m_SwimTrigger.m_Abovewater.Stop();
 
         if (moveDirX != 0 || moveDirZ != 0)
         {

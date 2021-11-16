@@ -198,7 +198,7 @@ public class SoundCtrl : MonoBehaviour
                 }
             }
         }
-        else
+        else 
         {
             if (m_Island_Bgm.volume > 0)
             {

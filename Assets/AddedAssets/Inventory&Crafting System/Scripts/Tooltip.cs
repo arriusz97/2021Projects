@@ -23,12 +23,12 @@ public class Tooltip : MonoBehaviour
         if (_item.name == "Recipe Campfire" || _item.name == "Recipe Shelter" || _item.name == "Recipe Tent")
         {
             _pos += new Vector3(go_Base.GetComponent<RectTransform>().rect.width * 0f,
-                                -go_Base.GetComponent<RectTransform>().rect.height * 0.95f, 0);
+                                -go_Base.GetComponent<RectTransform>().rect.height * 1.4f, 0);
         }
         else
         {
             _pos += new Vector3(go_Base.GetComponent<RectTransform>().rect.width * 0f,
-                                -go_Base.GetComponent<RectTransform>().rect.height * 0.55f, 0);
+                                -go_Base.GetComponent<RectTransform>().rect.height * 0.67f, 0);
         }
         go_Base.transform.position = _pos;
 
