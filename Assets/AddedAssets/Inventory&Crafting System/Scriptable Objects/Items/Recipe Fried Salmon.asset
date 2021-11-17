@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36c92f6916f51c84180ccd6986ebd922, type: 3}
   m_Name: Recipe Fried Salmon
   m_EditorClassIdentifier: 
-  uiDisplay: {fileID: 21300000, guid: 6a85d2369931e2545a4cbec2c36fc0ed, type: 3}
+  uiDisplay: {fileID: 21300000, guid: 1fd5d107191352b49b0ffd0a6d0660d8, type: 3}
   stackable: 0
   type: 1
   description: Recipe Fried Salmon

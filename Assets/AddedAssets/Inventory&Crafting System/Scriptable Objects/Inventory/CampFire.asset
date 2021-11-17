@@ -19,35 +19,35 @@ MonoBehaviour:
     Slots:
     - AllowedItems: 
       item:
-        Name: 
+        Name: Recipe Fried Amberjack
         Id: 9
         buffs: []
         itemType: 1
       amount: 1
     - AllowedItems: 
       item:
-        Name: 
+        Name: Recipe Fried Bass
         Id: 10
         buffs: []
         itemType: 1
       amount: 1
     - AllowedItems: 
       item:
-        Name: 
+        Name: Recipe Fried Goldfish
         Id: 11
         buffs: []
         itemType: 1
       amount: 1
     - AllowedItems: 
       item:
-        Name: 
+        Name: Recipe Fried  Koi
         Id: 12
         buffs: []
         itemType: 1
       amount: 1
     - AllowedItems: 
       item:
-        Name: 
+        Name: Recipe Fried Salmon
         Id: 13
         buffs: []
         itemType: 1

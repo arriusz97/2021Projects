@@ -150,6 +150,7 @@ public class ConstructUI : MonoBehaviour
         go_Prefab = null;
 
         go_BaseUI.SetActive(false);
+        AC.CloseConstruct();
     }
 
     public void OnPointerEnter(int _slotNumber)

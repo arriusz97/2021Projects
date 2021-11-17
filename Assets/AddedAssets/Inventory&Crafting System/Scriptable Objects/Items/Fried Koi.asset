@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36c92f6916f51c84180ccd6986ebd922, type: 3}
   m_Name: Fried Koi
   m_EditorClassIdentifier: 
-  uiDisplay: {fileID: 21300000, guid: d2764a933c0350144a69efd84a549793, type: 3}
+  uiDisplay: {fileID: 21300000, guid: 28b5c65075413a449bac3aa9ffaaabb7, type: 3}
   stackable: 1
   type: 3
   description: Fried Koi

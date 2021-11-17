@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36c92f6916f51c84180ccd6986ebd922, type: 3}
   m_Name: Fried Bass
   m_EditorClassIdentifier: 
-  uiDisplay: {fileID: 21300000, guid: a978506a1735d224b8e2fd0cea78a346, type: 3}
+  uiDisplay: {fileID: 21300000, guid: 51597d5ac3a932745bbfcf676fdd85e4, type: 3}
   stackable: 1
   type: 3
   description: Fried Bass

@@ -51,6 +51,7 @@ public class ActionController : MonoBehaviour
         CloseInventory();
         crafting.Load();
         CloseCrafting();
+        campfire.Load();
         CloseCampfire();
 
         UI = GameObject.Find("GUI").transform.Find("UI").gameObject;
@@ -299,7 +300,11 @@ public class ActionController : MonoBehaviour
 
     private void PlayLock()
     {
-        if (CraftingOpen == false && inventoryOpen == false && campfireOpen == false)
+        if (ConstructOpen)
+        {
+            playerLock = false;
+        }
+        else if (CraftingOpen == false && inventoryOpen == false && campfireOpen == false)
         {
             playerLock = false;
         }
