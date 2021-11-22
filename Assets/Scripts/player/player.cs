@@ -249,7 +249,7 @@ public class player : MonoBehaviour
 
         Vector3 moveHorizontal = transform.right * moveDirX;
         Vector3 moveVertical = transform.forward * -moveDirZ;
-        Vector3 m_velocity = (moveHorizontal - moveVertical) * m_SwimSpeed;
+        Vector3 m_velocity = (moveHorizontal - moveVertical).normalized * m_SwimSpeed;
 
         m_Anim.SetBool("WALK", false);
         m_Anim.SetBool("RUN", false);
@@ -322,7 +322,7 @@ public class player : MonoBehaviour
 
         Vector3 moveHorizontal = transform.right * moveDirX;
         Vector3 moveVertical = transform.forward * -moveDirZ;
-        Vector3 m_velocity = (moveHorizontal - moveVertical) * m_speed;
+        Vector3 m_velocity = (moveHorizontal - moveVertical).normalized * m_speed;
 
         m_Anim.SetBool("SWIM", false);
 
@@ -379,7 +379,7 @@ public class player : MonoBehaviour
                 m_Anim.SetBool("WALK", false);
                 m_cameraAnimator.SetBool("Camera_Run", true);
                 m_cameraAnimator.SetBool("Camera_Walk", false);
-                m_rigidbody.MovePosition(transform.position + (moveHorizontal - moveVertical) * m_runSpeed * Time.deltaTime);
+                m_rigidbody.MovePosition(transform.position + (moveHorizontal - moveVertical).normalized * m_runSpeed * Time.deltaTime);
             }
         }
     }
@@ -394,6 +394,6 @@ public class player : MonoBehaviour
 
     public void SwimSpeedUpgrade()
     {
-        m_SwimSpeed += 10;
+        m_SwimSpeed += 15;
     }
 }

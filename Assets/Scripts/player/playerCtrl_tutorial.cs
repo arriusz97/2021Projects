@@ -121,7 +121,7 @@ public class playerCtrl_tutorial : MonoBehaviour
 
         Vector3 moveHorizontal = transform.right * moveDirX;
         Vector3 moveVertical = transform.forward * -moveDirZ;
-        Vector3 m_velocity = (moveHorizontal - moveVertical) * m_speed;
+        Vector3 m_velocity = (moveHorizontal - moveVertical).normalized * m_speed;
 
         if (!m_rigidbody.useGravity)
         {
