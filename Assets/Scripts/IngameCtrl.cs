@@ -7,7 +7,12 @@ public class IngameCtrl : MonoBehaviour
 {
     [SerializeField]
     private CanvasGroup deadUICanvas, gui;
-    
+
+    private void OnEnable()
+    {
+        Cursor.visible = false;
+    }
+
     public void playerDead()
     {
         StartCoroutine(dead());
