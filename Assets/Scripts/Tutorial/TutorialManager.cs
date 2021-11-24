@@ -51,6 +51,11 @@ public class TutorialManager : MonoBehaviour
     //private bool b_NarrationRunning = false;
     public bool b_SceneChagne;  //scene을 변경할 bool 변수
 
+    private void OnEnable()
+    {
+        Cursor.visible = false;
+    }
+
     private void Start()
     {
         tutorial_Scene_Ctrl = GameObject.Find("TutorialSceneCtrl").gameObject.GetComponent<TutorialSceneCtrl>();
