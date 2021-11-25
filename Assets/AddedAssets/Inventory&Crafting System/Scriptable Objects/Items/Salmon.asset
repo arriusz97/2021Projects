@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Salmon
   m_EditorClassIdentifier: 
   uiDisplay: {fileID: 21300000, guid: 6a85d2369931e2545a4cbec2c36fc0ed, type: 3}
-  stackable: 0
+  stackable: 1
   type: 3
   description: Salmon
   data:
