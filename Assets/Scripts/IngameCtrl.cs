@@ -15,6 +15,7 @@ public class IngameCtrl : MonoBehaviour
 
     public void playerDead()
     {
+        Time.timeScale = 0;
         StartCoroutine(dead());
     }
 
@@ -26,13 +27,18 @@ public class IngameCtrl : MonoBehaviour
     //player가 죽었을 때 불릴 함수
     //player가 죽고나서 5초 뒤 lobby로 전환
     IEnumerator dead()
-    {
-        
+    {        
         yield return StartCoroutine(Fade(true));
         gui.alpha = 1;
-        WaitForSeconds five  = new WaitForSeconds(5.0f);
+        WaitForSecondsRealtime five  = new WaitForSecondsRealtime(5.0f);
         yield return five;
-        
+        Cursor.visible = true;
+        Time.timeScale = 1;
+
+        GameObject.Find("TitleUI").transform.Find("TUI").gameObject.SetActive(true);
+        GameObject.Find("UI").transform.Find("DayCounter").gameObject.SetActive(false);
+        GameObject.Find("UI").SetActive(false);
+
         SceneManager.LoadScene(0);
     }
 

@@ -79,12 +79,12 @@ public class ActionController : MonoBehaviour
             if (inventoryOpen)
             {
                 CloseInventory();
-                Cursor.visible = false;
+               //Cursor.visible = false;
             }
             else
             {
                 OpenInventory();
-                Cursor.visible = true;
+                //Cursor.visible = true;
             }
         }
         //단축키 c를 입력받으면 제작 창을 띄우거나 닫는다.
@@ -93,12 +93,12 @@ public class ActionController : MonoBehaviour
             if (CraftingOpen)
             {
                 CloseCrafting();
-                Cursor.visible = false;
+                //Cursor.visible = false;
             }
             else
             {
                 OpenCrafting();
-                Cursor.visible = true;
+                //Cursor.visible = true;
             }
         }
         else if (Input.GetKeyDown(KeyCode.Escape))
@@ -106,7 +106,7 @@ public class ActionController : MonoBehaviour
             if (campfireOpen)
             {
                 CloseCampfire();
-                Cursor.visible = false;
+                //Cursor.visible = false;
             }
             else
             {
@@ -276,7 +276,7 @@ public class ActionController : MonoBehaviour
         CraftingOpen = true;
         craftingScreen.SetActive(true);
         PlayLock();
-        Cursor.visible = true;
+        //Cursor.visible = true;
     }
     //제작 창 비활성화
     public void CloseCrafting()
@@ -285,7 +285,7 @@ public class ActionController : MonoBehaviour
         craftingScreen.GetComponent<UserInterface>().theItemEffectDatabase.HideToolTip();
         craftingScreen.SetActive(false);
         PlayLock();
-        Cursor.visible = false;
+        //Cursor.visible = false;
     }
 
     public void OpenCamfire()
@@ -293,7 +293,7 @@ public class ActionController : MonoBehaviour
         campfireOpen = true;
         campfireScreen.SetActive(true);
         PlayLock();
-        Cursor.visible = true;
+        //Cursor.visible = true;
     }
 
     public void CloseCampfire()
@@ -301,35 +301,40 @@ public class ActionController : MonoBehaviour
         campfireOpen = false;
         campfireScreen.SetActive(false);
         PlayLock();
-        Cursor.visible = false;
+        //Cursor.visible = false;
     }
 
     public void OpenConstruct()
     {
         ConstructOpen = true;
         PlayLock();
-        Cursor.visible = true;
+        //Cursor.visible = true;
     }
 
     public void CloseConstruct()
     {
         ConstructOpen = false;
         PlayLock();
-        Cursor.visible = false;
+        //Cursor.visible = false;
     }
 
-    private void PlayLock()
+    public void PlayLock()
     {
         if (ConstructOpen)
         {
             playerLock = false;
+            Cursor.visible = true;
         }
         else if (CraftingOpen == false && inventoryOpen == false && campfireOpen == false)
         {
             playerLock = false;
+            Cursor.visible = false;
         }
         else
+        {
             playerLock = true;
+            Cursor.visible = true;
+        }
     }
 
     //종료시 인벤토리와 퀵슬롯을 초기화한다.

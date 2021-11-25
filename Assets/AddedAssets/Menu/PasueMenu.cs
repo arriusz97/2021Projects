@@ -35,13 +35,22 @@ public class PasueMenu : MonoBehaviour
 
     public void ClickResume()
     {
-        Escape();
+        Escape();        
     }
 
     public void Escape()
     {
         isActive = !isActive;
         gameObject.SetActive(isActive);
+
+        if (isActive)
+        {
+            Cursor.visible = true;
+        }
+        else
+            Cursor.visible = false;
+
+
         TimeStop();
         CursorLock();
     }
