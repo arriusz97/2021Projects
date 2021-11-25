@@ -34,6 +34,9 @@ public class ActionController : MonoBehaviour
     [SerializeField]
     private PasueMenu pasueMenu;
 
+    [SerializeField]
+    private GameObject pauseMenu_gameObject;
+
     public ItemEffectDatabase effectDatabase;
 
     [SerializeField]
@@ -76,10 +79,12 @@ public class ActionController : MonoBehaviour
             if (inventoryOpen)
             {
                 CloseInventory();
+                Cursor.visible = false;
             }
             else
             {
                 OpenInventory();
+                Cursor.visible = true;
             }
         }
         //단축키 c를 입력받으면 제작 창을 띄우거나 닫는다.
@@ -88,10 +93,12 @@ public class ActionController : MonoBehaviour
             if (CraftingOpen)
             {
                 CloseCrafting();
+                Cursor.visible = false;
             }
             else
             {
                 OpenCrafting();
+                Cursor.visible = true;
             }
         }
         else if (Input.GetKeyDown(KeyCode.Escape))
@@ -99,9 +106,16 @@ public class ActionController : MonoBehaviour
             if (campfireOpen)
             {
                 CloseCampfire();
+                Cursor.visible = false;
             }
             else
+            {
+                if (pauseMenu_gameObject.gameObject.activeInHierarchy)
+                {
+                    Cursor.visible = false;
+                }
                 pasueMenu.Escape();
+            }
         }
     }
     //단축키 F를 입력받으면 아이템을 주울 수 있는지 판단하고 가능하면 줍는다.
@@ -262,6 +276,7 @@ public class ActionController : MonoBehaviour
         CraftingOpen = true;
         craftingScreen.SetActive(true);
         PlayLock();
+        Cursor.visible = true;
     }
     //제작 창 비활성화
     public void CloseCrafting()
@@ -270,6 +285,7 @@ public class ActionController : MonoBehaviour
         craftingScreen.GetComponent<UserInterface>().theItemEffectDatabase.HideToolTip();
         craftingScreen.SetActive(false);
         PlayLock();
+        Cursor.visible = false;
     }
 
     public void OpenCamfire()
@@ -277,6 +293,7 @@ public class ActionController : MonoBehaviour
         campfireOpen = true;
         campfireScreen.SetActive(true);
         PlayLock();
+        Cursor.visible = true;
     }
 
     public void CloseCampfire()
@@ -284,18 +301,21 @@ public class ActionController : MonoBehaviour
         campfireOpen = false;
         campfireScreen.SetActive(false);
         PlayLock();
+        Cursor.visible = false;
     }
 
     public void OpenConstruct()
     {
         ConstructOpen = true;
         PlayLock();
+        Cursor.visible = true;
     }
 
     public void CloseConstruct()
     {
         ConstructOpen = false;
         PlayLock();
+        Cursor.visible = false;
     }
 
     private void PlayLock()
@@ -370,3 +390,5 @@ public class ActionController : MonoBehaviour
         dataController.Gamedata.swimUpgrade = 1;
     }
 }
+
+////pause menu를 닫으면 mouse cursor 끄기

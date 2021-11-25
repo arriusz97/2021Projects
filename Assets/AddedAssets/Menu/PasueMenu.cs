@@ -11,7 +11,7 @@ public class PasueMenu : MonoBehaviour
     [SerializeField]
     private DataController dataController;
 
-    private bool isActive = false;
+    public bool isActive = false;
 
     private void OnEnable()
     {
