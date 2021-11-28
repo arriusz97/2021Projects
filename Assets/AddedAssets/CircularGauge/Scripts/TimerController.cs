@@ -17,6 +17,9 @@ public class TimerController : MonoBehaviour
     [SerializeField]
     private SunController SC;
 
+    [SerializeField]
+    private IngameCtrl ingameCtrl;
+
     public void StartTimer(int TimerNum)
     {
         TimerContainer[TimerNum].StartTimer();
@@ -40,7 +43,7 @@ public class TimerController : MonoBehaviour
 
     private void Update()
     {
-        O2Call();        
+        O2Call();
 
         UpdateTimer(0, Time.deltaTime);
 
@@ -104,7 +107,7 @@ public class TimerController : MonoBehaviour
     }
 
     private void HPdownCall()
-    {
+    {       
         if (TimerContainer[1].isPaused)
         {
             UpdateTimer(0, -HPdown * Time.deltaTime);
@@ -114,5 +117,11 @@ public class TimerController : MonoBehaviour
         {
             UpdateTimer(0, -1 * Time.deltaTime);
         }
+    }
+
+    public void PlayerDead()
+    {
+        ingameCtrl.playerDead();
+        //gameObject.SetActive(false);
     }
 }

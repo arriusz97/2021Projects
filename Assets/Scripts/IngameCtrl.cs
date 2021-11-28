@@ -11,6 +11,7 @@ public class IngameCtrl : MonoBehaviour
     private void OnEnable()
     {
         Cursor.visible = false;
+        gui = GameObject.Find("GUI").GetComponent<CanvasGroup>();
     }
 
     public void playerDead()
