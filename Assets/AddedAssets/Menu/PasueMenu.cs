@@ -42,14 +42,8 @@ public class PasueMenu : MonoBehaviour
     {
         isActive = !isActive;
         gameObject.SetActive(isActive);
-
-        if (isActive)
-        {
-            Cursor.visible = true;
-        }
-        else
-            Cursor.visible = false;
-
+        Cursor.visible = isActive;
+        //Cursor.lockState = CursorLockMode.Confined;
 
         TimeStop();
         CursorLock();

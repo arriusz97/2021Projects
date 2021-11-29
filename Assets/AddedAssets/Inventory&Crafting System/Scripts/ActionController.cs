@@ -110,10 +110,6 @@ public class ActionController : MonoBehaviour
             }
             else
             {
-                if (pauseMenu_gameObject.gameObject.activeInHierarchy)
-                {
-                    Cursor.visible = false;
-                }
                 pasueMenu.Escape();
             }
         }

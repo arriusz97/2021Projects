@@ -394,6 +394,6 @@ public class player : MonoBehaviour
 
     public void SwimSpeedUpgrade()
     {
-        m_SwimSpeed += 15;
+        m_SwimSpeed += 10;
     }
 }
