@@ -15,9 +15,13 @@
 🐬 Play 영상 : https://youtu.be/Fh01tWw7_sc
 
 🐬 차용한 부분 
+  
   Monster FSM, ObjPool, Spawn Controller : https://github.com/akpil/Unity-1908/tree/master/Platformer/Assets/Scripts
+  
   Mouse Rotation : https://wergia.tistory.com/230
+  
   Inventory : https://www.youtube.com/watch?v=_IqTeruf3-s&list=PLJWSdH2kAe_Ij7d7ZFR2NIW8QCJE74CyT
+  
   Fish Controller : https://coderzero.tistory.com/entry/%EC%9C%A0%EB%8B%88%ED%8B%B0-%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%86%8C%EC%8A%A4-Fish-Flock
 
 🐬 Assets : Mixamo, Unity Asset Store
