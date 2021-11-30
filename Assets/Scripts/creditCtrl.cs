@@ -28,7 +28,7 @@ public class creditCtrl : MonoBehaviour
         Debug.Log(m_rectTransform.position.y + m_Speed);
 
 
-        if(m_rectTransform.position.y + m_Speed > -1800f)
+        if(m_rectTransform.position.y + m_Speed > -1500f)
         {
             StartCoroutine(twosec());
         }
