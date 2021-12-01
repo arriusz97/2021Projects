@@ -14,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiDisplay: {fileID: 21300000, guid: 900be737a6d254d4b84080469d00504e, type: 3}
   stackable: 1
-  type: 3
+  type: 2
   description: Goldfish
   data:
     Name: Goldfish
     Id: 6
     buffs: []
-    itemType: 3
+    itemType: 2
   RecipeData:
     result: {fileID: 0}
     resultamount: 1

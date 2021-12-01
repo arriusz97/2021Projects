@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using System.IO;
 
 public class Title : MonoBehaviour
 {
     public string gameSceneName, tutorialSceneName;
-
+    public string GameDataFileName = "savedata.json";
 
     [SerializeField]
     private GameObject background;
@@ -33,11 +34,19 @@ public class Title : MonoBehaviour
 
     public void ClickLoad()
     {
-        Load = true;
-        progressbar.gameObject.SetActive(true);
-        background.SetActive(true);
-        SceneManager.sceneLoaded += LoadSceneEnd;
-        StartCoroutine(GameStartCoroutine(gameSceneName));
+        string filePath = Application.persistentDataPath + GameDataFileName;
+        if (File.Exists(filePath))
+        {
+            Load = true;
+            progressbar.gameObject.SetActive(true);
+            background.SetActive(true);
+            SceneManager.sceneLoaded += LoadSceneEnd;
+            StartCoroutine(GameStartCoroutine(gameSceneName));
+        }
+        else
+        {
+            Debug.Log("no file to load");
+        }
     }
 
     public void ClickExit()

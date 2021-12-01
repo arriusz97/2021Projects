@@ -14,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiDisplay: {fileID: 21300000, guid: 6a85d2369931e2545a4cbec2c36fc0ed, type: 3}
   stackable: 1
-  type: 3
+  type: 2
   description: Salmon
   data:
     Name: Salmon
     Id: 8
     buffs: []
-    itemType: 3
+    itemType: 2
   RecipeData:
     result: {fileID: 0}
     resultamount: 1
