@@ -13,6 +13,8 @@ public class creditCtrl : MonoBehaviour
     private AudioSource m_bgm;
     [SerializeField]
     private AudioSource m_helicopter;
+    [SerializeField]
+    private float m_endingTransform;
 
     private void Awake()
     {
@@ -28,7 +30,7 @@ public class creditCtrl : MonoBehaviour
         Debug.Log(m_rectTransform.position.y + m_Speed);
 
 
-        if(m_rectTransform.position.y + m_Speed > -1500f)
+        if(m_rectTransform.position.y + m_Speed > -m_endingTransform)
         {
             StartCoroutine(twosec());
         }
