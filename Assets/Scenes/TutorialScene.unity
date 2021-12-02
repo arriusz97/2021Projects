@@ -8287,7 +8287,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ChatText: {fileID: 1193332762}
-  skipButton: 09000000
+  skipButton: 090000000d00000043010000
   fulltext:
   - "\uC73D \uAC11\uC790\uAE30 \uC694\uD2B8\uAC00 \uB9D0\uC744 \uB4E3\uC9C0 \uC54A\uB294\uB2E4... "
   - "\uBE68\uB9AC \uC721\uC9C0\uB85C \uBC29\uD5A5\uC744 \uD2C0\uC9C0 \uC54A\uC73C\uBA74
