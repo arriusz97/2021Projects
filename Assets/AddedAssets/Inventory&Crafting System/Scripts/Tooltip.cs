@@ -28,7 +28,7 @@ public class Tooltip : MonoBehaviour
         else
         {
             _pos += new Vector3(go_Base.GetComponent<RectTransform>().rect.width * 0f,
-                                -go_Base.GetComponent<RectTransform>().rect.height * 0.8f, 0);
+                                -go_Base.GetComponent<RectTransform>().rect.height * 0.7f, 0);
         }
         go_Base.transform.position = _pos;
 
