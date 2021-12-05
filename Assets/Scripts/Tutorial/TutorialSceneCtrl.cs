@@ -33,6 +33,7 @@ public class TutorialSceneCtrl : MonoBehaviour
             yield return null;
         }
 
+        Cursor.visible = true;
 
         GameObject.Find("TitleUI").transform.Find("TUI").gameObject.SetActive(true);
 
