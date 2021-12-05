@@ -94,7 +94,8 @@ public class ConstructUI : MonoBehaviour
 
     private void Build()
     {
-        if (isPreviewActivated && go_Preview.GetComponent<Preview>().isBuildable() && constructs[ConstructionNUm].IO.CanCraft())
+        if (isPreviewActivated && go_Preview.GetComponent<Preview>().isBuildable() &&
+            hitInfo.transform.tag == "Ground" && constructs[ConstructionNUm].IO.CanCraft())
         {
             GameObject cons = Instantiate(go_Prefab, hitInfo.point, Quaternion.identity);
             //Instantiate(go_Prefab, hitInfo.point, Quaternion.identity);

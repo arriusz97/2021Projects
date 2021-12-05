@@ -30,7 +30,7 @@ public class SunController : MonoBehaviour
     private bool dayCounterMove;
 
     //island bgm 밤, 낮 바꿔줄 bool 변수
-    public bool m_night = false;
+    public bool m_night = false, m_Nap = false;
 
     [SerializeField]
     private DataController dataController;
@@ -43,6 +43,9 @@ public class SunController : MonoBehaviour
 
     [SerializeField]
     private bool rescueSignal = false, sleep = false;
+
+    [SerializeField]
+    TimerController TC;
 
     // Start is called before the first frame update
     void Start()
@@ -145,7 +148,7 @@ public class SunController : MonoBehaviour
         {
             currentTime = 0;                        //자정이 지나면
             currentDay++;                         //날짜 증가
-            
+            m_Nap = false;
             if (!dayCounterMove)            //날짜가 변하면 DayCounter 출력 준비
             {
                 dayCounterMove = true;
@@ -201,5 +204,23 @@ public class SunController : MonoBehaviour
             sleep = true;
             Time.timeScale = SecondsOfDay * 0.125f;
         }
+    }
+
+    public void Nap()
+    {
+        if (!m_night && !m_Nap)
+        {
+            StartCoroutine(NapOn());
+            m_Nap = true;
+            TC.UpdateTimer(1, (SecondsOfDay / 12f));
+        }
+    }
+
+    IEnumerator NapOn()
+    {
+        Time.timeScale = SecondsOfDay * 0.125f;
+        WaitForSeconds Nap = new WaitForSeconds((SecondsOfDay / 12f)/Time.timeScale);
+        yield return Nap;
+        Time.timeScale = 1f;
     }
 }

@@ -186,7 +186,7 @@ public class ActionController : MonoBehaviour
         }
         else if(type == InforType.Construction)
         {
-            actionText.text = "Press " + "<color=yellow>" + "(F)" + "</color>" + " to Dismantle ";
+            actionText.text = "Press " + "<color=yellow>" + "(F)" + "</color>" + " to Take a Nap ";
         }
         else if (type == InforType.Tent)
         {
@@ -240,7 +240,8 @@ public class ActionController : MonoBehaviour
                     }
                     else if (interactionObject.InteractionType == eInteractionType.Construction)
                     {
-                        interactionObject.Dismantle();
+                        //interactionObject.Dismantle();
+                        SC.Nap();
                     }
                     else if (interactionObject.InteractionType == eInteractionType.Tent)
                     {
