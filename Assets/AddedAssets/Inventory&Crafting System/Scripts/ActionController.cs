@@ -49,10 +49,13 @@ public class ActionController : MonoBehaviour
     private SunController SC;
 
     //게임 시작시 인벤토리가 한번 활성화되야해서 활성화 된채로 시작해 비활성화 시킨다.
+
+
     private void Start()
     {
         CloseInventory();
-        crafting.Load();
+        //crafting.Load();
+        craftingScreen.GetComponent<UserInterface>().InventoryUpdate();
         CloseCrafting();
         campfire.Load();
         CloseCampfire();
@@ -97,7 +100,7 @@ public class ActionController : MonoBehaviour
             }
             else
             {
-                OpenCrafting();
+                OpenCrafting();               
                 //Cursor.visible = true;
             }
         }
@@ -270,6 +273,7 @@ public class ActionController : MonoBehaviour
     //제작 창 활성화
     public void OpenCrafting()
     {
+        craftingScreen.GetComponent<UserInterface>().InventoryUpdate();
         CraftingOpen = true;
         craftingScreen.SetActive(true);
         PlayLock();
@@ -287,6 +291,7 @@ public class ActionController : MonoBehaviour
 
     public void OpenCamfire()
     {
+        campfireScreen.GetComponent<UserInterface>().InventoryUpdate();
         campfireOpen = true;
         campfireScreen.SetActive(true);
         PlayLock();

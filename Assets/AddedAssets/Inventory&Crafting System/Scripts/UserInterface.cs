@@ -39,6 +39,14 @@ public abstract class UserInterface : MonoBehaviour
         theItemEffectDatabase = GameObject.Find("EffectDatabase").GetComponent<ItemEffectDatabase>();
     }
 
+    public void InventoryUpdate()
+    {
+        for (int i = 0; i < inventory.GetSlots.Length; i++)
+        {            
+            OnSlotUpdate(inventory.GetSlots[i]);
+        }
+    }
+
     public abstract void CreateSlots();
     //인벤토리 슬롯과 데이터베이스의 아이템 링크
     public void UpdateInventoryLinks()
@@ -55,12 +63,14 @@ public abstract class UserInterface : MonoBehaviour
     {
         if (slot.item.Id <= -1)
         {
+            Debug.Log("item id -1");
             slot.slotDisplay.transform.GetChild(0).GetComponent<Image>().sprite = null;
             slot.slotDisplay.transform.GetChild(0).GetComponent<Image>().color = new Color(1, 1, 1, 0);
             slot.slotDisplay.GetComponentInChildren<TextMeshProUGUI>().text = string.Empty;
         }
         else
         {
+            Debug.Log("item id" + slot.item.Id);
             slot.slotDisplay.transform.GetChild(0).GetComponent<Image>().sprite = slot.GetItemObject().uiDisplay;
             slot.slotDisplay.transform.GetChild(0).GetComponent<Image>().color = new Color(1, 1, 1, 1);
             slot.slotDisplay.GetComponentInChildren<TextMeshProUGUI>().text = slot.amount == 1 ? string.Empty : slot.amount.ToString("n0");
