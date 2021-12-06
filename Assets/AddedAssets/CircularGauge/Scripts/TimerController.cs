@@ -107,21 +107,31 @@ public class TimerController : MonoBehaviour
     }
 
     private void HPdownCall()
-    {       
+    {
         if (TimerContainer[1].isPaused)
         {
             UpdateTimer(0, -HPdown * Time.deltaTime);
         }
 
-        if (SC.m_night == true)
+        if (SC.m_night == true && !SC.sleep)
         {
             UpdateTimer(0, -1 * Time.deltaTime);
+        }
+        else if (SC.sleep)
+        {
+            UpdateTimer(1, 1 * Time.deltaTime);
+        }
+
+        if (SC.m_Nap)
+        {
+            UpdateTimer(1, 1 * Time.deltaTime);
         }
     }
 
     public void PlayerDead()
     {
         ingameCtrl.playerDead();
+        Debug.Log("player dead");
         //gameObject.SetActive(false);
     }
 }

@@ -39,7 +39,7 @@ public class InteractionObject : MonoBehaviour
             playerInventory.AddItem(slot.item, slot.amount);
         }
 
-        Destroy(gameObject, 1);
+        gameObject.SetActive(false);
     }
     
     public void Dismantle()

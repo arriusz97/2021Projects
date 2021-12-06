@@ -30,7 +30,7 @@ public class SunController : MonoBehaviour
     private bool dayCounterMove;
 
     //island bgm 밤, 낮 바꿔줄 bool 변수
-    public bool m_night = false, m_Nap = false;
+    public bool m_night = false, m_Nap = false, sleep = false;
 
     [SerializeField]
     private DataController dataController;
@@ -42,7 +42,7 @@ public class SunController : MonoBehaviour
     private IngameCtrl ingameCtrl;
 
     [SerializeField]
-    private bool rescueSignal = false, sleep = false;
+    private bool rescueSignal = false;
 
     [SerializeField]
     TimerController TC;
@@ -212,15 +212,15 @@ public class SunController : MonoBehaviour
         {
             StartCoroutine(NapOn());
             m_Nap = true;
-            TC.UpdateTimer(1, (SecondsOfDay / 12f));
         }
     }
 
     IEnumerator NapOn()
     {
         Time.timeScale = SecondsOfDay * 0.125f;
-        WaitForSeconds Nap = new WaitForSeconds((SecondsOfDay / 12f)/Time.timeScale);
+        WaitForSeconds Nap = new WaitForSeconds((SecondsOfDay / 12f));
         yield return Nap;
         Time.timeScale = 1f;
+        m_Nap = false;
     }
 }
