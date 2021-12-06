@@ -19,15 +19,8 @@ MonoBehaviour:
     Slots:
     - AllowedItems: 
       item:
-        Name: 
-        Id: 3
-        buffs: []
-        itemType: 3
-      amount: 36
-    - AllowedItems: 
-      item:
-        Name: 
-        Id: 1
+        Name: Duct Tape
+        Id: 21
         buffs: []
         itemType: 2
       amount: 1

@@ -19,21 +19,21 @@ MonoBehaviour:
     Slots:
     - AllowedItems: 
       item:
-        Name: Wood Plank Recipe
+        Name: Recipe Wood Plank
         Id: 3
         buffs: []
         itemType: 1
       amount: 1
     - AllowedItems: 
       item:
-        Name: Wood Plank Recipe
+        Name: Recipe Wood Stick
         Id: 29
         buffs: []
         itemType: 1
       amount: 1
     - AllowedItems: 
       item:
-        Name: Wood Plank Recipe
+        Name: Recipe PLB Repair
         Id: 35
         buffs: []
         itemType: 1

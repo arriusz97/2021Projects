@@ -19,8 +19,8 @@ MonoBehaviour:
     Slots:
     - AllowedItems: 
       item:
-        Name: Battery
-        Id: 19
+        Name: 
+        Id: 39
         buffs: []
-        itemType: 2
+        itemType: 0
       amount: 1

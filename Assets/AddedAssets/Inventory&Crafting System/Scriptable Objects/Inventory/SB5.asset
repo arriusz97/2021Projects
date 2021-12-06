@@ -19,22 +19,15 @@ MonoBehaviour:
     Slots:
     - AllowedItems: 
       item:
-        Name: 
-        Id: 31
+        Name: Battery
+        Id: 19
         buffs: []
         itemType: 2
       amount: 1
     - AllowedItems: 
       item:
-        Name: 
-        Id: 30
-        buffs: []
-        itemType: 2
-      amount: 4
-    - AllowedItems: 
-      item:
-        Name: 
-        Id: 20
+        Name: Bucket
+        Id: 31
         buffs: []
         itemType: 2
       amount: 1

@@ -19,8 +19,8 @@ MonoBehaviour:
     Slots:
     - AllowedItems: 
       item:
-        Name: Duct Tape
-        Id: 21
+        Name: Shelter Blueprint
+        Id: 40
         buffs: []
         itemType: 2
       amount: 1

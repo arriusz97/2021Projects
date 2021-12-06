@@ -19,8 +19,8 @@ MonoBehaviour:
     Slots:
     - AllowedItems: 
       item:
-        Name: 
-        Id: 1
+        Name: Flippers
+        Id: 37
         buffs: []
-        itemType: 0
-      amount: 2
+        itemType: 5
+      amount: 1

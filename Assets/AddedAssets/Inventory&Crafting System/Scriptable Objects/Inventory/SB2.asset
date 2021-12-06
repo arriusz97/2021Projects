@@ -19,8 +19,8 @@ MonoBehaviour:
     Slots:
     - AllowedItems: 
       item:
-        Name: 
-        Id: 1
+        Name: Compass
+        Id: 36
         buffs: []
         itemType: 2
-      amount: 2
+      amount: 1

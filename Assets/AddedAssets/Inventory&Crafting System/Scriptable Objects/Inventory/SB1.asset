@@ -19,15 +19,8 @@ MonoBehaviour:
     Slots:
     - AllowedItems: 
       item:
-        Name: Water Bottle
-        Id: 36
-        buffs: []
-        itemType: 3
-      amount: 3
-    - AllowedItems: 
-      item:
-        Name: Flippers
-        Id: 37
+        Name: O2
+        Id: 38
         buffs: []
         itemType: 5
       amount: 1
