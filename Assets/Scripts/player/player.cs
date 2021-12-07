@@ -33,7 +33,7 @@ public class player : MonoBehaviour
     [Header("camera변수")]
     public Camera m_camera;
     public Transform m_cameraArm;
-    private float m_lookSensitivity = 0.8f;
+    private float m_lookSensitivity = 0.7f;
     private float m_cameraRotationLimit = 50f;
     private float m_currentCameraRotationX;
     [SerializeField]
