@@ -43,35 +43,35 @@ MonoBehaviour:
         Name: Amberjack
         Id: 4
         buffs: []
-        itemType: 3
+        itemType: 2
       amount: 20
     - AllowedItems: 
       item:
         Name: Bass
         Id: 5
         buffs: []
-        itemType: 3
+        itemType: 2
       amount: 20
     - AllowedItems: 
       item:
         Name: Goldfish
         Id: 6
         buffs: []
-        itemType: 3
+        itemType: 2
       amount: 20
     - AllowedItems: 
       item:
         Name: Koi
         Id: 7
         buffs: []
-        itemType: 3
+        itemType: 2
       amount: 20
     - AllowedItems: 
       item:
         Name: Salmon
         Id: 8
         buffs: []
-        itemType: 3
+        itemType: 2
       amount: 20
     - AllowedItems: 
       item:
@@ -191,4 +191,11 @@ MonoBehaviour:
         Id: 38
         buffs: []
         itemType: 5
+      amount: 1
+    - AllowedItems: 
+      item:
+        Name: Shelter Blueprint
+        Id: 40
+        buffs: []
+        itemType: 2
       amount: 1

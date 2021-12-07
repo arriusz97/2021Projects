@@ -31,3 +31,10 @@ MonoBehaviour:
         buffs: []
         itemType: 2
       amount: 1
+    - AllowedItems: 
+      item:
+        Name: Lighter
+        Id: 32
+        buffs: []
+        itemType: 2
+      amount: 1
